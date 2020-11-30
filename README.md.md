@@ -201,7 +201,16 @@ c) The page will render all desks where the Admin can scroll to find a desks, se
 d) Amend by deactivating or changing the photo
 e) Upon saving they will return to the desk list
 
+**5. Administrator Booking a Desk**
 
+The Admin can be required to book a desk on behalf of someone such as a new employee that does not yet have access or for employees from other offices around the world. The Admin will have the ability to book a desk to reserve a spot for the above reasons. 
+To make any of these actions, they will need to:
+a) Enter login details into the FlexiDesk application by visiting [www.flexi-desks.com](http://www.flexi-desks.com) 
+b) From the navigation menu on the left, they will need to click ‘New Booking’’
+c) Select a date
+d) Select an available seat
+e) Select an Employee
+f) Upon saving they will return to the bookings page
 
 
 
