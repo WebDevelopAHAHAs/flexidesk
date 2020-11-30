@@ -97,27 +97,9 @@ FlexiDesk is a full stack application built on the MERN stack (MongoDB, Express,
 
 
 
-| Admin Add Desk Dataflow                                      | Admin Edit Desk Dataflow                                     |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="docs/img/AdminAddDesk.png" style="zoom:50%;" />    | <img src="docs/img/AdminEditDesk.png" style="zoom:50%;" />   |
-| **Admin Add User Dataflow**                                  | **Admin Edit User Dataflow**                                 |
-| <img src="docs/img/AdminAddUser.png" style="zoom:50%;" />    | <img src="docs/img/AdminEditUser.png" style="zoom:50%;" />   |
-| **Admin Analytics Dataflow**                                 | **Admin Make a Booking Dataflow**                            |
-| <img src="docs/img/AdminReviewAnalytics.png" style="zoom:50%;" /> | <img src="docs/img/AdminMakeBooking.png" style="zoom:40%;" /> |
-
-
-
-
-
 ##### **Employee Dataflow Diagram**
 
 ![](docs/img/Employee Dataflow Diagram.png)
-
-
-
-| Employee Make Booking Dataflow                               | Employee Edit/Delete Booking Dataflow                        |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="docs/img/EmployeeMakeBooking.png" style="zoom:50%;" /> | <img src="docs/img/EmployeeEditDeleteBooking.png" style="zoom:50%;" /> |
 
 
 
@@ -205,7 +187,23 @@ e) Upon saving they will return to the desk list
 
 
 
+| Admin Add Desk Dataflow                                      | Admin Edit Desk Dataflow                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="docs/img/AdminAddDesk.png" style="zoom:50%;" />    | <img src="docs/img/AdminEditDesk.png" style="zoom:50%;" />   |
+| **Admin Add User Dataflow**                                  | **Admin Edit User Dataflow**                                 |
+| <img src="docs/img/AdminAddUser.png" style="zoom:50%;" />    | <img src="docs/img/AdminEditUser.png" style="zoom:50%;" />   |
+| **Admin Analytics Dataflow**                                 | **Admin Make a Booking Dataflow**                            |
+| <img src="docs/img/AdminReviewAnalytics.png" style="zoom:50%;" /> | <img src="docs/img/AdminMakeBooking.png" style="zoom:40%;" /> |
 
+
+
+**Employee**
+
+
+
+| Employee Make Booking Dataflow                               | Employee Edit/Delete Booking Dataflow                        |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="docs/img/EmployeeMakeBooking.png" style="zoom:50%;" /> | <img src="docs/img/EmployeeEditDeleteBooking.png" style="zoom:50%;" /> |
 
 
 
@@ -219,5 +217,29 @@ e) Upon saving they will return to the desk list
 
 
 
+##### 23rd November 2020 - Board Status
 
+![Trello Screenshot 23rd November 2020](docs/img/trello/23112020.png)
+
+
+
+##### 24th November 2020 - Board Status
+
+![Trello Screenshot 24th November 2020](docs/img/trello/24112020.png)
+
+
+
+##### 29th November 2020 - Dataflow Card
+
+![Trello Screenshot 29th November 2020](docs/img/trello/29112020.png)
+
+
+
+#####  30th November 2020 - Dataflow Card
+
+![Trello Screenshot 30th November 2020 [1]](docs/img/trello/30112020(1).png)
+
+##### 30th November 2020 - Board Status
+
+![Trello Screenshot 30th November 2020 [2]](docs/img/trello/30112020(2).png)
 
