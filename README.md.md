@@ -97,27 +97,9 @@ FlexiDesk is a full stack application built on the MERN stack (MongoDB, Express,
 
 
 
-| Admin Add Desk Dataflow                                      | Admin Edit Desk Dataflow                                     |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="docs/img/AdminAddDesk.png" style="zoom:50%;" />    | <img src="docs/img/AdminEditDesk.png" style="zoom:50%;" />   |
-| **Admin Add User Dataflow**                                  | **Admin Edit User Dataflow**                                 |
-| <img src="docs/img/AdminAddUser.png" style="zoom:50%;" />    | <img src="docs/img/AdminEditUser.png" style="zoom:50%;" />   |
-| **Admin Analytics Dataflow**                                 | **Admin Make a Booking Dataflow**                            |
-| <img src="docs/img/AdminReviewAnalytics.png" style="zoom:50%;" /> | <img src="docs/img/AdminMakeBooking.png" style="zoom:40%;" /> |
-
-
-
-
-
 ##### **Employee Dataflow Diagram**
 
 ![](docs/img/Employee Dataflow Diagram.png)
-
-
-
-| Employee Make Booking Dataflow                               | Employee Edit/Delete Booking Dataflow                        |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="docs/img/EmployeeMakeBooking.png" style="zoom:50%;" /> | <img src="docs/img/EmployeeEditDeleteBooking.png" style="zoom:50%;" /> |
 
 
 
@@ -156,6 +138,10 @@ d) Upon the click, a form will be displayed where they will be required to add t
 
 e) Upon saving the form, this will create the user with certain permissions. From there the employee can login and make a booking.
 
+<img src="docs/img/AdminAddDesk.png" style="zoom:50%;" />
+
+
+
 **2. Administrator editing a user**
 From time to time the Admin will need to edit the employees account details for various reasons:
 
@@ -172,6 +158,10 @@ c) Select ‘edit’ against the Employee they wish to edit
 d) Amend the details or deactivate
 e) Upon saving they will return to the list
 
+<img src="docs/img/AdminEditDesk.png" style="zoom:50%;" />
+
+
+
 **3. Administrator Adding a new Desk**
 The Admin will occasionally be required to add new desks to the floorplan for Employees to book. 
 
@@ -184,6 +174,8 @@ d) The Admin will need to assign a desk number and section
 e) Activate desk
 d) Upload a photo of the desk
 e) Upon saving they will return to the desk list
+
+<img src="docs/img/AdminAddUser.png" style="zoom:50%;" />
 
 
 
@@ -198,6 +190,10 @@ c) The page will render all desks where the Admin can scroll to find a desks, se
 d) Amend by deactivating or changing the photo
 e) Upon saving they will return to the desk list
 
+<img src="docs/img/AdminEditUser.png" style="zoom:50%;" />
+
+
+
 **5. Administrator Booking a Desk**
 
 The Admin can be required to book a desk on behalf of someone such as a new employee that does not yet have access or for employees from other offices around the world. The Admin will have the ability to book a desk to reserve a spot for the above reasons. 
@@ -210,6 +206,10 @@ c) Select a date
 d) Select an available seat
 e) Select an Employee
 f) Upon saving they will return to the bookings page
+
+<img src="docs/img/AdminMakeBooking.png" style="zoom:40%;" />
+
+
 
 **6. Administrator Reviewing Analytics**
 Admins require an overview of what is happening in the organization with bookings. They will want to track:
@@ -224,9 +224,13 @@ To make any of these actions, they will need to:
 
 a) Enter login details into the FlexiDesk application by visiting [www.flexi-desks.com](http://www.flexi-desks.com) 
 b) The analytics page will automatically be the first rendered page, otherwise if they are on another page, they can access analytics from the navigation menu on the left.
-c) From here they can view a variety of analytics 
+c) From here they can view a variety of analytics
 
-**Employee**
+<img src="docs/img/AdminReviewAnalytics.png" style="zoom:50%;" />
+
+
+
+##### **Employee**
 
 From an employee perspective, there are various user stories that can occur when using the FlexiDesk application, these are:
 
@@ -243,6 +247,10 @@ e) The employee must complete the form pop-up in order to reserve the desk.
 f) Upon save, they will be redirected back to the dashboard to see their upcoming bookings
 g) An employee will receive an email reminder within 24 hours prior to the booking
 
+<img src="docs/img/EmployeeMakeBooking.png" style="zoom:50%;" />
+
+
+
 **2. Editing/Deleting an Existing Booking**
 Employees sometimes need to edit or delete a booking that they have made. They may need to edit the date or delete the entire booking if they cannot come in that day. 
 
@@ -251,6 +259,8 @@ To do so, they will need to:
 a) Enter login details into the FlexiDesk application by visiting [www.flexi-desks.com](http://www.flexi-desks.com) 
 b) The page will automatically render past and upcoming bookings
 c) From here, the User can edit or delete the booking depending on which icon they select
+
+<img src="docs/img/EmployeeEditDeleteBooking.png" style="zoom:50%;" />
 
 
 
@@ -264,5 +274,29 @@ c) From here, the User can edit or delete the booking depending on which icon th
 
 
 
+##### 23rd November 2020 - Board Status
 
+![Trello Screenshot 23rd November 2020](docs/img/trello/23112020.png)
+
+
+
+##### 24th November 2020 - Board Status
+
+![Trello Screenshot 24th November 2020](docs/img/trello/24112020.png)
+
+
+
+##### 29th November 2020 - Dataflow Card
+
+![Trello Screenshot 29th November 2020](docs/img/trello/29112020.png)
+
+
+
+#####  30th November 2020 - Dataflow Card
+
+![Trello Screenshot 30th November 2020 [1]](docs/img/trello/30112020(1).png)
+
+##### 30th November 2020 - Board Status
+
+![Trello Screenshot 30th November 2020 [2]](docs/img/trello/30112020(2).png)
 
