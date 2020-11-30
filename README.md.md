@@ -1,4 +1,4 @@
-<img src="docs/img/2020-11-30_15-14-23.jpg" style="zoom:55%;" />
+<img src="docs/img/logo.jpg" style="zoom:55%;" />
 
 # T3A2 - Full Stack App (Part A)
 
@@ -117,7 +117,7 @@ There are two types of target audience for FlexiDesk with multiple user stories 
 
 From an Admin perspective, there are multiple user stories that can occur when using the FlexiDesk application, these are:
 
-**1. Administrator adding a User**
+####### **1. Administrator adding a User**
 The Administrator is the People and Cultural Team (HR) at LEAPDev. The Admin is required to onboard any new employee that has recently been employed at LEAPDev, therefore they will need to set up accounts such as, FlexiDesk so that the employee can use the application to book an appointment from or before their start date at LEAPDev. 
 
 They will need to:
