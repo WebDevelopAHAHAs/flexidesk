@@ -2,9 +2,7 @@
 
 
 
-**# T3A2 - Full Stack App (Part A)**
-
-
+# T3A2 - Full Stack App (Part A)
 
 by Callum Worrall, Rachel Williams and Tom Fisher
 
@@ -12,11 +10,11 @@ by Callum Worrall, Rachel Williams and Tom Fisher
 
 
 
-**#### R1. Description of your website, including: Purpose, Functionality/Features, Target Audience and Tech Stack.**
+## R1. Description of your website, including: Purpose, Functionality/Features, Target Audience and Tech Stack.
 
 
 
-***\*FlexiDesk\**** allows LEAPDev to accurately plan and manage who is in the office each day thus protecting the entire company by knowing exactly who was at each desk and when. 
+**FlexiDesk** allows LEAPDev to accurately plan and manage who is in the office each day thus protecting the entire company by knowing exactly who was at each desk and when. 
 
 
 
@@ -28,9 +26,7 @@ Say goodbye to dedicated team days, spreadsheets and no-shows! FlexiDesk enables
 
 
 
-***\*Purpose\****
-
-
+## **Purpose**
 
 The purpose of FlexiDesk is to provide our client, LEAPDev, an application that they can introduce to their 130 employees to book 60 COVID friendly workspaces. 
 
@@ -62,7 +58,7 @@ Overall, FlexiDesk is a cost effective solution that focuses on employee well-be
 
 
 
-***\*Functionality and Features\****
+## **Functionality and Features**
 
 
 
@@ -86,75 +82,46 @@ The People and Cultural team can securely log in with Admin rights to view analy
 
 The MVP features of FlexiDesk are:
 
-
-
-| ***\*Feature\****                      | ***\*User\****       | ***\*Functionality\****                                            |
-
+| **Feature**                      | **User**       | **Functionality**                                            |
 | -------------------------------- | -------------- | ------------------------------------------------------------ |
-
-| ***\*Secure Login/sign  out\****       | Employee/Admin | Securely log in  with credentials and sign out once signed in |
-
-| **Account Setup**                | Admin          | Admins will be  able to create/edit accounts for employees with the following information:<br />- First name<br />- Last Name<br />- Email Address   <br />- Phone <br />- Company   <br />- Team division   <br />- Level of Access |
-
-| ***\*Floorplan Preview\****            | Employee/Admin | Employees will be  able to see the floor plan of what desks are available.    <br />Admin will be able to amend the floorplan . |
-
-| ***\*Booking Calendar\****             | Employee/Admin | Employees will be  able to select a day and view available seats and unavailable seats.  Admins will be  able to book on behalf of a staff member. |
-
-| ***\*Booking Form\****                 | Employee/Admin | Upon booking the  required fields are needed in order to secure the workstation:<br />1.  Have you travelled outside of NSW in the past 14 days?   <br />2. Have you had any flu-like symptoms?   <br />3. Have you been tested for COVID in the past 14 days? <br />4. I consent that the information above is true |
-
-| ***\*Recurring  Appointments\****      | Employee/Admin | Employees with an  access level of 3 or higher can reserve an office/desk permanently or  recurring |
-
-| ***\*Restrictions  Access Level 1\**** | Employee       | Employees with  access level of 1 can only book two weeks in advance and two days a week max |
-
-| ***\*Restrictions  Access Level 2\**** | Employee       | Employees with  access level of 3 can only book two weeks in advance and five days a week max |
-
-| ***\*Reminder Emails\****              | Employee       | Reminder email  will be sent 12/24 hours prior to booking with the option to modify/delete |
-
-| ***\*Staff Dashboard\****              | Employee       | Ability to:     <br />1. Book a new workstation  <br />2. Edit an existing booking    <br />3. Delete an existing booking  <br />4. View past bookings  <br />5. View present/future bookings  <br />6. Analytics |
-
+| **Secure Login / Sign Out**      | Employee/Admin | Securely log in  with credentials and sign out once signed in |
+| **Account Setup**                | Admin          | Admins will be  able to create/edit accounts for employees with the following information:<br />- First name<br />- Last Name<br />- Email Address<br />- Phone<br />- Company<br />- Team division<br />- Level of Access |
+| **Floorplan Preview**            | Employee/Admin | Employees will be  able to see the floor plan of what desks are available.<br />Admin will be able to amend the floorplan . |
+| **Booking Calendar**             | Employee/Admin | Employees will be  able to select a day and view available seats and unavailable seats.<br />Admins will be  able to book on behalf of a staff member. |
+| **Booking Form**                 | Employee/Admin | Upon booking the  required fields are needed in order to secure the workstation:<br />1.  Have you travelled outside of NSW in the past 14 days?<br />2. Have you had any flu-like symptoms?3. Have you been tested for COVID in the past 14 days?<br />4. I consent that the information above is true. |
+| **Recurring  Appointments**      | Employee/Admin | Employees with an  access level of 3 or higher can reserve an office/desk permanently or  recurring. |
+| **Restrictions  Access Level 1** | Employee       | Employees with  access level of 1 can only book two weeks in advance and two days a week max. |
+| **Restrictions  Access Level 2** | Employee       | Employees with  access level of 3 can only book two weeks in advance and five days a week max. |
+| **Reminder Emails**              | Employee       | Reminder email  will be sent 12/24 hours prior to booking with the option to modify/delete. |
+| **Staff Dashboard**              | Employee       | Ability to:     <br />1. Book a new workstation  <br />2. Edit an existing booking    <br />3. Delete an existing booking  <br />4. View past bookings  <br />5. View present/future bookings  <br />6. Analytics |
 | **Admin Dashboard**              | Admin          | Admin dashboard for  P&C team with the ability view an overall of activity happening with  bookings such as:     - Analytics on past/present/future bookings<br />- Analytics per workstation   <br />- Analytics per employee   <br />- Analytics per team   <br />- Ability to search by name/workstation    <br />In addition to  this, they will have the functionality to:     <br />- Book on behalf of an employee   <br />- Delete/ edit existing bookings    <br />- Ability to add/remove/edit desks<br />- Ability to add/edit photos of desks |
 
 
 
-
-
-***\*Target Audience\****
-
-
+## **Target Audience**
 
 The are two types of target audience for FlexiDesk, for employees and HR/Senior Management:
 
 
 
-\1. Employees who want more flexibility for when they desire to come into the office; and
+1. Employees who want more flexibility for when they desire to come into the office; and
 
-\2. Senior Management and HR to:
-
-   \- Easily track and manage COVID friendly workspaces for social distancing purposes 
-
-   \- Contact Tracing in case someone has or knows someone recently infected with COVID
-
-   \- Track who is coming in when and where they are sitting
-
-   \- Better manage cleaning and maintenance on used workstations
-
-   \- Make better cost effective decisions based on seats booked
+2. Senior Management and HR to:
+   - Easily track and manage COVID friendly workspaces for social distancing purposes 
+   - Contact Tracing in case someone has or knows someone recently infected with COVID
+   - Track who is coming in when and where they are sitting
+   - Better manage cleaning and maintenance on used workstations
+   - Make better cost effective decisions based on seats booked
 
 
 
-***\*Tech stack\****
+## Tech Stack
 
-
-
-\- MongoDB
-
-\- Express.js
-
-\- React
-
-\- Node.js
-
-\- AWS S3
+- MongoDB
+- Express.js
+- React
+- Node.js
+- AWS S3
 
 \- GoDaddy Website Deployment on www.flexi-desks.com
 
@@ -172,11 +139,11 @@ FlexiDesk is a full stack application built on the MERN stack (MongoDB, Express,
 
 
 
-**#### R2. Dataflow Diagram**
+# R2. Dataflow Diagram
 
 
 
-**##### \**Administrator Dataflow Diagram\****
+## Administrator Dataflow Diagram
 
 
 
@@ -184,13 +151,13 @@ FlexiDesk is a full stack application built on the MERN stack (MongoDB, Express,
 
 
 
-##### **Employee Dataflow Diagram**
+## **Employee Dataflow Diagram**
 
 ![](docs/img/Employee Dataflow Diagram.png)
 
 
 
-#### R3. Application Architecture Diagram
+# R3. Application Architecture Diagram
 
 ![](docs/img/AAD.jpg)
 
@@ -198,7 +165,7 @@ FlexiDesk is a full stack application built on the MERN stack (MongoDB, Express,
 
 
 
-**#### R4. User Stories**
+# R4. User Stories
 
 
 
@@ -206,20 +173,19 @@ There are two types of target audience for FlexiDesk with multiple user stories 
 
 
 
-**##### \**Administrator\****
+## Administrator
 
 
 
 From an Admin perspective, there are multiple user stories that can occur when using the FlexiDesk application, these are:
 
-####### **1. Administrator adding a User**
+### Administrator adding a User
+
 The Administrator is the People and Cultural Team (HR) at LEAPDev. The Admin is required to onboard any new employee that has recently been employed at LEAPDev, therefore they will need to set up accounts such as, FlexiDesk so that the employee can use the application to book an appointment from or before their start date at LEAPDev. 
 
 
 
 They will need to:
-
-
 
 a) Enter login details into the FlexiDesk application by visiting [www.flexi-desks.com](http://www.flexi-desks.com) 
 
@@ -229,24 +195,21 @@ c) The page will render all employees. The Admin will click on â€œAdd Employeeâ€
 
 d) Upon the click, a form will be displayed where they will be required to add the following details: 
 
+- First Name
 
+- Last Name
 
-\- First Name
+- Email Address
 
-\- Last Name
+- Phone Number
 
-\- Email Address
+- Company Name (selector) 
 
-\- Phone Number
+- Team Name (selector)
 
-\- Company Name (selector) 
+- Access Level
 
-\- Team Name (selector)
-
-\- Access Level
-
-\- Temp Password
-
+- Temp Password
 
 
 e) Upon saving the form, this will create the user with certain permissions. From there the employee can login and make a booking.
@@ -255,9 +218,7 @@ e) Upon saving the form, this will create the user with certain permissions. Fro
 
 
 
-
-
-***\*2. Administrator editing a user\****
+### Administrator editing a user
 
 From time to time the Admin will need to edit the employees account details for various reasons:
 
@@ -293,7 +254,7 @@ e) Upon saving they will return to the list
 
 
 
-***\*3. Administrator Adding a new Desk\****
+### Administrator Adding a new Desk
 
 The Admin will occasionally be required to add new desks to the floorplan for Employees to book. 
 
@@ -319,9 +280,7 @@ e) Upon saving they will return to the desk list
 
 
 
-
-
-***\*4. Administrator Editing Existing Desk\****
+### Administrator Editing Existing Desk
 
 The Admin will occasionally be required to edit desks based on changes such as COVID, the desk no longer exists or the desk placement has changed on the floor plan.
 
@@ -345,7 +304,7 @@ e) Upon saving they will return to the desk list
 
 
 
-**5. Administrator Booking a Desk**
+### Administrator Booking a Desk
 
 The Admin can be required to book a desk on behalf of someone such as a new employee that does not yet have access or for employees from other offices around the world. The Admin will have the ability to book a desk to reserve a spot for the above reasons. 
 
@@ -362,7 +321,8 @@ f) Upon saving they will return to the bookings page
 
 
 
-**6. Administrator Reviewing Analytics**
+### Administrator Reviewing Analytics
+
 Admins require an overview of what is happening in the organization with bookings. They will want to track:
 
 - Who is coming in on what days
@@ -381,11 +341,12 @@ c) From here they can view a variety of analytics
 
 
 
-##### **Employee**
+## **Employee**
 
 From an employee perspective, there are various user stories that can occur when using the FlexiDesk application, these are:
 
-**1.** **Making a booking**
+### Making a booking
+
 An employee that is wanting to come into the office to work must be required to book a desk via FlexiDesk. 
 
 To do so, they will need to:
@@ -402,7 +363,8 @@ g) An employee will receive an email reminder within 24 hours prior to the booki
 
 
 
-**2. Editing/Deleting an Existing Booking**
+### Editing/Deleting an Existing Booking
+
 Employees sometimes need to edit or delete a booking that they have made. They may need to edit the date or delete the entire booking if they cannot come in that day. 
 
 To do so, they will need to:
@@ -417,7 +379,7 @@ c) From here, the User can edit or delete the booking depending on which icon th
 
 
 
-#### ** R5. Wireframes for multiple standard screen sizes, created using industry standard software.**
+# R5. Wireframes for multiple standard screen sizes, created using industry standard software.
 
 Below is a legend corresponding to the wireframes.
 
@@ -455,32 +417,39 @@ Below are the Employee Wireframes for FlexiDesk.
 
 ![Employee Covid Form](docs/img/wireframes/Employee_CovidForm.png)
 
+# R6. Screenshots of Trello board throughout the duration of the project.
 
 
-##### 23rd November 2020 - Board Status
+
+### Documentation Phase
+
+### 23rd November 2020 - Board Status
 
 ![Trello Screenshot 23rd November 2020](docs/img/trello/23112020.png)
 
 
 
-##### 24th November 2020 - Board Status
+### 24th November 2020 - Board Status
 
 ![Trello Screenshot 24th November 2020](docs/img/trello/24112020.png)
 
 
 
-##### 29th November 2020 - Dataflow Card
+### 29th November 2020 - Dataflow Card
 
 ![Trello Screenshot 29th November 2020](docs/img/trello/29112020.png)
 
 
 
-#####  30th November 2020 - Dataflow Card
+###  30th November 2020 - Dataflow Card
 
 ![Trello Screenshot 30th November 2020 [1]](docs/img/trello/30112020(1).png)
 
-##### 30th November 2020 - Board Status
+
+
+### 30th November 2020 - Board Status
 
 ![Trello Screenshot 30th November 2020 [2]](docs/img/trello/30112020(2).png)
 
-**#### R6. Screenshots of Trello board throughout the duration of the project.**
+
+
