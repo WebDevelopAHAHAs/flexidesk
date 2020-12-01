@@ -361,7 +361,9 @@ Below is a legend corresponding to the wireframes.
 
 ## Universal Wireframes
 
-### Sign In Page (Universal)![Landing Page](docs/img/wireframes/FlexiDesk_LandingPage.png)
+### Sign In Page (Universal)
+
+![Landing Page](docs/img/wireframes/FlexiDesk_SignIn.png)
 
 ## Administrator Wireframes
 
@@ -399,7 +401,9 @@ Below is a legend corresponding to the wireframes.
 
 ![Admin Edit Employees Form](docs/img/wireframes/Admin_EditEmployeeForm.png)
 
-### View Desks Page (Admin)![Admin Desks](docs/img/wireframes/Admin_Desks.png)
+### View Desks Page (Admin)
+
+![Admin Desks](docs/img/wireframes/Admin_Desks.png)
 
 
 
@@ -407,7 +411,9 @@ Below is a legend corresponding to the wireframes.
 
 ![Admin Add Desks](docs/img/wireframes/Admin_AddDeskForm.png)
 
-### Edit Desk Form (Admin)![Admin Edit Desks](docs/img/wireframes/Admin_EditDeskForm.png)
+### Edit Desk Form (Admin)
+
+![Admin Edit Desks](docs/img/wireframes/Admin_EditDeskForm.png)
 
 ## Employee Wireframes
 
@@ -415,9 +421,13 @@ Below is a legend corresponding to the wireframes.
 
 ![Employee Deskboard](docs/img/wireframes/Employee_Dashboard.png)
 
-### Make Bookings (Employee)![Employee Bookings](docs/img/wireframes/Employee_Bookings.png)
+### Make Bookings (Employee)
 
-### Covid Form (Employee)![Employee Covid Form](docs/img/wireframes/Employee_CovidForm.png)
+![Employee Bookings](docs/img/wireframes/Employee_Bookings.png)
+
+### Covid Form (Employee)
+
+![Employee Covid Form](docs/img/wireframes/Employee_CovidForm.png)
 
 # R6. Screenshots of Trello board throughout the duration of the project.
 
