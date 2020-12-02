@@ -375,19 +375,17 @@ Below is a legend corresponding to the wireframes.
 
 ![Admin Bookings](docs/img/wireframes/Admin_Bookings.png)
 
-### Make Bookings Page (Admin)
+### Edit Booking - Form (Admin)
+
+![Admin Employees](docs/img/wireframes/Admin_EditBookingForm.png)
+
+### New Bookings Page (Admin)
 
 ![Admin New Bookings](docs/img/wireframes/Admin_NewBookings.png)
 
 ### New Booking Form (Admin)
 
 ![Admin New Bookings Form](docs/img/wireframes/Admin_NewBookingForm.png)
-
-### Edit Booking - Form (Admin)
-
-![Admin Employees](docs/img/wireframes/Admin_EditBookingForm.png)
-
-
 
 ### View Employees Page (Admin)
 
@@ -404,8 +402,6 @@ Below is a legend corresponding to the wireframes.
 ### View Desks Page (Admin)
 
 ![Admin Desks](docs/img/wireframes/Admin_Desks.png)
-
-
 
 ### Add Desk Form (Admin)
 
