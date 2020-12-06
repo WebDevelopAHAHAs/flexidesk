@@ -1,5 +1,6 @@
 import React from "react";
-export default function SignIn_Page(props)
+
+export default function SignInPage(props)
 {
   return( <div class="page">
 

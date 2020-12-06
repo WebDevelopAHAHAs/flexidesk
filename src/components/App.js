@@ -1,11 +1,16 @@
 import React from 'react'
-import SignIn_Page from './pages/SignIn_Page';
+import {BrowserRouter, Route} from 'react-router-dom'
+import SignInPage from './universal/SignInPage';
+
+import EmployeesPage from './admin/employee/EmployeesPage';
 
 export default function App()
 {
   return (
     <div className="App">
-      <SignIn_Page/>
+      <BrowserRouter>
+        <Route to="/employees" render={(props) => <EmployeesPage/> } />
+      </BrowserRouter>
     </div>
   )
 }
