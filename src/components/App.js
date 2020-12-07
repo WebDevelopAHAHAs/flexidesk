@@ -5,15 +5,15 @@ import SignInPage from './sign_in/SignInPage';
 import ViewEmployeesPage from './users/admin/ViewEmployeesPage';
 import DashboardPageAdmin from './dashboard/admin/DashboardPageAdmin';
 import NavBar from './NavBar'
-// import Typography from './styling/Layout'
-// import Layout from "./styling/Layout"
+import {StylingTypography, Layout} from './styling/Layout'
 
 export default function App()
 {
   return ( <div className="App">
 
     <BrowserRouter>
-    
+      <StylingTypography/>
+      <Layout/>
       {/* <Route exact path="/" component={SignInPage} /> */}
 
         <Route exact path="/" render={(props) => <SignInPage/> } />

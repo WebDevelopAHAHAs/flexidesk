@@ -1,5 +1,7 @@
 import React from 'react';
 import './layout.css';
+import Navbar from '../NavBar'
+
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
@@ -21,7 +23,7 @@ import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 
 
-export function Typography() {
+export function StylingTypography() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
     {'Copyright © '}
@@ -158,6 +160,8 @@ export function Layout() {
         open={open}
       >
         <div className={classes.toolbarIcon}>
+          {/* HERE IS WHERE WE WILL WRITE THE WELCOME NOTE TO THE USER */}
+          <h2>Welcome Admin</h2>
           <IconButton onClick={handleDrawerClose}>
             <ChevronLeftIcon />
           </IconButton>
@@ -165,7 +169,11 @@ export function Layout() {
         <Divider />
         <List></List>
         <Divider />
-        <List></List>
+        <List>
+          <h2 className="navbar-header">What would you like to do</h2>
+          {/* Here is the NavBar */}
+          <Navbar className="navbar-home"/>
+        </List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
