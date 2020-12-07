@@ -1,6 +1,6 @@
 import React from 'react'
 
-const User = ({user}) => {
+const DisplayUser = ({user}) => {
     if (!user) return null
 
     const {first_name, last_name} = user
@@ -11,4 +11,4 @@ const User = ({user}) => {
     )
 }
 
-export default User
+export default DisplayUser
