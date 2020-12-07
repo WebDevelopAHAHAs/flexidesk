@@ -1,7 +1,5 @@
 <img src="docs/img/logo.jpg" style="zoom:55%;" />
 
-
-
 # T3A2 - Full Stack App (Part A)
 
 by Callum Worrall, Rachel Williams and Tom Fisher
