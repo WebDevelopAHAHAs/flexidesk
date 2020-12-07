@@ -5,10 +5,11 @@ export default function NavBar() {
         <div>
             <h1>NavBar</h1>
             <ul>
-                <li><a href="/flexidesk">Home</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/admin/dashboard">Admin Dashboard</a></li>
                 <li><a href="/viewbookings">View Bookings</a></li>
                 <li><a href="/newbooking">New Bookings</a></li>
-                <li><a href="/viewemployees">View Employees</a></li>
+                <li><a href="/admin/viewemployees">View Employees</a></li>
                 <li><a href="/viewdesks">View Desks</a></li>
                 <li><a href="/analytics">Analytics</a></li>
             </ul>
