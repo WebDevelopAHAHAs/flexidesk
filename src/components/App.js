@@ -4,6 +4,8 @@ import {BrowserRouter, Route} from 'react-router-dom'
 import SignInPage from './sign_in/SignInPage';
 import ViewEmployeesPage from './users/admin/ViewEmployeesPage';
 import DashboardPageAdmin from './dashboard/admin/DashboardPageAdmin';
+// import Typography from './styling/Layout'
+// import Layout from "./styling/Layout"
 
 export default function App()
 {
