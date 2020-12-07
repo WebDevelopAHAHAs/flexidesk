@@ -5,6 +5,8 @@ import SignInPage from './sign_in/SignInPage';
 import ViewEmployeesPage from './users/admin/ViewEmployeesPage';
 import DashboardPageAdmin from './dashboard/admin/DashboardPageAdmin';
 import NavBar from './NavBar'
+// import Typography from './styling/Layout'
+// import Layout from "./styling/Layout"
 
 export default function App()
 {
@@ -13,7 +15,7 @@ export default function App()
     <BrowserRouter>
     
       {/* <Route exact path="/" component={SignInPage} /> */}
-      
+
         <Route exact path="/" render={(props) => <SignInPage/> } />
         <Route exact path="/admin/dashboard" render={(props) => <DashboardPageAdmin/> } />
         <Route exact path="/admin/viewemployees" render={(props) => <ViewEmployeesPage/> } />
