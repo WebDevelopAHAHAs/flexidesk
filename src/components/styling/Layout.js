@@ -148,6 +148,7 @@ export function Layout() {
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
               <NotificationsIcon />
+              {/* HERE IS THE NOTIFICATIONS */}
             </Badge>
           </IconButton>
         </Toolbar>
@@ -188,13 +189,15 @@ export function Layout() {
          
             <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
-              
+              {/* THIS IS THE BOX TOP RIGHT */}
+              IM TOP RIGHT BOX
               </Paper>
             </Grid>
           
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-               
+                {/* HERE IS THE BOTTOM BOX ON OUR PAGES */}
+               BOTTOM BOX
               </Paper>
             </Grid>
           </Grid>
