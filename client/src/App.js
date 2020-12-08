@@ -1,9 +1,9 @@
 import React from 'react'
 import {BrowserRouter, Route} from 'react-router-dom'
 
-import SignInPage from './sign_in/SignInPage';
-import ViewEmployeesPage from './users/admin/ViewEmployeesPage';
-import DashboardPageAdmin from './dashboard/admin/DashboardPageAdmin';
+import SignInPage from './components/sign_in/SignInPage';
+import ViewEmployeesPage from './components/users/admin/ViewEmployeesPage';
+import DashboardPageAdmin from './components/dashboard/admin/DashboardPageAdmin';
 
 export default function App()
 {
