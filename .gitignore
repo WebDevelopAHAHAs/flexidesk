@@ -1,5 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# Old
+
 # dependencies
 /node_modules
 /.pnp
@@ -23,3 +25,55 @@ yarn-debug.log*
 yarn-error.log*
 
 .eslintcache
+
+# Client
+
+## Dependencies
+client/node_modules
+client/.pnp
+client/.pnp.js
+
+## Testing
+client/coverage
+
+## Production
+client/build
+
+## Misc
+client/.DS_Store
+client/.env.local
+client/.env.development.local
+client/.env.test.local
+client/.env.production.local
+
+client/npm-debug.log*
+client/yarn-debug.log*
+client/yarn-error.log*
+
+client/.eslintcache
+
+# Server
+
+## Dependencies
+server/node_modules
+server/.pnp
+server/.pnp.js
+
+## Testing
+server/coverage
+
+## Production
+server/build
+
+## Misc
+server/.DS_Store
+server/.env.local
+server/.env.development.local
+server/.env.test.local
+server/.env.production.local
+
+server/npm-debug.log*
+server/yarn-debug.log*
+server/yarn-error.log*
+
+server/.eslintcache
