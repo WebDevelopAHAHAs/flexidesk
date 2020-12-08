@@ -1,12 +1,12 @@
 import React from 'react'
-import User from "./DisplayUser"
+import DisplayUser from "./DisplayUser"
 
-const DisplayUsers = ({userData}) => {
+const DisplayUsers = (userData) => {
     return (
         <div>
-            {userData.sort((a,b) => b.last_name - a.last_name).map((user) => <User key={user._id} user={user} />)} 
+            {userData.sort((a,b) => b.last_name - a.last_name).map((user) => <DisplayUser key={user._id} user={user} />)} 
         </div>
     )
 }
 
-export default DisplayUsers
+export default DisplayUsers;
