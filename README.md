@@ -138,7 +138,9 @@ FlexiDesk is a full stack application built on the MERN stack (MongoDB, Express,
 
 # R2. Dataflow Diagram
 
+## Legend
 
+<img src="docs/img/diagrams/dataflow/dataflow legend.png" style="zoom:67%;" />
 
 ## Administrator Dataflow Diagram
 
@@ -425,7 +427,9 @@ Below is a legend corresponding to the wireframes.
 
 # R6. Screenshots of Trello board throughout the duration of the project.
 
+[Trello Link](https://trello.com/b/Q2ebjdwr)
 
+[Screenshots on GitHub](https://github.com/WebDevelopAHAHAs/flexidesk/tree/Documentation/docs/img/trello)
 
 ## Documentation Phase
 
