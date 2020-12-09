@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+
+import CovidForm from './review-forms/CovidForm';
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+                // <App />,
+               <CovidForm />,
+                document.getElementById('root'));
