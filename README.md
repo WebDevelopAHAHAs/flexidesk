@@ -43,8 +43,6 @@ Overall, FlexiDesk is a cost effective solution that focuses on employee well-be
 
 ## **Functionality and Features**
 
-
-
 With an easy to use interface, employees can securely log in and be displayed with a booking calendar in a matter of seconds.
 
 The FlexiDesk application has been designed to be quick and efficient for:
@@ -70,15 +68,13 @@ The MVP features of FlexiDesk are:
 | **Restrictions  Access Level 2** | Employee       | Employees with  access level of 3 can only book two weeks in advance and five days a week max. |
 | **Reminder Emails**              | Employee       | Reminder email  will be sent 12/24 hours prior to booking with the option to modify/delete. |
 | **Staff Dashboard**              | Employee       | Ability to:     <br />1. Book a new workstation  <br />2. Edit an existing booking    <br />3. Delete an existing booking  <br />4. View past bookings  <br />5. View present/future bookings  <br />6. Analytics |
-| **Admin Dashboard**              | Admin          | Admin dashboard for  P&C team with the ability view an overall of activity happening with  bookings such as:     - Analytics on past/present/future bookings<br />- Analytics per workstation   <br />- Analytics per employee   <br />- Analytics per team   <br />- Ability to search by name/workstation    <br />In addition to  this, they will have the functionality to:     <br />- Book on behalf of an employee   <br />- Delete/ edit existing bookings    <br />- Ability to add/remove/edit desks<br />- Ability to add/edit photos of desks |
+| **Admin Dashboard**              | Admin          | Admin dashboard for  P&C team with the ability view an overall of activity happening with  bookings such as:<br />- Analytics on past/present/future bookings<br />- Analytics per workstation   <br />- Analytics per employee   <br />- Analytics per team   <br />- Ability to search by name/workstation    <br /><br />In addition to  this, they will have the functionality to:     <br />- Book on behalf of an employee   <br />- Delete/ edit existing bookings    <br />- Ability to add/remove/edit desks<br />- Ability to add/edit photos of desks |
 
 
 
 ## **Target Audience**
 
 The are two types of target audience for FlexiDesk, for employees and HR/Senior Management:
-
-
 
 1. Employees who want more flexibility for when they desire to come into the office.
 
@@ -95,6 +91,8 @@ The are two types of target audience for FlexiDesk, for employees and HR/Senior 
 
 FlexiDesk is a full stack application built on the MERN stack (MongoDB, Express, React and Node) and utilises a range of packages to help with the development time and improving features. 
 
+
+
 ### Development Tools
 
 - Visual Studio Code
@@ -102,9 +100,13 @@ FlexiDesk is a full stack application built on the MERN stack (MongoDB, Express,
 - GitHub
 - GitHub Desktop
 
+
+
 ### Diagrams
 
 - Whimsical (Dataflow Diagrams, Wireframes, Application Architecture Diagram)
+
+
 
 ### Project Management
 
@@ -112,22 +114,30 @@ FlexiDesk is a full stack application built on the MERN stack (MongoDB, Express,
 - Discord (Communication)
 - Trello (Task Management)
 
+
+
 ### Front-End
 
 - React.js
 - HTML
 - CSS / SCSS
 
+
+
 ### Back-End
 
 - Express.js
 - Node.js
+
+
 
 ### Deployment
 
 - Heroku (Publishing)
 - Netlify (Development)
 - GoDaddy (Domain Host)
+
+
 
 ### Data Storage
 
@@ -138,9 +148,13 @@ FlexiDesk is a full stack application built on the MERN stack (MongoDB, Express,
 
 # R2. Dataflow Diagram
 
+
+
 ## Legend
 
 <img src="docs/img/diagrams/dataflow/dataflow legend.png" style="zoom:67%;" />
+
+
 
 ## Administrator Dataflow Diagram
 
@@ -156,7 +170,7 @@ FlexiDesk is a full stack application built on the MERN stack (MongoDB, Express,
 
 # R3. Application Architecture Diagram
 
-<img src="docs/img/diagrams/application architecture.jpg" style="zoom:55%;" />
+<img src="docs/img/diagrams/application architecture.png" style="zoom:55%;" />
 
 
 
@@ -164,9 +178,13 @@ FlexiDesk is a full stack application built on the MERN stack (MongoDB, Express,
 
 There are two types of target audience for FlexiDesk with multiple user stories depending on what the end user wants to accomplish and whether they have different permissions.
 
+
+
 ## Administrator
 
 From an Admin perspective, there are multiple user stories that can occur when using the FlexiDesk application, these are:
+
+
 
 ### Administrator adding a User
 
@@ -191,7 +209,7 @@ They will need to:
    - Temp Password
 5. Upon saving the form, this will create the user with certain permissions. From there the employee can login and make a booking.
 
-<img src="docs/img/diagrams/dataflow/user_stories/AdminAddDesk.png" style="zoom:80%;" />
+<img src="docs/img/diagrams/dataflow/user_stories/AdminAddUser.png" style="zoom:80%;" />
 
 
 
@@ -220,8 +238,7 @@ To make any of these actions, they will need to:
 
 5. Upon saving they will return to the list
 
-
-<img src="docs/img/diagrams/dataflow/user_stories/AdminEditDesk.png" style="zoom:80%;" />
+<img src="docs/img/diagrams/dataflow/user_stories/AdminEditUser.png" style="zoom:80%;" />
 
 
 
@@ -247,8 +264,7 @@ To make this action, they will need to:
 
 7. Upon saving they will return to the desk list
 
-
-<img src="docs/img/diagrams/dataflow/user_stories/AdminAddUser.png" style="zoom:80%;" />
+<img src="docs/img/diagrams/dataflow/user_stories/AdminAddDesk.png" style="zoom:80%;" />
 
 
 
@@ -268,8 +284,7 @@ To make any of these actions, they will need to:
 
 5. Upon saving they will return to the desk list
 
-
-<img src="docs/img/diagrams/dataflow/user_stories/AdminEditUser.png" style="zoom:80%;" />
+<img src="docs/img/diagrams/dataflow/user_stories/AdminEditDesk.png" style="zoom:80%;" />
 
 
 
@@ -353,8 +368,6 @@ To do so, they will need to:
 
 ## Wireframe Legend
 
-Below is a legend corresponding to the wireframes.
-
 <img src="docs/img/wireframes/FlexiDesk_Legend.png" style="zoom:25%;" />
 
 
@@ -364,6 +377,8 @@ Below is a legend corresponding to the wireframes.
 ### Sign In Page (Universal)
 
 ![Landing Page](docs/img/wireframes/FlexiDesk_SignIn.png)
+
+
 
 ## Administrator Wireframes
 
@@ -411,7 +426,11 @@ Below is a legend corresponding to the wireframes.
 
 ![Admin Edit Desks](docs/img/wireframes/Admin_EditDeskForm.png)
 
+
+
 ## Employee Wireframes
+
+
 
 ### Employee Dashboard (Employee)
 
@@ -463,3 +482,12 @@ Below is a legend corresponding to the wireframes.
 
 
 
+### 2nd December 2020
+
+![Trello Screenshot 2nd November 2020](docs/img/trello/02122020.png)
+
+
+
+### 7th December 2020
+
+![Trello Screenshot 7th December 2020](docs/img/trello/07122020.png)
