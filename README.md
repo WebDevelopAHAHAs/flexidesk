@@ -8,7 +8,7 @@ by Callum Worrall, Rachel Williams and Tom Fisher
 
 ## R1. Description of your website, including: Purpose, Functionality/Features, Target Audience and Tech Stack.
 
-**FlexiDesk** allows LEAPDev to accurately plan and manage who is in the office each day thus protecting the entire company by knowing exactly who was at each desk and when. 
+**FlexiDesk** allows LEAPDev to accurately plan and manage who is in the office each day thus protecting the entire company by knowing exactly who was at each desk and when.
 
 This self-serve technology lets employees manage themselves with easy, on-the-fly bookings based on what is available and what social distancing requirements are in place. 
 
@@ -213,7 +213,7 @@ They will need to:
 
 
 
-### Administrator editing a user
+### Administrator editing a User
 
 From time to time the Admin will need to edit the employees account details for various reasons:
 
@@ -244,7 +244,7 @@ To make any of these actions, they will need to:
 
 
 
-### Administrator Adding a new Desk
+### Administrator adding a new Desk
 
 The Admin will occasionally be required to add new desks to the floorplan for Employees to book. 
 
@@ -268,59 +268,59 @@ To make this action, they will need to:
 
 
 
-### Administrator Editing Existing Desk
+### Administrator editing a Desk
 
 The Admin will occasionally be required to edit desks based on changes such as COVID, the desk no longer exists or the desk placement has changed on the floor plan.
 
 To make any of these actions, they will need to:
 
-1. Enter login details into the FlexiDesk application by visiting [www.flexi-desks.com](http://www.flexi-desks.com) 
+1. Enter login details into the FlexiDesk application by visiting [www.flexi-desks.com](http://www.flexi-desks.com) .
 
-2. From the navigation menu on the left, they will need to click ‘View Desks’
+2. From the navigation menu on the left, they will need to click ‘View Desks’.
 
-3. The page will render all desks where the Admin can scroll to find a desks, select ‘edit’
+3. The page will render all desks where the Admin can scroll to find a desks, select ‘edit’.
 
-4. Amend by deactivating or changing the photo
+4. Amend by deactivating or changing the photo.
 
-5. Upon saving they will return to the desk list
+5. Upon saving they will return to the desk list.
 
 <img src="docs/img/diagrams/dataflow/user_stories/AdminEditDesk.png" style="zoom:80%;" />
 
 
 
-### Administrator Booking a Desk
+### Administrator booking a Desk
 
 The Admin can be required to book a desk on behalf of someone such as a new employee that does not yet have access or for employees from other offices around the world. The Admin will have the ability to book a desk to reserve a spot for the above reasons. 
 
 To make any of these actions, they will need to:
 
-1. Enter login details into the FlexiDesk application by visiting [www.flexi-desks.com](http://www.flexi-desks.com) 
-2. From the navigation menu on the left, they will need to click ‘New Booking’’
-3. Select a date
-4. Select an available seat
-5. Select an Employee
-6. Upon saving they will return to the bookings page
+1. Enter login details into the FlexiDesk application by visiting [www.flexi-desks.com](http://www.flexi-desks.com) .
+2. From the navigation menu on the left, they will need to click ‘New Booking’’.
+3. Select a date.
+4. Select an available seat.
+5. Select an Employee.
+6. Upon saving they will return to the bookings page.
 
 <img src="docs/img/diagrams/dataflow/user_stories/AdminMakeBooking.png" style="zoom:70%;" />
 
 
 
-### Administrator Reviewing Analytics
+### Administrator reviewing Analytics
 
 Admins require an overview of what is happening in the organization with bookings. They will want to track:
 
-- Who is coming in on what days
-- What desks are being booked out
-- How many desks are being booked out per day, week or month
-- Who is COVID safe
+- Who is coming in on what days.
+- What desks are being booked out.
+- How many desks are being booked out per day, week or month.
+- Who is COVID safe?
 
 All these analytics will help Admins forecast for budgeting purposes and save money on floor space, track employees that are coming in and if there is a medical breach due to COVID they can contact trace people within the area to isolate. 
 
 To make any of these actions, they will need to:
 
-1. Enter login details into the FlexiDesk application by visiting 
+1. Enter login details into the FlexiDesk application by visiting.
 2. The analytics page will automatically be the first rendered page, otherwise if they are on another page, they can access analytics from the navigation menu on the left.
-3. From here they can view a variety of analytics
+3. From here they can view a variety of analytics.
 
 <img src="docs/img/diagrams/dataflow/user_stories/AdminReviewAnalytics.png" style="zoom:80%;" />
 
@@ -336,13 +336,13 @@ An employee that is wanting to come into the office to work must be required to 
 
 To do so, they will need to:
 
-1. Enter login details into the FlexiDesk application by visiting [www.flexi-desks.com](http://www.flexi-desks.com) 
-2. Click on ‘New Booking’
-3. Select a date from the calendar within 2 weeks from today's date 
-4. Either view the floor plan to see where the available desks are, or select an available desk
+1. Enter login details into the FlexiDesk application by visiting [www.flexi-desks.com](http://www.flexi-desks.com) .
+2. Click on ‘New Booking’.
+3. Select a date from the calendar within 2 weeks from today's date.
+4. Either view the floor plan to see where the available desks are, or select an available desk.
 5. The employee must complete the form pop-up in order to reserve the desk. 
-6. Upon save, they will be redirected back to the dashboard to see their upcoming bookings
-7. An employee will receive an email reminder within 24 hours prior to the booking
+6. Upon save, they will be redirected back to the dashboard to see their upcoming bookings.
+7. An employee will receive an email reminder within 24 hours prior to the booking.
 
 <img src="docs/img/diagrams/dataflow/user_stories/EmployeeMakeBooking.png" style="zoom:70%;" />
 
@@ -354,9 +354,9 @@ Employees sometimes need to edit or delete a booking that they have made. They m
 
 To do so, they will need to:
 
-1. Enter login details into the FlexiDesk application by visiting [www.flexi-desks.com](http://www.flexi-desks.com) 
-2. The page will automatically render past and upcoming bookings
-3. From here, the User can edit or delete the booking depending on which icon they select
+1. Enter login details into the FlexiDesk application by visiting [www.flexi-desks.com](http://www.flexi-desks.com) .
+2. The page will automatically render past and upcoming bookings.
+3. From here, the User can edit or delete the booking depending on which icon they select.
 
 <img src="docs/img/diagrams/dataflow/user_stories/EmployeeEditDeleteBooking.png" style="zoom:70%;" />
 
