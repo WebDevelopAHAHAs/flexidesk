@@ -7,15 +7,7 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 
-function SelectedDesk(){
-  console.log("here")
-  return(
-    <div>
-      {/* Rendering Form */}
-      <TransitionsModal/>
-    </div>
-  )
-}
+
 
 export function ShowDesk(day){
   const useStyles = makeStyles((theme) => ({
@@ -36,23 +28,11 @@ export function ShowDesk(day){
   const [open, setOpen] = useState(false);
   const [deskNum, setDeskNum] = useState(null)
 
+  const selectedDesk = () =>{
 
-  const handleOpen = (event) => {
-    console.log(event.target.id)
-    setOpen(true);
-    setDeskNum(event.target.id)
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-return(
-  <div>
-      {/* renders desks available (connected to backend) */}
-   <button id="desk1" onClick={handleOpen}> Desk 1</button>
-   <button id="desk2" onClick={handleOpen}> Desk 2</button>
-   <button id="desk3" onClick={handleOpen}> Desk 3</button>
-   <Modal
+    return(
+      <div>
+       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         className={classes.modal}
@@ -71,9 +51,30 @@ return(
           </div>
         </Fade>
       </Modal>
-   {/* onClick will render form to book w/covid questions */}
+      </div>
+    )
+  }
+
+  const handleOpen = (event) => {
+    console.log(event.target.id)
+    setOpen(true);
+    setDeskNum(event.target.id)
+    selectedDesk()
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+return(
+  <div>
+      {/* renders desks available (connected to backend) */}
+   <button id="desk1" onClick={handleOpen}> Desk 1</button>
+   <button id="desk2" onClick={handleOpen}> Desk 2</button>
+   <button id="desk3" onClick={handleOpen}> Desk 3</button>
+  
+
     {/* onClick > execute another function for form (look at react events - https://reactjs.org/docs/handling-events.html) content and logic seperated out (dont call twice) */}
-  {/* <SelectedDesk/> */}
+  
   </div>
 )
 }
