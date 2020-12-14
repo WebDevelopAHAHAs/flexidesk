@@ -183,14 +183,14 @@ export function Layout() {
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
           
-            <Grid item xs={12} md={8} lg={9}>
+            <Grid item xs={12} md={8} lg={4}>
               <Paper className="admin-calendar">
                 <Bookings/> 
               </Paper>
             </Grid>
          
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
+            <Grid item xs={12} md={8} lg={4}>
+              <Paper className="available-seats">
               <h3>Available Desks</h3>
               <ShowDesk/>
               </Paper>
