@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
-import Register from './components/auth/Register'
+import App from './App';
 
 ReactDOM.render(
-  <Register />,
-  // <App />,
+  <App />,
   document.getElementById('root')
 );

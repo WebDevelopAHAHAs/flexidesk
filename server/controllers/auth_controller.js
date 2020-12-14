@@ -1,17 +1,18 @@
-const UserModel = require("../models/user");
+const User = require("../models/user");
 
 // #region Register
 
-function registerNew(req, res) {
-    res.render("auth/register");
-}
+// function registerNew(req, res) {
+//     res.render("auth/register");
+// }
 
-async function registerCreate(req, res) {
-    const { email, password } = req.body;
+async function register(req, res) {
+    const { first_name, email, password } = req.body;
+    console.log(req.body)
     try{
-            const user = await UserModel.create({ email, password });
+            const user = await User.create({ first_name, email, password });
             req.session.user = user;
-            res.redirect("/dashboard");
+            res.redirect("/"); //home / dashboard
     }
     catch(err){
         console.log(err)
@@ -20,31 +21,54 @@ async function registerCreate(req, res) {
 
 // #endregion
 
-// #region Login
+// #region Login / Logout
 
-//auth
-async function loginNew(req, res) {
-  res.render("auth/login");
-}
-async function loginCreate(req, res) {
-  authenticate(req, res, function () {
-      res.status(200);
-      res.json({user: req.user, sessionID: req.sessionID});
-  });
+async function login(req, res) {
+  console.log(req.body)
+
+  const { email, password } = req.body;
+  console.log(email)
+  const user = await User.findOne({email});
+  if (!user) {
+    console.log("ERROR - user: Invalid email")
+    res.redirect("/auth/login");
+    // return res.render("authentication/login", { error: "Invalid email & password" });
+  }
+
+  const valid = await user.verifyPassword(password);
+  if (!valid) {
+    console.log("ERROR - validation: Invalid password")
+    res.redirect("/auth/login");
+    // return res.render("authentication/login", { error: "Invalid email & password" });
+  }
+
+  console.log('Logged in', email);
+  req.session.user = user;
+  res.redirect("/");
 }
 
-async function logout(req, res) {
+const logout = function (req, res) {
+  console.log('Logged out.');
+  // console.log('session object:', req.session);
+
   req.session.destroy(() => {
-      res.redirect("/");
+    res.redirect("/");
   });
+
+  // res.sendStatus(200);
 }
+
+
+// #endregion
 
 module.exports = {
-    registerNew,
-    registerCreate,
+    // registerNew,
 
-    loginNew,
-    loginCreate,
+    register,
+    login,
+
+    // loginNew,
+    // login: loginUser,
 
     logout
 }

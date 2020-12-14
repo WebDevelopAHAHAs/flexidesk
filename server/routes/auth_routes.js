@@ -1,24 +1,17 @@
 const express = require('express');
 const router = express.Router();
 const { authRedirect } = require("../middleware/auth_middleware");
-const {
-  registerNew,
-  registerCreate,
-
-  loginNew,
-  loginCreate,
-  
-  logout
-} = require('../controllers/auth_controller');
+const { register, login, logout } = require('../controllers/auth_controller');
 
 // Register
-router.get('/register', authRedirect, registerNew);
-router.post('/register', registerCreate);
+// router.get('/register', authRedirect, registerNew); //handled in react
+
+router.post('/register', register); //database user creation route
 
 // Login
-router.get('/login', authRedirect, loginNew)
-router.post('/login', loginCreate)
+router.post('/login', login) // create user session
+// router.get('/login', authRedirect, loginNew) //handled in react?
 
-router.get('/logout', logout);
+router.get('/logout', logout); // delete user session
 
 module.exports = router;
