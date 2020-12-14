@@ -51,8 +51,12 @@
       display: 'flex';
       align-items: 'center';
       justify-content: 'center';
-      background-color: red;
-      border: '2px solid #000';
-      box-shadow: teal;
-      padding: 20px;
+  
+  }
+
+  .modal-form-test2{
+    background-color: red;
+    border: '2px solid #000';
+    box-shadow: teal;
+    padding: 20px;
   }

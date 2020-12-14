@@ -58,7 +58,9 @@ function ShowDesk(props){
     }}
        >
 
-        <Fade in={props.open}>
+        <Fade 
+        className="modal-form-test2"
+        in={props.open}>
          <div>
             {/* <div className={classes.paper}> */}
             <h2 id="transition-modal-title">You have clicked {props.deskNum} </h2>
