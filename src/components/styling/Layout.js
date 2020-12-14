@@ -22,6 +22,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 
+import { Bookings, ShowDesk } from '../bookings/BookingsPage'
+import TransitionsModal from '../bookings/admin/NewBookingAdminForm';
 
 export function StylingTypography() {
   return (
@@ -182,15 +184,15 @@ export function Layout() {
           <Grid container spacing={3}>
           
             <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-               <h1>Calendar Here</h1>
+              <Paper className="admin-calendar">
+                <Bookings/>
               </Paper>
             </Grid>
          
             <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
               {/* THIS IS THE BOX TOP RIGHT */}
-              IM TOP RIGHT BOX
+              <ShowDesk/>
               </Paper>
             </Grid>
           
