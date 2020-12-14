@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useState} from 'react';
 import './layout.css';
 import Navbar from '../NavBar'
 
@@ -121,7 +121,7 @@ const useStyles = makeStyles((theme) => ({
 
 export function Layout() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = useState(true);
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -129,6 +129,10 @@ export function Layout() {
     setOpen(false);
   };
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+
+  // modal content hooks defined at top level component - and passed as props to follow hook rules
+  const [modalOpen, setModalOpen] = useState(false);
+  const [deskNum, setDeskNum] = useState(null)
 
   return (
     <div className={classes.root}>
@@ -148,7 +152,7 @@ export function Layout() {
             Dashboard
           </Typography>
           <IconButton color="inherit">
-            <Badge badgeContent={4} color="secondary">
+            <Badge badgeContent={1} color="secondary">
               <NotificationsIcon />
               {/* HERE IS THE NOTIFICATIONS */}
             </Badge>
@@ -192,7 +196,7 @@ export function Layout() {
             <Grid item xs={12} md={8} lg={4}>
               <Paper className="available-seats">
               <h3>Available Desks</h3>
-              <ShowDesk/>
+              <ShowDesk open={modalOpen} setOpen={setModalOpen} deskNum={deskNum} setDeskNum={setDeskNum}/>
               </Paper>
             </Grid>
           
