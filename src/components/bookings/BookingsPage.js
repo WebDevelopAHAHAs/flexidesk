@@ -48,7 +48,7 @@ function ShowDesk(props){
        <Modal 
         aria-labelledby="transition-modal-title" 
         aria-describedby="transition-modal-description"
-        className="modal-form-test"
+        className="modal-position"
         open={props.open}
         onClose={handleClose}
         closeAfterTransition
@@ -59,7 +59,7 @@ function ShowDesk(props){
        >
 
         <Fade 
-        className="modal-form-test2"
+        className="modal-styling"
         in={props.open}>
          <div>
             {/* <div className={classes.paper}> */}
