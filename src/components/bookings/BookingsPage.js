@@ -9,8 +9,25 @@ import Fade from '@material-ui/core/Fade';
 
 
 
-export function ShowDesk(day){
-  const useStyles = makeStyles((theme) => ({
+// export function ShowDesk(day){
+//   const useStyles = makeStyles((theme) => ({
+//     modal: {
+//       display: 'flex',
+//       alignItems: 'center',
+//       justifyContent: 'center',
+//     },
+//     paper: {
+//       backgroundColor: theme.palette.background.paper,
+//       border: '2px solid #000',
+//       boxShadow: theme.shadows[5],
+//       padding: theme.spacing(2, 4, 3),
+//     },
+//   }));
+
+
+
+function SelectedDesk(event){
+    const useStyles = makeStyles((theme) => ({
     modal: {
       display: 'flex',
       alignItems: 'center',
@@ -23,13 +40,12 @@ export function ShowDesk(day){
       padding: theme.spacing(2, 4, 3),
     },
   }));
-
-  const classes = useStyles();
-  const [open, setOpen] = useState(false);
-  const [deskNum, setDeskNum] = useState(null)
-
-  const selectedDesk = () =>{
-
+    const classes = useStyles();
+    const [open, setOpen] = useState(false);
+    const [deskNum, setDeskNum] = useState(null)
+    setOpen(true);
+    setDeskNum(event.target.id)
+ 
     return(
       <div>
        <Modal
@@ -46,6 +62,7 @@ export function ShowDesk(day){
       >
         <Fade in={open}>
           <div className={classes.paper}>
+         
             <h2 id="transition-modal-title">You have clicked {deskNum}</h2>
             <p id="transition-modal-description"> put component here</p>
           </div>
@@ -53,33 +70,32 @@ export function ShowDesk(day){
       </Modal>
       </div>
     )
-  }
+  
 
-  const handleOpen = (event) => {
-    console.log(event.target.id)
-    setOpen(true);
-    setDeskNum(event.target.id)
-    selectedDesk()
-  };
+//   const handleOpen = (event) => {
+//     console.log(event.target.id)
+//     selectedDesk()
+//   };
 
   const handleClose = () => {
     setOpen(false);
   };
-return(
-  <div>
-      {/* renders desks available (connected to backend) */}
-   <button id="desk1" onClick={handleOpen}> Desk 1</button>
-   <button id="desk2" onClick={handleOpen}> Desk 2</button>
-   <button id="desk3" onClick={handleOpen}> Desk 3</button>
-  
-
-    {/* onClick > execute another function for form (look at react events - https://reactjs.org/docs/handling-events.html) content and logic seperated out (dont call twice) */}
-  
-  </div>
-)
 }
 
-export function Bookings() {
+
+function ShowDesk(day){
+    return(
+        <div>
+            {/* renders desks available (connected to backend) */}
+         <button id="desk1" onClick={SelectedDesk}> Desk 1</button>
+         {/* <button id="desk2" onClick={handleOpen}> Desk 2</button>
+         <button id="desk3" onClick={handleOpen}> Desk 3</button> */}
+         {/* onClick > execute another function for form (look at react events - https://reactjs.org/docs/handling-events.html) content and logic seperated out (dont call twice) */}
+        
+        </div>
+    )}
+
+function Bookings() {
   const [value, onChange] = useState(new Date());
   
   return (
@@ -90,11 +106,11 @@ export function Bookings() {
         // passes argument 
         onClickDay={(day)=> ShowDesk(day)}
       />
-      {/* renders ShowDesk function after a day is clicked */}
-      {/* <ShowDesk/> */}
 
     </div>
 
   );
 }
+
+export {Bookings, ShowDesk};
 
