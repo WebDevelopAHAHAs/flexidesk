@@ -1,5 +1,7 @@
-import React from 'react';
+import {React, useState} from 'react';
 import './layout.css';
+import Navbar from '../NavBar'
+
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
@@ -20,8 +22,10 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 
+import { Bookings, ShowDesk } from '../bookings/BookingsPage'
+import TransitionsModal from '../bookings/admin/NewBookingAdminForm';
 
-export function Typography() {
+export function StylingTypography() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
     {'Copyright © '}
@@ -117,7 +121,7 @@ const useStyles = makeStyles((theme) => ({
 
 export function Layout() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = useState(true);
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -125,6 +129,10 @@ export function Layout() {
     setOpen(false);
   };
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+
+  // modal content hooks defined at top level component - and passed as props to follow hook rules
+  const [modalOpen, setModalOpen] = useState(false);
+  const [deskNum, setDeskNum] = useState(null)
 
   return (
     <div className={classes.root}>
@@ -144,8 +152,9 @@ export function Layout() {
             Dashboard
           </Typography>
           <IconButton color="inherit">
-            <Badge badgeContent={4} color="secondary">
+            <Badge badgeContent={1} color="secondary">
               <NotificationsIcon />
+              {/* HERE IS THE NOTIFICATIONS */}
             </Badge>
           </IconButton>
         </Toolbar>
@@ -158,6 +167,8 @@ export function Layout() {
         open={open}
       >
         <div className={classes.toolbarIcon}>
+          {/* HERE IS WHERE WE WILL WRITE THE WELCOME NOTE TO THE USER */}
+          <h2>Welcome Admin</h2>
           <IconButton onClick={handleDrawerClose}>
             <ChevronLeftIcon />
           </IconButton>
@@ -165,28 +176,34 @@ export function Layout() {
         <Divider />
         <List></List>
         <Divider />
-        <List></List>
+        <List>
+          <h2 className="navbar-header">What would you like to do</h2>
+          {/* Here is the NavBar */}
+          <Navbar className="navbar-home"/>
+        </List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
           
-            <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-               <h1>Calendar Here</h1>
+            <Grid item xs={12} md={8} lg={4}>
+              <Paper className="admin-calendar">
+                <Bookings/> 
               </Paper>
             </Grid>
          
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-              
+            <Grid item xs={12} md={8} lg={4}>
+              <Paper className="available-seats">
+              <h3>Available Desks</h3>
+              <ShowDesk open={modalOpen} setOpen={setModalOpen} deskNum={deskNum} setDeskNum={setDeskNum}/>
               </Paper>
             </Grid>
           
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-               
+                {/* HERE IS THE BOTTOM BOX ON OUR PAGES */}
+               BOTTOM BOX
               </Paper>
             </Grid>
           </Grid>

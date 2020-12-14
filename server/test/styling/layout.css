@@ -24,5 +24,25 @@
   
   html, body {
       font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-    }
-   
+  }
+  
+  .navbar-button-list{
+    border-radius: 5px;
+  }
+  .navbar-header{
+    font-size: larger;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .admin-calendar{
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .available-seats{
+    padding: 10px;
+    height: 295px;
+    
+  }
