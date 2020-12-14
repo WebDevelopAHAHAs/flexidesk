@@ -185,13 +185,13 @@ export function Layout() {
           
             <Grid item xs={12} md={8} lg={9}>
               <Paper className="admin-calendar">
-                <Bookings/>
+                <Bookings/> 
               </Paper>
             </Grid>
          
             <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
-              {/* THIS IS THE BOX TOP RIGHT */}
+              <h3>Available Desks</h3>
               <ShowDesk/>
               </Paper>
             </Grid>
