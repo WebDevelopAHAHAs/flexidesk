@@ -1,14 +1,24 @@
 import React, {useState} from 'react'
 import {useGlobalState} from '../../config/store'
-import { loginUser } from '../../services/auth_services'
+import {loginUser} from '../../services/auth_services'
 
 const SignInForm = ({history}) => {
     const initialFormState = {
         email: "",
         password: ""
-    } 
+    }
+
+    //User Related
     const [userDetails,setUserDetails] = useState(initialFormState)
     const {dispatch} = useGlobalState()
+
+    //Error Related
+    const [errorMessage, setErrorMessage] = useState(null)
+
+    //Compartmentalise
+    const errorStyles = {
+      color: "red"
+    }
 
     function handleChange(event) {
         const name = event.target.name
@@ -30,34 +40,31 @@ const SignInForm = ({history}) => {
           history.push("/")
           
       }).catch((error) => {
-          console.log(`An error occurred authenticating: ${error}`)
-      })		
+        if (error.response && error.response.status === 401)
+            setErrorMessage("Authentication failed. Please check your username and password.")
+        else   
+            setErrorMessage("There may be a problem with the server. Please try again after a few moments.")
+    })
   }
 
-    // // Login user
-    // function loginUser() {
-    //   dispatch({
-    //     type: "setLoggedInUser",
-    //     data: userDetails
-    //   })
-    // }
+  return (
+    <form onSubmit={handleSubmit}>
+      {errorMessage && <p style={errorStyles}>{errorMessage}</p>}
 
-    return (
-        <form onSubmit={handleSubmit}>
-            <div >
-                <label >Email</label>
-                <input  required type="text" name="email" placeholder="Enter an email" onChange={handleChange}></input>
-            </div>
+      <div>
+        <label>Email</label>
+        <input required type="text" name="email" placeholder="Enter an email" onChange={handleChange}></input>
+      </div>
 
-            <div >
-                <label >Password</label>
-                <input  required type="password" name="password" placeholder="Enter a password" onChange={handleChange}></input>
-            </div>
-            
-            <input type="submit" value="Login"></input>
-            
-        </form>
-    )
+      <div>
+        <label>Password</label>
+        <input required type="password" name="password" placeholder="Enter a password" onChange={handleChange}></input>
+      </div>
+      
+      <input type="submit" value="Login"></input>
+        
+    </form>
+  )
 }
 
 export default SignInForm;

@@ -52,8 +52,8 @@ app.use(session({
 }));
 
 app.get('/', (req, res) => {
-    // console.log('get on /');
-    // console.log('req.session', req.session)
+    console.log('GET on /');
+    console.log('Session Details', req.session)
     res.send("Request received.");
 })
 

@@ -1,17 +1,18 @@
 const User = require("../models/user");
 
-// #region Register
-
-// function registerNew(req, res) {
-//     res.render("auth/register");
-// }
-
+//Register / Does not Sign In
 async function register(req, res) {
     const { first_name, email, password } = req.body;
-    console.log(req.body)
+    
     try{
+      //
             const user = await User.create({ first_name, email, password });
+            console.log("Created User:", user)
+            
+            //Delete the bottom eventually when admins can create
             req.session.user = user;
+            console.log('Logged on as', user.email);
+
             res.redirect("/"); //home / dashboard
     }
     catch(err){
@@ -19,34 +20,36 @@ async function register(req, res) {
     }
 }
 
-// #endregion
-
-// #region Login / Logout
-
+//Login
 async function login(req, res) {
-  console.log(req.body)
+  // console.log(req.body)
 
   const { email, password } = req.body;
-  console.log(email)
+  // console.log(email)
+
+  //Find Email
   const user = await User.findOne({email});
   if (!user) {
     console.log("ERROR - user: Invalid email")
     res.redirect("/auth/login");
-    // return res.render("authentication/login", { error: "Invalid email & password" });
   }
 
+  //Password Validation
   const valid = await user.verifyPassword(password);
   if (!valid) {
     console.log("ERROR - validation: Invalid password")
     res.redirect("/auth/login");
-    // return res.render("authentication/login", { error: "Invalid email & password" });
   }
 
-  console.log('Logged in', email);
-  req.session.user = user;
-  res.redirect("/");
+  // if(user & valid)
+  // {
+    console.log('Logged on as', email);
+    req.session.user = user;
+    res.redirect("/");
+  // }
 }
 
+//Logout
 const logout = function (req, res) {
   console.log('Logged out.');
   // console.log('session object:', req.session);
