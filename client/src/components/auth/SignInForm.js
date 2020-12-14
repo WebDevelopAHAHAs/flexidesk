@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {useGlobalState} from '../../config/store'
+import { loginUser } from '../../services/auth_services'
 
 const SignInForm = ({history}) => {
     const initialFormState = {
@@ -33,13 +34,13 @@ const SignInForm = ({history}) => {
       })		
   }
 
-    // Login user
-    function loginUser() {
-      dispatch({
-        type: "setLoggedInUser",
-        data: userDetails
-      })
-    }
+    // // Login user
+    // function loginUser() {
+    //   dispatch({
+    //     type: "setLoggedInUser",
+    //     data: userDetails
+    //   })
+    // }
 
     return (
         <form onSubmit={handleSubmit}>
