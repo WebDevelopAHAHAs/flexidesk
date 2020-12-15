@@ -3,6 +3,7 @@ import './layout.css';
 import Navbar from '../NavBar'
 import { Bookings, ShowDesk } from '../bookings/BookingsPage'
 import TransitionsModal from '../bookings/NewBookingAdminForm';
+import AddEmployee from '../employees/EmployeesPage'
 
 import Core, { Typography, Link, Drawer, Paper, Grid, Divider, List,
   Badge, Toolbar, AppBar, CssBaseline, Container, Box } from '@material-ui/core';
@@ -22,6 +23,7 @@ import IconButton from '@material-ui/core/IconButton';
 import clsx from 'clsx';
 // import Badge from '@material-ui/core/Badge';
 import MenuIcon from '@material-ui/icons/Menu';
+import EmployeesPage from '../employees/EmployeesPage';
 // import Toolbar from '@material-ui/core/Toolbar';
 // import AppBar from '@material-ui/core/AppBar';
 // import CssBaseline from '@material-ui/core/CssBaseline';
@@ -124,7 +126,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export function Layout(props) {
-  console.log(props.booking)
   const classes = useStyles();
   const [open, setOpen] = useState(true);
   const handleDrawerOpen = () => {
@@ -195,6 +196,7 @@ export function Layout(props) {
             <Grid item xs={12} md={8} lg={4}>
               <Paper className="admin-calendar">
                 {props && props.booking && <Bookings/>}
+                {props && props.employee && <AddEmployee/>}
                
               </Paper>
             </Grid>
