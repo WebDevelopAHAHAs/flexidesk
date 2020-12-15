@@ -4,34 +4,21 @@ import Navbar from '../NavBar'
 import { Bookings, ShowDesk } from '../bookings/BookingsPage'
 import TransitionsModal from '../bookings/NewBookingAdminForm';
 
-import Core, { Typography, Link, Drawer, Paper, Grid, Divider, List,
-  Badge, Toolbar, AppBar, CssBaseline, Container, Box } from '@material-ui/core';
-// import Icons, { IconButton } from '@material-ui/icons';
+import clsx from 'clsx';
 
-// import Typography from '@material-ui/core/Typography';
-// import Link from '@material-ui/core/Link';
+import { Typography, Link, Drawer, Paper, Grid, Divider, List,
+  Badge, Toolbar, AppBar, CssBaseline, Container, Box } from '@material-ui/core';
+
 import { makeStyles } from '@material-ui/core/styles';
-// import Drawer from '@material-ui/core/Drawer';
-// import Paper from '@material-ui/core/Paper';
-// import Grid from '@material-ui/core/Grid';
-// import Divider from '@material-ui/core/Divider';
-// import List from '@material-ui/core/List';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import IconButton from '@material-ui/core/IconButton';
-import clsx from 'clsx';
-// import Badge from '@material-ui/core/Badge';
 import MenuIcon from '@material-ui/icons/Menu';
-// import Toolbar from '@material-ui/core/Toolbar';
-// import AppBar from '@material-ui/core/AppBar';
-// import CssBaseline from '@material-ui/core/CssBaseline';
-// import Container from '@material-ui/core/Container';
-// import Box from '@material-ui/core/Box';
 
 
 export function StylingTypography() {
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
+  <Typography variant="body2" color="textSecondary" align="center">
     {'Copyright © '}
     <Link color="inherit" href="https://material-ui.com/">
       Your Website
@@ -39,7 +26,7 @@ export function StylingTypography() {
     {new Date().getFullYear()}
     {'.'}
   </Typography>
-);
+  );
 }
 
 const drawerWidth = 240;

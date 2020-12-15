@@ -2,7 +2,7 @@ import {React, useState} from 'react';
 import clsx from 'clsx';
 import Core, { Typography, Drawer, Paper, Grid, Divider, List,
   Badge, Toolbar, AppBar, CssBaseline, Container, Box } from '@material-ui/core';
-import Icons, { ChevronLeftIcon, NotificationsIcon, IconButton, Menu } from '@material-ui/icons';
+import Icon, { ChevronLeft, Notifications, IconButton, Menu } from '@material-ui/icons';
 
 import { Bookings, ShowDesk } from '../bookings/BookingsPage'
 import '../layout.css';
@@ -11,7 +11,6 @@ import Navbar from '../NavBar'
 import TransitionsModal from '../bookings/NewBookingAdminForm';
 
 const drawerWidth = 240;
-
 
 export function Layout() {
   const classes = useStyles();
@@ -45,7 +44,7 @@ export function Layout() {
           {/* Notification Icon */}
           <IconButton color="inherit">
             <Badge badgeContent={1} color="secondary">
-              <NotificationsIcon/>
+              <Notifications/>
               {/* HERE IS THE NOTIFICATIONS */}
             </Badge>
           </IconButton>
@@ -64,7 +63,7 @@ export function Layout() {
           {/* HERE IS WHERE WE WILL WRITE THE WELCOME NOTE TO THE USER */}
           <h2>Welcome Admin</h2>
           <IconButton onClick={handleDrawerClose}>
-            <ChevronLeftIcon />
+            <ChevronLeft/>
           </IconButton>
         </div>
         <Divider />
