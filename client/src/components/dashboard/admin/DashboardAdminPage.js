@@ -6,7 +6,7 @@ import {logoutUser} from '../../../services/auth_services'
 export default function DashboardAdminPage(props)
 {
   const {store, dispatch} = useGlobalState()
-  // const {loggedInUser} = store
+  const {loggedInUser} = store
 
   function handleLogout() {
     logoutUser().then((response) => {
@@ -14,6 +14,7 @@ export default function DashboardAdminPage(props)
     }).catch ((error) => {
         console.log("The server may be down - caught an exception on logout:", error)
     })
+
     // Even if we catch an error, logout the user locally
     dispatch({
         type: "setLoggedInUser",
@@ -24,12 +25,11 @@ export default function DashboardAdminPage(props)
   return( <div class="page">
 
     <h1>Admin Dashboard</h1>
-    {/* <a href="/auth/register">Register</a>
-    <a href="/auth/login">Login</a> */}
     <Link to="/auth/register">Register</Link>
-    <Link to="/auth/login">login</Link>
+
+    <Link to="/auth/login">Login</Link>
+
     <Link onClick={handleLogout} to="/">Logout</Link>
 
   </div> )
 }
-

@@ -37,7 +37,9 @@ const SignInForm = ({history}) => {
               type: "setLoggedInUser",
               data: userDetails
           })
-          history.push("/")
+
+
+          history.push("/admin/dashboard") //successful redirect
           
       }).catch((error) => {
         if (error.response && error.response.status === 401)

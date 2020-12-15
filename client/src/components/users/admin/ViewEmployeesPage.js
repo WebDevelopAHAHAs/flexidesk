@@ -1,21 +1,21 @@
-// import React, {useState, useEffect} from "react";
-// // import {BrowserRouter, Route} from 'react-router-dom'
-// import DisplayUsers from './DisplayUsers'
-// //.. users .. components .. src
-// import userData from '../../../data/user_data'
+import React, {useState, useEffect} from "react";
+// import {BrowserRouter, Route} from 'react-router-dom'
+import DisplayUsers from './DisplayUsers'
+//.. users .. components .. src
+import userData from '../../../data/user_data'
 
-// export default function ViewEmployeesPage()
-// {
-//   const [users, setUsers] = useState([])
+export default function ViewEmployeesPage(history)
+{
+  const [users, setUsers] = useState([])
 
-//   useEffect(() => {
-//     setUsers(userData)
-//   },[])
+  useEffect(() => {
+    setUsers(userData)
+  },[])
 
-//   return( <div class="page">
+  return( <div class="page">
 
-//     <h1>Employees</h1>
-//     {/* <DisplayUsers userData={users} /> */}
+    <h1>Employees</h1>
+    {/* <DisplayUsers userData={users} /> */}
 
-//   </div> )
-// }
+  </div> )
+}
