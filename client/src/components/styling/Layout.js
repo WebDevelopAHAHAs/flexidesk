@@ -112,14 +112,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export function Layout(props) {
+
   const classes = useStyles();
   const [open, setOpen] = useState(true);
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
+
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   // modal content hooks defined at top level component - and passed as props to follow hook rules
@@ -160,6 +164,7 @@ export function Layout(props) {
         }}
         open={open}
       >
+        
         <div className={classes.toolbarIcon}>
           {/* HERE IS WHERE WE WILL WRITE THE WELCOME NOTE TO THE USER */}
           <h2>Welcome Admin</h2>
@@ -176,8 +181,15 @@ export function Layout(props) {
           <Navbar className="navbar-home"/>
         </List>
       </Drawer>
+
+
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
+
+        {/* FOR REFACTOR */}
+        {/* {props && props.booking && <BookingsLayout/>} */}
+        {/* {props && props.booking && <EmployeesLayout/>} */}
+
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
           
@@ -211,4 +223,77 @@ export function Layout(props) {
       </main>
     </div>
   );
+}
+
+
+function BookingsLayout(props) {
+
+  const classes = useStyles();
+  const [deskNum, setDeskNum] = useState(null)
+
+  // modal content hooks defined at top level component - and passed as props to follow hook rules
+
+  const [newBookingsModalOpen, setNewBookingsModalOpen] = useState(false);
+
+  return(
+    <Container maxWidth="lg" className={classes.container} id="bookings-container">
+      <Grid container spacing={3}>
+
+        {/* Calendar Day Selector */}
+        <Grid item xs={12} md={8} lg={4}>
+          <Paper className="admin-calendar">
+            <Bookings/>         
+          </Paper>
+        </Grid>
+
+        {/* Desk Selector */}
+        <Grid item xs={12} md={8} lg={4}>
+          <Paper className="available-seats">
+            <ShowDesk open={newBookingsModalOpen} setOpen={setNewBookingsModalOpen} deskNum={deskNum} setDeskNum={setDeskNum}/>
+          </Paper>
+        </Grid>
+
+        {/* HERE IS THE BOTTOM BOX ON OUR PAGES */}
+        <Grid item xs={12}>
+          <Paper className={classes.paper}>          
+           BOTTOM BOX
+          </Paper>
+        </Grid>
+
+      </Grid>
+      <Box pt={4}>
+
+      </Box>
+    </Container>
+  );
+}
+
+function EmployeesLayout(props) {
+
+  const classes = useStyles();
+
+  const [addEmployeeModalOpen, setAddEmployeeModalOpen] = useState(false);
+  const [editEmployeeModalOpen, setEditEmployeeModalOpen] = useState(false);
+
+  const [setAddEmployee] = useState(null)
+  const [setEditEmployee] = useState(null)
+
+  return(
+    <Container maxWidth="lg" className={classes.container} id="employees-container">
+      <Grid container spacing={1}>
+      
+        <Grid item xs={12} md={8} lg={4}>
+          <Paper className="box1">
+            <Bookings/>
+            <AddEmployee open={addEmployeeModalOpen} setOpen={setAddEmployeeModalOpen} setAddEmployee={setAddEmployee}/>
+            <EditEmployee open={editEmployeeModalOpen} setOpen={setEditEmployeeModalOpen} setEditEmployee={setEditEmployee}/>
+          </Paper>
+        </Grid>
+      
+      </Grid>
+      
+      <Box pt={4}></Box>
+      
+    </Container>
+  )
 }

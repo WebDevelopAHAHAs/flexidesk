@@ -18,7 +18,7 @@ export function BookingsPage(props){
     <StylingTypography/>
     <Layout booking showdesk/>
 
-    <h1>Admin Dashboard</h1>
+    <h1>Bookings</h1>
 
     <NavBar/> 
 
@@ -46,7 +46,8 @@ function ShowDesk(props){
     if(props){
         console.log("props----", props)
     }
-        const handleOpen = (event) => {
+    
+    const handleOpen = (event) => {
         console.log(event.target.id)
         props.setOpen(true);
         props.setDeskNum(event.target.id)
@@ -64,6 +65,7 @@ function ShowDesk(props){
         <button id="desk3" onClick={handleOpen}> Desk 3</button>
     {/* onClick > execute another function for form (look at react events - https://reactjs.org/docs/handling-events.html) content and logic seperated out (dont call twice) */}
     
+      
        <Modal 
         aria-labelledby="transition-modal-title" 
         aria-describedby="transition-modal-description"
@@ -72,19 +74,14 @@ function ShowDesk(props){
         onClose={handleClose}
         closeAfterTransition
         BackdropComponent={Backdrop}
-        BackdropProps={{
-        timeout: 500,
-    }}
-       >
+        BackdropProps={{ timeout: 500, }}>
 
-        <Fade 
-        className="modal-styling"
-        in={props.open}>
+        <Fade className="modal-styling" in={props.open}>
          <div>
             {/* <div className={classes.paper}> */}
             <h2 id="transition-modal-title">You have clicked {props.deskNum} </h2>
             <p id="transition-modal-description"> put component here</p>
-            </div>
+          </div>
         </Fade>
       </Modal>
     </div>
