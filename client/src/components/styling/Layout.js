@@ -13,7 +13,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
-import EmployeesPage, {AddEmployee, EditEmployee} from '../employees/EmployeesPage'
+import {AddEmployee, EditEmployee} from '../employees/EmployeesPage'
 
 
 
@@ -125,9 +125,10 @@ export function Layout(props) {
   // modal content hooks defined at top level component - and passed as props to follow hook rules
   const [modalOpen, setModalOpen] = useState(false);
   const [deskNum, setDeskNum] = useState(null)
-  const [setAddEmployee] = useState(null)
-  const [setEditEmployee] = useState(null)
-  
+  const [addNum, setAddNum] = useState(null)
+  const [editNum, setEditNum,] = useState(null)
+ 
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -184,8 +185,8 @@ export function Layout(props) {
             <Grid item xs={12} md={8} lg={4}>
               <Paper className="admin-calendar">
                 {props && props.booking && <Bookings/>}
-                {props && props.employees && <AddEmployee open={modalOpen} setOpen={setModalOpen} setAddEmployee={setAddEmployee}/>}
-                {props && props.edit && <EditEmployee open={modalOpen} setOpen={setModalOpen} setEditEmployee={setEditEmployee}/>}
+                {props && props.employees && <AddEmployee open={modalOpen} setOpen={setModalOpen} addNum={addNum} setAddNum={setAddNum}/>}
+                {props && props.edit && <EditEmployee open={modalOpen} setOpen={setModalOpen} editNum={editNum} setEditNum={setEditNum}/>}
                
               </Paper>
             </Grid>
