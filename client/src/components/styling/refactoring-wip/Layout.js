@@ -14,7 +14,6 @@ const drawerWidth = 240;
 
 export function Layout(props)
 {
-  console.log(props.
   const classes = useStyles();
   const [open, setOpen] = useState(true);
   const handleDrawerOpen = () => { setOpen(true); };
@@ -27,7 +26,9 @@ export function Layout(props)
 
   return (
     <div className={classes.root}>
-      <CssBaseline />
+
+      <CssBaseline/>
+
       <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
 
         <Toolbar className={classes.toolbar}>
@@ -68,8 +69,9 @@ export function Layout(props)
           </IconButton>
         </div>
         <Divider />
-        <List></List>
-        <Divider />
+          <List></List>
+        <Divider/>
+        
         <List>
           <h2 className="navbar-header">What would you like to do</h2>
           {/* Here is the NavBar */}
