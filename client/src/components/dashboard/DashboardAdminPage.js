@@ -9,7 +9,7 @@ export default function DashboardAdminPage(props)
   <div page="dashboardAdmin">
 
     <StylingTypography/>
-    {/* <Layout/> */}
+    <Layout/>
 
     <h1>Admin Dashboard</h1>
 

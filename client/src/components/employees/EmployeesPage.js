@@ -8,7 +8,7 @@ export default function EmployeesPage(history)
   <div page="employeesPage">
 
     <StylingTypography/>
-    {/* <Layout/> */}
+    <Layout/>
 
       <h1>Employees</h1>
 

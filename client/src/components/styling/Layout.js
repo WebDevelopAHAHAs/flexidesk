@@ -110,7 +110,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function Layout() {
+export function Layout(props) {
+  console.log(props.booking)
   const classes = useStyles();
   const [open, setOpen] = useState(true);
   const handleDrawerOpen = () => {
@@ -143,10 +144,10 @@ export function Layout() {
             Dashboard
           </Typography>
           <IconButton color="inherit">
-            <Badge badgeContent={1} color="secondary">
-              <NotificationsIcon />
+            {/* <Badge badgeContent={1} color="secondary"> */}
+              {/* <NotificationsIcon /> */}
               {/* HERE IS THE NOTIFICATIONS */}
-            </Badge>
+            {/* </Badge> */}
           </IconButton>
         </Toolbar>
       </AppBar>
@@ -179,14 +180,14 @@ export function Layout() {
           
             <Grid item xs={12} md={8} lg={4}>
               <Paper className="admin-calendar">
-                <Bookings/> 
+                {props && props.booking && <Bookings/>}
+               
               </Paper>
             </Grid>
          
             <Grid item xs={12} md={8} lg={4}>
               <Paper className="available-seats">
-              <h3>Available Desks</h3>
-              <ShowDesk open={modalOpen} setOpen={setModalOpen} deskNum={deskNum} setDeskNum={setDeskNum}/>
+              {props && props.showdesk &&  <ShowDesk open={modalOpen} setOpen={setModalOpen} deskNum={deskNum} setDeskNum={setDeskNum}/>}
               </Paper>
             </Grid>
           

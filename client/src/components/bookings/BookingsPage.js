@@ -10,13 +10,13 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 
 
-export function BookingsPage(props)
-{
+export function BookingsPage(props){
+    console.log(props)
   return(
   <div page="dashboardAdmin">
 
     <StylingTypography/>
-    <Layout/>
+    <Layout booking showdesk/>
 
     <h1>Bookings</h1>
 
