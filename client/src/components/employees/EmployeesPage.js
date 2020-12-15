@@ -25,8 +25,9 @@ function AddEmployee(props) {
     console.log("props----", props)
 }
     const handleOpen = (event) => {
+      console.log(event.target.id)
       props.setOpen(true);
-     console.log(event)
+      props.setAddNum(event.target.id)
   
 };
 
@@ -37,7 +38,7 @@ const handleClose = () => {
 return(
  <div>
 {/* renders desks available (connected to backend) */}
-    <button onClick={handleOpen}> Add Employee</button>
+    <button id="Add" onClick={handleOpen}> Add Employee</button>
     
 {/* onClick > execute another function for form (look at react events - https://reactjs.org/docs/handling-events.html) content and logic seperated out (dont call twice) */}
 
@@ -59,7 +60,7 @@ return(
     in={props.open}>
      <div>
         {/* <div className={classes.paper}> */}
-        <h2 id="transition-modal-title">TESTER </h2>
+        <h2 id="transition-modal-title">{props.addNum} Employee</h2>
         <p id="transition-modal-description"> put component here</p>
         </div>
     </Fade>
@@ -73,8 +74,9 @@ function EditEmployee(props){
     console.log("props----", props)
 }
     const handleOpen = (event) => {
-      props.setOpen(true);
-     console.log(event)
+    console.log(event.target.id)
+    props.setOpen(true);
+    props.setEditNum(event.target.id)
   
 };
 
@@ -85,7 +87,7 @@ const handleClose = () => {
 return(
  <div>
 {/* renders desks available (connected to backend) */}
-    <button onClick={handleOpen}> Edit Employee</button>
+    <button id="Edit" onClick={handleOpen}> Edit Employee</button>
     
 {/* onClick > execute another function for form (look at react events - https://reactjs.org/docs/handling-events.html) content and logic seperated out (dont call twice) */}
 
@@ -107,7 +109,7 @@ return(
     in={props.open}>
      <div>
         {/* <div className={classes.paper}> */}
-        <h2 id="transition-modal-title">FORMkljasdlkhajsl</h2>
+        <h2 id="transition-modal-title">{props.editNum} employee</h2>
         <p id="transition-modal-description"> put component here</p>
         </div>
     </Fade>
