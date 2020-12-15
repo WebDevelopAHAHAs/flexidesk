@@ -3,17 +3,14 @@ import {BrowserRouter, Route} from 'react-router-dom'
 import stateReducer from '../config/stateReducer'
 import {StateContext} from '../config/store'
 
-//Styling & Layout
-import {StylingTypography, Layout} from './styling/Layout'
-
-//Partials
-// import NavBar from './NavBar'
-
 //Pages
-import RegisterForm from './auth/RegisterForm'
-import SignInPage from './sign_in/SignInPage'
-import DashboardAdminPage from './dashboard/admin/DashboardAdminPage';
+import LoginPage from './auth/LoginPage'
+import DashboardAdminPage from './dashboard/DashboardAdminPage';
+import EmployeesPage from './employees/EmployeesPage';
+import {BookingsPage} from './bookings/BookingsPage'
 
+//Forms
+import RegisterForm from './employees/RegisterForm'
 
 export default function App()
 {
@@ -22,33 +19,33 @@ export default function App()
   }
 
   const [store, dispatch] = useReducer(stateReducer, initialState)
+  // const {loggedInUser} = store
 
   return (
   <div className="App">
 
     <StateContext.Provider value={{store, dispatch}}>
       <BrowserRouter>
-        <StylingTypography/>
-        <Layout/>
 
         {/* Login */}
-        <Route exact path="/signin"           component={SignInPage} />
+        <Route exact path="/login"               component={LoginPage} />
 
         {/* Dashboard */}
-        <Route exact path="/admin/dashboard"  component={DashboardAdminPage} />
+        <Route exact path="/admin/dashboard"      component={DashboardAdminPage} />
 
         {/* Employees */}
-        {/* <Route exact path="/admin/employees" render={(props) => <ViewEmployeesPage/> } /> */}
-        {/* <Route exact path="/admin/employees/new" render={(props) => <NewEmployeeModal/> } /> */}
+        <Route exact path="/admin/employees"      component={EmployeesPage} />
+
+        <Route exact path="/admin/employees/new"  component={RegisterForm} /> {/* Temporary until modal implemented */}
 
         {/* Desks */}
 
         {/* Bookings */}
+        
+        <Route exact path="/admin/bookings"      component={BookingsPage} />
 
         {/* Misc / Outliers */}
-        <Route exact path="/auth/register"    component={RegisterForm} />
 
-        {/* <NavBar/> */}
       </BrowserRouter>
     </StateContext.Provider>
     

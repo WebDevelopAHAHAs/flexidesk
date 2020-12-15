@@ -1,4 +1,4 @@
-import api from '../config/api'
+import api from '../../config/api'
 
 export async function registerUser(userInfo) {
   const response = await api.post("/auth/register", userInfo)
@@ -17,4 +17,10 @@ export async function loginUser(userInfo) {
   // call to server to logout user
 export async function logoutUser() {
   return api.get("/auth/logout")
+}
+
+export async function getUser() {
+  const response = await api.get("/auth/get")
+  console.log("got user back from server", response) 
+  return response.data
 }

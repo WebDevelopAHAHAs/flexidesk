@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {useGlobalState} from '../../config/store'
-import {loginUser} from '../../services/auth_services'
+import {loginUser} from './auth_services'
 
 const SignInForm = ({history}) => {
     const initialFormState = {
@@ -37,7 +37,6 @@ const SignInForm = ({history}) => {
               type: "setLoggedInUser",
               data: userDetails
           })
-
 
           history.push("/admin/dashboard") //successful redirect
           

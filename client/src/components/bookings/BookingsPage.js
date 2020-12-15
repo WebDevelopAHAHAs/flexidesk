@@ -1,11 +1,30 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
+import {StylingTypography, Layout} from '../styling/Layout'
+import NavBar from '../NavBar'
 
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
+
+
+export function BookingsPage(props)
+{
+  return(
+  <div page="dashboardAdmin">
+
+    <StylingTypography/>
+    <Layout/>
+
+    <h1>Admin Dashboard</h1>
+
+    <NavBar/> 
+
+  </div>
+  )
+}
 
 // const modalStyles = makeStyles((theme) => ({
 //     modal: {
