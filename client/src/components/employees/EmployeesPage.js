@@ -1,6 +1,9 @@
 import React from "react";
 import {StylingTypography, Layout} from '../styling/Layout'
 import NavBar from '../NavBar'
+import Modal from '@material-ui/core/Modal';
+import Backdrop from '@material-ui/core/Backdrop';
+import Fade from '@material-ui/core/Fade';
 
 export default function EmployeesPage(props){
   console.log(props)
@@ -16,25 +19,101 @@ export default function EmployeesPage(props){
   )
 }
 
-function AddEmployee() {
+function AddEmployee(props) {
 
-  return(
-    <div>
-      <button> Add New Employee </button>
-      
-    </div>
+  if(props){
+    console.log("props----", props)
+}
+    const handleOpen = (event) => {
+      props.setOpen(true);
+     console.log(event)
+  
+};
+
+const handleClose = () => {
+    props.setOpen(false);
+};
+
+return(
+ <div>
+{/* renders desks available (connected to backend) */}
+    <button onClick={handleOpen}> Add Employee</button>
     
-  )
+{/* onClick > execute another function for form (look at react events - https://reactjs.org/docs/handling-events.html) content and logic seperated out (dont call twice) */}
+
+   <Modal 
+    aria-labelledby="transition-modal-title" 
+    aria-describedby="transition-modal-description"
+    className="modal-position"
+    open={props.open}
+    onClose={handleClose}
+    closeAfterTransition
+    BackdropComponent={Backdrop}
+    BackdropProps={{
+    timeout: 500,
+}}
+   >
+
+    <Fade 
+    className="modal-styling"
+    in={props.open}>
+     <div>
+        {/* <div className={classes.paper}> */}
+        <h2 id="transition-modal-title">TESTER </h2>
+        <p id="transition-modal-description"> put component here</p>
+        </div>
+    </Fade>
+  </Modal>
+</div>
+)
 }
 
-function EditEmployee(){
- 
-  return(
-    <div>
-       <button> Edit Employee </button>
-    </div>
+function EditEmployee(props){
+  if(props){
+    console.log("props----", props)
+}
+    const handleOpen = (event) => {
+      props.setOpen(true);
+     console.log(event)
+  
+};
+
+const handleClose = () => {
+    props.setOpen(false);
+};
+
+return(
+ <div>
+{/* renders desks available (connected to backend) */}
+    <button onClick={handleOpen}> Edit Employee</button>
     
-  )
+{/* onClick > execute another function for form (look at react events - https://reactjs.org/docs/handling-events.html) content and logic seperated out (dont call twice) */}
+
+   <Modal 
+    aria-labelledby="transition-modal-title" 
+    aria-describedby="transition-modal-description"
+    className="modal-position"
+    open={props.open}
+    onClose={handleClose}
+    closeAfterTransition
+    BackdropComponent={Backdrop}
+    BackdropProps={{
+    timeout: 500,
+}}
+   >
+
+    <Fade 
+    className="modal-styling"
+    in={props.open}>
+     <div>
+        {/* <div className={classes.paper}> */}
+        <h2 id="transition-modal-title">FORMkljasdlkhajsl</h2>
+        <p id="transition-modal-description"> put component here</p>
+        </div>
+    </Fade>
+  </Modal>
+</div>
+)
 }
 
 export {AddEmployee, EditEmployee};
