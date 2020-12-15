@@ -12,7 +12,9 @@ import TransitionsModal from '../bookings/NewBookingAdminForm';
 
 const drawerWidth = 240;
 
-export function Layout() {
+export function Layout(props)
+{
+  console.log(props.
   const classes = useStyles();
   const [open, setOpen] = useState(true);
   const handleDrawerOpen = () => { setOpen(true); };
@@ -52,11 +54,10 @@ export function Layout() {
         </Toolbar>
 
       </AppBar>
+
       <Drawer
         variant="permanent"
-        classes={{
-          paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
-        }}
+        classes={{ paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose), }}
         open={open}
       >
         <div className={classes.toolbarIcon}>
@@ -76,29 +77,38 @@ export function Layout() {
         </List>
       </Drawer>
       <main className={classes.content}>
+
         <div className={classes.appBarSpacer} />
+
+        {/*Page Container*/}
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
           
+          if(props && props.bookings)
+          {
+            {/*Calendar*/}
             <Grid item xs={12} md={8} lg={4}>
               <Paper className="admin-calendar">
-                <Bookings/> 
+                <Bookings/>
               </Paper>
             </Grid>
-         
+
+            {/*Desks*/}
             <Grid item xs={12} md={8} lg={4}>
               <Paper className="available-seats">
               <h3>Available Desks</h3>
               <ShowDesk open={modalOpen} setOpen={setModalOpen} deskNum={deskNum} setDeskNum={setDeskNum}/>
               </Paper>
             </Grid>
+          }
           
+            {/*Footer*/} {/* HERE IS THE BOTTOM BOX ON OUR PAGES */}
             <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                {/* HERE IS THE BOTTOM BOX ON OUR PAGES */}
-               BOTTOM BOX
+              <Paper className={classes.paper}>                
+                BOTTOM BOX
               </Paper>
             </Grid>
+
           </Grid>
           <Box pt={4}>
          

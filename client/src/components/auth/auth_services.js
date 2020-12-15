@@ -10,7 +10,7 @@ export async function registerUser(userInfo) {
   // return user info if successful and error if not
 export async function loginUser(userInfo) {
   const response = await api.post("/auth/login", userInfo)
-  console.log("got user back from server", response) 
+  console.log("got user back from server", response)
   return response.data
 }
 

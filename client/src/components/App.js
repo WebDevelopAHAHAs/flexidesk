@@ -27,8 +27,10 @@ export default function App()
     <StateContext.Provider value={{store, dispatch}}>
       <BrowserRouter>
 
+        {/* <Route exact path="/" component={Redirect} /> */}
+
         {/* Login */}
-        <Route exact path="/login"               component={LoginPage} />
+        <Route exact path="/login"                component={LoginPage} />
 
         {/* Dashboard */}
         <Route exact path="/admin/dashboard"      component={DashboardAdminPage} />

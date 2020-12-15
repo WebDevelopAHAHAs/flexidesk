@@ -18,7 +18,7 @@ export function BookingsPage(props)
     <StylingTypography/>
     <Layout/>
 
-    <h1>Admin Dashboard</h1>
+    <h1>Bookings</h1>
 
     <NavBar/> 
 

@@ -32,7 +32,9 @@ const SignInForm = ({history}) => {
     function handleSubmit(event) {
       event.preventDefault()
       // Attempt login on server
-      loginUser(userDetails).then(() => {
+      loginUser(userDetails).then((response) => {
+
+          console.log("response success:", response)
           dispatch({
               type: "setLoggedInUser",
               data: userDetails
@@ -41,6 +43,8 @@ const SignInForm = ({history}) => {
           history.push("/admin/dashboard") //successful redirect
           
       }).catch((error) => {
+        console.log('error:', error)
+
         if (error.response && error.response.status === 401)
             setErrorMessage("Authentication failed. Please check your username and password.")
         else   

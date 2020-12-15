@@ -33,7 +33,7 @@ export default function NavBar() {
 
       {/* <li><Button color="primary" href="/admin/desks">Desks</Button></li> */}
 
-      <Button color="secondary" onClick={handleLogout} to="/login" >Logout </Button>
+      <li><Button color="secondary" onClick={handleLogout} href="/login" >Logout </Button></li>
 
       </ul>
     </div>

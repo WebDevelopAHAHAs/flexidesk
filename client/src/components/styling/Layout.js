@@ -150,13 +150,7 @@ export function Layout() {
           </IconButton>
         </Toolbar>
       </AppBar>
-      <Drawer
-        variant="permanent"
-        classes={{
-          paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
-        }}
-        open={open}
-      >
+      <Drawer variant="permanent" classes={{ paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose), }} open={open}>
         <div className={classes.toolbarIcon}>
           {/* HERE IS WHERE WE WILL WRITE THE WELCOME NOTE TO THE USER */}
           <h2>Welcome Admin</h2>
@@ -164,9 +158,12 @@ export function Layout() {
             <ChevronLeftIcon />
           </IconButton>
         </div>
-        <Divider />
+        <Divider/>
+
         <List></List>
-        <Divider />
+
+        <Divider/>
+
         <List>
           <h2 className="navbar-header">What would you like to do</h2>
           {/* Here is the NavBar */}
@@ -174,7 +171,9 @@ export function Layout() {
         </List>
       </Drawer>
       <main className={classes.content}>
-        <div className={classes.appBarSpacer} />
+
+        <div className={classes.appBarSpacer}/>
+        
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
           
@@ -197,6 +196,7 @@ export function Layout() {
                BOTTOM BOX
               </Paper>
             </Grid>
+
           </Grid>
           <Box pt={4}>
          

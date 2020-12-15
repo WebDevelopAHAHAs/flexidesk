@@ -22,7 +22,7 @@ async function register(req, res) {
 
 //Login
 async function login(req, res) {
-  // console.log(req.body)
+  console.log(req.body)
 
   const { email, password } = req.body;
   // console.log(email)
