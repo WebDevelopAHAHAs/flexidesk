@@ -2,14 +2,13 @@ import React from "react";
 import {StylingTypography, Layout} from '../styling/Layout'
 import NavBar from '../NavBar'
 
-export default function EmployeesPage(props)
-{
+export default function EmployeesPage(props){
   console.log(props)
   return(
   <div page="employeesPage">
     
     <StylingTypography/>
-    <Layout employees/>
+    <Layout employees edit/>
       <h1>Employees</h1>
     <NavBar/>    
 
@@ -17,13 +16,25 @@ export default function EmployeesPage(props)
   )
 }
 
-function AddEmployee(props) {
+function AddEmployee() {
+
   return(
     <div>
-      <h1>New Employee</h1>
+      <button> Add New Employee </button>
+      
     </div>
     
   )
 }
 
-export {AddEmployee};
+function EditEmployee(){
+ 
+  return(
+    <div>
+       <button> Edit Employee </button>
+    </div>
+    
+  )
+}
+
+export {AddEmployee, EditEmployee};

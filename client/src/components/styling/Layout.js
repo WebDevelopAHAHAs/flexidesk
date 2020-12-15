@@ -3,7 +3,7 @@ import './layout.css';
 import Navbar from '../NavBar'
 import { Bookings, ShowDesk } from '../bookings/BookingsPage'
 import TransitionsModal from '../bookings/NewBookingAdminForm';
-import AddEmployee from '../employees/EmployeesPage'
+import {AddEmployee, EditEmployee} from '../employees/EmployeesPage'
 
 import Core, { Typography, Link, Drawer, Paper, Grid, Divider, List,
   Badge, Toolbar, AppBar, CssBaseline, Container, Box } from '@material-ui/core';
@@ -196,7 +196,8 @@ export function Layout(props) {
             <Grid item xs={12} md={8} lg={4}>
               <Paper className="admin-calendar">
                 {props && props.booking && <Bookings/>}
-                {props && props.employee && <AddEmployee/>}
+                {props && props.employees && <AddEmployee/>}
+                {props && props.edit && <EditEmployee/>}
                
               </Paper>
             </Grid>
@@ -204,6 +205,7 @@ export function Layout(props) {
             <Grid item xs={12} md={8} lg={4}>
               <Paper className="available-seats">
               {props && props.showdesk &&  <ShowDesk open={modalOpen} setOpen={setModalOpen} deskNum={deskNum} setDeskNum={setDeskNum}/>}
+              
               </Paper>
             </Grid>
           
