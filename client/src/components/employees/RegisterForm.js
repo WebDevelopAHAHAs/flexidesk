@@ -38,7 +38,7 @@ const Register = ({history}) => {
               type: "setLoggedInUser",
               data: userDetails
           })
-          history.push("/")
+          // history.push("/")
           
       }).catch((error) => {
         if (error.response && error.response.status === 401)
