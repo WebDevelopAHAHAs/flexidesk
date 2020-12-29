@@ -188,9 +188,11 @@ export function Layout(props) {
         <div className={classes.appBarSpacer} />
 
         {/* FOR REFACTOR */}
-        {/* {props && props.booking && <BookingsLayout/>} */}
-        {/* {props && props.booking && <EmployeesLayout/>} */}
+        {props && props.booking && <BookingsLayout/>}
+        {props && props.booking && <EmployeesLayout/>}
 
+        //#region old
+        {/*
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
           
@@ -212,15 +214,17 @@ export function Layout(props) {
           
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                {/* HERE IS THE BOTTOM BOX ON OUR PAGES */}
                BOTTOM BOX
               </Paper>
             </Grid>
           </Grid>
           <Box pt={4}>
          
-          </Box>
-        </Container>
+          </Box> </Container>
+        */}
+
+        // #endregion
+
       </main>
     </div>
   );

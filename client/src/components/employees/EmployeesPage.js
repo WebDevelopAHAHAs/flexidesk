@@ -21,52 +21,47 @@ export default function EmployeesPage(props){
 
 function AddEmployee(props) {
 
-  if(props){
-    console.log("props----", props)
-}
-    const handleOpen = (event) => {
-      console.log(event.target.id)
-      props.setOpen(true);
-      props.setAddNum(event.target.id)
-  
-};
+  // if(props){
+  //   console.log("props----", props)
+  // }
 
-const handleClose = () => {
-    props.setOpen(false);
-};
+  const handleOpen = (event) => {
+    console.log(event.target.id)
+    props.setOpen(true);
+    props.setAddNum(event.target.id)
+  };
 
-return(
- <div>
-{/* renders desks available (connected to backend) */}
-    <button id="Add" onClick={handleOpen}> Add Employee</button>
-    
-{/* onClick > execute another function for form (look at react events - https://reactjs.org/docs/handling-events.html) content and logic seperated out (dont call twice) */}
+  const handleClose = () => {
+      props.setOpen(false);
+  };
 
-   <Modal 
-    aria-labelledby="transition-modal-title" 
-    aria-describedby="transition-modal-description"
-    className="modal-position"
-    open={props.open}
-    onClose={handleClose}
-    closeAfterTransition
-    BackdropComponent={Backdrop}
-    BackdropProps={{
-    timeout: 500,
-}}
-   >
+  return(
+   <div>
+  {/* renders desks available (connected to backend) */}
+      <button id="Add" onClick={handleOpen}> Add Employee</button>
 
-    <Fade 
-    className="modal-styling"
-    in={props.open}>
-     <div>
-        {/* <div className={classes.paper}> */}
-        <h2 id="transition-modal-title">{props.addNum} Employee</h2>
-        <p id="transition-modal-description"> put component here</p>
-        </div>
-    </Fade>
-  </Modal>
-</div>
-)
+  {/* onClick > execute another function for form (look at react events - https://reactjs.org/docs/handling-events.html) content and logic seperated out (dont call twice) */}
+
+     <Modal 
+      aria-labelledby="transition-modal-title" 
+      aria-describedby="transition-modal-description"
+      className="modal-position"
+      open={props.open}
+      onClose={handleClose}
+      closeAfterTransition
+      BackdropComponent={Backdrop}
+      BackdropProps={{ timeout: 500 }} >
+
+      <Fade  className="modal-styling" in={props.open}>
+       <div>
+          {/* <div className={classes.paper}> */}
+          <h2 id="transition-modal-title">{props.addNum} Employee</h2>
+          <p id="transition-modal-description"> put component here</p>
+          </div>
+      </Fade>
+    </Modal>
+  </div>
+  )
 }
 
 function EditEmployee(props){
