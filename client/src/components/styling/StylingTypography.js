@@ -11,5 +11,5 @@ export default function StylingTypography() {
       {new Date().getFullYear()}
       {'.'}
     </Typography>
-);
+  );
 }

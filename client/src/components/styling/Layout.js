@@ -11,8 +11,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 // Our Files
 import useStyles from './useStyles';
 import Navbar from '../NavBar'
-import BookingsLayout from './BookingsLayout'
-import EmployeesLayout from './EmployeesLayout'
+import AdminBookingsLayout from './AdminBookingsLayout'
+import AdminEmployeesLayout from './AdminEmployeesLayout'
 
 export default function Layout(props) {
 
@@ -91,11 +91,12 @@ export default function Layout(props) {
       </Drawer>
 
       <main className={classes.content}>
+        
         <div className={classes.appBarSpacer} />
 
-        {props && props.employees && <EmployeesLayout/>}
+        {props && props.bookings && <AdminBookingsLayout/>}
 
-        {props && props.bookings && <BookingsLayout/>}
+        {props && props.employees && <AdminEmployeesLayout/>}
         
       </main>
     </div>

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import {useGlobalState} from '../../config/store'
-import {registerUser} from '../auth/auth_services'
+import {useGlobalState} from '../../../config/store'
+import {registerUser} from '../../authentication/auth_services'
 
 const Register = ({history}) => {
   const initialFormState = {

@@ -11,7 +11,7 @@ export default function EditEmployee(props) {
   const handleOpen = (event) => {
     console.log(event.target.id)
     props.setOpen(true);
-    props.setEditEmployee(event.target.id)
+    props.setEditNum(event.target.id)
   };
 
   const handleClose = () => {
@@ -19,12 +19,7 @@ export default function EditEmployee(props) {
   };
 
   return(<div className='editEmployeeDiv'>
-  {/* renders desks available (connected to backend) */}
     <button id="Edit" onClick={handleOpen}> Edit Employee</button>
-
-  {/* onClick > execute another function for form
-  (look at react events - https://reactjs.org/docs/handling-events.html)
-  content and logic seperated out (dont call twice) */}
     <Modal 
       aria-labelledby="transition-modal-title" 
       aria-describedby="transition-modal-description"

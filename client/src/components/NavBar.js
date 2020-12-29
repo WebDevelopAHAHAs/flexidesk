@@ -1,5 +1,5 @@
 import React from 'react'
-import {logoutUser} from './auth/auth_services'
+import {logoutUser} from './authentication/auth_services'
 import {useGlobalState} from '../config/store'
 import Button from '@material-ui/core/Button'
 

@@ -4,13 +4,13 @@ import stateReducer from '../config/stateReducer'
 import {StateContext} from '../config/store'
 
 //Pages
-import LoginPage from './auth/LoginPage'
-import DashboardAdminPage from './dashboard/DashboardAdminPage';
-import EmployeesPage from './employees/EmployeesPage';
-import {BookingsPage} from './bookings/BookingsPage'
+import LoginPage from './authentication/LoginPage'
+import AdminDashboardPage from './userAdmin/dashboard/AdminDashboardPage';
+import AdminEmployeesPage from './userAdmin/employees/AdminEmployeesPage';
+import AdminBookingsPage from './userAdmin/bookings/AdminBookingsPage';
 
 //Forms
-import RegisterForm from './employees/RegisterForm'
+import RegisterForm from './userAdmin/employees/RegisterForm'
 
 export default function App()
 {
@@ -28,13 +28,13 @@ export default function App()
       <BrowserRouter>
 
         {/* Login */}
-        <Route exact path="/login"               component={LoginPage} />
+        <Route exact path="/login"                component={LoginPage} />
 
         {/* Dashboard */}
-        <Route exact path="/admin/dashboard"      component={DashboardAdminPage} />
+        <Route exact path="/admin/dashboard"      component={AdminDashboardPage} />
 
         {/* Employees */}
-        <Route exact path="/admin/employees"      component={EmployeesPage} />
+        <Route exact path="/admin/employees"      component={AdminEmployeesPage} />
 
         <Route exact path="/admin/employees/new"  component={RegisterForm} /> {/* Temporary until modal implemented */}
 
@@ -42,7 +42,7 @@ export default function App()
 
         {/* Bookings */}
         
-        <Route exact path="/admin/bookings"      component={BookingsPage} />
+        <Route exact path="/admin/bookings"      component={AdminBookingsPage} />
 
         {/* Misc / Outliers */}
 

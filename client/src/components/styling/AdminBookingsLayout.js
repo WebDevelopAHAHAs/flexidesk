@@ -1,14 +1,11 @@
 import {React, useState} from 'react';
-//Material UI
 import { Paper, Grid, Container, Box } from '@material-ui/core';
-
 import useStyles from './useStyles';
 
+import CalendarSelector from '../userAdmin/bookings/CalendarSelector'
+import ShowDesks from '../userAdmin/bookings/ShowDesks'
 
-import CalendarSelector from '../bookings/CalendarSelector'
-import ShowDesks from '../bookings/ShowDesks'
-
-export default function BookingsLayout(props) {
+export default function AdminBookingsLayout(props) {
 
   const classes = useStyles();
   const [deskNum, setDeskNum] = useState(null)

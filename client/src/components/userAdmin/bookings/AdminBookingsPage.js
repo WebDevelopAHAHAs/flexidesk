@@ -2,14 +2,14 @@
 
 // import { makeStyles } from '@material-ui/core/styles';
 
-import StylingTypography from '../styling/StylingTypography'
-import Layout from '../styling/Layout'
-import NavBar from '../NavBar'
+import StylingTypography from '../../styling/StylingTypography'
+import Layout from '../../styling/Layout'
+import NavBar from '../../NavBar'
 
-export function BookingsPage(props){
+export default function AdminBookingsPage(props){
     console.log(props)
   return(
-  <div page="dashboardAdmin">
+  <div page="adminBookings-page">
 
     <StylingTypography/>
     <Layout bookings showdesk/>
