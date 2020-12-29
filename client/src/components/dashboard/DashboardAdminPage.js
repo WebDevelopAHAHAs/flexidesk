@@ -1,12 +1,14 @@
 import React from "react";
-// import {useGlobalState} from '../../config/store'
-import {StylingTypography, Layout} from '../styling/Layout'
+
+//Styling
+import StylingTypography from '../styling/StylingTypography'
+import Layout from '../styling/Layout'
+
 import NavBar from '../NavBar'
 
 export default function DashboardAdminPage(props)
 {
-  return(
-  <div page="dashboardAdmin">
+  return( <div page="dashboardAdmin">
 
     <StylingTypography/>
     <Layout/>
@@ -15,6 +17,5 @@ export default function DashboardAdminPage(props)
 
     <NavBar/> 
 
-  </div>
-  )
+  </div> )
 }

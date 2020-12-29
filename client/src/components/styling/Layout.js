@@ -1,117 +1,20 @@
 import {React, useState} from 'react';
 import './layout.css';
-import Navbar from '../NavBar'
-import { Bookings, ShowDesk } from '../bookings/BookingsPage'
-import TransitionsModal from '../bookings/NewBookingAdminForm';
-
 import clsx from 'clsx';
-import Core, { Typography, Link, Drawer, Paper, Grid, Divider, List,
-  Badge, Toolbar, AppBar, CssBaseline, Container, Box } from '@material-ui/core';
-import makeStyles from '@material-ui/core/styles/makeStyles';
+import { Typography, Drawer, Divider, List,
+  Toolbar, AppBar, CssBaseline } from '@material-ui/core';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import NotificationsIcon from '@material-ui/icons/Notifications';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
-import {AddEmployee, EditEmployee} from '../employees/EmployeesPage'
 
+// Our Files
+import useStyles from './useStyles';
+import Navbar from '../NavBar'
+import BookingsLayout from './BookingsLayout'
+import EmployeesLayout from './EmployeesLayout'
 
-
-export function StylingTypography() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-    {'Copyright © '}
-    <Link color="inherit" href="https://material-ui.com/">
-      Your Website
-    </Link>{' '}
-    {new Date().getFullYear()}
-    {'.'}
-  </Typography>
-);
-}
-
-const drawerWidth = 240;
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-  },
-  toolbar: {
-    paddingRight: 24, // keep right padding when drawer closed
-  },
-  toolbarIcon: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    padding: '0 8px',
-    ...theme.mixins.toolbar,
-  },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-  },
-  appBarShift: {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
-  menuButton: {
-    marginRight: 36,
-  },
-  menuButtonHidden: {
-    display: 'none',
-  },
-  title: {
-    flexGrow: 1,
-  },
-  drawerPaper: {
-    position: 'relative',
-    whiteSpace: 'nowrap',
-    width: drawerWidth,
-    transition: theme.transitions.create('width', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
-  drawerPaperClose: {
-    overflowX: 'hidden',
-    transition: theme.transitions.create('width', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    width: theme.spacing(7),
-    [theme.breakpoints.up('sm')]: {
-      width: theme.spacing(9),
-    },
-  },
-  appBarSpacer: theme.mixins.toolbar,
-  content: {
-    flexGrow: 1,
-    height: '100vh',
-    overflow: 'auto',
-  },
-  container: {
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4),
-  },
-  paper: {
-    padding: theme.spacing(2),
-    display: 'flex',
-    overflow: 'auto',
-    flexDirection: 'column',
-  },
-  fixedHeight: {
-    height: 240,
-  },
-}));
-
-export function Layout(props) {
+export default function Layout(props) {
 
   const classes = useStyles();
   const [open, setOpen] = useState(true);
@@ -124,13 +27,13 @@ export function Layout(props) {
     setOpen(false);
   };
 
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  // const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
-  // modal content hooks defined at top level component - and passed as props to follow hook rules
-  const [modalOpen, setModalOpen] = useState(false);
-  const [deskNum, setDeskNum] = useState(null)
-  const [addNum, setAddNum] = useState(null)
-  const [editNum, setEditNum,] = useState(null)
+  // // modal content hooks defined at top level component - and passed as props to follow hook rules
+  // const [modalOpen, setModalOpen] = useState(false);
+  // const [deskNum, setDeskNum] = useState(null)
+  // const [addNum, setAddNum] = useState(null)
+  // const [editNum, setEditNum,] = useState(null)
  
 
   return (
@@ -145,7 +48,7 @@ export function Layout(props) {
             onClick={handleDrawerOpen}
             className={clsx(classes.menuButton, open && classes.menuButtonHidden)}
           >
-            <MenuIcon />
+            <MenuIcon/>
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
             Dashboard
@@ -173,9 +76,13 @@ export function Layout(props) {
             <ChevronLeftIcon />
           </IconButton>
         </div>
-        <Divider />
+
+        <Divider/>
+
         <List></List>
-        <Divider />
+
+        <Divider/>
+
         <List>
           <h2 className="navbar-header">What would you like to do</h2>
           {/* Here is the NavBar */}
@@ -183,122 +90,15 @@ export function Layout(props) {
         </List>
       </Drawer>
 
-
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
 
-        {/* FOR REFACTOR */}
-        {props && props.booking && <BookingsLayout/>}
-        {props && props.booking && <EmployeesLayout/>}
+        {props && props.employees && <EmployeesLayout/>}
 
-        //#region old
-        {/*
-        <Container maxWidth="lg" className={classes.container}>
-          <Grid container spacing={3}>
-          
-            <Grid item xs={12} md={8} lg={4}>
-              <Paper className="admin-calendar">
-                {props && props.booking && <Bookings/>}
-                {props && props.employees && <AddEmployee open={modalOpen} setOpen={setModalOpen} addNum={addNum} setAddNum={setAddNum}/>}
-                {props && props.edit && <EditEmployee open={modalOpen} setOpen={setModalOpen} editNum={editNum} setEditNum={setEditNum}/>}
-               
-              </Paper>
-            </Grid>
-         
-            <Grid item xs={12} md={8} lg={4}>
-              <Paper className="available-seats">
-              {props && props.showdesk && <ShowDesk open={modalOpen} setOpen={setModalOpen} deskNum={deskNum} setDeskNum={setDeskNum}/>}
-              
-              </Paper>
-            </Grid>
-          
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-               BOTTOM BOX
-              </Paper>
-            </Grid>
-          </Grid>
-          <Box pt={4}>
-         
-          </Box> </Container>
-        */}
-
-        // #endregion
-
+        {props && props.bookings && <BookingsLayout/>}
+        
       </main>
     </div>
   );
 }
 
-
-function BookingsLayout(props) {
-
-  const classes = useStyles();
-  const [deskNum, setDeskNum] = useState(null)
-
-  // modal content hooks defined at top level component - and passed as props to follow hook rules
-
-  const [newBookingsModalOpen, setNewBookingsModalOpen] = useState(false);
-
-  return(
-    <Container maxWidth="lg" className={classes.container} id="bookings-container">
-      <Grid container spacing={3}>
-
-        {/* Calendar Day Selector */}
-        <Grid item xs={12} md={8} lg={4}>
-          <Paper className="admin-calendar">
-            <Bookings/>         
-          </Paper>
-        </Grid>
-
-        {/* Desk Selector */}
-        <Grid item xs={12} md={8} lg={4}>
-          <Paper className="available-seats">
-            <ShowDesk open={newBookingsModalOpen} setOpen={setNewBookingsModalOpen} deskNum={deskNum} setDeskNum={setDeskNum}/>
-          </Paper>
-        </Grid>
-
-        {/* HERE IS THE BOTTOM BOX ON OUR PAGES */}
-        <Grid item xs={12}>
-          <Paper className={classes.paper}>          
-           BOTTOM BOX
-          </Paper>
-        </Grid>
-
-      </Grid>
-      <Box pt={4}>
-
-      </Box>
-    </Container>
-  );
-}
-
-function EmployeesLayout(props) {
-
-  const classes = useStyles();
-
-  const [addEmployeeModalOpen, setAddEmployeeModalOpen] = useState(false);
-  const [editEmployeeModalOpen, setEditEmployeeModalOpen] = useState(false);
-
-  const [setAddEmployee] = useState(null)
-  const [setEditEmployee] = useState(null)
-
-  return(
-    <Container maxWidth="lg" className={classes.container} id="employees-container">
-      <Grid container spacing={1}>
-      
-        <Grid item xs={12} md={8} lg={4}>
-          <Paper className="box1">
-            <Bookings/>
-            <AddEmployee open={addEmployeeModalOpen} setOpen={setAddEmployeeModalOpen} setAddEmployee={setAddEmployee}/>
-            <EditEmployee open={editEmployeeModalOpen} setOpen={setEditEmployeeModalOpen} setEditEmployee={setEditEmployee}/>
-          </Paper>
-        </Grid>
-      
-      </Grid>
-      
-      <Box pt={4}></Box>
-      
-    </Container>
-  )
-}
