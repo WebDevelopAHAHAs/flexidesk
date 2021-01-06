@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import {useGlobalState} from '../../config/store'
-import {registerUser} from '../auth/auth_services'
+import {registerUser} from '../../../services/userServices'
+import {useGlobalState} from '../../../config/store'
 
 const Register = ({history}) => {
   const initialFormState = {
@@ -38,7 +38,7 @@ const Register = ({history}) => {
               type: "setLoggedInUser",
               data: userDetails
           })
-          history.push("/")
+          // history.push("/")
           
       }).catch((error) => {
         if (error.response && error.response.status === 401)

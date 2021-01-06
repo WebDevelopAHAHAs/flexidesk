@@ -4,13 +4,15 @@ import stateReducer from '../config/stateReducer'
 import {StateContext} from '../config/store'
 
 //Pages
-import LoginPage from './auth/LoginPage'
-import DashboardAdminPage from './dashboard/DashboardAdminPage';
-import EmployeesPage from './employees/EmployeesPage';
-import {BookingsPage} from './bookings/BookingsPage'
+import LoginPage from           './login/LoginPage'
 
-//Forms
-import RegisterForm from './employees/RegisterForm'
+import {Route as AdminBookings} from   './admin/bookings/AdminBookingsPage';
+import {Route as AdminDashboard} from  './admin/dashboard/AdminDashboardPage';
+import {Route as AdminEmployees} from  './admin/employees/AdminEmployeesPage';
+
+
+//Forms // needs to be put into a modal and then wont need to be here
+import RegisterForm from './admin/employees/RegisterForm'
 
 export default function App()
 {
@@ -22,35 +24,17 @@ export default function App()
   // const {loggedInUser} = store
 
   return (
-  <div className="App">
-
     <StateContext.Provider value={{store, dispatch}}>
       <BrowserRouter>
 
-        {/* <Route exact path="/" component={Redirect} /> */}
-
-        {/* Login */}
         <Route exact path="/login"                component={LoginPage} />
-
-        {/* Dashboard */}
-        <Route exact path="/admin/dashboard"      component={DashboardAdminPage} />
-
-        {/* Employees */}
-        <Route exact path="/admin/employees"      component={EmployeesPage} />
-
-        <Route exact path="/admin/employees/new"  component={RegisterForm} /> {/* Temporary until modal implemented */}
-
+        <Route exact path="/admin/dashboard"      component={AdminDashboard} />
+        <Route exact path="/admin/bookings"       component={AdminBookings} />
+        <Route exact path="/admin/employees"      component={AdminEmployees} />
+        <Route exact path="/admin/employees/new"  component={RegisterForm} />
         {/* Desks */}
-
-        {/* Bookings */}
-        
-        <Route exact path="/admin/bookings"      component={BookingsPage} />
-
-        {/* Misc / Outliers */}
 
       </BrowserRouter>
     </StateContext.Provider>
-    
-  </div>
   )
 }

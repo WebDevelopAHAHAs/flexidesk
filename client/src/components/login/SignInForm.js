@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {useGlobalState} from '../../config/store'
-import {loginUser} from './auth_services'
+import {loginUser} from '../../services/authServices'
 
 const SignInForm = ({history}) => {
     const initialFormState = {
