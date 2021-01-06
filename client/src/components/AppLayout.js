@@ -1,17 +1,17 @@
 import {React, useState} from 'react';
-import './layout.css';
+import './styling/style.css';
 import clsx from 'clsx';
 import * as MatUI from '@material-ui/core';
 import * as MatIcon from '@material-ui/icons'
 
-// Our Files
-import useStyles from '../styling/useStyles';
-import StylingTypography from '../styling/StylingTypography';
+// Styling
+import useStyles from './styling/useStyles';
+import StylingTypography from './styling/StylingTypography';
 
-import NavBar from '../components/NavBar'
-import {Layout as AdminBookingsLayout} from './admin/AdminBookingsPage'
-import {Layout as AdminDashboardLayout} from './admin/AdminDashboardPage'
-import {Layout as AdminEmployeesLayout} from './admin/AdminEmployeesPage'
+import NavBar from './navBar/NavBar'
+import {Layout as AdminBookingsLayout}  from './admin/bookings/AdminBookingsPage'
+import {Layout as AdminDashboardLayout} from './admin/dashboard/AdminDashboardPage'
+import {Layout as AdminEmployeesLayout} from './admin/employees/AdminEmployeesPage'
 
 
 export default function AppLayout(props)
@@ -43,7 +43,7 @@ export default function AppLayout(props)
         </MatUI.IconButton>
 
         <MatUI.Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-          Dashboard
+          FlexiDesk
         </MatUI.Typography>
 
         <MatUI.IconButton color="inherit">
@@ -87,8 +87,6 @@ export default function AppLayout(props)
       
     </main>
 
-    
     </div>
-    <NavBar/>
   </div> );
 }

@@ -1,33 +1,21 @@
 import {React, useState} from 'react';
-
-//Styling
 import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';
-import StylingTypography from '../../styling/StylingTypography'
+import AppLayout from '../../AppLayout'
 
-import AppLayout from '../AppLayout'
-import NavBar from '../../components/NavBar'
-
-export default function AdminDashboardPage(props)
-{
-  return( <div page="adminDashboard-page">
-
-    <StylingTypography/>
-    <AppLayout dashboard/>
-
-    <h1>Admin Dashboard</h1>
-
-    <NavBar/>
-
-  </div> )
+export function Route(props) {
+  return( <AppLayout dashboard/>);
 }
 
 export function Layout(props) {
 
   const classes = useStyles();
 
-  return( <div>
-    <MatUI.Container maxWidth="lg" className={classes.container} id="dashboard-container">
+  return( <div id="adminDashboard-page">
+
+  <h1>Dashboard</h1>
+
+    <MatUI.Container maxWidth="lg" className={classes.container} id="adminDashboard-container">
       <MatUI.Grid container spacing={1}>
       
         <MatUI.Grid item xs={12} md={8} lg={4}>
@@ -41,6 +29,6 @@ export function Layout(props) {
       <MatUI.Box pt={4}></MatUI.Box>
       
     </MatUI.Container>
-    </div>
-  )
+
+  </div>)
 }

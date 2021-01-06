@@ -1,6 +1,6 @@
 import React from 'react'
-import {logoutUser} from '../services/authServices'
-import {useGlobalState} from '../config/store'
+import {logoutUser} from '../../services/authServices'
+import {useGlobalState} from '../../config/store'
 import * as MatUI from '@material-ui/core'
 
 export default function NavBar() {

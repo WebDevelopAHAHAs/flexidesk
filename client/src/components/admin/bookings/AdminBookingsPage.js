@@ -1,28 +1,13 @@
 import {React, useState} from 'react';
 import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';
-import StylingTypography from '../../styling/StylingTypography'
+import AppLayout from '../../AppLayout'
 
-import CalendarSelector from '../../components/bookings/CalendarSelector'
-import DeskSelector from '../../components/bookings/DeskSelector'
+import CalendarSelector from './CalendarSelector'
+import DeskSelector from './DeskSelector'
 
-import AppLayout from '../AppLayout'
-import NavBar from '../../components/NavBar'
-
-export default function AdminBookingsPage(props){
-    console.log(props)
-  return(
-  <div page="adminBookings-page">
-
-    <StylingTypography/>
-    <AppLayout bookings showdesk/>
-
-    <h1>Bookings</h1>
-
-    <NavBar/> 
-
-  </div>
-  )
+export function Route(props){
+  return(<AppLayout bookings/>);
 }
 
 export function Layout(props) {
@@ -32,8 +17,11 @@ export function Layout(props) {
 
   const [newBookingsModalOpen, setNewBookingsModalOpen] = useState(false);
 
-  return(
-    <MatUI.Container maxWidth="lg" className={classes.container} id="bookings-container">
+  return( <div id="adminBookings-page">
+
+    <h1>Bookings</h1>
+    
+    <MatUI.Container maxWidth="lg" className={classes.container} id="adminBookings-container">
       <MatUI.Grid container spacing={3}>
 
         {/* Calendar Day Selector */}
@@ -68,5 +56,6 @@ export function Layout(props) {
 
       </MatUI.Box>
     </MatUI.Container>
-  );
+
+    </div>);
 }

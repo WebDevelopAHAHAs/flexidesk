@@ -1,30 +1,13 @@
 import {React, useState} from 'react';
 import * as MatUI from '@material-ui/core';
-
-//Styling
 import useStyles from '../../styling/useStyles';
-import StylingTypography from '../../styling/StylingTypography'
+import AppLayout from '../../AppLayout'
 
-import AppLayout from '../AppLayout'
-import NavBar from '../../components/NavBar'
+import AddEmployee from './AddEmployeeModal'
+import EditEmployee from './EditEmployeeModal'
 
-import AddEmployee from '../../components/employees/AddEmployee'
-import EditEmployee from '../../components/employees/EditEmployee'
-
-export default function AdminEmployeesPage(props){
-  console.log(props)
-  return(
-  <div page="adminEmployees-page">
-    
-    <StylingTypography/>
-    <AppLayout employees/>
-
-      <h1>Employees</h1>
-      
-    <NavBar/>    
-
-  </div>
-  )
+export function Route(props){
+  return(<AppLayout employees/>);
 }
 
 export function Layout(props) {
@@ -39,8 +22,11 @@ export function Layout(props) {
   const [editEmployeeModalOpen, setEditEmployeeModalOpen] = useState(false);
   const [editNum, setEditNum,] = useState(null)
 
-  return( <div>
-    <MatUI.Container maxWidth="lg" className={classes.container} id="employees-container">
+  return( <div id="adminEmployees-page">
+
+    <h1>Employees</h1>
+
+    <MatUI.Container maxWidth="lg" className={classes.container} id="adminEmployees-container">
 
       <MatUI.Grid container spacing={1}>
       
@@ -59,6 +45,7 @@ export function Layout(props) {
       
       <MatUI.Box pt={4}></MatUI.Box>
       
-    </MatUI.Container>    
-    </div>)
+    </MatUI.Container>
+
+  </div>)
 }

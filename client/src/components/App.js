@@ -4,13 +4,15 @@ import stateReducer from '../config/stateReducer'
 import {StateContext} from '../config/store'
 
 //Pages
-import LoginPage from           '../containers/login/LoginPage'
-import AdminDashboardPage from  '../containers/admin/AdminDashboardPage';
-import AdminEmployeesPage from  '../containers/admin/AdminEmployeesPage';
-import AdminBookingsPage from   '../containers/admin/AdminBookingsPage';
+import LoginPage from           './login/LoginPage'
 
-//Forms
-import RegisterForm from './employees/RegisterForm'
+import {Route as AdminBookings} from   './admin/bookings/AdminBookingsPage';
+import {Route as AdminDashboard} from  './admin/dashboard/AdminDashboardPage';
+import {Route as AdminEmployees} from  './admin/employees/AdminEmployeesPage';
+
+
+//Forms // needs to be put into a modal and then wont need to be here
+import RegisterForm from './admin/employees/RegisterForm'
 
 export default function App()
 {
@@ -25,24 +27,12 @@ export default function App()
     <StateContext.Provider value={{store, dispatch}}>
       <BrowserRouter>
 
-        {/* Login */}
         <Route exact path="/login"                component={LoginPage} />
-
-        {/* Dashboard */}
-        <Route exact path="/admin/dashboard"      component={AdminDashboardPage} />
-
-        {/* Employees */}
-        <Route exact path="/admin/employees"      component={AdminEmployeesPage} />
-
-        <Route exact path="/admin/employees/new"  component={RegisterForm} /> {/* Temporary until modal implemented */}
-
+        <Route exact path="/admin/dashboard"      component={AdminDashboard} />
+        <Route exact path="/admin/bookings"       component={AdminBookings} />
+        <Route exact path="/admin/employees"      component={AdminEmployees} />
+        <Route exact path="/admin/employees/new"  component={RegisterForm} />
         {/* Desks */}
-
-        {/* Bookings */}
-        
-        <Route exact path="/admin/bookings"      component={AdminBookingsPage} />
-
-        {/* Misc / Outliers */}
 
       </BrowserRouter>
     </StateContext.Provider>

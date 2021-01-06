@@ -1,5 +1,5 @@
 import React from "react";
-import SignInForm from '../../components/authentication/SignInForm'
+import SignInForm from './SignInForm'
 
 export default function LoginPage(props)
 {
