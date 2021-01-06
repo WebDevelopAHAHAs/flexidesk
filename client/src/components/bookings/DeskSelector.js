@@ -1,9 +1,6 @@
+import * as MatUI from '@material-ui/core';
 
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
-
-export default function ShowDesks(props){
+export default function DeskSelector(props){
        
   if(props){
       console.log("props----", props)
@@ -26,24 +23,24 @@ export default function ShowDesks(props){
       <button id="desk2" onClick={handleOpen}> Desk 2</button>
       <button id="desk3" onClick={handleOpen}> Desk 3</button>
     
-     <Modal 
+     <MatUI.Modal 
       aria-labelledby="transition-modal-title" 
       aria-describedby="transition-modal-description"
       className="modal-position"
       open={props.open}
       onClose={handleClose}
       closeAfterTransition
-      BackdropComponent={Backdrop}
+      BackdropComponent={MatUI.Backdrop}
       BackdropProps={{ timeout: 500, }}>
 
-      <Fade className="modal-styling" in={props.open}>
+      <MatUI.Fade className="modal-styling" in={props.open}>
        <div>
           {/* <div className={classes.paper}> */}
           <h2 id="transition-modal-title">You have clicked {props.deskNum} </h2>
           <p id="transition-modal-description"> put component here</p>
         </div>
-      </Fade>
-    </Modal>
+      </MatUI.Fade>
+    </MatUI.Modal>
   </div>
   )
   }

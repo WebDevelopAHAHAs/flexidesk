@@ -2,7 +2,7 @@ import {React, useState} from 'react';
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 
-import ShowDesks from './ShowDesks'
+import DeskSelector from './DeskSelector'
 
 export default function CalendarSelector() {
     
@@ -15,9 +15,8 @@ export default function CalendarSelector() {
           value={value}
           // passes argument
           // onClickDay={(day)=> ShowDesk(day, setOpen, setDeskNum, open, deskNum)}
-          onClickDay = {(day) => ShowDesks(day)}
+          onClickDay = {(day) => DeskSelector(day)}
        />                
   </div>
-
 );
 }

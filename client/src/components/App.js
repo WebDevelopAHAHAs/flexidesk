@@ -4,13 +4,13 @@ import stateReducer from '../config/stateReducer'
 import {StateContext} from '../config/store'
 
 //Pages
-import LoginPage from './authentication/LoginPage'
-import AdminDashboardPage from './userAdmin/dashboard/AdminDashboardPage';
-import AdminEmployeesPage from './userAdmin/employees/AdminEmployeesPage';
-import AdminBookingsPage from './userAdmin/bookings/AdminBookingsPage';
+import LoginPage from           '../containers/login/LoginPage'
+import AdminDashboardPage from  '../containers/admin/AdminDashboardPage';
+import AdminEmployeesPage from  '../containers/admin/AdminEmployeesPage';
+import AdminBookingsPage from   '../containers/admin/AdminBookingsPage';
 
 //Forms
-import RegisterForm from './userAdmin/employees/RegisterForm'
+import RegisterForm from './employees/RegisterForm'
 
 export default function App()
 {
@@ -22,8 +22,6 @@ export default function App()
   // const {loggedInUser} = store
 
   return (
-  <div className="App">
-
     <StateContext.Provider value={{store, dispatch}}>
       <BrowserRouter>
 
@@ -48,7 +46,5 @@ export default function App()
 
       </BrowserRouter>
     </StateContext.Provider>
-    
-  </div>
   )
 }
