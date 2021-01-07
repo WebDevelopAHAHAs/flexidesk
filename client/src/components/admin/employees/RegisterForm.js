@@ -3,12 +3,13 @@ import { useHistory} from "react-router-dom"
 import {registerUser} from '../../../services/userServices'
 import {useGlobalState} from '../../../config/store'
 
-const Register = ({history}) => {
+const Register = (props) => {
   const initialFormState = {
     first_name: "",
     email: "",
     password: ""
   } 
+  const handleClose = props.handleClose
 
   //User Related
   const [userDetails,setUserDetails] = useState(initialFormState)
@@ -31,20 +32,16 @@ const Register = ({history}) => {
       })
   }
 
-  function SubmitButton(){
-    const history = useHistory();
-  }
 
   function handleSubmit(event) {
-     history.push("/admin/employees");
       event.preventDefault()
       // Attempt register with server
       registerUser(userDetails).then(() => {
           dispatch({
               type: "setLoggedInUser",
               data: userDetails
-          })
-          // history.push("/")
+          });
+          handleClose();
           
       }).catch((error) => {
         if (error.response && error.response.status === 401)
@@ -52,6 +49,7 @@ const Register = ({history}) => {
         else   
             setErrorMessage("There may be a problem with the server. Please try again after a few moments.")
     })
+    
   }
 
 

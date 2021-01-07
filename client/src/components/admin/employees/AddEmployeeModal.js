@@ -35,7 +35,7 @@ export default function AddEmployee(props) {
          <div>
             {/* <div className={classes.paper}> */}
             <h2 id="transition-modal-title">{props.addNum} Employee</h2>
-            <p id="transition-modal-description"> <RegisterForm/></p>
+            <p id="transition-modal-description"> <RegisterForm handleClose={handleClose}/></p>
             </div>
         </Fade>
       </Modal>
