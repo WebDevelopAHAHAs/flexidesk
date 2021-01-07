@@ -20,6 +20,7 @@ export default function EditEmployee(props) {
 
   return(<div className='editEmployeeDiv'>
     <button id="Edit" onClick={handleOpen}> Edit Employee</button>
+    
     <Modal 
       aria-labelledby="transition-modal-title" 
       aria-describedby="transition-modal-description"

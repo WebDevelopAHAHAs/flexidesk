@@ -43,7 +43,7 @@ export default function App()
         <Route exact path=  "/admin/bookings"       component={AdminBookings} />
         <Route exact path=  "/admin/employees"      component={AdminEmployees} />
         <Route exact path=  "/admin/employees/new"  component={RegisterForm} />
-        <Route exact path=  "/"                     component={Redirect} />
+        <Route exact path=  "/"                     component={Redirect} login={LoginPage} dashboard={AdminDashboard} />
         {/* Desks */}
         
       </BrowserRouter>

@@ -4,16 +4,15 @@ const User = require("../models/user");
 async function register(req, res) {
     const { first_name, email, password } = req.body;
     
-    try{
-      //
-            const user = await User.create({ first_name, email, password });
-            console.log("Created User:", user)
-            
-            //Delete the bottom eventually when admins can create
-            req.session.user = user;
-            console.log('Logged on as', user.email);
+    try {
+      const user = await User.create({ first_name, email, password });
+      console.log("Created User:", user)
+      
+      //Delete the bottom eventually when admins can create
+      req.session.user = user;
+      console.log('Logged on as', user.email);
 
-            res.redirect("/"); //home / dashboard
+      res.redirect("/"); //home / dashboard
     }
     catch(err){
         console.log(err)
@@ -25,7 +24,6 @@ async function login(req, res) {
   console.log(req.body)
 
   const { email, password } = req.body;
-  // console.log(email)
 
   //Find Email
   const user = await User.findOne({email});
@@ -41,12 +39,10 @@ async function login(req, res) {
     res.redirect("/auth/login");
   }
 
-  // if(user & valid)
-  // {
-    console.log('Logged on as', email);
-    req.session.user = user;
-    res.redirect("/");
-  // }
+
+  console.log('Logged on as', email);
+  req.session.user = user;
+  res.redirect("/");
 }
 
 //Logout
