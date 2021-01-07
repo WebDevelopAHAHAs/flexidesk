@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { useHistory} from "react-router-dom"
 import {registerUser} from '../../../services/userServices'
 import {useGlobalState} from '../../../config/store'
 
@@ -30,7 +31,12 @@ const Register = ({history}) => {
       })
   }
 
+  function SubmitButton(){
+    const history = useHistory();
+  }
+
   function handleSubmit(event) {
+     history.push("/admin/employees");
       event.preventDefault()
       // Attempt register with server
       registerUser(userDetails).then(() => {
