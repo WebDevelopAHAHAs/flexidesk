@@ -16,9 +16,3 @@ export async function loginUser(userInfo) {
   console.log("got user back from server", response) 
   return response.data
 }
-
-
-
-
-//logout
-// export async function logoutUser;

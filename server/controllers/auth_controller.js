@@ -1,24 +1,5 @@
 const User = require("../models/user");
 
-//Register / Does not Sign In
-async function register(req, res) {
-    const { first_name, email, password } = req.body;
-    
-    try {
-      const user = await User.create({ first_name, email, password });
-      console.log("Created User:", user)
-      
-      //Delete the bottom eventually when admins can create
-      req.session.user = user;
-      console.log('Logged on as', user.email);
-
-      res.redirect("/"); //home / dashboard
-    }
-    catch(err){
-        console.log(err)
-    }
-}
-
 //Login
 async function login(req, res) {
   console.log(req.body)
@@ -61,13 +42,6 @@ const logout = function (req, res) {
 // #endregion
 
 module.exports = {
-    // registerNew,
-
-    register,
     login,
-
-    // loginNew,
-    // login: loginUser,
-
     logout
 }
