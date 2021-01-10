@@ -1,12 +1,12 @@
 
 
-
 /* Entire Table */
 .employee-table{
     width: 100%;
     text-align: left;
     padding: 5px;
 }
+
 /* Header of Table */
 thead{
     font-size: 20px;
