@@ -2,7 +2,7 @@ import {React, useState} from 'react';
 import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';
 import AppLayout from '../../AppLayout'
-import './AdminEmployees.css'
+import './adminEmployees.css'
 
 import AddEmployee from './AddEmployeeModal'
 import EditEmployee from './EditEmployeeModal'
@@ -54,6 +54,8 @@ export function Layout(props) {
                                 <th>Mobile</th>
                                 <th>Access</th>
                                 <th>Email</th>
+                                <th>Team</th>
+                                <th>Active User</th>
                                 <th></th>
                                 
                             </tr>
@@ -71,6 +73,8 @@ export function Layout(props) {
                                 <td>0417139641</td>
                                 <td>1</td>
                                 <td>rachel.williams@leapdev.io</td>
+                                <td>UI/UX</td>
+                                <td>yes</td>
                                 <td><EditEmployee open={editEmployeeModalOpen} setOpen={setEditEmployeeModalOpen} setEditNum={setEditNum}/></td>
                                 
                               

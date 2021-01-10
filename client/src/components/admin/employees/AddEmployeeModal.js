@@ -20,16 +20,9 @@ export default function AddEmployee(props) {
    <div className='addEmployeeDiv'>
       <button id="Add" onClick={handleOpen}> Add Employee</button>
 
-      <Modal 
-        aria-labelledby="transition-modal-title" 
-        aria-describedby="transition-modal-description"
-        className="modal-position"
-        open={props.open}
-        onClose={handleClose}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{ timeout: 500 }}
-      >
+      <Modal className="modal-position" open={props.open} onClose={handleClose} closeAfterTransition
+        aria-labelledby="transition-modal-title" aria-describedby="transition-modal-description"        
+        BackdropComponent={Backdrop} BackdropProps={{ timeout: 500 }} >
 
         <Fade  className="modal-styling" in={props.open}>
          <div>
