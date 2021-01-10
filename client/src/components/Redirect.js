@@ -1,14 +1,16 @@
 // import { useHistory } from "react-router-dom";
 
-export default function Route({history}){
+export default function Route(props){
   // let history = useHistory();
 
-  if(history.loggedInUser == null) {
-    history.push('/login')
+  if(props.history.loggedInUser == null) {
+    props.history.push('/login')
+    return props.login;
   }
   else
   {
-    history.push('/admin/dashboard')
+    props.history.push('/admin/dashboard')
+    return props.dashboard;
   }
 
 }

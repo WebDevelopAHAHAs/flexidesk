@@ -7,6 +7,7 @@ const { uri } = require("./config/databaseKey")
 const dbConn = uri;
 const pageRouter = require('./routes/page_routes');
 const authRouter = require('./routes/auth_routes');
+const userRouter = require('./routes/user_routes');
 
 const port = process.env.PORT || 3009;
 const app = express();
@@ -59,6 +60,7 @@ app.get('/', (req, res) => {
 
 app.use("/", pageRouter)
 app.use('/auth', authRouter)
+app.use('/user', userRouter)
 
 app.listen(port, () => {
     console.log(`FlexiDesk listening on port ${port}`);
