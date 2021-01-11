@@ -27,21 +27,22 @@ const getUser = function(req, res) {
 });
 }
 
-const getUsers = function(req) {
-	return User.find()
-}
-// const getUsers = function (req, res) {
-//   // execute the query from getAllPosts
-//   getAllUsers().exec((err, users) => {
-//       if (err) {
-//           res.status(500);
-//           return res.json({
-//               error: err.message
-//           });
-//       }
-//       res.send(users);
-//   });
-// };
+// const getAllUsers = function(req) {
+// 	return User.find()
+// }
+
+const getUsers = function (req, res) {
+
+  getAllUsers(req).exec((err, users) => {
+      if (err) {
+          res.status(500);
+          return res.json({
+              error: err.message
+          });
+      }
+      res.send(users);
+  });
+};
 
 const removeUser = function (req, res) {
     deleteUser(req.params.id).exec((err) => {
