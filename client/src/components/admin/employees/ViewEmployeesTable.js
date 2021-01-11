@@ -3,7 +3,6 @@ import {getUsers} from '../../../services/userServices'
 
 import EditEmployee from './EditEmployeeModal'
 
-// http://localhost:3000/admin/employees
 
 export default function ViewEmployeesTable(props) {
 
@@ -16,9 +15,9 @@ export default function ViewEmployeesTable(props) {
   }, [])
 
   async function fetchData() {
-    // console.log("lifeCycleCalled")
+    console.log("lifeCycleCalled")
     const userData = await getUsers();
-    // console.log(userData)
+    console.log(userData)
     const table = document.getElementById("employee-table-id");
 
     userData.forEach( user => {

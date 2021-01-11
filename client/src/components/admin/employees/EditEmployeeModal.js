@@ -22,25 +22,15 @@ export default function EditEmployee(props) {
     
     <button id="Edit" onClick={handleOpen}> <i class="far fa-edit"></i></button>
 
-    <Modal 
-      aria-labelledby="transition-modal-title" 
-      aria-describedby="transition-modal-description"
-      className="modal-position"
-      open={props.open}
-      onClose={handleClose}
-      closeAfterTransition
-      BackdropComponent={Backdrop}
-      BackdropProps={{ timeout: 500 }}
-    >
+    <Modal className="modal-position" open={props.open} onClose={handleClose} closeAfterTransition
+      aria-labelledby="transition-modal-title" aria-describedby="transition-modal-description"
+      BackdropComponent={Backdrop} BackdropProps={{ timeout: 500 }} >
 
-      <Fade 
-        className="modal-styling"
-        in={props.open}>
+      <Fade className="modal-styling" in={props.open}>
          <div>
-            {/* <div className={classes.paper}> */}
             <h2 id="transition-modal-title">{props.editNum} Edit Employee</h2>
-            <p id="transition-modal-description"> <EditEmployeeForm/></p>
-            </div>
+            <p id="transition-modal-description"> <EditEmployeeForm/> </p>
+          </div>
       </Fade>
 
     </Modal>

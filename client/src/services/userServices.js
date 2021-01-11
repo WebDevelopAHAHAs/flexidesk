@@ -7,6 +7,7 @@ export async function registerUser(userInfo) {
 }
 
 export async function getUsers() {
+  console.log('request sent')
   const response = await api.get("/user/all")
   console.log("got all users back from server", response) 
   return response.data

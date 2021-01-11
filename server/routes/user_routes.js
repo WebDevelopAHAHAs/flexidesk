@@ -13,7 +13,6 @@ router.get('/all', getUsers)
 
 router.get('/:id', getUser)
 
-
 //Edit
 router.post('/:id', changeUser)
 

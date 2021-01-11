@@ -1,9 +1,13 @@
 const User = require('../models/user');
-const {getUserByID, getAllUsers, deleteUser,updateUser}
-= require('../utilities/user_utilities')
+const {getUserByID, deleteUser, updateUser} = require('../utilities/user_utilities')
+
+const test = function(req, res) {
+  console.log("Hit!");
+}
 
 //Register / Does not Sign In
 async function newUser(req, res) {
+  console.log("Hit!")
   const { first_name, email, password } = req.body;
 
   try {
@@ -18,18 +22,14 @@ async function newUser(req, res) {
 }
 
 const getUser = function(req, res) {
-	getUserByID(req.params.id).exec((err, post) => {
+	getUserByID(req.params.id).exec((err, user) => {
     if (err) {
         res.status(400);
-        return res.send("Post not found");
+        return res.send("User not found");
     }
-    res.send(post);
+    res.send(user);
 });
 }
-
-// const getAllUsers = function(req) {
-// 	return User.find()
-// }
 
 const getUsers = function (req, res) {
 
@@ -48,9 +48,7 @@ const removeUser = function (req, res) {
     deleteUser(req.params.id).exec((err) => {
         if (err) {
             res.status(500);
-            res.json({
-                error: err
-            });
+            res.json({ error: err });
         }
         res.sendStatus(204);
     });
@@ -64,9 +62,7 @@ const changeUser = function (req, res) {
         updateUser(req.params.id).exec((err, user) => {
             if (err) {
                 res.status(500);
-                res.json({
-                    error: err
-                });
+                res.json({ error: err });
             }
             res.status(200);
             res.json(user);
@@ -79,5 +75,6 @@ module.exports = {
   getUser,
   getUsers,
   removeUser,
-  changeUser
+  changeUser,
+  test
 };
