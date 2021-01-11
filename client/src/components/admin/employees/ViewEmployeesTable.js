@@ -3,7 +3,6 @@ import {getUsers} from '../../../services/userServices'
 
 import EditEmployee from './EditEmployeeModal'
 
-// http://localhost:3000/admin/employees
 
 export default function ViewEmployeesTable(props) {
 
@@ -16,9 +15,9 @@ export default function ViewEmployeesTable(props) {
   }, [])
 
   async function fetchData() {
-    // console.log("lifeCycleCalled")
+    console.log("lifeCycleCalled")
     const userData = await getUsers();
-    // console.log(userData)
+    console.log(userData)
     const table = document.getElementById("employee-table-id");
 
     userData.forEach( user => {
@@ -34,19 +33,9 @@ export default function ViewEmployeesTable(props) {
       var email_text = document.createTextNode(user.email);
       email_cell.appendChild(email_text);
       rowNode.appendChild(email_cell);
-      
-      // var edit_cell = <td><EditEmployee open={editEmployeeModalOpen} setOpen={setEditEmployeeModalOpen} setEditNum={setEditNum} userID={user._id}/></td>;
 
       var edit_cell = document.createElement("td");
-
-      edit_cell.innerHTML = <EditEmployee open={editEmployeeModalOpen} setOpen={setEditEmployeeModalOpen} setEditNum={setEditNum} userID={user._id}/>;
-
-      
-      // var edit_node = <td><EditEmployee open={editEmployeeModalOpen} setOpen={setEditEmployeeModalOpen} setEditNum={setEditNum} userID={user._id}/></td>;
-      // edit_cell = 
-      // edit_cell.appendChild(edit_node);
-
-
+      edit_cell.body = <EditEmployee open={editEmployeeModalOpen} setOpen={setEditEmployeeModalOpen} setEditNum={setEditNum} userID={user._id}/>;
       rowNode.appendChild(edit_cell); 
 
       table.appendChild(rowNode);
