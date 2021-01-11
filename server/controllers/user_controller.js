@@ -1,5 +1,5 @@
 const User = require('../models/user');
-// const { deleteUser, updateUser } = require('../utils/user_utilities');
+// const {getAllUsers} = require('../utilities/user_utilities')
 
 //Register / Does not Sign In
 async function registerUser(req, res) {
@@ -8,40 +8,17 @@ async function registerUser(req, res) {
   try {
     const user = await User.create({ first_name, email, password });
     console.log("Created User:", user)
-    
-    // //Delete the bottom eventually when admins can create
-    // req.session.user = user;
-    // console.log('Logged on as', user.email);
 
-    res.redirect("/"); //home / dashboard
+    res.redirect("/");
   }
   catch(err){
       console.log(err)
   }
 }
 
-// const getUsers = (req) => {
-//   return User.find();
-// }
-
-// async function getUsers(req) {
-//   try {
-//     const users = await User.find();
-//     // console.log("Retrieved users:", users)
-//     return users;
-//   }
-//   catch(err){
-//       console.log(err)
-//   }
-// }
-
-const getAllUsers = function(req) {
-	return User.find()
-}
-
 const getUsers = function (req, res) {
   // execute the query from getAllPosts
-  getAllUsers(req).exec((err, users) => {
+  User.find().exec((err, users) => {
       if (err) {
           res.status(500);
           return res.json({
@@ -52,6 +29,24 @@ const getUsers = function (req, res) {
   });
 };
 
+const getUserByID = function(req) {
+	return User.findById(req.params.id)
+}
+
+const getUsersByName = function(req) {
+	return User.find(User.first_name, req.params.id)
+}
+
+const updateUserByID = function(req) {
+	// return User.find(User.first_name, req.params.id)
+}
+
+const deleteUserByID = function(req) {
+	// return User.find(User.first_name, req.params.id)
+}
+
+
+//#region Old
 // const removeUser = function (req, res) {
 //     deleteUser(req).exec((err) => {
 //         if (err) {
@@ -110,10 +105,15 @@ const getUsers = function (req, res) {
 //         });
 //     }
 // }
+//#endregion
 
 module.exports = {  
   registerUser,
-  getUsers
+  getUsers,
+  getUserByID,
+  getUsersByName,
+  updateUserByID,
+  deleteUserByID
   //,
   // removeUser,
   // changeUser,

@@ -19,5 +19,5 @@ export async function getUsersFromID(id) {
 }
 
 export async function deleteUserFromID(id) {
-  
+  return null;
 }
