@@ -33,7 +33,7 @@ export default function NavBar() {
 
       <li><MatUI.Button color="primary" href="/admin/employees">Employees</MatUI.Button></li>
 
-      {/* <li><Button color="primary" href="/admin/desks">Desks</Button></li> */}
+      <li><MatUI.Button color="primary" href="/admin/desks">Desks</MatUI.Button></li>
 
       <MatUI.Button color="secondary" onClick={handleLogout} to="/login" >Logout </MatUI.Button>
 

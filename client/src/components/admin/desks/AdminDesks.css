@@ -1,12 +1,9 @@
-
-
 /* Entire Table */
-.employee-table{
+.desk-table{
     width: 100%;
     text-align: left;
     padding: 5px;
 }
-
 /* Header of Table */
 thead{
     font-size: 20px;
@@ -21,12 +18,13 @@ th{
     background-color: #fff;
     border: none;
     font-size: 15px;
-    padding: 3px;
+    
 }
 #Edit:active{
     background-color: #fff;
+    border: none;
     transform: translateY(4px);
-  
+   
 }
 
 #Edit:hover{
@@ -41,7 +39,24 @@ th{
     border: none;
 }
 
-#AddEmployee{
+button{
+    background-color: #fff;
+    padding: 12px 26px;
+    border-radius: 2px;
+    outline: none;
+    border: 1px solid #000;
+    transition: all 0.3s ease-out;
+    font-size: 15px;
+    color: #000;
+    text-decoration-style: solid;
+}
+button:hover{
+    color: green;
+    
+}
+
+
+#AddDesk{
     background-color: white;
     padding: 12px 26px;
     border-radius: 4px;
@@ -57,14 +72,14 @@ th{
     text-decoration-style: solid;
 }
 
-#AddEmployee span {
+#AddDesk span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
   }
   
-  #AddEmployee span:after {
+  #AddDesk span:after {
     content: '\002b';
     font-weight:bold ;
     position: absolute;
@@ -74,11 +89,11 @@ th{
     transition: 0.5s;
   }
   
-  #AddEmployee:hover span {
+  #AddDesk:hover span {
     padding-right: 25px;
   }
   
-  #AddEmployee:hover span:after {
+  #AddDesk:hover span:after {
     opacity: 1;
     right: 0;
   }
