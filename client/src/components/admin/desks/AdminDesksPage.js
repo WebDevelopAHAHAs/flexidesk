@@ -25,7 +25,7 @@ export function Layout(props) {
 
   return( <div id="adminDesk-page">
 
-    <h1>Desks</h1>
+  
 
     <MatUI.Container maxWidth="lg" className={classes.container} id="adminDesks-container">
 
@@ -35,7 +35,7 @@ export function Layout(props) {
 
          
 
-            <AddDesk open={addDeskModalOpen} setOpen={setAddDeskModalOpen} setAddNum={setAddNum}/>
+        <h1>Desks</h1><AddDesk open={addDeskModalOpen} setOpen={setAddDeskModalOpen} setAddNum={setAddNum}/>
             
 
           </MatUI.Grid>

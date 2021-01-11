@@ -18,7 +18,7 @@ import {Layout as AdminDesksLayout} from './admin/desks/AdminDesksPage'
 export default function AppLayout(props)
 {
   const classes = useStyles();
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
