@@ -25,13 +25,13 @@ export default function AddEmployee(props) {
         BackdropComponent={Backdrop} BackdropProps={{ timeout: 500 }} >
 
         <Fade  className="modal-styling" in={props.open}>
-         <div>
+          <div>
             {/* <div className={classes.paper}> */}
             <h2 id="transition-modal-title">{props.addNum} Employee</h2>
 
             <p id="transition-modal-description"> <RegisterForm handleClose={handleClose}/></p>
 
-            </div>
+          </div>
         </Fade>
       </Modal>
       

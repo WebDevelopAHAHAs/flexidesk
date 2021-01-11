@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { useHistory} from "react-router-dom"
-import {registerUser} from '../../../services/userServices'
-import {useGlobalState} from '../../../config/store'
+import {registerUser} from '../../../../services/userServices'
+import {useGlobalState} from '../../../../config/store'
 
 const Register = (props) => {
   const initialFormState = {
