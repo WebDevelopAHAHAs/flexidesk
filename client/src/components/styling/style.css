@@ -10,6 +10,7 @@ html, body {
 
 .site-layout .site-layout-background {
   background: #fff;
+  
 }
 
 .logo {
@@ -27,8 +28,10 @@ html, body {
 }
 
 .trigger:hover {
-  color: #1890ff;
+  color: #000;
 }
+
+
 
 
 

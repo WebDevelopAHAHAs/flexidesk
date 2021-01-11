@@ -60,14 +60,16 @@ const AddEmployeeForm = (props) => {
   return (
 
     <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
-        <MatUI.FormControl>
+      <MatUI.FormControl>
         <MatUI.InputLabel htmlFor="component-simple">Name</MatUI.InputLabel>
         <MatUI.Input id="standard-basic" name="first_name"required type="text" onChange={handleChange} />
       </MatUI.FormControl>
+
       <MatUI.FormControl>
         <MatUI.InputLabel htmlFor="component-simple">Email</MatUI.InputLabel>
         <MatUI.Input id="standard-basic" name="email" required type="email" onChange={handleChange}/>
       </MatUI.FormControl>
+
       <MatUI.FormControl>
         <MatUI.InputLabel htmlFor="component-simple">Password</MatUI.InputLabel>
         <MatUI.Input id="standard-basic" name="password"required type="password" onChange={handleChange} />

@@ -25,13 +25,14 @@ export function Layout(props) {
 
   return( <div id="adminBookings-page">
 
-    <h1>Bookings</h1>
+    
     
     <MatUI.Container maxWidth="lg" className={classes.container} id="adminBookings-container">
       <MatUI.Grid container spacing={3}>
 
         {/* Calendar Day Selector */}
         <MatUI.Grid item xs={12} md={8} lg={4}>
+        <h1>Bookings</h1>
           <MatUI.Paper className="admin-calendar">
 
             <CalendarSelector/>
@@ -42,18 +43,19 @@ export function Layout(props) {
         </MatUI.Grid>
 
         {/* Desk Selector */}
-        <MatUI.Grid item xs={12} md={8} lg={4}>
+        {/* <MatUI.Grid item xs={12} md={8} lg={4}>
           <MatUI.Paper className="available-seats">
 
-            <DeskSelector open={newBookingsModalOpen} setOpen={setNewBookingsModalOpen} deskNum={deskNum} setDeskNum={setDeskNum}/>
+           
 
           </MatUI.Paper>
-        </MatUI.Grid>
+        </MatUI.Grid> */}
 
-        {/* HERE IS THE BOTTOM BOX ON OUR PAGES */}
+        {/* Desk Selector */}
         <MatUI.Grid item xs={12}>
           <MatUI.Paper className={classes.paper}>   
 
+          <DeskSelector open={newBookingsModalOpen} setOpen={setNewBookingsModalOpen} deskNum={deskNum} setDeskNum={setDeskNum}/>
   
           < NewBookingModal open={addNewBookingsModalOpen} setOpen={setAddNewBookingsModalOpen}>Edit Booking</ NewBookingModal>
           

@@ -33,18 +33,21 @@ export default function ViewEmployeesTable(props) {
       var email_cell = document.createElement("td");
       var email_text = document.createTextNode(user.email);
       email_cell.appendChild(email_text);
-      rowNode.appendChild(email_cell); 
-
+      rowNode.appendChild(email_cell);
       
       // var edit_cell = <td><EditEmployee open={editEmployeeModalOpen} setOpen={setEditEmployeeModalOpen} setEditNum={setEditNum} userID={user._id}/></td>;
 
-      // var edit_cell = document.createElement("td");
+      var edit_cell = document.createElement("td");
+
+      edit_cell.innerHTML = <EditEmployee open={editEmployeeModalOpen} setOpen={setEditEmployeeModalOpen} setEditNum={setEditNum} userID={user._id}/>;
+
+      
       // var edit_node = <td><EditEmployee open={editEmployeeModalOpen} setOpen={setEditEmployeeModalOpen} setEditNum={setEditNum} userID={user._id}/></td>;
       // edit_cell = 
       // edit_cell.appendChild(edit_node);
 
-      
-      // rowNode.appendChild(edit_cell); 
+
+      rowNode.appendChild(edit_cell); 
 
       table.appendChild(rowNode);
     })

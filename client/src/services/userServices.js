@@ -12,12 +12,18 @@ export async function getUsers() {
   return response.data
 }
 
-export async function getUsersFromID(id) {
+export async function getUserByID(id) {
   const response = await api.get(`/user/${id}`)
-  console.log("got all users back from server", response) 
+  console.log("Retrieved a user from the database: ", response) 
   return response.data
 }
 
-export async function deleteUserFromID(id) {
-  return null;
+export async function deleteUserByID(id) {
+  const response = await api.delete(`/user/${id}`)
+  console.log("Deleted user from database: ", response) 
+}
+
+export async function updateUserByID(id) {
+  const response = await api.update(`/user/${id}`)
+  console.log("Updated user in database: ", response) 
 }
