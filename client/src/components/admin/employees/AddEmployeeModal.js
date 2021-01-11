@@ -14,31 +14,25 @@ export default function AddEmployee(props) {
 
   const handleClose = () => {
       props.setOpen(false);
+      window.location.reload()  
   };
 
   return(
    <div className='addEmployeeDiv'>
-      <button id="Add" onClick={handleOpen}> Add Employee</button>
+      <button id="AddEmployee" onClick={handleOpen}><span>Add Employee</span></button>
 
-      <Modal 
-        aria-labelledby="transition-modal-title" 
-        aria-describedby="transition-modal-description"
-        className="modal-position"
-        open={props.open}
-        onClose={handleClose}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{ timeout: 500 }}
-      >
+      <Modal className="modal-position" open={props.open} onClose={handleClose} closeAfterTransition
+        aria-labelledby="transition-modal-title" aria-describedby="transition-modal-description"        
+        BackdropComponent={Backdrop} BackdropProps={{ timeout: 500 }} >
 
         <Fade  className="modal-styling" in={props.open}>
-         <div>
+          <div>
             {/* <div className={classes.paper}> */}
             <h2 id="transition-modal-title">{props.addNum} Employee</h2>
 
             <p id="transition-modal-description"> <RegisterForm handleClose={handleClose}/></p>
 
-            </div>
+          </div>
         </Fade>
       </Modal>
       

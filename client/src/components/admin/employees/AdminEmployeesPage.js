@@ -1,11 +1,12 @@
-import {React, useState} from 'react';
+import {React, useState, useEffect} from 'react';
 import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';
 import AppLayout from '../../AppLayout'
-// import './AdminEmployees.css'
+import './adminEmployees.css'
 
+import ViewEmployees from './ViewEmployeesTable'
 import AddEmployee from './AddEmployeeModal'
-import EditEmployee from './EditEmployeeModal'
+// import EditEmployee from './EditEmployeeModal'
 
 export function Route(props){
   return(<AppLayout employees/>);
@@ -19,9 +20,15 @@ export function Layout(props) {
   const [addEmployeeModalOpen, setAddEmployeeModalOpen] = useState(false);
   const [addNum, setAddNum] = useState(null)
 
-  //edit employee
-  const [editEmployeeModalOpen, setEditEmployeeModalOpen] = useState(false);
-  const [editNum, setEditNum,] = useState(null)
+  // useEffect( () => {
+  //   // fetchData();
+  // }, addEmployeeModalOpen)
+
+  // const refresh = useEffect() => {
+    
+  // }
+
+
 
   return( <div id="adminEmployees-page">
 
@@ -44,41 +51,9 @@ export function Layout(props) {
           <MatUI.Grid item xs={12}>
             <MatUI.Paper className={classes.paper}>   
 
-            <div className='row'>
-                <div className='col-12'>
-                    <table className="employee-table">
-                        <thead>
-                            <tr>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Mobile</th>
-                                <th>Access</th>
-                                <th>Email</th>
-                                <th></th>
-                                
-                            </tr>
-                        </thead>
-                        <tbody>
-                          {/* {data.map(employee =>
-                            <tr key={employee.id}> */}
-                            <tr>
-                                {/* <td>{employee.first_name}</td>
-                                <td>{employee.last_name}</td>
-                                <td>edit</td>
-                                <td>delete</td> */}
-                                <td>Rachel</td>
-                                <td>Williams</td>
-                                <td>0417139641</td>
-                                <td>1</td>
-                                <td>rachel.williams@leapdev.io</td>
-                                <td><EditEmployee open={editEmployeeModalOpen} setOpen={setEditEmployeeModalOpen} setEditNum={setEditNum}/></td>
-                                
-                              
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+
+              <ViewEmployees/>
+
 
             </MatUI.Paper>
           </MatUI.Grid>

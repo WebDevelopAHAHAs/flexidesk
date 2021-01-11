@@ -1,27 +1,25 @@
-// import React from 'react'
-import {Modal, Backdrop, Fade} from '@material-ui/core/';
+//Material UI
+import Modal from '@material-ui/core/Modal';
+import Backdrop from '@material-ui/core/Backdrop';
+import Fade from '@material-ui/core/Fade';
 
-import EditEmployeeForm from './EmployeeEditForm'
-
-export default function EditEmployee(props) {
+export default function EditDesk(props) {
   if(props){
-    console.log("Edit Employee props: ", props)
+    console.log("props----", props)
   }
 
   const handleOpen = (event) => {
     console.log(event.target.id)
     props.setOpen(true);
-    props.setEditNum(props.userID) //event.target.id)
+    props.setEditNum(event.target.id)
   };
 
   const handleClose = () => {
       props.setOpen(false);
   };
 
-  return(<div className='editEmployeeDiv'>
-    
+  return(<div className='editDeskDiv'>
     <button id="Edit" onClick={handleOpen}> <i class="far fa-edit"></i></button>
-
     <Modal 
       aria-labelledby="transition-modal-title" 
       aria-describedby="transition-modal-description"
@@ -38,8 +36,8 @@ export default function EditEmployee(props) {
         in={props.open}>
          <div>
             {/* <div className={classes.paper}> */}
-            <h2 id="transition-modal-title">{props.editNum} Edit Employee</h2>
-            <p id="transition-modal-description"> <EditEmployeeForm/></p>
+            <h2 id="transition-modal-title">{props.editNum}Edit Desk</h2>
+            <p id="transition-modal-description"> put component here</p>
             </div>
       </Fade>
 

@@ -12,6 +12,7 @@ import NavBar from './navBar/NavBar'
 import {Layout as AdminBookingsLayout}  from './admin/bookings/AdminBookingsPage'
 import {Layout as AdminDashboardLayout} from './admin/dashboard/AdminDashboardPage'
 import {Layout as AdminEmployeesLayout} from './admin/employees/AdminEmployeesPage'
+import {Layout as AdminDesksLayout} from './admin/desks/AdminDesksPage'
 
 
 export default function AppLayout(props)
@@ -84,6 +85,8 @@ export default function AppLayout(props)
       {props && props.dashboard && <AdminDashboardLayout/>}
 
       {props && props.employees && <AdminEmployeesLayout/>}
+
+      {props && props.desks && <AdminDesksLayout/>}
       
     </main>
 
