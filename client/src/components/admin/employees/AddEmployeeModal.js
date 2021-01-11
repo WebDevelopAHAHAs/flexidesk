@@ -18,7 +18,7 @@ export default function AddEmployee(props) {
 
   return(
    <div className='addEmployeeDiv'>
-      <button id="Add" onClick={handleOpen}> Add Employee</button>
+      <button id="AddEmployee" onClick={handleOpen}><span>Add Employee</span></button>
 
       <Modal className="modal-position" open={props.open} onClose={handleClose} closeAfterTransition
         aria-labelledby="transition-modal-title" aria-describedby="transition-modal-description"        

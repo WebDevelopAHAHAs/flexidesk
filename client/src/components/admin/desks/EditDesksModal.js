@@ -36,7 +36,7 @@ export default function EditDesk(props) {
         in={props.open}>
          <div>
             {/* <div className={classes.paper}> */}
-            <h2 id="transition-modal-title">{props.editNum} Desk</h2>
+            <h2 id="transition-modal-title">{props.editNum}Edit Desk</h2>
             <p id="transition-modal-description"> put component here</p>
             </div>
       </Fade>

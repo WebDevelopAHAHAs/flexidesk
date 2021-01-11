@@ -50,21 +50,21 @@ export function Layout(props) {
                         <thead>
                             <tr>
                                 <th>Desk No</th>
-                              
+                                <th>Desk Section</th>
+                                <th>Available</th>
+                                <th></th>
                                 <th></th>
                                 
                             </tr>
                         </thead>
                         <tbody>
-                          {/* {data.map(employee =>
-                            <tr key={employee.id}> */}
+                          
                             <tr>
-                                {/* <td>{employee.first_name}</td>
-                                <td>{employee.last_name}</td>
-                                <td>edit</td>
-                                <td>delete</td> */}
+                               
                                 <td>4</td>
-                                
+                                <td>Global Area</td>
+                                <td>Yes</td>
+                                <td>View Desk</td>
                                 <td><EditDesk open={editDeskModalOpen} setOpen={setEditDeskModalOpen} setEditNum={setEditNum}/></td>
                                 
                               

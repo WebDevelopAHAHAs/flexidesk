@@ -18,7 +18,7 @@ export default function AddDesk(props) {
 
   return(
    <div className='addDeskDiv'>
-      <button id="Add" onClick={handleOpen}> Add Desk</button>
+      <button id="AddDesk" onClick={handleOpen}><span>Add Desk</span></button>
 
       <Modal 
         aria-labelledby="transition-modal-title" 
@@ -34,7 +34,7 @@ export default function AddDesk(props) {
         <Fade  className="modal-styling" in={props.open}>
          <div>
             {/* <div className={classes.paper}> */}
-            <h2 id="transition-modal-title">{props.addNum} Desk</h2>
+            <h2 id="transition-modal-title">{props.addNum} Add Desk</h2>
 
             <p id="transition-modal-description"> Form Component Here</p>
 
