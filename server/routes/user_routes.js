@@ -4,7 +4,7 @@ const { newUser, getUsers, getUser,
   changeUser, removeUser } = require('../controllers/user_controller');
 
 //Create
-router.post('/register', newUser); //database user creation route
+router.post('/new', newUser); //database user creation route
 
 router.get('/:id', getUser)
 

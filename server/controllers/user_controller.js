@@ -17,8 +17,8 @@ async function newUser(req, res) {
   }
 }
 
-const getUser = function(req) {
-	getUserByID(req.params.id)(req).exec((err, post) => {
+const getUser = function(req, res) {
+	getUserByID(req.params.id).exec((err, post) => {
     if (err) {
         res.status(400);
         return res.send("Post not found");
@@ -27,18 +27,21 @@ const getUser = function(req) {
 });
 }
 
-const getUsers = function (req, res) {
-  // execute the query from getAllPosts
-  getAllUsers().exec((err, users) => {
-      if (err) {
-          res.status(500);
-          return res.json({
-              error: err.message
-          });
-      }
-      res.send(users);
-  });
-};
+const getUsers = function(req) {
+	return User.find()
+}
+// const getUsers = function (req, res) {
+//   // execute the query from getAllPosts
+//   getAllUsers().exec((err, users) => {
+//       if (err) {
+//           res.status(500);
+//           return res.json({
+//               error: err.message
+//           });
+//       }
+//       res.send(users);
+//   });
+// };
 
 const removeUser = function (req, res) {
     deleteUser(req.params.id).exec((err) => {

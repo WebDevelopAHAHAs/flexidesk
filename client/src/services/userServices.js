@@ -1,7 +1,7 @@
 import api from '../config/api'
 
 export async function registerUser(userInfo) {
-  const response = await api.post("/user/register", userInfo)
+  const response = await api.post("/user/new", userInfo)
   console.log("new user posted to server", response) 
   return response.data
 }
