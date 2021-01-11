@@ -60,24 +60,22 @@ const Register = (props) => {
   return (
 
     <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
-        <MatUI.FormControl>
+      <MatUI.FormControl>
         <MatUI.InputLabel htmlFor="component-simple">Name</MatUI.InputLabel>
         <MatUI.Input id="standard-basic" name="first_name"required type="text" onChange={handleChange} />
       </MatUI.FormControl>
+
       <MatUI.FormControl>
         <MatUI.InputLabel htmlFor="component-simple">Email</MatUI.InputLabel>
         <MatUI.Input id="standard-basic" name="email" required type="email" onChange={handleChange}/>
       </MatUI.FormControl>
+
       <MatUI.FormControl>
         <MatUI.InputLabel htmlFor="component-simple">Password</MatUI.InputLabel>
         <MatUI.Input id="standard-basic" name="password"required type="password" onChange={handleChange} />
       </MatUI.FormControl>
-
-    {/* <MatUI.Input id="standard-basic" name="first_name"required type="text" label="First Name" onChange={handleChange} />
-    <MatUI.Input id="standard-basic" name="email" required type="email" label="email" onChange={handleChange}/>
-    <MatUI.Input placeholder="Placeholder" inputProps={{ 'aria-label': 'description' }} />
-    <MatUI.Input id="standard-basic" required type="password" label="Password" name="password" onChange={handleChange}/> */}
-    <input type="submit" value="Register"></input>
+      
+    <MatUI.Button type="submit" value="Register"></MatUI.Button>
   </form>
     // <form onSubmit={handleSubmit}>
       

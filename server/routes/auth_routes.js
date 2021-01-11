@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { authRedirect } = require("../middleware/auth_middleware");
+// const { authRedirect } = require("../middleware/auth_middleware");
 const { login, logout } = require('../controllers/auth_controller');
 
 // Register
