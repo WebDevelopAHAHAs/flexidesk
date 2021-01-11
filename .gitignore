@@ -53,6 +53,10 @@ client/yarn-error.log*
 client/.eslintcache
 
 # Server
+<<<<<<< Updated upstream
+=======
+server/config/databaseKey.js
+>>>>>>> Stashed changes
 
 ## Dependencies
 server/node_modules
