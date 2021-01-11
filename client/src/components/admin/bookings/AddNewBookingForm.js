@@ -67,8 +67,8 @@ const NewEmployee = (props) => {
         <MatUI.InputLabel htmlFor="component-simple">Recurring Booking</MatUI.InputLabel>
         <MatUI.Select id="standard-select" name="recurring-booking"required type="select" onChange={handleChange} />
       </MatUI.FormControl>
-      <input type="submit" value="Save Changes"></input>
-      <MatUI.Button onClick={handleClose} variant="contained" color="primary">Cancel
+      <MatUI.Button type="submit" value="Register">Register Employee</MatUI.Button>
+      <MatUI.Button onClick={handleClose} variant="contained" color="primary">Cancel//FIX ME
       </MatUI.Button>
       
   </form>

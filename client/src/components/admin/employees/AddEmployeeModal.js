@@ -2,7 +2,7 @@
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
-import RegisterForm from '../employees/RegisterForm'
+import AddEmployeeForm from './AddEmployeeForm';
 
 export default function AddEmployee(props) {
 
@@ -30,7 +30,7 @@ export default function AddEmployee(props) {
             {/* <div className={classes.paper}> */}
             <h2 id="transition-modal-title">{props.addNum} Employee</h2>
 
-            <p id="transition-modal-description"> <RegisterForm handleClose={handleClose}/></p>
+            <p id="transition-modal-description"> <AddEmployeeForm handleClose={handleClose}/></p>
 
           </div>
         </Fade>

@@ -14,9 +14,6 @@ import {Route as AdminEmployees} from  './admin/employees/AdminEmployeesPage';
 import {Route as AdminDesks} from  './admin/desks/AdminDesksPage';
 
 
-//Forms // needs to be put into a modal and then wont need to be here
-import RegisterForm from './admin/employees/RegisterForm'
-
 export default function App()
 {
   
@@ -43,7 +40,6 @@ export default function App()
         <Route exact path=  "/admin/dashboard"      component={AdminDashboard} />
         <Route exact path=  "/admin/bookings"       component={AdminBookings} />
         <Route exact path=  "/admin/employees"      component={AdminEmployees} />
-        <Route exact path=  "/admin/employees/new"  component={RegisterForm} />
         <Route exact path=  "/admin/desks"      component={AdminDesks} />
         <Route exact path=  "/"                     component={Redirect} />
         <Route exact path=  "/"                     component={Redirect} login={LoginPage} dashboard={AdminDashboard} />
