@@ -5,6 +5,9 @@ import AppLayout from '../../AppLayout'
 
 import CalendarSelector from './CalendarSelector'
 import DeskSelector from './DeskSelector'
+import EditBookingModal from './EditBookingModal'
+import NewBookingModal from './AddNewBookingModal'
+
 
 export function Route(props){
   return(<AppLayout bookings/>);
@@ -16,6 +19,9 @@ export function Layout(props) {
   const [deskNum, setDeskNum] = useState(null)
 
   const [newBookingsModalOpen, setNewBookingsModalOpen] = useState(false);
+  const [editBookingsModalOpen, setEditBookingsModalOpen] = useState(false);
+
+  const [addNewBookingsModalOpen, setAddNewBookingsModalOpen] = useState(false);
 
   return( <div id="adminBookings-page">
 
@@ -30,6 +36,8 @@ export function Layout(props) {
           <MatUI.Paper className="admin-calendar">
 
             <CalendarSelector/>
+
+            {/* <AddEmployee open={addEmployeeModalOpen} setOpen={setAddEmployeeModalOpen} setAddNum={setAddNum}/> */}
 
           </MatUI.Paper>
         </MatUI.Grid>
@@ -48,6 +56,12 @@ export function Layout(props) {
           <MatUI.Paper className={classes.paper}>   
 
           <DeskSelector open={newBookingsModalOpen} setOpen={setNewBookingsModalOpen} deskNum={deskNum} setDeskNum={setDeskNum}/>
+  
+          < NewBookingModal open={addNewBookingsModalOpen} setOpen={setAddNewBookingsModalOpen}>Edit Booking</ NewBookingModal>
+          
+            
+          < EditBookingModal open={editBookingsModalOpen} setOpen={setEditBookingsModalOpen}>Edit Booking</ EditBookingModal>
+          
 
           </MatUI.Paper>
         </MatUI.Grid>
