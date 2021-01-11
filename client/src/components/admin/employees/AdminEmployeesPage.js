@@ -32,7 +32,7 @@ export function Layout(props) {
 
   return( <div id="adminEmployees-page">
 
-    <h1>Employees</h1>
+   
 
     <MatUI.Container maxWidth="lg" className={classes.container} id="adminEmployees-container">
 
@@ -42,7 +42,7 @@ export function Layout(props) {
 
          
 
-            <AddEmployee open={addEmployeeModalOpen} setOpen={setAddEmployeeModalOpen} setAddNum={setAddNum}/>
+        <h1>Employees</h1> <AddEmployee open={addEmployeeModalOpen} setOpen={setAddEmployeeModalOpen} setAddNum={setAddNum}/>
             
 
           </MatUI.Grid>
