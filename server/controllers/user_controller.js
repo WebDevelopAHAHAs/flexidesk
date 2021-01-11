@@ -1,5 +1,4 @@
 const User = require('../models/user');
-// const { authRedirect } = require("../middleware/auth_middleware");
 const {getUserByID, getAllUsers, deleteUser,updateUser}
 = require('../utilities/user_utilities')
 
@@ -52,7 +51,6 @@ const removeUser = function (req, res) {
         res.sendStatus(204);
     });
 }
-
 
 const changeUser = function (req, res) {
     if (req.error) {
