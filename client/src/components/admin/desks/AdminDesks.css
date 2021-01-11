@@ -23,6 +23,7 @@ th{
 #Edit:active{
     background-color: #fff;
     border: none;
+    transform: translateY(4px);
    
 }
 
