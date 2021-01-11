@@ -1,17 +1,15 @@
-//Material UI
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
+// import React from 'react'
+import {Modal, Backdrop, Fade} from '@material-ui/core/';
 
 export default function EditEmployee(props) {
   if(props){
-    console.log("props----", props)
+    console.log("Edit Employee props: ", props)
   }
 
   const handleOpen = (event) => {
     console.log(event.target.id)
     props.setOpen(true);
-    props.setEditNum(event.target.id)
+    props.setEditNum(props.userID) //event.target.id)
   };
 
   const handleClose = () => {

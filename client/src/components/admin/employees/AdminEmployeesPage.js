@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import {React, useState, useEffect} from 'react';
 import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';
 import AppLayout from '../../AppLayout'
@@ -6,7 +6,7 @@ import './adminEmployees.css'
 
 import ViewEmployees from './ViewEmployeesTable'
 import AddEmployee from './AddEmployeeModal'
-import EditEmployee from './EditEmployeeModal'
+// import EditEmployee from './EditEmployeeModal'
 
 export function Route(props){
   return(<AppLayout employees/>);
@@ -20,9 +20,15 @@ export function Layout(props) {
   const [addEmployeeModalOpen, setAddEmployeeModalOpen] = useState(false);
   const [addNum, setAddNum] = useState(null)
 
-  //edit employee
-  const [editEmployeeModalOpen, setEditEmployeeModalOpen] = useState(false);
-  const [editNum, setEditNum,] = useState(null)
+  // useEffect( () => {
+  //   // fetchData();
+  // }, addEmployeeModalOpen)
+
+  // const refresh = useEffect() => {
+    
+  // }
+
+
 
   return( <div id="adminEmployees-page">
 
@@ -45,7 +51,9 @@ export function Layout(props) {
           <MatUI.Grid item xs={12}>
             <MatUI.Paper className={classes.paper}>   
 
-              <ViewEmployees/>            
+
+              <ViewEmployees/>
+
 
             </MatUI.Paper>
           </MatUI.Grid>

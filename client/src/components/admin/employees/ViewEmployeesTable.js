@@ -1,10 +1,15 @@
-import { unstable_createMuiStrictModeTheme } from '@material-ui/core';
 import React, {useState, useEffect} from 'react'
 import {getUsers} from '../../../services/userServices'
+
+import EditEmployee from './EditEmployeeModal'
 
 // http://localhost:3000/admin/employees
 
 export default function ViewEmployeesTable(props) {
+
+  //edit employee
+  const [editEmployeeModalOpen, setEditEmployeeModalOpen] = useState(false);
+  const [editNum, setEditNum,] = useState(null)
 
   useEffect( () => {
     fetchData();
@@ -19,6 +24,7 @@ export default function ViewEmployeesTable(props) {
     userData.forEach( user => {
       // console.log(user)     
       var rowNode = document.createElement("tr");
+
       var first_name_cell = document.createElement("td");
       var first_name_text = document.createTextNode(user.first_name);
       first_name_cell.appendChild(first_name_text);
@@ -28,6 +34,14 @@ export default function ViewEmployeesTable(props) {
       var email_text = document.createTextNode(user.email);
       email_cell.appendChild(email_text);
       rowNode.appendChild(email_cell); 
+
+      var edit_cell = <td><EditEmployee open={editEmployeeModalOpen} setOpen={setEditEmployeeModalOpen} setEditNum={setEditNum} userID={user._id}/></td>;
+      // var edit_cell = document.createElement("td");
+      // var edit_node = <td><EditEmployee open={editEmployeeModalOpen} setOpen={setEditEmployeeModalOpen} setEditNum={setEditNum} userID={user._id}/></td>;
+      // edit_cell = 
+      // edit_cell.appendChild(edit_node);
+      rowNode.appendChild(edit_cell); 
+
       table.appendChild(rowNode);
     })
   }
@@ -43,7 +57,7 @@ export default function ViewEmployeesTable(props) {
                 {/* <th>Mobile</th> */}
                 {/* <th>Access</th> */}
                 <th>Email</th>
-                {/* <th></th> */}
+                <th>Edit</th>
               </tr>
           </thead>
           <tbody> </tbody>

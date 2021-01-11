@@ -17,3 +17,7 @@ export async function getUsersFromID(id) {
   console.log("got all users back from server", response) 
   return response.data
 }
+
+export async function deleteUserFromID(id) {
+  
+}

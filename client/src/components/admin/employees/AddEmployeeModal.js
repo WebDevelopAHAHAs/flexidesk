@@ -14,6 +14,7 @@ export default function AddEmployee(props) {
 
   const handleClose = () => {
       props.setOpen(false);
+      window.location.reload()  
   };
 
   return(
