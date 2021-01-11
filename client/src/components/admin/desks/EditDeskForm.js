@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
+import { useHistory} from "react-router-dom"
 import {registerUser} from '../../../services/userServices'
 import {useGlobalState} from '../../../config/store'
 import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';
-  
-const NewEmployee = (props) => {
+
+const EditDeskForm = (props) => {
   const initialFormState = {
     first_name: "",
     email: "",
@@ -59,20 +60,37 @@ const NewEmployee = (props) => {
   return (
 
     <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
-        <MatUI.FormControl>
-        <MatUI.InputLabel htmlFor="component-simple">Employee Name</MatUI.InputLabel>
+
+      <MatUI.FormControl>
+        <MatUI.InputLabel htmlFor="component-simple">Name</MatUI.InputLabel>
         <MatUI.Input id="standard-basic" name="first_name"required type="text" onChange={handleChange} />
       </MatUI.FormControl>
+
       <MatUI.FormControl>
-        <MatUI.InputLabel htmlFor="component-simple">Recurring Booking</MatUI.InputLabel>
-        <MatUI.Select id="standard-select" name="recurring-booking"required type="select" onChange={handleChange} />
+        <MatUI.InputLabel htmlFor="component-simple">Email</MatUI.InputLabel>
+        <MatUI.Input id="standard-basic" name="email" required type="email" onChange={handleChange}/>
       </MatUI.FormControl>
-      <MatUI.Button type="submit" value="Register">Create New Booking</MatUI.Button>
-      <MatUI.Button onClick={handleClose} variant="contained" color="primary">Cancel//FIX ME
-      </MatUI.Button>
-      
+
+      <MatUI.FormControl>
+        <MatUI.InputLabel htmlFor="component-simple">Password</MatUI.InputLabel>
+        <MatUI.Input id="standard-basic" name="password"required type="password" onChange={handleChange} />
+      </MatUI.FormControl>
+      <MatUI.Input
+        accept="image/*"
+        className={classes.input}
+        style={{ display: 'none' }}
+        id="raised-button-file"
+        multiple
+        type="file"
+        />
+        <label htmlFor="raised-button-file">
+        <MatUI.Button variant="contained" component="span" className={classes.button}>
+            Upload
+        </MatUI.Button>
+        </label> 
+
+      <MatUI.Button variant="contained" type="submit" value="Register">Save Changes</MatUI.Button>
   </form>
   )
 }
-
-export default NewEmployee
+export default EditDeskForm
