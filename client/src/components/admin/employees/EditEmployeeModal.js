@@ -2,6 +2,7 @@
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
+import EditEmployeeForm from './EmployeeEditForm'
 
 export default function EditEmployee(props) {
   if(props){
@@ -36,8 +37,8 @@ export default function EditEmployee(props) {
         in={props.open}>
          <div>
             {/* <div className={classes.paper}> */}
-            <h2 id="transition-modal-title">{props.editNum} employee</h2>
-            <p id="transition-modal-description"> put component here</p>
+            <h2 id="transition-modal-title">{props.editNum} Edit Employee</h2>
+            <p id="transition-modal-description"> <EditEmployeeForm/></p>
             </div>
       </Fade>
 

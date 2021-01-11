@@ -2,7 +2,7 @@ import {React, useState} from 'react';
 import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';
 import AppLayout from '../../AppLayout'
-import './AdminEmployees.css'
+// import './AdminEmployees.css'
 
 import AddEmployee from './AddEmployeeModal'
 import EditEmployee from './EditEmployeeModal'

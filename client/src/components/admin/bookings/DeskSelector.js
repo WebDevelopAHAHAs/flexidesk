@@ -1,4 +1,5 @@
 import * as MatUI from '@material-ui/core';
+import AddNewBookingForm from './AddNewBookingForm'
 
 export default function DeskSelector(props){
        
@@ -19,9 +20,9 @@ export default function DeskSelector(props){
   return(
    <div className='showDesksDiv'>
   {/* renders desks available (connected to backend) */}
-      <button id="desk1" onClick={handleOpen}> Desk 1</button>
-      <button id="desk2" onClick={handleOpen}> Desk 2</button>
-      <button id="desk3" onClick={handleOpen}> Desk 3</button>
+      <button id="Desk 1" onClick={handleOpen}> Desk 1</button>
+      <button id="Desk 2" onClick={handleOpen}> Desk 2</button>
+      <button id="Desk 3" onClick={handleOpen}> Desk 3</button>
     
      <MatUI.Modal 
       aria-labelledby="transition-modal-title" 
@@ -37,7 +38,7 @@ export default function DeskSelector(props){
        <div>
           {/* <div className={classes.paper}> */}
           <h2 id="transition-modal-title">You have clicked {props.deskNum} </h2>
-          <p id="transition-modal-description"> put component here</p>
+          <p id="transition-modal-description"> <AddNewBookingForm/></p>
         </div>
       </MatUI.Fade>
     </MatUI.Modal>
