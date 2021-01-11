@@ -18,7 +18,7 @@ async function newUser(req, res) {
 }
 
 const getUser = function(req) {
-	getUserByID(req.params.id)(req).exec((err, post) => {
+	getUserByID(req.params.id).exec((err, post) => {
     if (err) {
         res.status(400);
         return res.send("Post not found");
