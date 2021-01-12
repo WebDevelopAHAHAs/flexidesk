@@ -6,7 +6,7 @@ import * as MatIcon from '@material-ui/icons'
 
 // Styling
 import useStyles from './styling/useStyles';
-import StylingTypography from './styling/StylingTypography';
+
 
 import NavBar from './navBar/NavBar'
 import {Layout as AdminBookingsLayout}  from './admin/bookings/AdminBookingsPage'
