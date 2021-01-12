@@ -43,7 +43,7 @@ export default function AppLayout(props)
           <MatIcon.Menu/>
         </MatUI.IconButton>
 
-        <MatUI.Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
+        <MatUI.Typography noWrap className={classes.title}>
           FlexiDesk
         </MatUI.Typography>
 

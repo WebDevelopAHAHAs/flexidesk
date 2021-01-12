@@ -53,6 +53,9 @@ const useStyles = makeStyles((theme) => ({
 
   title: {
     flexGrow: 1,
+    color: '#E8E9EB',
+    fontSize: "40px",
+    fontFamily: 'Exo 2'
   },
 
   drawerPaper: {
