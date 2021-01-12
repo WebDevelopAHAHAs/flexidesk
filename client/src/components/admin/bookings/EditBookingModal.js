@@ -18,7 +18,7 @@ export default function EditBooking(props) {
 
   return(
    <div className='editEmployeeDiv'>
-      <button id="Add" onClick={handleOpen}> Edit Booking</button>
+      <button id="EditBooking" onClick={handleOpen}> <i class="far fa-edit"></i></button>
 
       <Modal 
         aria-labelledby="transition-modal-title" 

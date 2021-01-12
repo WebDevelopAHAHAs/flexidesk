@@ -19,7 +19,7 @@ export function Layout(props) {
   const [deskNum, setDeskNum] = useState(null)
 
   const [newBookingsModalOpen, setNewBookingsModalOpen] = useState(false);
-  const [editBookingsModalOpen, setEditBookingsModalOpen] = useState(false);
+
 
   const [addNewBookingsModalOpen, setAddNewBookingsModalOpen] = useState(false);
 
@@ -60,7 +60,7 @@ export function Layout(props) {
           < NewBookingModal open={addNewBookingsModalOpen} setOpen={setAddNewBookingsModalOpen}>Edit Booking</ NewBookingModal>
           
             
-          < EditBookingModal open={editBookingsModalOpen} setOpen={setEditBookingsModalOpen}>Edit Booking</ EditBookingModal>
+     
           
 
           </MatUI.Paper>

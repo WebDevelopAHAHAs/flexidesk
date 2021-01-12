@@ -79,7 +79,6 @@ export function Layout(props) {
 
         </MatUI.Grid>
       <MatUI.Box pt={4}>
-      <EditDesk open={editDeskModalOpen} setOpen={setEditDeskModalOpen} setAddNum={setAddNum}/>
       </MatUI.Box>
     </MatUI.Container>
 
