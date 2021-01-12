@@ -1,0 +1,27 @@
+/* Styling for login screen on desktop */
+img{
+    width: 650px
+}
+
+/* Styling for login screen on iPhone Portrait and Landscape*/
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
+img{
+    width: 450px;
+}
+
+}
+
+/* Styling for login screen on iPad */
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    img{
+        width: 420px;
+    }
+}

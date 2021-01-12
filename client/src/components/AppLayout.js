@@ -29,7 +29,7 @@ export default function AppLayout(props)
   };
 
   return ( <div>
-    <StylingTypography/>
+    
   
     <div className={classes.root}>
 
@@ -72,8 +72,9 @@ export default function AppLayout(props)
       <MatUI.Divider/>
 
       <NavBar/>
-
+      
     </MatUI.Drawer>
+    
 
 
     <main className={classes.content}>
@@ -91,7 +92,8 @@ export default function AppLayout(props)
       {props && props.desks && <AdminDesksLayout/>}
       
     </main>
-
+    
     </div>
+   
   </div> );
 }
