@@ -2,6 +2,8 @@
   .navbar-button-list{
     border-radius: 5px;
     font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+    
     
   }
   .navbar-header{
@@ -13,5 +15,9 @@
   li{
     list-style-type: none;
     padding-bottom: 25px;
+  }
+
+  .nav-btn{
+    color: #fff,
   }
 

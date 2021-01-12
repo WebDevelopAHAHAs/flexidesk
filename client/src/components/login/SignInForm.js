@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
     backgroundSize: 'cover',
-    backgroundPosition: 'center',
+    backgroundPosition: 'right',
   },
   paper: {
     margin: theme.spacing(8, 4),
@@ -118,7 +118,7 @@ const SignInForm = ({history}) => {
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
-          <img src="/images/logo.jpg" alt="logo" width="450"></img>
+          <img src="/images/logo.jpg" alt="logo"></img>
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>

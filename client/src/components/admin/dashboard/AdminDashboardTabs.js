@@ -6,6 +6,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import './adminDashboard.css'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -58,7 +59,7 @@ export default function CenteredTabs() {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Tabs className="dashboard-tabs" value={value} onChange={handleChange} aria-label="simple tabs example">
+        <Tabs TabIndicatorProps={{style: {background:'#6E75A3'}}} className="dashboard-tabs" value={value} onChange={handleChange} aria-label="simple tabs example">
           <Tab label="Today" {...a11yProps(0)} />
           <Tab label="Week" {...a11yProps(1)} />
           <Tab label="Month" {...a11yProps(2)} />
