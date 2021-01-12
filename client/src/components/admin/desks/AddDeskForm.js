@@ -7,7 +7,7 @@ import useStyles from '../../styling/useStyles';
 
 const AddNewDesk = (props) => {
   const initialFormState = {
-    first_name: "",
+    name: "",
     email: "",
     password: ""
   } 
@@ -16,7 +16,7 @@ const AddNewDesk = (props) => {
   const classes = useStyles();
 
   //User Related
-  const [userDetails,setUserDetails] = useState(initialFormState)
+  const [deskDetails, setDeskDetails] = useState(initialFormState)
   const {dispatch} = useGlobalState()
 
   //Error Related
@@ -30,8 +30,8 @@ const AddNewDesk = (props) => {
   function handleChange(event) {
       const name = event.target.name
       const value = event.target.value
-      setUserDetails({
-          ...userDetails,
+      setDeskDetails({
+          ...deskDetails,
           [name]: value
       })
   }
@@ -40,10 +40,10 @@ const AddNewDesk = (props) => {
   function handleSubmit(event) {
       event.preventDefault()
       // Attempt register with server
-      registerUser(userDetails).then(() => {
+      newDesk(deskDetails).then(() => {
           dispatch({
-              type: "setLoggedInUser",
-              data: userDetails
+              type: "addNewDesk",
+              data: deskDetails
           });
           handleClose();
           
@@ -62,20 +62,20 @@ const AddNewDesk = (props) => {
     <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
 
       <MatUI.FormControl>
-        <MatUI.FormLabel htmlFor="component-simple">Name</MatUI.FormLabel>
-        <MatUI.Input id="standard-basic" name="first_name"required type="text" onChange={handleChange} />
+        <MatUI.FormLabel htmlFor="component-simple">Desk Number</MatUI.FormLabel>
+        <MatUI.Input id="standard-basic" name="number"required type="number" onChange={handleChange} />
       </MatUI.FormControl>
       <MatUI.FormControl>
-        <MatUI.FormLabel htmlFor="component-simple">Desk Number</MatUI.FormLabel>
-        <MatUI.Input id="standard-basic" name="first_name"required type="text" onChange={handleChange} />
+        <MatUI.FormLabel htmlFor="component-simple">Section</MatUI.FormLabel>
+        <MatUI.Input id="standard-basic" name="section"required type="text" onChange={handleChange} />
       </MatUI.FormControl>
       <MatUI.FormControl>
         <MatUI.FormLabel htmlFor="component-simple">Available</MatUI.FormLabel>
-        <MatUI.Radio id="standard-basic" name="first_name"required type="text" onChange={handleChange} />
+        <MatUI.Radio id="standard-basic" name="available"required type="text" onChange={handleChange} />
       </MatUI.FormControl>
 
 
-      <MatUI.Button variant="contained" type="submit" value="Register">Create Desk</MatUI.Button>
+      <MatUI.Button variant="contained" type="submit" value="New">Create Desk</MatUI.Button>
   </form>
   )
 }
