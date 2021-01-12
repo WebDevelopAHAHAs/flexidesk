@@ -53,9 +53,11 @@ client/yarn-error.log*
 client/.eslintcache
 
 # Server
+
 server/config/databaseKey.js
 
 server/config/databaseKey.js
+
 
 ## Dependencies
 server/node_modules

@@ -5,7 +5,7 @@ import {useGlobalState} from '../../../config/store'
 import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';
 
-const Register = (props) => {
+const AddEmployeeForm = (props) => {
   const initialFormState = {
     first_name: "",
     email: "",
@@ -45,7 +45,7 @@ const Register = (props) => {
               type: "setLoggedInUser",
               data: userDetails
           });
-          handleClose();
+          handleClose(true);
           
       }).catch((error) => {
         if (error.response && error.response.status === 401)
@@ -74,35 +74,8 @@ const Register = (props) => {
         <MatUI.InputLabel htmlFor="component-simple">Password</MatUI.InputLabel>
         <MatUI.Input id="standard-basic" name="password"required type="password" onChange={handleChange} />
       </MatUI.FormControl>
-      
-    <MatUI.Button type="submit" value="Register"></MatUI.Button>
+      <MatUI.Button type="submit" value="Register">Register Employee</MatUI.Button>
   </form>
-    // <form onSubmit={handleSubmit}>
-      
-    //   <div>
-    //     <label>First Name</label>
-    //     <input required type="text" name="first_name"
-    //       placeholder="Enter a first name" onChange={handleChange}>
-    //     </input>
-    //   </div>
-
-    //   <div>
-    //     <label>Email</label>
-    //     <input required type="email" name="email"
-    //       placeholder="Enter an email" onChange={handleChange}>
-    //     </input>
-    //   </div>
-
-    //   <div>
-    //     <label>Password</label>
-    //     <input required type="password" name="password"
-    //       placeholder="Enter a password" onChange={handleChange}>
-    //     </input>
-    //   </div>
-      
-      
-      
-    // </form>
   )
 }
-export default Register
+export default AddEmployeeForm

@@ -3,6 +3,7 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 
+import AddDeskForm from './AddDeskForm'
 
 export default function AddDesk(props) {
 
@@ -36,7 +37,7 @@ export default function AddDesk(props) {
             {/* <div className={classes.paper}> */}
             <h2 id="transition-modal-title">{props.addNum} Add Desk</h2>
 
-            <p id="transition-modal-description"> Form Component Here</p>
+            <p id="transition-modal-description"> <AddDeskForm/></p>
 
             </div>
         </Fade>

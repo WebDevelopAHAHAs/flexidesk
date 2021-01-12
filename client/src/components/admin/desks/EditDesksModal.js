@@ -2,6 +2,7 @@
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
+import EditDeskForm from './EditDeskForm'
 
 export default function EditDesk(props) {
   if(props){
@@ -11,7 +12,7 @@ export default function EditDesk(props) {
   const handleOpen = (event) => {
     console.log(event.target.id)
     props.setOpen(true);
-    props.setEditNum(event.target.id)
+    // props.setEditNum(event.target.id)
   };
 
   const handleClose = () => {
@@ -37,7 +38,7 @@ export default function EditDesk(props) {
          <div>
             {/* <div className={classes.paper}> */}
             <h2 id="transition-modal-title">{props.editNum}Edit Desk</h2>
-            <p id="transition-modal-description"> put component here</p>
+            <p id="transition-modal-description"> <EditDeskForm/></p>
             </div>
       </Fade>
 
