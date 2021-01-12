@@ -8,7 +8,9 @@ export default function EditEmployee(props) {
   const handleOpen = (event) => {
     console.log("Edit Employee Button Pressed.")
     // console.log(event.target.id)
+    console.log(props.open)
     props.setOpen(true);
+    console.log(props.open)
     props.setEditNum(event.target.id) //event.target.id)
   };
 
@@ -20,12 +22,13 @@ export default function EditEmployee(props) {
   return(<div className='editEmployeeDiv'>
     
     <button id="Edit" onClick={handleOpen}> <i className="far fa-edit"></i></button>
-
+    <h1>{props.open}</h1>
     <Modal className="modal-position"
       open={props.open} onClose={handleClose} closeAfterTransition
       aria-labelledby="transition-modal-title" aria-describedby="transition-modal-description"
       BackdropComponent={Backdrop} BackdropProps={{ timeout: 500 }} >
 
+      
       <Fade className="modal-styling" in={props.open}>
          <div>
 
