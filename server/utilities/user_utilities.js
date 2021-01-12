@@ -13,12 +13,12 @@ const getUserByID = function(id) {
 }
 
 const deleteUser = function(id) {
-	return Post.findByIdAndRemove(id)
+	return Desk.findByIdAndRemove(id)
 }
 
 const updateUser = function (id) {
   req.body.modified_date = Date.now();
-  // use new:true to return the updated post rather than the original post when the query is executed
+  // use new:true to return the updated user rather than the original user when the query is executed
   return User.findByIdAndUpdate(id, req.body
     // ,{ new: true } // include if i dont want to return the document
   );
