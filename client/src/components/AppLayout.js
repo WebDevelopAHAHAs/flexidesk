@@ -6,7 +6,7 @@ import * as MatIcon from '@material-ui/icons'
 
 // Styling
 import useStyles from './styling/useStyles';
-import StylingTypography from './styling/StylingTypography';
+
 
 import NavBar from './navBar/NavBar'
 import {Layout as AdminBookingsLayout}  from './admin/bookings/AdminBookingsPage'
@@ -43,7 +43,7 @@ export default function AppLayout(props)
           <MatIcon.Menu/>
         </MatUI.IconButton>
 
-        <MatUI.Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
+        <MatUI.Typography noWrap className={classes.title}>
           FlexiDesk
         </MatUI.Typography>
 

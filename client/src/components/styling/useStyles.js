@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
 
   toolbar: {
     paddingRight: 24, // keep right padding when drawer closed
+    backgroundColor: "#2A2D34"
   },
 
   toolbarIcon: {
@@ -24,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 
   appBar: {
+    
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
@@ -32,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   appBarShift: {
+    backgroundColor: "#2A2D34",
     marginLeft: drawerWidth,
     width: `calc(100% - ${drawerWidth}px)`,
     transition: theme.transitions.create(['width', 'margin'], {
@@ -50,6 +53,9 @@ const useStyles = makeStyles((theme) => ({
 
   title: {
     flexGrow: 1,
+    color: '#E8E9EB',
+    fontSize: "40px",
+    fontFamily: 'Exo 2'
   },
 
   drawerPaper: {
