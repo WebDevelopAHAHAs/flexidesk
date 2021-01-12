@@ -7,7 +7,7 @@ const Desk = new Schema({
       required: true
     },
     section: {
-      type: text,
+      type: String,
       required: true
     },
     active: {

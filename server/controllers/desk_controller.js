@@ -17,7 +17,7 @@ async function newDesk(req, res) {
 
 const getDesks = function (req, res) {
 
-  getAllEntries(req).exec((err, desks) => {
+  getAllEntries().exec((err, desks) => {
       if (err) {
           res.status(500);
           return res.json({

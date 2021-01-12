@@ -1,20 +1,19 @@
 
-const getAllDesks = function(req) {
-  return User.find();
+const getAllDesks = function() {
+  return Desk.find();
 }
 
-const getUserByID = function(id) {
-	return User.findById(id)
+const getDeskByID = function(id) {
+	return Desk.findById(id)
 }
 
-const deleteUser = function(id) {
-	return Post.findByIdAndRemove(id)
+const deleteDesk = function(id) {
+	return Desk.findByIdAndRemove(id)
 }
 
-const updateUser = function (id) {
+const updateDesk = function (id) {
   req.body.modified_date = Date.now();
-  // use new:true to return the updated post rather than the original post when the query is executed
-  return User.findByIdAndUpdate(id, req.body
-    // ,{ new: true } // include if i dont want to return the document
-  );
+  // use new:true to return the updated desk rather than the original desk when the query is executed
+  return Desk.findByIdAndUpdate(id, req.body, { new: true } );
+    // ,{ new: true } // include if i dont want to return the old document
 };
