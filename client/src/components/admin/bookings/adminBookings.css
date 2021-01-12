@@ -10,3 +10,103 @@
   height: 295px;
   
 }
+
+/* Entire Table */
+.bookings-table{
+  width: 100%;
+  text-align: left;
+  padding: 5px;
+}
+/* Header of Table */
+thead{
+  font-size: 20px;
+}
+
+th{
+  padding-bottom: 10px;    
+}
+
+/* Edit button */
+#EditBooking{
+  background-color: #fff;
+  border: none;
+  font-size: 15px;
+  
+}
+#EditBooking:active{
+  background-color: #fff;
+  border: none;
+  transform: translateY(4px);
+ 
+}
+
+#EditBooking:hover{
+  background-color: #fff;
+  border: none;
+  color: green;
+  
+}
+
+#EditBooking:visited{
+  background-color: #fff;
+  border: none;
+}
+
+button{
+  background-color: #fff;
+  padding: 12px 26px;
+  border-radius: 2px;
+  outline: none;
+  border: 1px solid #000;
+  transition: all 0.3s ease-out;
+  font-size: 15px;
+  color: #000;
+  text-decoration-style: solid;
+}
+button:hover{
+  color: green;
+  
+}
+
+
+#NewBooking{
+  background-color: white;
+  padding: 12px 26px;
+  border-radius: 4px;
+  outline: none;
+  text-align: center;
+  border: 1px solid #000;
+  letter-spacing: 1px;
+text-transform: uppercase;
+transition: all 0.5s;	
+cursor: pointer;
+  font-size: 15px;
+  color: #000;
+  text-decoration-style: solid;
+}
+
+#NewBooking span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#NewBooking span:after {
+  content: '\002b';
+  font-weight:bold ;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#NewBooking:hover span {
+  padding-right: 25px;
+}
+
+#NewBooking:hover span:after {
+  opacity: 1;
+  right: 0;
+}

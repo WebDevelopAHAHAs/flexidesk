@@ -27,9 +27,11 @@ export default function NavBar() {
     <div className="navbar-home">
       <ul className="navbar-button-list">
 
-      <li><MatUI.Button color="primary" href="/admin/dashboard">Home</MatUI.Button></li>
+      <li><MatUI.Button color="primary" href="/admin/dashboard">Dashboard</MatUI.Button></li>
 
-      <li><MatUI.Button color="primary" href="/admin/bookings">Bookings</MatUI.Button></li>
+      <li><MatUI.Button color="primary" href="/admin/bookings">New Booking</MatUI.Button></li>
+
+      <li><MatUI.Button color="primary" href="/admin/viewbookings">View Bookings</MatUI.Button></li>
 
       <li><MatUI.Button color="primary" href="/admin/employees">Employees</MatUI.Button></li>
 
