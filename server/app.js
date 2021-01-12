@@ -8,6 +8,8 @@ const dbConn = uri;
 const pageRouter = require('./routes/page_routes');
 const authRouter = require('./routes/auth_routes');
 const userRouter = require('./routes/user_routes');
+const deskRouter = require('./routes/desk_routes');
+// const bookingRouter = require('./routes/booking_routes');
 
 const port = process.env.PORT || 3009;
 const app = express();
@@ -61,6 +63,8 @@ app.get('/', (req, res) => {
 app.use("/", pageRouter);
 app.use('/auth', authRouter);
 app.use("/user", userRouter);
+// app.use("/booking", bookingRouter);
+app.use("/desk", deskRouter);
 
 app.listen(port, () => {
     console.log(`FlexiDesk listening on port ${port}`);

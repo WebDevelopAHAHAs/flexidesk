@@ -1,17 +1,12 @@
-//Material UI
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
+import {Modal, Backdrop, Fade} from '@material-ui/core';
+
 import AddEmployeeForm from './AddEmployeeForm';
 
 export default function AddEmployee(props) {
 
   const handleOpen = (event) => {
     console.log("Add Employee Button Pressed.")
-    // console.log(event.target.id)
-    console.log(props.open)
     props.setOpen(true);
-    console.log(props.open)
     props.setAddNum(event.target.id)
   };
 
@@ -23,7 +18,7 @@ export default function AddEmployee(props) {
   return(
    <div className='addEmployeeDiv'>
       <button id="AddEmployee" onClick={handleOpen}><span>Add Employee</span></button>
-      <h1>{props.open}</h1>
+
       <Modal className="modal-position"
         open={props.open} onClose={handleClose} closeAfterTransition
         aria-labelledby="transition-modal-title" aria-describedby="transition-modal-description"        
@@ -37,6 +32,7 @@ export default function AddEmployee(props) {
 
           </div>
         </Fade>
+
       </Modal>
       
   </div>

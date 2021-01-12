@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { useHistory} from "react-router-dom"
-import {registerUser} from '../../../services/userServices'
+import {updateDesk} from '../../../services/deskServices'
 import {useGlobalState} from '../../../config/store'
 import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';

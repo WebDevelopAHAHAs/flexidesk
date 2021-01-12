@@ -42,10 +42,10 @@ export function Layout(props) {
             </MatUI.Paper>
           </MatUI.Grid>
 
-        </MatUI.Grid>
-      <MatUI.Box pt={4}>
-
-      </MatUI.Box>
+      </MatUI.Grid>
+      
+      <MatUI.Box pt={4}> </MatUI.Box>
+      
     </MatUI.Container>
 
   </div>)
