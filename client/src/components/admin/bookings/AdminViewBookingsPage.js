@@ -37,9 +37,8 @@ export function Layout(props) {
 
      
 
-    <h1>View Bookings</h1> <button id='NewBooking' onClick={routeChange}><span>New Booking</span></button>
-
-    <button id='NewBooking' ><span>Search Feature</span></button>
+    <h1>View Bookings</h1> 
+    <button id='NewBooking' onClick={routeChange}><span>New Booking</span></button><button id='NewBooking' ><span>Search Feature</span></button>
     
         
 

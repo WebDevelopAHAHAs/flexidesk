@@ -37,7 +37,7 @@ export default function NavBar() {
 
       <li><MatUI.Button className="nav-btn" href="/admin/desks">Desks</MatUI.Button></li>
 
-      <MatUI.Button className="nav-btn" onClick={handleLogout} to="/login" >Logout </MatUI.Button>
+      <MatUI.Button id="nav-btn" onClick={handleLogout} to="/login" >Logout </MatUI.Button>
 
       </ul>
     </div>

@@ -30,7 +30,7 @@ th{
 #Edit:hover{
     background-color: #fff;
     border: none;
-    color: green;
+    color: #6E75A8 ;
     
 }
 
@@ -38,7 +38,7 @@ th{
     background-color: #fff;
     border: none;
 }
-
+/* 
 button{
     background-color: #fff;
     padding: 12px 26px;
@@ -51,13 +51,14 @@ button{
     text-decoration-style: solid;
 }
 button:hover{
-    color: #E8E9EB;
+    color: #fff ;
+   
     
-}
+} */
 
 
 #AddDesk{
-    background-color: white;
+    background-color: #6E75A8 ;
     padding: 12px 26px;
     border-radius: 4px;
     outline: none;
@@ -68,7 +69,7 @@ button:hover{
 	transition: all 0.5s;	
 	cursor: pointer;
     font-size: 15px;
-    color: #000;
+    color: #fff;
     text-decoration-style: solid;
 }
 

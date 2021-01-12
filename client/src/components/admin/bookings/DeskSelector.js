@@ -20,9 +20,9 @@ export default function DeskSelector(props){
   return(
    <div className='showDesksDiv'>
   {/* renders desks available (connected to backend) */}
-      <button id="Desk 1" onClick={handleOpen}> Desk 1</button>
-      <button id="Desk 2" onClick={handleOpen}> Desk 2</button>
-      <button id="Desk 3" onClick={handleOpen}> Desk 3</button>
+      <button id="Desk 1" className='desks' onClick={handleOpen}><span>Desk 1</span></button>
+      <button id="Desk 2" className='desks' onClick={handleOpen}><span>Desk 2</span></button>
+      <button id="Desk 3" className='desks' onClick={handleOpen}><span>Desk 3</span></button>
     
      <MatUI.Modal 
       aria-labelledby="transition-modal-title" 
