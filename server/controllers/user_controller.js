@@ -1,5 +1,5 @@
 const User = require('../models/user');
-const {getUserByID, deleteUser, updateUser} = require('../utilities/user_utilities')
+const {getUserByID, getAllUsers, deleteUser, updateUser} = require('../utilities/user_utilities')
 
 const test = function(req, res) {
   console.log("Hit!");

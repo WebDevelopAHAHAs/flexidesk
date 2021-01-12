@@ -20,15 +20,6 @@ export function Layout(props) {
   const [addEmployeeModalOpen, setAddEmployeeModalOpen] = useState(false);
   const [addNum, setAddNum] = useState(null)
 
-  // useEffect( () => {
-  //   // fetchData();
-  // }, addEmployeeModalOpen)
-
-  // const refresh = useEffect() => {
-    
-  // }
-
-
 
   return( <div id="adminEmployees-page">
 
@@ -42,7 +33,10 @@ export function Layout(props) {
 
          
 
-        <h1>Employees</h1> <AddEmployee open={addEmployeeModalOpen} setOpen={setAddEmployeeModalOpen} setAddNum={setAddNum}/>
+        <h1>Employees</h1>
+        
+        
+        <AddEmployee open={addEmployeeModalOpen} setOpen={setAddEmployeeModalOpen} setAddNum={setAddNum}/>
             
 
           </MatUI.Grid>

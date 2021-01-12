@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import ReactDOM from 'react-dom';
 import {getUsers} from '../../../services/userServices'
 
 import EditEmployee from './EditEmployeeModal'
@@ -35,7 +36,12 @@ export default function ViewEmployeesTable(props) {
       rowNode.appendChild(email_cell);
 
       var edit_cell = document.createElement("td");
-      edit_cell.body = <EditEmployee open={editEmployeeModalOpen} setOpen={setEditEmployeeModalOpen} setEditNum={setEditNum} userID={user._id}/>;
+      
+      ReactDOM.render(
+        <EditEmployee open={editEmployeeModalOpen} setOpen={setEditEmployeeModalOpen} setEditNum={setEditNum} userID={user._id}/>,
+        edit_cell
+      );
+
       rowNode.appendChild(edit_cell); 
 
       table.appendChild(rowNode);

@@ -13,18 +13,18 @@ export async function getUsers() {
   return response.data
 }
 
-export async function getUserByID(id) {
-  const response = await api.get(`/user/${id}`)
+export async function getUser(userInfo) {
+  const response = await api.get(`/user/${userInfo.id}`)
   console.log("Retrieved a user from the database: ", response) 
   return response.data
 }
 
-export async function deleteUserByID(id) {
-  const response = await api.delete(`/user/${id}`)
+export async function deleteUser(userInfo) {
+  const response = await api.delete(`/user/${userInfo.id}`)
   console.log("Deleted user from database: ", response) 
 }
 
-export async function updateUserByID(id) {
-  const response = await api.update(`/user/${id}`)
+export async function updateUser(userInfo) {
+  const response = await api.update(`/user/${userInfo.id}`)
   console.log("Updated user in database: ", response) 
 }
