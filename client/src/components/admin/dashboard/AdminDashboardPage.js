@@ -12,9 +12,7 @@ export function Layout(props) {
 
   const classes = useStyles();
 
-  return( <div id="adminDashboard-page">
-
-  
+  return( <div id="adminDashboard-page">  
 
     <MatUI.Container maxWidth="lg" className={classes.container} id="adminDashboard-container">
       <MatUI.Grid container spacing={1}>

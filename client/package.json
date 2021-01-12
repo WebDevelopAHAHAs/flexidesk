@@ -1,5 +1,6 @@
 {
   "name": "flexidesk",
+  "home": "http://flexi-desks.com",
   "version": "0.1.0",
   "private": true,
   "description": "FlexiDesk Client",

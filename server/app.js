@@ -58,9 +58,9 @@ app.get('/', (req, res) => {
     res.send("Request received.");
 })
 
-app.use("/", pageRouter)
-app.use('/auth', authRouter)
-app.use('/user', userRouter)
+app.use("/", pageRouter);
+app.use('/auth', authRouter);
+app.use("/user", userRouter);
 
 app.listen(port, () => {
     console.log(`FlexiDesk listening on port ${port}`);

@@ -56,6 +56,9 @@ client/.eslintcache
 
 server/config/databaseKey.js
 
+server/config/databaseKey.js
+
+
 ## Dependencies
 server/node_modules
 server/.pnp
