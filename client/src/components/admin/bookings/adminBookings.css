@@ -52,20 +52,56 @@ th{
   border: none;
 }
 
-button{
-  background-color: #fff;
+.desks{
+  margin-right: 30px;
+  background-color: #6E75A8 ;
   padding: 12px 26px;
-  border-radius: 2px;
+  border-radius: 4px;
   outline: none;
+  text-align: center;
   border: 1px solid #000;
-  transition: all 0.3s ease-out;
+  letter-spacing: 1px;
+text-transform: uppercase;
+transition: all 0.5s;	
+cursor: pointer;
   font-size: 15px;
-  color: #000;
+  color: #fff;
   text-decoration-style: solid;
-}
-button:hover{
-  color: #fff ;
   
+
+}
+
+.desks span{
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.desks span:after {
+  content: 'book!';
+  text-align: center;
+  color: #6E75A8;
+  font-weight:bold ;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.desks:hover span {
+  padding-right: 0px;
+  color: #E8E9EB ;
+}
+
+.desks:hover{
+  background-color: #E8E9EB ;
+}
+
+.desks:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 
