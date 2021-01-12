@@ -6,26 +6,20 @@ import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';
 
 const EditEmployee = (props) => {
-  const initialFormState = {
-    first_name: "",
-    email: "",
-    password: ""
-  } 
-  const handleClose = props.handleClose
-
   const classes = useStyles();
+  // const errorStyles = { color: "red" }
 
-  //User Related
-  const [userDetails,setUserDetails] = useState(initialFormState)
   const {dispatch} = useGlobalState()
+  const [errorMessage, setErrorMessage] = useState(null)  
 
-  //Error Related
-  const [errorMessage, setErrorMessage] = useState(null)
-
-  //Compartmentalise
-  const errorStyles = {
-    color: "red"
+  const initialFormState = {    
+    first_name: props.first_name,
+    email: props.email
   }
+
+  const [userDetails, setUserDetails] = useState(initialFormState)
+
+  const handleClose = props.handleClose
 
   function handleChange(event) {
       const name = event.target.name
@@ -36,10 +30,8 @@ const EditEmployee = (props) => {
       })
   }
 
-
   function handleSubmit(event) {
       event.preventDefault()
-      // Attempt register with server
       updateUser(userDetails).then(() => {
           dispatch({
               type: "setLoggedInUser",
@@ -53,26 +45,29 @@ const EditEmployee = (props) => {
         else   
             setErrorMessage("There may be a problem with the server. Please try again after a few moments.")
     })
-    
   }
-
 
   return (
 
     <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
-        <MatUI.FormControl>
+      <MatUI.FormControl>
         <MatUI.InputLabel htmlFor="component-simple">Name</MatUI.InputLabel>
-        <MatUI.Input id="standard-basic" name="first_name"required type="text" onChange={handleChange} />
+        <MatUI.Input id="standard-basic" defaultValue={props.first_name} name="first_name" required type="text" onChange={handleChange} />
       </MatUI.FormControl>
+
       <MatUI.FormControl>
         <MatUI.InputLabel htmlFor="component-simple">Email</MatUI.InputLabel>
-        <MatUI.Input id="standard-basic" name="email" required type="email" onChange={handleChange}/>
+        <MatUI.Input id="standard-basic" defaultValue={props.email} name="email" required type="email" onChange={handleChange}/>
       </MatUI.FormControl>
+
       <MatUI.FormControl>
         <MatUI.InputLabel htmlFor="component-simple">Password</MatUI.InputLabel>
         <MatUI.Input id="standard-basic" name="password"required type="password" onChange={handleChange} />
       </MatUI.FormControl>
-      <MatUI.Button type="submit" value="Register">Register Employee</MatUI.Button>
+
+      <MatUI.Button type="submit" value="Update">Save Changes</MatUI.Button>
+
+      <p>{errorMessage}</p>
 
   </form>
   )

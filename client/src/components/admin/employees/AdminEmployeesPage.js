@@ -33,14 +33,11 @@ export function Layout(props) {
           <AddEmployee open={addEmployeeModalOpen} setOpen={setAddEmployeeModalOpen} setAddNum={setAddNum}/>
             
         </MatUI.Grid>
-          
-          {/* HERE IS THE BOTTOM BOX ON OUR PAGES */}
-          <MatUI.Grid item xs={12}>
-            <MatUI.Paper className={classes.paper}>   
 
+          <MatUI.Grid item xs={12}>
+            <MatUI.Paper className={classes.paper}>
 
               <ViewEmployeesTable/>
-
 
             </MatUI.Paper>
           </MatUI.Grid>
