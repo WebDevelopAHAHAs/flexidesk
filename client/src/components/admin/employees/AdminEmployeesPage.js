@@ -4,8 +4,9 @@ import useStyles from '../../styling/useStyles';
 import AppLayout from '../../AppLayout'
 import './adminEmployees.css'
 
-import ViewEmployees from './ViewEmployeesTable'
 import AddEmployee from './AddEmployeeModal'
+import ViewEmployeesTable from './ViewEmployeesTable'
+
 // import EditEmployee from './EditEmployeeModal'
 
 export function Route(props){
@@ -18,12 +19,9 @@ export function Layout(props) {
 
   //add employee
   const [addEmployeeModalOpen, setAddEmployeeModalOpen] = useState(false);
-  const [addNum, setAddNum] = useState(null)
-
+  const [addNum, setAddNum] = useState(null);
 
   return( <div id="adminEmployees-page">
-
-   
 
     <MatUI.Container maxWidth="lg" className={classes.container} id="adminEmployees-container">
 
@@ -31,22 +29,17 @@ export function Layout(props) {
       
         <MatUI.Grid item xs={12} md={8} lg={4}>
 
-         
-
-        <h1>Employees</h1>
-        
-        
-        <AddEmployee open={addEmployeeModalOpen} setOpen={setAddEmployeeModalOpen} setAddNum={setAddNum}/>
+          <h1>Employees</h1>   
+          <AddEmployee open={addEmployeeModalOpen} setOpen={setAddEmployeeModalOpen} setAddNum={setAddNum}/>
             
-
-          </MatUI.Grid>
+        </MatUI.Grid>
           
           {/* HERE IS THE BOTTOM BOX ON OUR PAGES */}
           <MatUI.Grid item xs={12}>
             <MatUI.Paper className={classes.paper}>   
 
 
-              <ViewEmployees/>
+              <ViewEmployeesTable/>
 
 
             </MatUI.Paper>

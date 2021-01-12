@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import React, {useState, useEffect} from 'react'
 import ReactDOM from 'react-dom';
 import {getUsers} from '../../../services/userServices'
@@ -9,48 +10,58 @@ export default function ViewEmployeesTable(props) {
 
   //edit employee
   const [editEmployeeModalOpen, setEditEmployeeModalOpen] = useState(false);
+  const [users, setUsers] = useState([])
   const [editNum, setEditNum,] = useState(null)
 
   useEffect( () => {
     fetchData();
   }, [])
 
+
+  function createRow(user) {
+    return (<tr>
+      <td>
+        <p>{user.first_name}</p>
+      </td>
+
+      <td>
+        <p>{user.email}</p>
+      </td>
+
+      <td>
+        <EditEmployee open={editEmployeeModalOpen}
+          setOpen={setEditEmployeeModalOpen}
+          setEditNum={setEditNum}
+          userID={user._id}/>
+      </td>
+    </tr>)
+  }
+
   async function fetchData() {
-    console.log("lifeCycleCalled")
     const userData = await getUsers();
-    console.log(userData)
-    const table = document.getElementById("employee-table-id");
+    setUsers(userData);
+  }
 
-    userData.forEach( user => {
-      // console.log(user)     
-      var rowNode = document.createElement("tr");
+  const loadTable = () => {
+    return users.map(user => (
+      <tr key={user._id}>
+        <td>{user.first_name} </td>
 
-      var first_name_cell = document.createElement("td");
-      var first_name_text = document.createTextNode(user.first_name);
-      first_name_cell.appendChild(first_name_text);
-      rowNode.appendChild(first_name_cell);
+        <td>{user.email}</td>
 
-      var email_cell = document.createElement("td");
-      var email_text = document.createTextNode(user.email);
-      email_cell.appendChild(email_text);
-      rowNode.appendChild(email_cell);
-
-      var edit_cell = document.createElement("td");
-      
-      ReactDOM.render(
-        <EditEmployee open={editEmployeeModalOpen} setOpen={setEditEmployeeModalOpen} setEditNum={setEditNum} userID={user._id}/>,
-        edit_cell
-      );
-
-      rowNode.appendChild(edit_cell); 
-
-      table.appendChild(rowNode);
-    })
+        <td><EditEmployee
+            open={editEmployeeModalOpen}
+            setOpen={setEditEmployeeModalOpen}
+            setEditNum={setEditNum}
+            userID={user._id}/>
+        </td>
+      </tr>
+    ))
   }
 
   return( <div className='row'>
     <div className='col-12'>
-
+      
       <table className="employee-table"  id="employee-table-id">
           <thead>
               <tr>
@@ -62,9 +73,11 @@ export default function ViewEmployeesTable(props) {
                 <th>Edit</th>
               </tr>
           </thead>
-          <tbody> </tbody>
+          <tbody>
+           {loadTable()}
+          </tbody>
       </table>
-
+        
     </div>
   </div> )
 }
