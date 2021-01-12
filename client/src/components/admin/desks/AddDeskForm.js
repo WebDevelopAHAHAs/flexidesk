@@ -62,32 +62,18 @@ const AddNewDesk = (props) => {
     <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
 
       <MatUI.FormControl>
-        <MatUI.InputLabel htmlFor="component-simple">Name</MatUI.InputLabel>
+        <MatUI.FormLabel htmlFor="component-simple">Name</MatUI.FormLabel>
         <MatUI.Input id="standard-basic" name="first_name"required type="text" onChange={handleChange} />
       </MatUI.FormControl>
-
       <MatUI.FormControl>
-        <MatUI.InputLabel htmlFor="component-simple">Email</MatUI.InputLabel>
-        <MatUI.Input id="standard-basic" name="email" required type="email" onChange={handleChange}/>
+        <MatUI.FormLabel htmlFor="component-simple">Desk Number</MatUI.FormLabel>
+        <MatUI.Input id="standard-basic" name="first_name"required type="text" onChange={handleChange} />
+      </MatUI.FormControl>
+      <MatUI.FormControl>
+        <MatUI.FormLabel htmlFor="component-simple">Available</MatUI.FormLabel>
+        <MatUI.Radio id="standard-basic" name="first_name"required type="text" onChange={handleChange} />
       </MatUI.FormControl>
 
-      <MatUI.FormControl>
-        <MatUI.InputLabel htmlFor="component-simple">Password</MatUI.InputLabel>
-        <MatUI.Input id="standard-basic" name="password"required type="password" onChange={handleChange} />
-      </MatUI.FormControl>
-      <MatUI.Input
-        accept="image/*"
-        className={classes.input}
-        style={{ display: 'none' }}
-        id="raised-button-file"
-        multiple
-        type="file"
-        />
-        <label htmlFor="raised-button-file">
-        <MatUI.Button variant="contained" component="span" className={classes.button}>
-            Upload
-        </MatUI.Button>
-        </label> 
 
       <MatUI.Button variant="contained" type="submit" value="Register">Create Desk</MatUI.Button>
   </form>
