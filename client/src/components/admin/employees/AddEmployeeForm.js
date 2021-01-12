@@ -45,7 +45,7 @@ const AddEmployeeForm = (props) => {
               type: "setLoggedInUser",
               data: userDetails
           });
-          handleClose();
+          handleClose(true);
           
       }).catch((error) => {
         if (error.response && error.response.status === 401)

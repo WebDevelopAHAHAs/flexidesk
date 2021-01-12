@@ -4,7 +4,7 @@ const User = require('../models/user');
 
 // }
 
-const getAllUsers = () => {
+const getAllUsers = function(req) {
   return User.find();
 }
 
