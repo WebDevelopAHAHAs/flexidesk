@@ -31,6 +31,7 @@ const getUser = function(req, res) {
 });
 }
 
+
 const getUsers = function (req, res) {
 
   getAllUsers(req).exec((err, users) => {
