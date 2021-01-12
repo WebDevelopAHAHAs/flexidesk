@@ -38,6 +38,9 @@ export function Layout(props) {
      
 
     <h1>View Bookings</h1> <button id='NewBooking' onClick={routeChange}><span>New Booking</span></button>
+
+    <button id='NewBooking' ><span>Search Feature</span></button>
+    
         
 
       </MatUI.Grid>
@@ -47,6 +50,78 @@ export function Layout(props) {
         <MatUI.Paper className={classes.paper}>   
 
         <div className='row'>
+        <h1>Today</h1>
+            <div className='col-12'>
+                <table className="bookings-table">
+                    <thead>
+                        <tr>
+                            <th>Desk No</th>
+                            <th>Employee</th>
+                            <th>Date</th>
+                            <th></th>
+                           
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                      
+                        <tr>
+                           
+                            <td>4</td>
+                            <td>John Smith</td>
+                            <td>14/1/2021</td>
+                            <td>< EditBookingModal open={editBookingsModalOpen} setOpen={setEditBookingsModalOpen}>Edit Booking</ EditBookingModal></td>
+                            
+                          
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        </MatUI.Paper>
+      </MatUI.Grid>
+      <MatUI.Grid item xs={12}>
+        <MatUI.Paper className={classes.paper}>   
+
+        <div className='row'>
+        <h1>This Week</h1>
+            <div className='col-12'>
+                <table className="bookings-table">
+                    <thead>
+                        <tr>
+                            <th>Desk No</th>
+                            <th>Employee</th>
+                            <th>Date</th>
+                            <th></th>
+                           
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                      
+                        <tr>
+                           
+                            <td>4</td>
+                            <td>John Smith</td>
+                            <td>14/1/2021</td>
+                            <td>< EditBookingModal open={editBookingsModalOpen} setOpen={setEditBookingsModalOpen}>Edit Booking</ EditBookingModal></td>
+                            
+                          
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        </MatUI.Paper>
+      </MatUI.Grid>
+
+      <MatUI.Grid item xs={12}>
+        <MatUI.Paper className={classes.paper}>   
+
+        <div className='row'>
+        <h1>This Month</h1>
             <div className='col-12'>
                 <table className="bookings-table">
                     <thead>
