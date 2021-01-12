@@ -85,6 +85,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     height: '100vh',
     overflow: 'auto',
+    color: '#2A2D34',
     
   },
 
