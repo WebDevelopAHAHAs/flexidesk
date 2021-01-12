@@ -1,0 +1,37 @@
+@import "../navBar/navBar.css";
+@import "../admin/bookings/adminBookings.css";
+/* @import "../admin/dashboard/adminDashboard.css";
+@import "../admin/employees/adminEmployees.css"; */
+@import "./modal.css";
+
+html, body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+  
+}
+
+.logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 16px;
+}
+
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #000;
+}
+
+
+
+
+

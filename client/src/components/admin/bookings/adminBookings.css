@@ -1,0 +1,149 @@
+
+.admin-calendar{
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.available-seats{
+  padding: 10px;
+  height: 295px;
+  
+}
+
+/* Entire Table */
+.bookings-table{
+  width: 100%;
+  text-align: left;
+  padding: 5px;
+}
+/* Header of Table */
+thead{
+  font-size: 20px;
+}
+
+th{
+  padding-bottom: 10px;    
+}
+
+/* Edit button */
+#EditBooking{
+  background-color: #fff;
+  border: none;
+  font-size: 15px;
+  
+}
+#EditBooking:active{
+  background-color: #fff;
+  border: none;
+  transform: translateY(4px);
+ 
+}
+
+#EditBooking:hover{
+  background-color: #fff;
+  border: none;
+  color: #6E75A8;
+  
+}
+
+#EditBooking:visited{
+  background-color: #fff;
+  border: none;
+}
+
+.desks{
+  margin-right: 30px;
+  background-color: #6E75A8 ;
+  padding: 12px 26px;
+  border-radius: 4px;
+  outline: none;
+  text-align: center;
+  border: 1px solid #000;
+  letter-spacing: 1px;
+text-transform: uppercase;
+transition: all 0.5s;	
+cursor: pointer;
+  font-size: 15px;
+  color: #fff;
+  text-decoration-style: solid;
+  
+
+}
+
+.desks span{
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.desks span:after {
+  content: 'book!';
+  text-align: center;
+  color: #6E75A8;
+  font-weight:bold ;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.desks:hover span {
+  padding-right: 0px;
+  color: #E8E9EB ;
+}
+
+.desks:hover{
+  background-color: #E8E9EB ;
+}
+
+.desks:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+#NewBooking{
+  margin: 3px;
+  background-color: #6E75A8 ;
+  padding: 12px 26px;
+  border-radius: 4px;
+  outline: none;
+  text-align: center;
+  border: 1px solid #000;
+  letter-spacing: 1px;
+text-transform: uppercase;
+transition: all 0.5s;	
+cursor: pointer;
+  font-size: 15px;
+  color: #fff;
+  text-decoration-style: solid;
+}
+
+#NewBooking span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#NewBooking span:after {
+  content: '\002b';
+  font-weight:bold ;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#NewBooking:hover span {
+  padding-right: 25px;
+}
+
+#NewBooking:hover span:after {
+  opacity: 1;
+  right: 0;
+}

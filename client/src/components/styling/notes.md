@@ -1,0 +1,1 @@
+  // modal content hooks need to be defined at top level of a component - and passed as props so as to follow hook rules

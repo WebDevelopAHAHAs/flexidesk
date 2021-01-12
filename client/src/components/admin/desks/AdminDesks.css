@@ -1,0 +1,100 @@
+/* Entire Table */
+.desk-table{
+    width: 100%;
+    text-align: left;
+    padding: 5px;
+}
+/* Header of Table */
+thead{
+    font-size: 20px;
+}
+
+th{
+    padding-bottom: 10px;    
+}
+
+/* Edit button */
+#Edit{
+    background-color: #fff;
+    border: none;
+    font-size: 15px;
+    
+}
+#Edit:active{
+    background-color: #fff;
+    border: none;
+    transform: translateY(4px);
+   
+}
+
+#Edit:hover{
+    background-color: #fff;
+    border: none;
+    color: #6E75A8 ;
+    
+}
+
+#Edit:visited{
+    background-color: #fff;
+    border: none;
+}
+/* 
+button{
+    background-color: #fff;
+    padding: 12px 26px;
+    border-radius: 2px;
+    outline: none;
+    border: 1px solid #000;
+    transition: all 0.3s ease-out;
+    font-size: 15px;
+    color: #000;
+    text-decoration-style: solid;
+}
+button:hover{
+    color: #fff ;
+   
+    
+} */
+
+
+#AddDesk{
+    background-color: #6E75A8 ;
+    padding: 12px 26px;
+    border-radius: 4px;
+    outline: none;
+    text-align: center;
+    border: 1px solid #000;
+    letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: all 0.5s;	
+	cursor: pointer;
+    font-size: 15px;
+    color: #fff;
+    text-decoration-style: solid;
+}
+
+#AddDesk span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  #AddDesk span:after {
+    content: '\002b';
+    font-weight:bold ;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  #AddDesk:hover span {
+    padding-right: 25px;
+  }
+  
+  #AddDesk:hover span:after {
+    opacity: 1;
+    right: 0;
+  }

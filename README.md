@@ -1,4 +1,6 @@
-<img src="docs/img/logo.jpg" style="zoom:55%;" />
+<img src="docs/img/Logo.jpg" style="zoom:55%;" />
+
+
 
 # T3A2 - Full Stack App (Part A)
 
