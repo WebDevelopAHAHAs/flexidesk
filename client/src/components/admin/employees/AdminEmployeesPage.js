@@ -4,8 +4,9 @@ import useStyles from '../../styling/useStyles';
 import AppLayout from '../../AppLayout'
 import './adminEmployees.css'
 
-import ViewEmployees from './ViewEmployeesTable'
 import AddEmployee from './AddEmployeeModal'
+import ViewEmployeesTable from './ViewEmployeesTable'
+
 // import EditEmployee from './EditEmployeeModal'
 
 export function Route(props){
@@ -46,7 +47,7 @@ export function Layout(props) {
             <MatUI.Paper className={classes.paper}>   
 
 
-              <ViewEmployees/>
+              <ViewEmployeesTable/>
 
 
             </MatUI.Paper>
