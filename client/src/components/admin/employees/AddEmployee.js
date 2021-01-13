@@ -47,6 +47,7 @@ export function Layout(props) {
 
   return(
   <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+
     <MatUI.FormControl>
       <MatUI.InputLabel htmlFor="component-simple">Name</MatUI.InputLabel>
       <MatUI.Input id="standard-basic" name="first_name"required type="text" onChange={handleChange} />
@@ -61,7 +62,11 @@ export function Layout(props) {
       <MatUI.InputLabel htmlFor="component-simple">Password</MatUI.InputLabel>
       <MatUI.Input id="standard-basic" name="password"required type="password" onChange={handleChange} />
     </MatUI.FormControl>
+    
     <MatUI.Button type="submit" value="CreateUser">Register Employee</MatUI.Button>
+
+    <p>{errorMessage}</p>
+
   </form>
   )
 }

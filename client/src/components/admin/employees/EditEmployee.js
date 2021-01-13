@@ -48,20 +48,23 @@ export function Layout(props) {
     })
   }
 
-  return(<form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+  return(
+  <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
 
-      <MatUI.FormControl>
-        <MatUI.InputLabel htmlFor="component-simple">Name</MatUI.InputLabel>
-        <MatUI.Input id="standard-basic" defaultValue={initialFormState.first_name} name="first_name" required type="text" onChange={handleChange} />
-      </MatUI.FormControl>
+    <MatUI.FormControl>
+      <MatUI.InputLabel htmlFor="component-simple">Name</MatUI.InputLabel>
+      <MatUI.Input id="standard-basic" defaultValue={initialFormState.first_name} name="first_name" required type="text" onChange={handleChange} />
+    </MatUI.FormControl>
 
-      <MatUI.FormControl>
-        <MatUI.InputLabel htmlFor="component-simple">Email</MatUI.InputLabel>
-        <MatUI.Input id="standard-basic" defaultValue={initialFormState.email} name="email" required type="email" onChange={handleChange}/>
-      </MatUI.FormControl>
-      <MatUI.Button type="submit" value="UpdateUser">Save Changes</MatUI.Button>
+    <MatUI.FormControl>
+      <MatUI.InputLabel htmlFor="component-simple">Email</MatUI.InputLabel>
+      <MatUI.Input id="standard-basic" defaultValue={initialFormState.email} name="email" required type="email" onChange={handleChange}/>
+    </MatUI.FormControl>
+
+    <MatUI.Button type="submit" value="UpdateUser">Save Changes</MatUI.Button>
 
     <p>{errorMessage}</p>
 
-    </form>)
+  </form>
+  )
 }

@@ -56,15 +56,20 @@ export function Layout(props) {
       <MatUI.FormLabel htmlFor="component-simple">Desk Number</MatUI.FormLabel>
       <MatUI.Input id="standard-basic" name="number" required type="number" onChange={handleChange} />
     </MatUI.FormControl>
+
     <MatUI.FormControl>
       <MatUI.FormLabel htmlFor="component-simple">Section</MatUI.FormLabel>
       <MatUI.Input id="standard-basic" name="section" required type="text" onChange={handleChange} />
     </MatUI.FormControl>
+
     <MatUI.FormControl>
       <MatUI.FormLabel htmlFor="component-simple">Available</MatUI.FormLabel>
       <MatUI.Radio id="standard-basic" name="available" required type="radio" onChange={handleChange} />
     </MatUI.FormControl>
+
     <MatUI.Button variant="contained" type="submit" value="New">Create Desk</MatUI.Button>
+
+    <p>{errorMessage}</p>
   
   </form>
   )
