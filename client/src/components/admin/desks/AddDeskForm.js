@@ -1,15 +1,15 @@
 import React, {useState} from 'react'
 import { useHistory} from "react-router-dom"
-import {newDesk} from '../../../services/deskServices'
+import {createDesk} from '../../../services/deskServices'
 import {useGlobalState} from '../../../config/store'
 import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';
 
 const AddNewDesk = (props) => {
   const initialFormState = {
-    name: "",
-    email: "",
-    password: ""
+    number: "",
+    section: "",
+    active: ""
   } 
   const handleClose = props.handleClose
 
@@ -40,9 +40,9 @@ const AddNewDesk = (props) => {
   function handleSubmit(event) {
       event.preventDefault()
       // Attempt register with server
-      newDesk(deskDetails).then(() => {
+      createDesk(deskDetails).then(() => {
           dispatch({
-              type: "addNewDesk",
+              type: "createDesk",
               data: deskDetails
           });
           handleClose();
@@ -71,10 +71,8 @@ const AddNewDesk = (props) => {
       </MatUI.FormControl>
       <MatUI.FormControl>
         <MatUI.FormLabel htmlFor="component-simple">Available</MatUI.FormLabel>
-        <MatUI.Radio id="standard-basic" name="available"required type="text" onChange={handleChange} />
+        <MatUI.Radio id="standard-basic" name="available"required type="radio" onChange={handleChange} />
       </MatUI.FormControl>
-
-
       <MatUI.Button variant="contained" type="submit" value="New">Create Desk</MatUI.Button>
   </form>
   )
