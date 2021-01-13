@@ -23,19 +23,21 @@ export default function NavBar() {
 
   return (
     <MatUI.List>
-    <h2 className="navbar-header">What would you like to do</h2>
+    <h2 className="navbar-header"></h2>
     <div className="navbar-home">
       <ul className="navbar-button-list">
 
-      <li><MatUI.Button color="primary" href="/admin/dashboard">Home</MatUI.Button></li>
+      <li><MatUI.Button className="nav-btn" href="/admin/dashboard">Dashboard</MatUI.Button></li>
 
-      <li><MatUI.Button color="primary" href="/admin/bookings">Bookings</MatUI.Button></li>
+      <li><MatUI.Button className="nav-btn" href="/admin/bookings">New Booking</MatUI.Button></li>
 
-      <li><MatUI.Button color="primary" href="/admin/employees">Employees</MatUI.Button></li>
+      <li><MatUI.Button className="nav-btn" href="/admin/viewbookings">View Bookings</MatUI.Button></li>
 
-      {/* <li><Button color="primary" href="/admin/desks">Desks</Button></li> */}
+      <li><MatUI.Button className="nav-btn" href="/admin/employees">Employees</MatUI.Button></li>
 
-      <MatUI.Button color="secondary" onClick={handleLogout} to="/login" >Logout </MatUI.Button>
+      <li><MatUI.Button className="nav-btn" href="/admin/desks">Desks</MatUI.Button></li>
+
+      <MatUI.Button id="nav-btn" onClick={handleLogout} to="/login" >Logout </MatUI.Button>
 
       </ul>
     </div>

@@ -6,18 +6,19 @@ import * as MatIcon from '@material-ui/icons'
 
 // Styling
 import useStyles from './styling/useStyles';
-import StylingTypography from './styling/StylingTypography';
+
 
 import NavBar from './navBar/NavBar'
 import {Layout as AdminBookingsLayout}  from './admin/bookings/AdminBookingsPage'
+import {Layout as AdminViewBookingsLayout}  from './admin/bookings/AdminViewBookingsPage'
 import {Layout as AdminDashboardLayout} from './admin/dashboard/AdminDashboardPage'
 import {Layout as AdminEmployeesLayout} from './admin/employees/AdminEmployeesPage'
-
+import {Layout as AdminDesksLayout}     from './admin/desks/AdminDesksPage'
 
 export default function AppLayout(props)
 {
   const classes = useStyles();
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -28,7 +29,7 @@ export default function AppLayout(props)
   };
 
   return ( <div>
-    <StylingTypography/>
+    
   
     <div className={classes.root}>
 
@@ -42,7 +43,7 @@ export default function AppLayout(props)
           <MatIcon.Menu/>
         </MatUI.IconButton>
 
-        <MatUI.Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
+        <MatUI.Typography noWrap className={classes.title}>
           FlexiDesk
         </MatUI.Typography>
 
@@ -71,8 +72,9 @@ export default function AppLayout(props)
       <MatUI.Divider/>
 
       <NavBar/>
-
+      
     </MatUI.Drawer>
+    
 
 
     <main className={classes.content}>
@@ -81,12 +83,17 @@ export default function AppLayout(props)
               
       {props && props.bookings && <AdminBookingsLayout/>}
 
+      {props && props.viewbookings && <AdminViewBookingsLayout/>}
+
       {props && props.dashboard && <AdminDashboardLayout/>}
 
       {props && props.employees && <AdminEmployeesLayout/>}
+
+      {props && props.desks && <AdminDesksLayout/>}
       
     </main>
-
+    
     </div>
+   
   </div> );
 }

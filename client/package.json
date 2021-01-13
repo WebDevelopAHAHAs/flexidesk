@@ -1,5 +1,6 @@
 {
   "name": "flexidesk",
+  "home": "http://flexi-desks.com",
   "version": "0.1.0",
   "private": true,
   "description": "FlexiDesk Client",
@@ -37,6 +38,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": "14.8.0"
   },
   "homepage": "/"
 }

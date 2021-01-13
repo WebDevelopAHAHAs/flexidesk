@@ -1,7 +1,8 @@
-import {React, useState} from 'react';
+import {React} from 'react';
 import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';
 import AppLayout from '../../AppLayout'
+import TabPanel from './AdminDashboardTabs'
 
 export function Route(props) {
   return( <AppLayout dashboard/>);
@@ -11,16 +12,15 @@ export function Layout(props) {
 
   const classes = useStyles();
 
-  return( <div id="adminDashboard-page">
-
-  <h1>Dashboard</h1>
+  return( <div id="adminDashboard-page">  
 
     <MatUI.Container maxWidth="lg" className={classes.container} id="adminDashboard-container">
       <MatUI.Grid container spacing={1}>
       
-        <MatUI.Grid item xs={12} md={8} lg={4}>
+        <MatUI.Grid item xs={12} md={8} lg={12}>
+        <h1 className="admin-dashboard-h1">Admin Dashboard</h1>
           <MatUI.Paper className="box1">
-
+            <TabPanel/>
           </MatUI.Paper>
         </MatUI.Grid>
       

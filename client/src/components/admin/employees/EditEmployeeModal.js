@@ -1,44 +1,41 @@
-//Material UI
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
+// import React from 'react'
+import {useState} from 'react'
+import {Modal, Backdrop, Fade} from '@material-ui/core/';
+
+import EditEmployeeForm from './EmployeeEditForm'
 
 export default function EditEmployee(props) {
-  if(props){
-    console.log("props----", props)
-  }
 
-  const handleOpen = (event) => {
-    console.log(event.target.id)
-    props.setOpen(true);
-    props.setEditNum(event.target.id)
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = (event) => {    
+    console.log("Edit Employee Button Pressed.", props)
+    setOpen(true);
   };
 
-  const handleClose = () => {
-      props.setOpen(false);
+  const handleClose = (success) => {
+      setOpen(false);
+      if(success === true) window.location.reload()  
   };
 
   return(<div className='editEmployeeDiv'>
-    <button id="Edit" onClick={handleOpen}> Edit Employee</button>
-    <Modal 
-      aria-labelledby="transition-modal-title" 
-      aria-describedby="transition-modal-description"
-      className="modal-position"
-      open={props.open}
-      onClose={handleClose}
-      closeAfterTransition
-      BackdropComponent={Backdrop}
-      BackdropProps={{ timeout: 500 }}
-    >
+    
+    <button id="Edit" onClick={handleOpen}> <i className="far fa-edit"></i></button>    
 
-      <Fade 
-        className="modal-styling"
-        in={props.open}>
-         <div>
-            {/* <div className={classes.paper}> */}
-            <h2 id="transition-modal-title">{props.editNum} employee</h2>
-            <p id="transition-modal-description"> put component here</p>
+    <Modal className="modal-position"
+      open={open} onClose={handleClose} closeAfterTransition
+      aria-labelledby="transition-modal-title" aria-describedby="transition-modal-description"
+      BackdropComponent={Backdrop} BackdropProps={{ timeout: 500 }} >
+
+      <Fade className="modal-styling" in={open}>
+          <div>
+
+            <h2 id="transition-modal-title">Edit Employee</h2>
+            <div id="transition-modal-description">
+              <EditEmployeeForm first_name={props.first_name} email={props.email} handleClose={handleClose}/>
             </div>
+          
+          </div>
       </Fade>
 
     </Modal>
