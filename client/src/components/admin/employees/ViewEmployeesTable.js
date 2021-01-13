@@ -26,11 +26,7 @@ export default function ViewEmployeesTable(props) {
       <tr key={user._id}>
         <td>{user.first_name} </td>
         <td>{user.email}</td>
-        <td><EditEmployee
-            key={user._id}
-            first_name={user.first_name}
-            email={user.email}/>
-        </td>
+        <td><EditEmployee key={user._id} first_name={user.first_name} email={user.email}/></td>
       </tr>
     ))
   }

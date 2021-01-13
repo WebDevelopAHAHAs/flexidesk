@@ -1,48 +1,37 @@
 import React, {useState} from 'react'
-import { useHistory} from "react-router-dom"
-import {registerUser} from '../../../services/userServices'
+// import { useHistory } from "react-router-dom"
+import {createUser} from '../../../services/userServices'
 import {useGlobalState} from '../../../config/store'
 import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';
 
 const AddEmployeeForm = (props) => {
-  const initialFormState = {
-    first_name: "",
-    email: "",
-    password: ""
-  } 
-  const handleClose = props.handleClose
-
+  const initialFormState = { first_name: "", email: "", password: "" };
+  const handleClose = props.handleClose;
   const classes = useStyles();
 
   //User Related
-  const [userDetails,setUserDetails] = useState(initialFormState)
-  const {dispatch} = useGlobalState()
+  const [userDetails,setUserDetails] = useState(initialFormState);
+  const {dispatch} = useGlobalState();
 
   //Error Related
-  const [errorMessage, setErrorMessage] = useState(null)
+  const [errorMessage, setErrorMessage] = useState(null);
 
   //Compartmentalise
-  const errorStyles = {
-    color: "red"
-  }
+  const errorStyles = { color: "red" };
 
   function handleChange(event) {
-      const name = event.target.name
-      const value = event.target.value
-      setUserDetails({
-          ...userDetails,
-          [name]: value
-      })
+    const name = event.target.name;
+    const value = event.target.value;
+    setUserDetails({ ...userDetails, [name]: value })
   }
-
 
   function handleSubmit(event) {
       event.preventDefault()
       // Attempt register with server
-      registerUser(userDetails).then(() => {
+      createUser(userDetails).then(() => {
           dispatch({
-              type: "setLoggedInUser",
+              type: "newUser",
               data: userDetails
           });
           handleClose(true);
@@ -52,10 +41,8 @@ const AddEmployeeForm = (props) => {
             setErrorMessage("Registration failed. Please check you've only entered string values and filled in every one.")
         else   
             setErrorMessage("There may be a problem with the server. Please try again after a few moments.")
-    })
-    
+    })    
   }
-
 
   return (
 
@@ -74,8 +61,9 @@ const AddEmployeeForm = (props) => {
         <MatUI.InputLabel htmlFor="component-simple">Password</MatUI.InputLabel>
         <MatUI.Input id="standard-basic" name="password"required type="password" onChange={handleChange} />
       </MatUI.FormControl>
-      <MatUI.Button type="submit" value="Register">Register Employee</MatUI.Button>
-  </form>
+      <MatUI.Button type="submit" value="CreateUser">Register Employee</MatUI.Button>
+    </form>
+
   )
 }
 export default AddEmployeeForm

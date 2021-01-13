@@ -2,7 +2,7 @@
 import {useState} from 'react'
 import {Modal, Backdrop, Fade} from '@material-ui/core/';
 
-import EditEmployeeForm from './EmployeeEditForm'
+import EditEmployeeForm from './EditEmployeeForm'
 
 export default function EditEmployee(props) {
 

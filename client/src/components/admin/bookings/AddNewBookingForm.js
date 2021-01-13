@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {registerUser} from '../../../services/userServices'
+import {createUser} from '../../../services/userServices'
 import {useGlobalState} from '../../../config/store'
 import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';
@@ -39,7 +39,7 @@ const NewEmployee = (props) => {
   function handleSubmit(event) {
       event.preventDefault()
       // Attempt register with server
-      registerUser(userDetails).then(() => {
+      createUser(userDetails).then(() => {
           dispatch({
               type: "setLoggedInUser",
               data: userDetails
