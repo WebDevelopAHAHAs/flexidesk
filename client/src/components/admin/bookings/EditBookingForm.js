@@ -79,7 +79,9 @@ const EditEmployee = (props) => {
         <MatUI.InputLabel htmlFor="component-simple">Recurring Booking</MatUI.InputLabel>
         <MatUI.Select id="standard-select" name="recurring-booking"required type="select" onChange={handleChange} />
       </MatUI.FormControl>
+      <MatUI.FormControl>
       <MatUI.Button type="submit" value="Register">Save Changes</MatUI.Button>
+      </MatUI.FormControl>
   </form>
   )
 }
