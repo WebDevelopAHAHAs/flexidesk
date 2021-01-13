@@ -6,10 +6,6 @@ import EditDesk from './EditDeskModal'
 
 export default function ViewDesksTable(props) {
 
-  //edit desk
-  const [editDeskModalOpen, setEditDeskModalOpen] = useState(false);
-  const [editNum, setEditNum,] = useState(null)
-
   useEffect( () => {
     fetchData();
   }, [])
@@ -23,18 +19,24 @@ export default function ViewDesksTable(props) {
       var rowNode = document.createElement("tr");
 
       var number_cell = document.createElement("td");
-      var number_text = document.createTextNode(desk.first_name);
+      var number_text = document.createTextNode(desk.number);
       number_cell.appendChild(number_text);
       rowNode.appendChild(number_cell);
+
+      var section_cell = document.createElement("td");
+      var section_text = document.createTextNode(desk.section);
+      section_cell.appendChild(section_text);
+      rowNode.appendChild(section_cell);
+
+      var available_cell = document.createElement("td");
+      var available_text = document.createTextNode(desk.available);
+      available_cell.appendChild(available_text);
+      rowNode.appendChild(available_cell);
 
       var edit_cell = document.createElement("td");
       
       ReactDOM.render(
-        <EditDesk
-          open={editDeskModalOpen}
-          setOpen={setEditDeskModalOpen}
-          setEditNum={setEditNum}
-          deskID={desk._id}/>,
+        <td><EditDesk userID={desk._id} number={desk.number} section={desk.section} email={desk.available}/></td>,
         edit_cell
       );
 

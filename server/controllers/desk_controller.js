@@ -1,5 +1,5 @@
 const Desk = require('../models/desk');
-const {getAllEntries} = require('../utilities/crud_utilities')
+const {getAllEntries} = require('../utilities/desk_utilities')
 
 async function newDesk(req, res) {
   const { number, section, active } = req.body;

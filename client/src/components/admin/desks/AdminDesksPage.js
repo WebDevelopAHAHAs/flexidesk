@@ -4,7 +4,7 @@ import useStyles from '../../styling/useStyles';
 import AppLayout from '../../AppLayout'
 import './AdminDesks.css'
 
-import AddDeskButton from './AddDeskModal'
+import AddDesk from './AddDesk'
 import ViewDesksTable from './ViewDesksTable'
 
 export function Route(props){
@@ -28,8 +28,8 @@ export function Layout(props) {
       
         <MatUI.Grid item xs={12} md={8} lg={4}>
 
-          <h1>Desks</h1>        
-          <AddDeskButton open={addDeskModalOpen} setOpen={setAddDeskModalOpen} setAddNum={setAddNum}/>
+          <h1>Desks</h1>
+          <AddDesk/>
 
         </MatUI.Grid>
 

@@ -1,11 +1,9 @@
 /* eslint-disable no-unused-expressions */
 import React, {useState, useEffect} from 'react'
-import ReactDOM from 'react-dom';
-import {getUser, getUsers} from '../../../services/userServices'
+import {getUsers} from '../../../services/userServices'
 
-import EditEmployee from './EditEmployeeModal'
+import EditEmployee from './EditEmployee'
 import DeleteDialog from './DeleteEmployeeDialog'
-
 
 export default function ViewEmployeesTable(props) {
 
@@ -27,7 +25,7 @@ export default function ViewEmployeesTable(props) {
       <tr key={user._id}>
         <td>{user.first_name} </td>
         <td>{user.email}</td>
-        <td><EditEmployee key={user._id} first_name={user.first_name} email={user.email}/></td>
+        <td><EditEmployee userID={user._id} first_name={user.first_name} email={user.email}/></td>
         <td><DeleteDialog/></td>
       </tr>
     ))

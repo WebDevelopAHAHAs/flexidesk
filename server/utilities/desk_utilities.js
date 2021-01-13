@@ -1,3 +1,4 @@
+const Desk = require('../models/Desk');
 
 const getAllDesks = function() {
   return Desk.find();
@@ -17,3 +18,5 @@ const updateDesk = function (id) {
   return Desk.findByIdAndUpdate(id, req.body, { new: true } );
     // ,{ new: true } // include if i dont want to return the old document
 };
+
+module.exports = { getDeskByID, getAllDesks, deleteDesk, updateDesk};

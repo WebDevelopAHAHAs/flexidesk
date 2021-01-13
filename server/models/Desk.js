@@ -10,7 +10,7 @@ const Desk = new Schema({
       type: String,
       required: true
     },
-    active: {
+    available: {
       type: Boolean,
       required: true
     }

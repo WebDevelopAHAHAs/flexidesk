@@ -22,6 +22,7 @@ async function newUser(req, res) {
 }
 
 const getUser = function(req, res) {
+  console.log("Hit!")
 	getUserByID(req).exec((err, user) => {
     if (err) {
         res.status(400);
@@ -34,7 +35,7 @@ const getUser = function(req, res) {
 
 const getUsers = function (req, res) {
 
-  getAllUsers(req).exec((err, users) => {
+  getAllUsers().exec((err, users) => {
       if (err) {
           res.status(500);
           return res.json({
@@ -46,7 +47,7 @@ const getUsers = function (req, res) {
 };
 
 const removeUser = function (req, res) {
-    deleteUser(req.params.id).exec((err) => {
+    deleteUser(req).exec((err) => {
         if (err) {
             res.status(500);
             res.json({ error: err });
@@ -60,7 +61,7 @@ const changeUser = function (req, res) {
         res.status(req.error.status);
         res.send(req.error.message);
     } else {
-        updateUser(req.params.id).exec((err, user) => {
+        updateUser(req).exec((err, user) => {
             if (err) {
                 res.status(500);
                 res.json({ error: err });
