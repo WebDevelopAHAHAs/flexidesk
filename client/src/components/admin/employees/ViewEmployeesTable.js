@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import {getUser, getUsers} from '../../../services/userServices'
 
 import EditEmployee from './EditEmployeeModal'
+import DeleteDialog from './DeleteEmployeeDialog'
 
 
 export default function ViewEmployeesTable(props) {
@@ -27,6 +28,7 @@ export default function ViewEmployeesTable(props) {
         <td>{user.first_name} </td>
         <td>{user.email}</td>
         <td><EditEmployee key={user._id} first_name={user.first_name} email={user.email}/></td>
+        <td><DeleteDialog/></td>
       </tr>
     ))
   }
@@ -42,7 +44,8 @@ export default function ViewEmployeesTable(props) {
                 {/* <th>Mobile</th> */}
                 {/* <th>Access</th> */}
                 <th>Email</th>
-                <th>Edit</th>
+                <th></th>
+                <th></th>
               </tr>
           </thead>
           
