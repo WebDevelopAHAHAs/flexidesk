@@ -1,4 +1,4 @@
-const Desk = require('../models/desk');
+const Desk = require('../models/Desk');
 const {getAllEntries} = require('../utilities/crud_utilities')
 
 async function newDesk(req, res) {
