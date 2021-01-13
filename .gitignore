@@ -28,6 +28,8 @@ yarn-error.log*
 
 # Client
 
+client/debug.log
+
 ## Dependencies
 client/node_modules
 client/.pnp
@@ -54,7 +56,10 @@ client/.eslintcache
 
 # Server
 
-./server/config/databaseKey.js
+server/config/databaseKey.js
+
+server/config/databaseKey.js
+
 
 ## Dependencies
 server/node_modules
