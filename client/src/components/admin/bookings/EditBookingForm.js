@@ -39,19 +39,19 @@ const EditEmployee = (props) => {
   function handleSubmit(event) {
       event.preventDefault()
       // Attempt register with server
-      registerUser(userDetails).then(() => {
-          dispatch({
-              type: "setLoggedInUser",
-              data: userDetails
-          });
-          handleClose();
+    //   registerUser(userDetails).then(() => {
+    //       dispatch({
+    //           type: "setLoggedInUser",
+    //           data: userDetails
+    //       });
+    //       handleClose();
           
-      }).catch((error) => {
-        if (error.response && error.response.status === 401)
-            setErrorMessage("Registration failed. Please check you've only entered string values and filled in every one.")
-        else   
-            setErrorMessage("There may be a problem with the server. Please try again after a few moments.")
-    })
+    //   }).catch((error) => {
+    //     if (error.response && error.response.status === 401)
+    //         setErrorMessage("Registration failed. Please check you've only entered string values and filled in every one.")
+    //     else   
+    //         setErrorMessage("There may be a problem with the server. Please try again after a few moments.")
+    // })
     
   }
 
