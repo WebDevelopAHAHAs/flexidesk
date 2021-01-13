@@ -2,6 +2,6 @@ import axios from 'axios'
 
 // Create an axios instance
 export default axios.create({
-  baseURL: 'http://localhost:3009',
+  baseURL: 'https://flexidesk.herokuapp.com/',
   timeout: 5000
 })
