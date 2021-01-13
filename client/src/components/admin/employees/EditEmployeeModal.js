@@ -2,7 +2,7 @@
 import {useState} from 'react'
 import {Modal, Backdrop, Fade} from '@material-ui/core/';
 
-import EditEmployeeForm from './EmployeeEditForm'
+import EditEmployeeForm from './EditEmployeeForm'
 
 export default function EditEmployee(props) {
 
@@ -32,10 +32,7 @@ export default function EditEmployee(props) {
 
             <h2 id="transition-modal-title">Edit Employee</h2>
             <div id="transition-modal-description">
-              <EditEmployeeForm handleClose={handleClose}
-                first_name={props.first_name}
-                email={props.email}
-              />
+              <EditEmployeeForm first_name={props.first_name} email={props.email} handleClose={handleClose}/>
             </div>
           
           </div>

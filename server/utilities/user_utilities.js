@@ -1,9 +1,5 @@
 const User = require('../models/user');
 
-// const createUser = () => {
-
-// }
-
 const getAllUsers = function(req) {
   return User.find();
 }
@@ -19,11 +15,8 @@ const deleteUser = function(id) {
 const updateUser = function (id) {
   req.body.modified_date = Date.now();
   // use new:true to return the updated post rather than the original post when the query is executed
-  return User.findByIdAndUpdate(id, req.body
-    // ,{ new: true } // include if i dont want to return the document
-  );
+  return User.findByIdAndUpdate(id, req.body); // ,{ new: true } 
+    // include if i dont want to return the document
 };
 
 module.exports = { getUserByID, getAllUsers, deleteUser, updateUser};
-
-// export default utilities;
