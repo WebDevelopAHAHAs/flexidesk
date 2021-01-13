@@ -1,4 +1,4 @@
-const User = require('../models/user');
+const User = require('../models/User');
 const {getUserByID, getAllUsers, deleteUser, updateUser} = require('../utilities/user_utilities')
 
 const test = function(req, res) {
@@ -22,7 +22,7 @@ async function newUser(req, res) {
 }
 
 const getUser = function(req, res) {
-	getUserByID(req.params.id).exec((err, user) => {
+	getUserByID(req).exec((err, user) => {
     if (err) {
         res.status(400);
         return res.send("User not found");
