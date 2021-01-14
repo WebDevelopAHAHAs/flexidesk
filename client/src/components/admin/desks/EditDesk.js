@@ -12,7 +12,7 @@ export default function Wrapper(props) {
 }
 
 export function Button(props) {
-  return (
+  return(
   <button id="Edit" onClick={props.handleOpen}>
     <i className="far fa-edit"></i>
   </button>

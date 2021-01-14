@@ -7,8 +7,7 @@ import ModalWrap from '../../ModalWrap'
 import {createDesk} from '../../../services/deskServices'
 
 export default function Wrapper(props) {
-  let details = null
-  return(<ModalWrap dataType="desk" formType="add" header="Add Desk" id={props.deskID} details={details}/>)
+  return(<ModalWrap dataType="desk" formType="add" header="Add Desk"/>)
 }
 
 export function Button(props) {

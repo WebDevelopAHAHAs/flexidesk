@@ -8,8 +8,7 @@ import useStyles from '../../styling/useStyles';
 import ModalWrap from '../../ModalWrap'
 
 export default function Wrapper(props) {
-  let details = null
-  return(<ModalWrap dataType="user" formType="add" header="Add Employee" id={props.userID} details={details}/>)
+  return(<ModalWrap dataType="user" formType="add" header="Add Employee"/>)
 }
 
 export function Button(props) {
@@ -39,7 +38,7 @@ export function Layout(props) {
 
       }).catch((error) => {
         if (error.response && error.response.status === 401)
-          setErrorMessage("Registration failed. Please check you've only entered string values and filled in every one.")
+          setErrorMessage("Registration failed.")
         else   
           setErrorMessage(props.errorMessage)
     })
@@ -63,7 +62,7 @@ export function Layout(props) {
       <MatUI.Input id="standard-basic" name="password"required type="password" onChange={handleChange} />
     </MatUI.FormControl>
     
-    <MatUI.Button type="submit" value="CreateUser">Register Employee</MatUI.Button>
+    <MatUI.Button type="submit" value="createUser">Register Employee</MatUI.Button>
 
     <p>{errorMessage}</p>
 

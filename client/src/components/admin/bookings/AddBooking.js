@@ -7,15 +7,14 @@ import ModalWrap from '../../ModalWrap'
 import {createBooking} from '../../../services/bookingServices'
 
 export default function Wrapper(props) {
-  let details = null
-  return(<ModalWrap dataType="desk" formType="add" header="Add Desk" id={props.deskID} details={details}/>)
+  return(<ModalWrap dataType="desk" formType="add" header="Add Desk"/>)
 }
 
 export function Button(props) {
-  return (
+  return(
   <button id="AddDesk" onClick={props.handleOpen}>
     <span>Add Desk</span>
-  </button> )
+  </button>)
 }
 
 export function Layout(props) {
@@ -53,12 +52,12 @@ export function Layout(props) {
     
     <MatUI.FormControl>
       <MatUI.InputLabel htmlFor="component-simple">Employee Name</MatUI.InputLabel>
-      <MatUI.Input id="standard-basic" name="first_name"required type="text" onChange={handleChange} />
+      <MatUI.Input id="standard-basic" name="first_name"required type="text" onChange={handleChange}/>
     </MatUI.FormControl>
 
     <MatUI.FormControl>
       <MatUI.InputLabel htmlFor="component-simple">Recurring Booking</MatUI.InputLabel>
-      <MatUI.Select id="standard-select" name="recurring-booking"required type="select" onChange={handleChange} />
+      <MatUI.Select id="standard-select" name="recurring-booking"required type="select" onChange={handleChange}/>
     </MatUI.FormControl>
 
     <MatUI.Button type="submit" value="Register">
