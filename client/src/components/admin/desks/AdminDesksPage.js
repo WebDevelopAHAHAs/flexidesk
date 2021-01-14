@@ -15,11 +15,6 @@ export function Layout(props) {
 
   const classes = useStyles();
 
-  //add desk
-  const [addDeskModalOpen, setAddDeskModalOpen] = useState(false);
-  const [addNum, setAddNum] = useState(null)
-
-
   return( <div id="adminDesk-page">
 
     <MatUI.Container maxWidth="lg" className={classes.container} id="adminDesks-container">

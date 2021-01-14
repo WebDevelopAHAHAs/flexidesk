@@ -4,7 +4,7 @@ import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';
 
 import ModalWrap from '../../ModalWrap'
-import {createDesk} from '../../../services/deskServices'
+import {createBooking} from '../../../services/bookingServices'
 
 export default function Wrapper(props) {
   let details = null
@@ -24,25 +24,25 @@ export function Layout(props) {
   const [errorMessage, setErrorMessage] = useState(null)
 
   const initialFormState = {number: "", section: "", available: false}
-  const [deskDetails, setDeskDetails] = useState(initialFormState);
+  const [bookingDetails, setBookingDetails] = useState(initialFormState);
 
   function handleChange(event) {
     const name = event.target.name
     let value = event.target.value
     if(name === "available")
       value = event.target.checked
-    setDeskDetails({ ...deskDetails, [name]: value })
+    setBookingDetails({ ...bookingDetails, [name]: value })
   }
 
   function handleSubmit(event) {
       event.preventDefault()
-      createDesk(deskDetails).then(() => {
-        dispatch({ type: "createDesk", data: deskDetails });
+      createBooking(bookingDetails).then(() => {
+        dispatch({ type: "createBooking", data: bookingDetails });
         props.handleClose(true);
 
       }).catch((error) => {
         if (error.response && error.response.status === 401)
-          setErrorMessage("Creating a new desk failed. Please check you've only entered string values and filled in every one.")
+          setErrorMessage("Creating a new booking failed.")
         else   
           setErrorMessage(props.errorMessage)
     })
@@ -50,23 +50,24 @@ export function Layout(props) {
 
   return(
   <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
-
+    
     <MatUI.FormControl>
-      <MatUI.FormLabel htmlFor="component-simple">Desk Number</MatUI.FormLabel>
-      <MatUI.Input id="standard-basic" name="number" required type="number" onChange={handleChange} />
+      <MatUI.InputLabel htmlFor="component-simple">Employee Name</MatUI.InputLabel>
+      <MatUI.Input id="standard-basic" name="first_name"required type="text" onChange={handleChange} />
     </MatUI.FormControl>
 
     <MatUI.FormControl>
-      <MatUI.FormLabel htmlFor="component-simple">Section</MatUI.FormLabel>
-      <MatUI.Input id="standard-basic" name="section" required type="text" onChange={handleChange} />
+      <MatUI.InputLabel htmlFor="component-simple">Recurring Booking</MatUI.InputLabel>
+      <MatUI.Select id="standard-select" name="recurring-booking"required type="select" onChange={handleChange} />
     </MatUI.FormControl>
 
-    <MatUI.FormControl>
-      <MatUI.FormLabel htmlFor="component-simple">Available</MatUI.FormLabel>
-      <MatUI.Radio id="standard-basic" name="available" required type="radio" onChange={handleChange} />
-    </MatUI.FormControl>
-
-    <MatUI.Button variant="contained" type="submit" value="New">Create Desk</MatUI.Button>
+    <MatUI.Button type="submit" value="Register">
+      Create New Booking
+    </MatUI.Button>
+    
+    <MatUI.Button onClick={props.handleClose} variant="contained" color="primary">
+      Cancel//FIX ME
+    </MatUI.Button>
 
     <p>{errorMessage}</p>
   

@@ -16,12 +16,12 @@ export function Button(props) {
 }
 
 export function Layout(props) {
+  const classes = useStyles();
+  console.log(useGlobalState)
+  const {dispatch} = useGlobalState();
+  const [errorMessage, setErrorMessage] = useState(null)
 
   const initialFormState = {id: props.id, first_name: props.details[0], email: props.details[1]}
-
-  const classes = useStyles();
-  const {dispatch} = useGlobalState()
-  const [errorMessage, setErrorMessage] = useState(null)
   const [userDetails, setUserDetails] = useState(initialFormState);
 
   function handleChange(event) {
@@ -40,12 +40,13 @@ export function Layout(props) {
         dispatch({ type: "updateUser", data: userDetails });
         props.handleClose(true);
 
-      }).catch((error) => {
-        if (error.response && error.response.status === 401)
-          setErrorMessage("Updating user failed. Please check you've only entered string values and filled in every one.")
-        else   
-          setErrorMessage(props.errorMessage)
-    })
+      }).catch((error) => setErrorMessage(props.errorGen(error)))
+    //   ).catch((error) => {
+    //     if (error.response && error.response.status === 401)
+    //       setErrorMessage("Updating user failed. Please check you've only entered string values and filled in every one.")
+    //     else   
+    //       setErrorMessage(props.errorMessage)
+    // })
   }
 
   return(

@@ -1,11 +1,11 @@
-const Desk = require('../models/desk');
-const {getAllEntries} = require('../utilities/desk_utilities')
+const Desk = require('../models/Desk');
+const {getAllDesks} = require('../utilities/desk_utilities')
 
 async function newDesk(req, res) {
-  const { number, section, active } = req.body;
+  const { number, section, available } = req.body;
 
   try {
-    const desk = await Desk.create({ number, section, active });
+    const desk = await Desk.create({ number, section, available });
     console.log("Created Desk:", desk)
 
     res.redirect("/");
@@ -17,7 +17,7 @@ async function newDesk(req, res) {
 
 const getDesks = function (req, res) {
 
-  getAllEntries().exec((err, desks) => {
+  getAllDesks().exec((err, desks) => {
       if (err) {
           res.status(500);
           return res.json({

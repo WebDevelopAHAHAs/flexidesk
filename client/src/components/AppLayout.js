@@ -9,11 +9,13 @@ import useStyles from './styling/useStyles';
 
 
 import NavBar from './navBar/NavBar'
-import {Layout as AdminBookingsLayout}  from './admin/bookings/AdminBookingsPage'
-import {Layout as AdminViewBookingsLayout}  from './admin/bookings/AdminViewBookingsPage'
-import {Layout as AdminDashboardLayout} from './admin/dashboard/AdminDashboardPage'
-import {Layout as AdminEmployeesLayout} from './admin/employees/AdminEmployeesPage'
-import {Layout as AdminDesksLayout}     from './admin/desks/AdminDesksPage'
+import {Layout as AdminDashboard} from './admin/dashboard/AdminDashboardPage'
+
+import {Layout as AdminNewBookings}  from './admin/bookings/AdminNewBookingsPage'
+import {Layout as AdminViewBookings}  from './admin/bookings/AdminViewBookingsPage'
+
+import {Layout as AdminEmployees} from './admin/employees/AdminEmployeesPage'
+import {Layout as AdminDesks}     from './admin/desks/AdminDesksPage'
 
 export default function AppLayout(props)
 {
@@ -28,8 +30,7 @@ export default function AppLayout(props)
     setOpen(false);
   };
 
-  return ( <div>
-    
+  return ( <div>  
   
     <div className={classes.root}>
 
@@ -43,16 +44,11 @@ export default function AppLayout(props)
           <MatIcon.Menu/>
         </MatUI.IconButton>
 
-        <MatUI.Typography noWrap className={classes.title}>
+        <MatUI.Typography className={classes.title} noWrap>
           FlexiDesk
         </MatUI.Typography>
 
-        <MatUI.IconButton color="inherit">
-          {/* <Badge badgeContent={1} color="secondary"> */}
-            {/* <NotificationsIcon /> */}
-            {/* HERE IS THE NOTIFICATIONS */}
-          {/* </Badge> */}
-        </MatUI.IconButton>
+        <MatUI.IconButton color="inherit"> {/* <Badge badgeContent={1} color="secondary"> */} {/* <NotificationsIcon /> */} {/* HERE IS THE NOTIFICATIONS */} {/* </Badge> */}</MatUI.IconButton>
 
       </MatUI.Toolbar>
 
@@ -68,7 +64,7 @@ export default function AppLayout(props)
       </div>
 
       <MatUI.Divider/>
-      <MatUI.List> </MatUI.List>
+        <MatUI.List> </MatUI.List>
       <MatUI.Divider/>
 
       <NavBar/>
@@ -81,15 +77,15 @@ export default function AppLayout(props)
       
       <div className={classes.appBarSpacer}/>
               
-      {props && props.bookings && <AdminBookingsLayout/>}
+      {props && props.newBookings && <AdminNewBookings/>}
 
-      {props && props.viewbookings && <AdminViewBookingsLayout/>}
+      {props && props.viewbookings && <AdminViewBookings/>}
 
-      {props && props.dashboard && <AdminDashboardLayout/>}
+      {props && props.dashboard && <AdminDashboard/>}
 
-      {props && props.employees && <AdminEmployeesLayout/>}
+      {props && props.employees && <AdminEmployees/>}
 
-      {props && props.desks && <AdminDesksLayout/>}
+      {props && props.desks && <AdminDesks/>}
       
     </main>
     

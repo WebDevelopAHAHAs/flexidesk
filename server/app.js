@@ -4,11 +4,13 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session)
 const { uri } = require("./config/databaseKey")
-const dbConn = uri;
+
 const pageRouter = require('./routes/page_routes');
 const authRouter = require('./routes/auth_routes');
 const userRouter = require('./routes/user_routes');
 const deskRouter = require('./routes/desk_routes');
+
+// const cacheReset = require('./models/schemaCacheDelete')
 // const bookingRouter = require('./routes/booking_routes');
 
 const port = process.env.PORT || 3009;
@@ -19,9 +21,11 @@ if(process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 }
 
+// cacheReset();
+
 //Set three properties to avoid deprecation warnings: useNewUrlParser: true, useUnifiedTopology: true, useFileAndModify: false, useCreateIndex: true
 mongoose.connect(
-  dbConn,
+  uri,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -32,10 +36,12 @@ mongoose.connect(
     if (err) {
         console.log("ERROR: Failed to connect to database.", err);
     } else {
-        console.log("Connected to database.", dbConn);
+        console.log("Connected to database.", uri);
     }
   }
 );
+
+// cacheReset(mongoose);
 
 // Install middleware
 app.use(cors());

@@ -25,7 +25,7 @@ export default function ViewEmployeesTable(props) {
       <tr key={user._id}>
         <td>{user.first_name} </td>
         <td>{user.email}</td>
-        <td><EditEmployee userID={user._id} first_name={user.first_name} email={user.email}/></td>
+        <td><EditEmployee dataID={user._id} first_name={user.first_name} email={user.email}/></td>
         <td><DeleteDialog/></td>
       </tr>
     ))
@@ -42,13 +42,13 @@ export default function ViewEmployeesTable(props) {
                 {/* <th>Mobile</th> */}
                 {/* <th>Access</th> */}
                 <th>Email</th>
-                <th></th>
-                <th></th>
+                <th>Edit</th>
+                <th>Delete</th>
               </tr>
           </thead>
           
           <tbody>
-           {loadTable()}
+            {loadTable()}
           </tbody>
       </table>
         

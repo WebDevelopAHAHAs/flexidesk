@@ -9,6 +9,20 @@ export default function stateReducer (state, action)
           }
       }
 
+      case "createUser" || "updateUser": {
+        return {
+            ...state,
+            user: action.data
+        }
+      }
+
+      case "createDesk" || "updateDesk": {
+        return {
+            ...state,
+            desk: action.data
+        }
+      }
+
       default: 
           return state
   }

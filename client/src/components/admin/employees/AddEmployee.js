@@ -34,7 +34,7 @@ export function Layout(props) {
       // console.log(userDetails)
       event.preventDefault()
       createUser(userDetails).then(() => {
-        dispatch({ type: "newUser", data: userDetails });
+        dispatch({ type: "createUser", data: userDetails });
         props.handleClose(true);
 
       }).catch((error) => {

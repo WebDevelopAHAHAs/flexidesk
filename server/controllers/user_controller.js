@@ -7,7 +7,6 @@ const test = function(req, res) {
 
 //Register / Does not Sign In
 async function newUser(req, res) {
-  console.log("Hit!")
   const { first_name, email, password } = req.body;
 
   try {

@@ -1,5 +1,5 @@
 import * as MatUI from '@material-ui/core';
-import AddNewBookingForm from './AddNewBookingForm'
+import AddBooking from './AddBooking'
 
 export default function DeskSelector(props){
        
@@ -38,7 +38,7 @@ export default function DeskSelector(props){
        <div>
           {/* <div className={classes.paper}> */}
           <h2 id="transition-modal-title">You have clicked {props.deskNum} </h2>
-          <p id="transition-modal-description"> <AddNewBookingForm/></p>
+          <p id="transition-modal-description"> <AddBooking/></p>
         </div>
       </MatUI.Fade>
     </MatUI.Modal>

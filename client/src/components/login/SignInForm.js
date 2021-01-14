@@ -93,7 +93,6 @@ const SignInForm = ({history}) => {
       event.preventDefault()
       // Attempt login on server
       loginUser(userDetails).then((response) => {
-
           console.log("response success:", response)
           dispatch({
               type: "setLoggedInUser",
@@ -139,29 +138,14 @@ const SignInForm = ({history}) => {
               autoFocus
               onChange={handleChange}
             />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-              onChange={handleChange}
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
+            <TextField name="password" label="Password" onChange={handleChange}
+              type="password" id="password" autoComplete="current-password"
+              variant="outlined" margin="normal" required fullWidth/>
+            <FormControlLabel label="Remember me"
+              control={<Checkbox value="remember" color="primary" />}/>              
+            
+            <Button className={classes.submit} type="submit"
+              fullWidth variant="contained" color="primary">
               Sign In
             </Button>
             <Grid container>
@@ -180,23 +164,6 @@ const SignInForm = ({history}) => {
       </Grid>
     </Grid>
   );
-    // <form onSubmit={handleSubmit}>
-    //   {errorMessage && <p style={errorStyles}>{errorMessage}</p>}
-
-    //   <div>
-    //     <label>Email</label>
-    //     <input required type="text" name="email" placeholder="Enter an email" onChange={handleChange}></input>
-    //   </div>
-
-    //   <div>
-    //     <label>Password</label>
-    //     <input required type="password" name="password" placeholder="Enter a password" onChange={handleChange}></input>
-    //   </div>
-      
-    //   <input type="submit" value="Login"></input>
-        
-    // </form>
-  
 }
 
 export default SignInForm;

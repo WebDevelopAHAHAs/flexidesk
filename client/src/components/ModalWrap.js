@@ -63,8 +63,9 @@ export default function ModalWrap(props) {
 
     <MatUI.Modal className="modal-position"
       open={open} onClose={handleClose} closeAfterTransition
-      aria-labelledby="transition-modal-title" aria-describedby="transition-modal-description"
-      BackdropComponent={MatUI.Backdrop} BackdropProps={{ timeout: 500 }} >
+      aria-labelledby="transition-modal-title"
+      aria-describedby="transition-modal-description"
+      BackdropComponent={MatUI.Backdrop} BackdropProps={{ timeout: 500 }}>
 
       <MatUI.Fade className="modal-styling" in={open}>
         <div>
@@ -75,10 +76,13 @@ export default function ModalWrap(props) {
 
           </h2>
 
-          <div id="transition-modal-description">
-            
-          <Form.Layout handleClose={handleClose}  id={props.id}details={props.details} errorGen={errorGen} defaultError={defaultError} />
-              
+          <div id="transition-modal-description">            
+            <Form.Layout
+              handleClose={handleClose}
+              dataID={props.dataID}
+              details={props.details}
+              errorGen={errorGen}
+              defaultError={defaultError}/>
           </div>
         
         </div>
