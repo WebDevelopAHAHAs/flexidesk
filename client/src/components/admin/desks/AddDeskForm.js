@@ -7,9 +7,9 @@ import useStyles from '../../styling/useStyles';
 
 const AddNewDesk = (props) => {
   const initialFormState = {
-    first_name: "",
-    email: "",
-    password: ""
+    number: "",
+    section: "",
+    available: ""
   } 
   const handleClose = props.handleClose
 
@@ -60,22 +60,21 @@ const AddNewDesk = (props) => {
   return (
 
     <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
-
-      <MatUI.FormControl>
-        <MatUI.FormLabel htmlFor="component-simple">Name</MatUI.FormLabel>
-        <MatUI.Input id="standard-basic" name="first_name"required type="text" onChange={handleChange} />
-      </MatUI.FormControl>
       <MatUI.FormControl>
         <MatUI.FormLabel htmlFor="component-simple">Desk Number</MatUI.FormLabel>
         <MatUI.Input id="standard-basic" name="first_name"required type="text" onChange={handleChange} />
       </MatUI.FormControl>
       <MatUI.FormControl>
-        <MatUI.FormLabel htmlFor="component-simple">Available</MatUI.FormLabel>
-        <MatUI.Radio id="standard-basic" name="first_name"required type="text" onChange={handleChange} />
+        <MatUI.FormLabel htmlFor="component-simple">Section</MatUI.FormLabel>
+        <MatUI.Input id="standard-basic" name="section"required type="text" onChange={handleChange} />
       </MatUI.FormControl>
-
-
-      <MatUI.Button variant="contained" type="submit" value="Register">Create Desk</MatUI.Button>
+      <MatUI.FormControl>
+        <MatUI.FormLabel htmlFor="component-simple">Available</MatUI.FormLabel>
+        <MatUI.Radio id="standard-basic" name="first_name"required type="radio" onChange={handleChange} />
+      </MatUI.FormControl>
+      <MatUI.FormControl>
+       <MatUI.Button variant="contained" type="submit" value="Register">Create Desk</MatUI.Button>
+      </MatUI.FormControl>
   </form>
   )
 }

@@ -37,7 +37,7 @@ export default function DeskSelector(props){
       <MatUI.Fade className="modal-styling" in={props.open}>
        <div>
           {/* <div className={classes.paper}> */}
-          <h2 id="transition-modal-title">You have clicked {props.deskNum} </h2>
+          <h2 id="transition-modal-title">You have selected {props.deskNum} </h2>
           <p id="transition-modal-description"> <AddNewBookingForm/></p>
         </div>
       </MatUI.Fade>

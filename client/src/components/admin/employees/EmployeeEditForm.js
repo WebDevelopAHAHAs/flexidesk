@@ -51,21 +51,47 @@ const EditEmployee = (props) => {
 
     <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
       <MatUI.FormControl>
-        <MatUI.InputLabel htmlFor="component-simple">Name</MatUI.InputLabel>
-        <MatUI.Input id="standard-basic" defaultValue={props.first_name} name="first_name" required type="text" onChange={handleChange} />
+        <MatUI.FormLabel htmlFor="component-simple">First Name</MatUI.FormLabel>
+        <MatUI.Input id="standard-basic" name="first_name"required type="text" onChange={handleChange} />
       </MatUI.FormControl>
-
       <MatUI.FormControl>
-        <MatUI.InputLabel htmlFor="component-simple">Email</MatUI.InputLabel>
-        <MatUI.Input id="standard-basic" defaultValue={props.email} name="email" required type="email" onChange={handleChange}/>
+        <MatUI.FormLabel htmlFor="component-simple">Last Name</MatUI.FormLabel>
+        <MatUI.Input id="standard-basic" name="last_name"required type="text" onChange={handleChange} />
       </MatUI.FormControl>
-
       <MatUI.FormControl>
-        <MatUI.InputLabel htmlFor="component-simple">Password</MatUI.InputLabel>
+        <MatUI.FormLabel htmlFor="component-simple">Contact Number</MatUI.FormLabel>
+        <MatUI.Input id="standard-basic" name="contact-number"required type="text" onChange={handleChange} />
+      </MatUI.FormControl>
+      <MatUI.FormControl>
+        <MatUI.FormLabel htmlFor="component-simple">Email</MatUI.FormLabel>
+        <MatUI.Input id="standard-basic" name="email"required type="email" onChange={handleChange} />
+      </MatUI.FormControl>
+      <MatUI.FormControl>
+        <MatUI.FormLabel htmlFor="component-simple">Password</MatUI.FormLabel>
         <MatUI.Input id="standard-basic" name="password"required type="password" onChange={handleChange} />
       </MatUI.FormControl>
+      <MatUI.FormControl>
+        <MatUI.FormLabel htmlFor="component-simple">Company</MatUI.FormLabel>
+        <MatUI.Input id="standard-basic" name="company"required type="text" onChange={handleChange} />
+      </MatUI.FormControl>
+      <MatUI.FormControl>
+        <MatUI.FormLabel htmlFor="component-simple">Permissions</MatUI.FormLabel>
+        <MatUI.Select id="demo-simple-select-helper" value={""} onChange={handleChange}>
+          <MatUI.MenuItem value=""><em>None</em></MatUI.MenuItem>
+            <MatUI.MenuItem value={""}>Employee Access</MatUI.MenuItem>
+            <MatUI.MenuItem value={""}>Manager Access</MatUI.MenuItem>
+            <MatUI.MenuItem value={""}>Admin Access</MatUI.MenuItem>
+        </MatUI.Select>
+      </MatUI.FormControl>
+      {/* <MatUI.FormControl>
+        <MatUI.Button type="submit" variant="contained" value="Register">Save Changes</MatUI.Button>
+      </MatUI.FormControl> */}
+      <MatUI.FormControl>
+        <MatUI.Button endIcon="+" fullWidth="" type="submit" variant="contained" value="Register">Save Changes</MatUI.Button>
+      </MatUI.FormControl>
+      
 
-      <MatUI.Button type="submit" value="Update">Save Changes</MatUI.Button>
+      {/* <MatUI.Button type="submit" value="Update">Save Changes</MatUI.Button> */}
 
       <p>{errorMessage}</p>
 

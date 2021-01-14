@@ -6,9 +6,8 @@ import useStyles from '../../styling/useStyles';
   
 const EditEmployee = (props) => {
   const initialFormState = {
-    first_name: "",
-    email: "",
-    password: ""
+    employee: "",
+    recurring_booking: "",
   } 
   const handleClose = props.handleClose
 
@@ -59,29 +58,17 @@ const EditEmployee = (props) => {
   return (
 
     <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
-        <MatUI.FormControl>
-        <MatUI.InputLabel htmlFor="component-simple">Employee Name</MatUI.InputLabel>
+                <MatUI.FormControl>
+        <MatUI.FormLabel htmlFor="component-simple">Employee Name</MatUI.FormLabel>
         <MatUI.Input id="standard-basic" name="first_name"required type="text" onChange={handleChange} />
       </MatUI.FormControl>
       <MatUI.FormControl>
-        <MatUI.InputLabel htmlFor="component-simple">Desk Number</MatUI.InputLabel>
-        <MatUI.Input id="standard-basic" name="desk-number"required type="text" onChange={handleChange} />
-      </MatUI.FormControl>
-      <MatUI.FormControl>
-        <MatUI.InputLabel htmlFor="component-simple">Date</MatUI.InputLabel>
-        <MatUI.Input id="standard-basic" name="date"required type="text" onChange={handleChange} />
-      </MatUI.FormControl>
-      <MatUI.FormControl>
-        <MatUI.InputLabel htmlFor="component-simple">Desk Section</MatUI.InputLabel>
-        <MatUI.Input id="standard-basic" name="desk-selection"required type="text" onChange={handleChange} />
-      </MatUI.FormControl>
-      <MatUI.FormControl>
-        <MatUI.InputLabel htmlFor="component-simple">Recurring Booking</MatUI.InputLabel>
+        <MatUI.FormLabel htmlFor="component-simple">Recurring Booking</MatUI.FormLabel>
         <MatUI.Select id="standard-select" name="recurring-booking"required type="select" onChange={handleChange} />
       </MatUI.FormControl>
-      <MatUI.FormControl>
-      <MatUI.Button type="submit" value="Register">Save Changes</MatUI.Button>
-      </MatUI.FormControl>
+      <MatUI.Button type="submit" value="Register">Create New Booking</MatUI.Button>
+      <MatUI.Button onClick={handleClose} color="primary">Cancel//FIX ME
+      </MatUI.Button>
   </form>
   )
 }

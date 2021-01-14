@@ -14,6 +14,7 @@ export default function EditBooking(props) {
 
   const handleClose = () => {
       props.setOpen(false);
+      
   };
 
   return(
@@ -37,6 +38,7 @@ export default function EditBooking(props) {
             <h2 id="transition-modal-title">{props.addNum} Add New Booking</h2>
 
             <p id="transition-modal-description"> <NewBookingForm handleClose={handleClose}/></p>
+            
 
             </div>
         </Fade>

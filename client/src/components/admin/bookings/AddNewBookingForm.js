@@ -6,11 +6,13 @@ import useStyles from '../../styling/useStyles';
   
 const NewEmployee = (props) => {
   const initialFormState = {
-    first_name: "",
-    email: "",
-    password: ""
+    employee: "",
+    recurring_booking: "",
+    // date: ""
   } 
   const handleClose = props.handleClose
+  console.log(props)
+  console.log(handleClose)
 
   const classes = useStyles();
 
@@ -35,6 +37,9 @@ const NewEmployee = (props) => {
       })
   }
 
+  function handleCancel() {
+    props.handleClose();
+  }
 
   function handleSubmit(event) {
       event.preventDefault()
@@ -45,6 +50,7 @@ const NewEmployee = (props) => {
               data: userDetails
           });
           handleClose();
+
           
       }).catch((error) => {
         if (error.response && error.response.status === 401)
@@ -60,15 +66,15 @@ const NewEmployee = (props) => {
 
     <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
         <MatUI.FormControl>
-        <MatUI.InputLabel htmlFor="component-simple">Employee Name</MatUI.InputLabel>
+        <MatUI.FormLabel htmlFor="component-simple">Employee Name</MatUI.FormLabel>
         <MatUI.Input id="standard-basic" name="first_name"required type="text" onChange={handleChange} />
       </MatUI.FormControl>
       <MatUI.FormControl>
-        <MatUI.InputLabel htmlFor="component-simple">Recurring Booking</MatUI.InputLabel>
+        <MatUI.FormLabel htmlFor="component-simple">Recurring Booking</MatUI.FormLabel>
         <MatUI.Select id="standard-select" name="recurring-booking"required type="select" onChange={handleChange} />
       </MatUI.FormControl>
       <MatUI.Button type="submit" value="Register">Create New Booking</MatUI.Button>
-      <MatUI.Button onClick={handleClose} variant="contained" color="primary">Cancel//FIX ME
+      <MatUI.Button onClick={handleClose} color="primary">Cancel//FIX ME
       </MatUI.Button>
       
   </form>

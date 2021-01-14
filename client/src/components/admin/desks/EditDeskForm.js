@@ -1,22 +1,22 @@
 import React, {useState} from 'react'
 import { useHistory} from "react-router-dom"
-import {registerUser} from '../../../services/userServices'
+import {editDesk} from '../../../services/deskServices'
 import {useGlobalState} from '../../../config/store'
 import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';
 
 const EditDeskForm = (props) => {
   const initialFormState = {
-    first_name: "",
-    email: "",
-    password: ""
+    number: "",
+    section: "",
+    available: false
   } 
   const handleClose = props.handleClose
 
   const classes = useStyles();
 
   //User Related
-  const [userDetails,setUserDetails] = useState(initialFormState)
+  const [deskDetails,setDeskDetails] = useState(initialFormState)
   const {dispatch} = useGlobalState()
 
   //Error Related
@@ -30,8 +30,8 @@ const EditDeskForm = (props) => {
   function handleChange(event) {
       const name = event.target.name
       const value = event.target.value
-      setUserDetails({
-          ...userDetails,
+      setDeskDetails({
+          ...deskDetails,
           [name]: value
       })
   }
@@ -40,10 +40,10 @@ const EditDeskForm = (props) => {
   function handleSubmit(event) {
       event.preventDefault()
       // Attempt register with server
-      registerUser(userDetails).then(() => {
+      editDesk(deskDetails).then(() => {
           dispatch({
-              type: "setLoggedInUser",
-              data: userDetails
+              type: "editDesk",
+              data: deskDetails
           });
           handleClose();
           
@@ -60,36 +60,21 @@ const EditDeskForm = (props) => {
   return (
 
     <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
-
       <MatUI.FormControl>
-        <MatUI.InputLabel htmlFor="component-simple">Name</MatUI.InputLabel>
+        <MatUI.FormLabel htmlFor="component-simple">Desk Number</MatUI.FormLabel>
         <MatUI.Input id="standard-basic" name="first_name"required type="text" onChange={handleChange} />
       </MatUI.FormControl>
-
       <MatUI.FormControl>
-        <MatUI.InputLabel htmlFor="component-simple">Email</MatUI.InputLabel>
-        <MatUI.Input id="standard-basic" name="email" required type="email" onChange={handleChange}/>
+        <MatUI.FormLabel htmlFor="component-simple">Section</MatUI.FormLabel>
+        <MatUI.Input id="standard-basic" name="section"required type="text" onChange={handleChange} />
       </MatUI.FormControl>
-
       <MatUI.FormControl>
-        <MatUI.InputLabel htmlFor="component-simple">Password</MatUI.InputLabel>
-        <MatUI.Input id="standard-basic" name="password"required type="password" onChange={handleChange} />
+        <MatUI.FormLabel htmlFor="component-simple">Available</MatUI.FormLabel>
+        <MatUI.Checkbox id="standard-basic" name="availabile"required type="checkbox" onChange={handleChange} />
       </MatUI.FormControl>
-      <MatUI.Input
-        accept="image/*"
-        className={classes.input}
-        style={{ display: 'none' }}
-        id="raised-button-file"
-        multiple
-        type="file"
-        />
-        <label htmlFor="raised-button-file">
-        <MatUI.Button variant="contained" component="span" className={classes.button}>
-            Upload
-        </MatUI.Button>
-        </label> 
-
-      <MatUI.Button variant="contained" type="submit" value="Register">Save Changes</MatUI.Button>
+      <MatUI.FormControl>
+       <MatUI.Button variant="contained" type="submit" value="Register">Create Desk</MatUI.Button>
+      </MatUI.FormControl>
   </form>
   )
 }
