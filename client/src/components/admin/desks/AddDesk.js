@@ -48,22 +48,25 @@ export function Layout(props) {
   }
 
   return(
-    <MatUI.FormControl onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+  <MatUI.FormControl component="form" onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
     <MatUI.FormControl>
-    <MatUI.FormLabel htmlFor="component-simple">Desk Number</MatUI.FormLabel>
-    <MatUI.Input id="standard-basic" name="desk-number"required type="text" onChange={handleChange} />
+      <MatUI.FormLabel htmlFor="component-simple">Desk Number</MatUI.FormLabel>
+      <MatUI.Input id="standard-basic" name="number" required type="text" onChange={handleChange} />
     </MatUI.FormControl>
+    
     <MatUI.FormControl>
-    <MatUI.FormLabel htmlFor="component-simple">Section</MatUI.FormLabel>
-    <MatUI.Input id="standard-basic" name="section"required type="text" onChange={handleChange} />
+      <MatUI.FormLabel htmlFor="component-simple">Section</MatUI.FormLabel>
+      <MatUI.Input id="standard-basic" name="section" required type="text" onChange={handleChange} />
     </MatUI.FormControl>
+    
     <MatUI.FormControl>
-    <MatUI.FormLabel htmlFor="component-simple">Available</MatUI.FormLabel>
-    <MatUI.Radio id="standard-basic" name="available"required type="radio" onChange={handleChange} />
+      <MatUI.FormLabel htmlFor="component-simple">Available</MatUI.FormLabel>
+      <MatUI.Radio id="standard-basic" name="available" required type="radio" onChange={handleChange} />
     </MatUI.FormControl>
+    
     <MatUI.FormControl>
-    <MatUI.Button variant="contained" type="submit" value="Register">Create Desk</MatUI.Button>
+      <MatUI.Button variant="contained" type="submit" value="Register">Create Desk</MatUI.Button>
     </MatUI.FormControl>
-    </MatUI.FormControl>
+  </MatUI.FormControl>
   )
 }

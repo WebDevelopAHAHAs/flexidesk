@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { newUser, getUsers
-  , getUser
-  , changeUser, removeUser
+const { newUser,
+  getUsers, getUser,
+  changeUser, removeUser
 } = require('../controllers/user_controller');
 
 //Create

@@ -29,9 +29,9 @@ export default function NavBar() {
 
       <li><MatUI.Button className="nav-btn" href="/admin/dashboard">Dashboard</MatUI.Button></li>
 
-      <li><MatUI.Button className="nav-btn" href="/admin/bookings">New Booking</MatUI.Button></li>
+      <li><MatUI.Button className="nav-btn" href="/admin/newBookings">New Booking</MatUI.Button></li>
 
-      <li><MatUI.Button className="nav-btn" href="/admin/viewbookings">View Bookings</MatUI.Button></li>
+      <li><MatUI.Button className="nav-btn" href="/admin/viewBookings">View Bookings</MatUI.Button></li>
 
       <li><MatUI.Button className="nav-btn" href="/admin/employees">Employees</MatUI.Button></li>
 

@@ -20,17 +20,6 @@ async function newUser(req, res) {
   }
 }
 
-const getUser = function(req, res) {
-  console.log("Hit!")
-	getUserByID(req).exec((err, user) => {
-    if (err) {
-        res.status(400);
-        return res.send("User not found");
-    }
-    res.send(user);
-});
-}
-
 
 const getUsers = function (req, res) {
 
@@ -45,6 +34,33 @@ const getUsers = function (req, res) {
   });
 };
 
+const getUser = function(req, res) {
+  console.log("Hit!")
+	getUserByID(req).exec((err, user) => {
+    if (err) {
+        res.status(400);
+        return res.send("User not found");
+    }
+    res.send(user);
+  });
+}
+
+const changeUser = function (req, res) {
+  if (req.error) {
+      res.status(req.error.status);
+      res.send(req.error.message);
+  } else {
+      updateUser(req).exec((err, user) => {
+          if (err) {
+              res.status(500);
+              res.json({ error: err });
+          }
+          res.status(200);
+          res.json(user);
+      });
+  }
+}
+
 const removeUser = function (req, res) {
     deleteUser(req).exec((err) => {
         if (err) {
@@ -53,22 +69,6 @@ const removeUser = function (req, res) {
         }
         res.sendStatus(204);
     });
-}
-
-const changeUser = function (req, res) {
-    if (req.error) {
-        res.status(req.error.status);
-        res.send(req.error.message);
-    } else {
-        updateUser(req).exec((err, user) => {
-            if (err) {
-                res.status(500);
-                res.json({ error: err });
-            }
-            res.status(200);
-            res.json(user);
-        });
-    }
 }
 
 module.exports = {  

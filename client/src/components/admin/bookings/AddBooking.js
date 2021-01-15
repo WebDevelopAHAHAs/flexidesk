@@ -1,39 +1,44 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {useGlobalState} from '../../../config/store'
 import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';
-
-import ModalWrap from '../../ModalWrap'
 import {createBooking} from '../../../services/bookingServices'
+import {getUsers} from '../../../services/userServices'
 
-export default function Wrapper(props) {
-  return(<ModalWrap dataType="desk" formType="add" header="Add Desk"/>)
-}
-
-export function Button(props) {
-  return(
-  <button id="AddDesk" onClick={props.handleOpen}>
-    <span>Add Desk</span>
-  </button>)
-}
-
-export function Layout(props) {
+export default function AddBooking(props) {
   const classes = useStyles();
   const {dispatch} = useGlobalState()
   const [errorMessage, setErrorMessage] = useState(null)
 
-  const initialFormState = {number: "", section: "", available: false}
-  const [bookingDetails, setBookingDetails] = useState(initialFormState);
+  const formState = {user_id: null, desk_id: props.desk_id, date: props.date}
+  console.log("Form State: ", formState)
+  const [bookingDetails, setBookingDetails] = useState(formState);
+  const [users, setUsers] = useState([])
+
+  const [employee, setEmployee] = useState("")
+
+  useEffect( () => {
+    fetchData();
+  }, [])
+
+  async function fetchData() {
+    const userData = await getUsers();
+    setUsers(userData);
+  }
 
   function handleChange(event) {
     const name = event.target.name
     let value = event.target.value
-    if(name === "available")
-      value = event.target.checked
     setBookingDetails({ ...bookingDetails, [name]: value })
   }
 
+  function handleEmployeeSelectorChange (event) {
+    setEmployee(event.target.value);
+    setBookingDetails({ ...bookingDetails, user_id: event.target.value })
+  }
+
   function handleSubmit(event) {
+    console.log('creating booking')
       event.preventDefault()
       createBooking(bookingDetails).then(() => {
         dispatch({ type: "createBooking", data: bookingDetails });
@@ -47,19 +52,31 @@ export function Layout(props) {
     })
   }
 
+  const loadUsers = () => {
+    console.log("Loading Users for Selector: ", users)
+ 
+    return users.map(user => (
+      <MatUI.MenuItem key={user._id} value={user._id}>
+        <em>{user.first_name}</em>
+      </MatUI.MenuItem>
+    ))
+  }
+
   return(
-  <MatUI.FormControl onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
-  <MatUI.FormControl>
-  <MatUI.FormLabel htmlFor="component-simple">Employee Name</MatUI.FormLabel>
-  <MatUI.Input id="standard-basic" name="employee-name"required type="text" onChange={handleChange} />
-  </MatUI.FormControl>
-  <MatUI.FormControl>
-  <MatUI.FormLabel htmlFor="component-simple">Recurring Booking</MatUI.FormLabel>
-  <MatUI.Select id="standard-select" name="recurring-booking"required type="select" onChange={handleChange} />
-  </MatUI.FormControl>
-  <MatUI.Button type="submit" value="Register">Create New Booking</MatUI.Button>
-  <MatUI.Button onClick={handleClose} color="primary">Cancel//FIX ONCLICK/CLOSE
-  </MatUI.Button>
+  <MatUI.FormControl component="form" onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+
+    <MatUI.FormControl>
+        <MatUI.FormLabel htmlFor="component-simple">Employee</MatUI.FormLabel>
+        <MatUI.Select id="demo-simple-select-helper" value={employee} onChange={handleEmployeeSelectorChange}>
+            <MatUI.MenuItem value={employee}><em>None</em></MatUI.MenuItem>
+            {loadUsers()}
+      </MatUI.Select>
+    </MatUI.FormControl>
+
+    <MatUI.Button type="submit" value="CreateBooking">
+      Create New Booking
+    </MatUI.Button>
+
   </MatUI.FormControl>
   
   )

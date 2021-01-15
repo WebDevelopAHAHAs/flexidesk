@@ -12,7 +12,7 @@ export default function Wrapper(props) {
 }
 
 export function Button(props) {
-  return ( <button id="Edit" onClick={props.handleOpen}> <i className="far fa-edit"></i></button>)
+  return ( <button id="Edit" onClick={props.handleOpen}> <i className="far fa-edit"></i></button> )
 }
 
 export function Layout(props) {
@@ -34,14 +34,15 @@ export function Layout(props) {
   }
 
   function handleSubmit(event) {
-      console.log(userDetails)
-      event.preventDefault()
-      updateUser(userDetails).then(() => {
-        dispatch({ type: "updateUser", data: userDetails });
-        props.handleClose(true);
+    console.log(userDetails)
+    event.preventDefault()
+    updateUser(userDetails).then(() => {
+      dispatch({ type: "updateUser", data: userDetails });
+      props.handleClose(true);
 
-      }).catch((error) => setErrorMessage(props.errorGen(error)))
-    //   ).catch((error) => {
+    }).catch((error) => setErrorMessage(props.errorGen(error)))
+
+    // ).catch((error) => {
     //     if (error.response && error.response.status === 401)
     //       setErrorMessage("Updating user failed. Please check you've only entered string values and filled in every one.")
     //     else   
@@ -50,7 +51,7 @@ export function Layout(props) {
   }
 
   return(
-    <MatUI.FormControl onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+    <MatUI.FormControl component="form" onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
       <MatUI.FormControl>
         <MatUI.FormLabel htmlFor="component-simple">First Name</MatUI.FormLabel>
         <MatUI.Input id="standard-basic" name="first-name"required type="text" onChange={handleChange} />

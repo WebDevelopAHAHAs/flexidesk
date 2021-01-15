@@ -4,7 +4,7 @@ import 'react-calendar/dist/Calendar.css';
 
 import DeskSelector from './DeskSelector'
 
-export default function CalendarSelector() {
+export default function CalendarSelector(props) {
     
   const [value, onChange] = useState(new Date());
 
@@ -15,7 +15,8 @@ export default function CalendarSelector() {
           value={value}
           // passes argument
           // onClickDay={(day)=> ShowDesk(day, setOpen, setDeskNum, open, deskNum)}
-          onClickDay = {(day) => DeskSelector(day)}
+          // onClickDay = {(day) => DeskSelector(day)}
+          onClickDay = {(day) => props.setDate(day)}
        />                
   </div>
 );

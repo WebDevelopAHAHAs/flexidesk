@@ -47,7 +47,7 @@ export function Layout(props) {
   }
 
   return(
-    <MatUI.FormControl onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+    <MatUI.FormControl component="form" onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
       <MatUI.FormControl>
         <MatUI.FormLabel htmlFor="component-simple">Desk Number</MatUI.FormLabel>
         <MatUI.Input id="standard-basic" name="desk-number"required type="text" onChange={handleChange} />

@@ -5,7 +5,7 @@ import AppLayout from '../../AppLayout'
 
 import CalendarSelector from './CalendarSelector'
 import DeskSelector from './DeskSelector'
-import AddBooking from './AddBooking'
+// import AddBooking from './AddBooking'
 
 
 export function Route(props){
@@ -15,9 +15,11 @@ export function Route(props){
 export function Layout(props) {
 
   const classes = useStyles();
-  const [deskNum, setDeskNum] = useState(null)
 
-  const [newBookingsModalOpen, setNewBookingsModalOpen] = useState(false);
+  const [date, setDate] = useState(null)
+  // const [desk_id, setDeskID] = useState(null)
+
+  // const [newBookingOpen, setNewBookingOpen] = useState(false);
   // const [addNewBookingsModalOpen, setAddNewBookingsModalOpen] = useState(false);
 
   return(
@@ -30,7 +32,7 @@ export function Layout(props) {
         <h1>New Booking</h1>
           <MatUI.Paper className="admin-calendar">
 
-            <CalendarSelector/>
+            <CalendarSelector setDate={setDate}/>
 
           </MatUI.Paper>
         </MatUI.Grid>
@@ -39,7 +41,7 @@ export function Layout(props) {
         <MatUI.Grid item xs={12}>
           <MatUI.Paper className={classes.paper}>   
 
-          <DeskSelector open={newBookingsModalOpen} setOpen={setNewBookingsModalOpen} deskNum={deskNum} setDeskNum={setDeskNum}/>
+          <DeskSelector date={date}/> {/* open={newBookingsModalOpen} setOpen={setNewBookingsModalOpen} deskNum={deskNum} setDeskNum={setDeskNum} */}
   
           {/* < NewBookingModal open={addNewBookingsModalOpen} setOpen={setAddNewBookingsModalOpen}>Edit Booking</ NewBookingModal> */}
 

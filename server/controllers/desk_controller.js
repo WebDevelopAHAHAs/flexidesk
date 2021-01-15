@@ -28,7 +28,49 @@ const getDesks = function (req, res) {
   });
 };
 
+
+const getDesk = function(req, res) {
+  console.log("Hit!")
+	getDeskByID(req).exec((err, desk) => {
+    if (err) {
+        res.status(400);
+        return res.send("Desk not found");
+    }
+    res.send(desk);
+  });
+}
+
+const changeDesk = function (req, res) {
+  if (req.error) {
+      res.status(req.error.status);
+      res.send(req.error.message);
+  } else {
+      updateDesk(req).exec((err, desk) => {
+          if (err) {
+              res.status(500);
+              res.json({ error: err });
+          }
+          res.status(200);
+          res.json(desk);
+      });
+  }
+}
+
+const removeDesk = function (req, res) {
+    deleteDesk(req).exec((err) => {
+        if (err) {
+            res.status(500);
+            res.json({ error: err });
+        }
+        res.sendStatus(204);
+    });
+}
+
+
 module.exports = {
   newDesk,
-  getDesks
+  getDesks,
+  getDesk,
+  changeDesk,
+  removeDesk
 };

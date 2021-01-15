@@ -15,6 +15,7 @@ export default function ViewBookingsTable(props) {
   async function fetchData() {
     const bookingData = await getBookings();
     setBookings(bookingData);
+
   }
 
   const loadTable = () => {
@@ -22,11 +23,10 @@ export default function ViewBookingsTable(props) {
  
     return bookings.map(booking => (
       <tr key={booking._id}>
-        <td>{booking.deskNumber} </td>
-        <td>{booking.employeeName}</td>
+        <td>{booking.user_id}</td>
+        <td>{booking.desk_id}</td>
         <td>{booking.date}</td>
-        <td><EditBooking dataID={booking._id} deskNumber={booking.deskNumber} employeeName={booking.employeeFullName} date={booking.date}/></td>
-        {/* <td><DeleteDialog/></td> */}
+        {/* <td><EditBooking dataID={booking._id} user_id={booking.user_id} desk_id={booking.desk_id} date={booking.date}/></td> */}
       </tr>
     ))
   }
@@ -37,10 +37,10 @@ export default function ViewBookingsTable(props) {
       <table className="booking-table"  id="booking-table-id">
           <thead>
             <tr>
-              <th>Desk Number</th>
               <th>Employee</th>
+              <th>Desk No.</th>
               <th>Date</th>
-              <th>Edit</th>
+              {/* <th>Edit</th> */}
               {/* <th>Delete</th> */}
             </tr>
           </thead>

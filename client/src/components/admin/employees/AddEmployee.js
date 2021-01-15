@@ -48,32 +48,32 @@ export function Layout(props) {
     <MatUI.FormControl onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
       <MatUI.FormControl>
         <MatUI.FormLabel htmlFor="component-simple">First Name</MatUI.FormLabel>
-        <MatUI.Input id="standard-basic" name="first-name"required type="text" onChange={handleChange} />
+        <MatUI.Input id="standard-basic" name="first_name" required type="text" onChange={handleChange} />
       </MatUI.FormControl>
       <MatUI.FormControl>
         <MatUI.FormLabel htmlFor="component-simple">Last Name</MatUI.FormLabel>
-        <MatUI.Input id="standard-basic" name="last-name"required type="text" onChange={handleChange} />
+        <MatUI.Input id="standard-basic" name="last_name" required type="text" onChange={handleChange} />
       </MatUI.FormControl>
       <MatUI.FormControl>
         <MatUI.FormLabel htmlFor="component-simple">Contact Number</MatUI.FormLabel>
-        <MatUI.Input id="standard-basic" name="contact-number"required type="text" onChange={handleChange} />
+        <MatUI.Input id="standard-basic" name="contact_number" required type="text" onChange={handleChange} />
       </MatUI.FormControl>
       <MatUI.FormControl>
         <MatUI.FormLabel htmlFor="component-simple">Email</MatUI.FormLabel>
-        <MatUI.Input id="standard-basic" name="email"required type="email" onChange={handleChange} />
+        <MatUI.Input id="standard-basic" name="email" required type="email" onChange={handleChange} />
       </MatUI.FormControl>
       <MatUI.FormControl>
         <MatUI.FormLabel htmlFor="component-simple">Password</MatUI.FormLabel>
-        <MatUI.Input id="standard-basic" name="password"required type="password" onChange={handleChange} />
+        <MatUI.Input id="standard-basic" name="password" required type="password" onChange={handleChange} />
       </MatUI.FormControl>
-      <MatUI.FormControl>
+      {/* <MatUI.FormControl>
         <MatUI.FormLabel htmlFor="component-simple">Company</MatUI.FormLabel>
         <MatUI.Input id="standard-basic" name="company"required type="text" onChange={handleChange} />
-      </MatUI.FormControl>
+      </MatUI.FormControl> */}
       <MatUI.FormControl>
         <MatUI.FormLabel htmlFor="component-simple">Permissions</MatUI.FormLabel>
         <MatUI.Select id="demo-simple-select-helper" value={""} onChange={handleChange}>
-          <MatUI.MenuItem value=""><em>None</em></MatUI.MenuItem>
+          <MatUI.MenuItem value={""}><em>None</em></MatUI.MenuItem>
           <MatUI.MenuItem value={""}>Employee Access</MatUI.MenuItem>
           <MatUI.MenuItem value={""}>Manager Access</MatUI.MenuItem>
           <MatUI.MenuItem value={""}>Admin Access</MatUI.MenuItem>
