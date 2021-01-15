@@ -2,16 +2,50 @@
   display: 'flex';
   align-items: 'center';
   justify-content: 'center';
-  padding: 100px;
-}
-
-.modal-styling {
-
-background-color: whitesmoke;
-border: '2px solid #000';
-box-shadow: teal;
-padding: 20px;
-/* justify-content: center;
-margin: 50px;
-outline-color: blue; */
-}
+  padding: 80px;
+  margin: auto;
+  height: fit-content;
+  width: 50vw;
+  text-align: center;
+  }
+  
+  .modal-styling {
+  background-color: whitesmoke;
+  border: '2px solid #000';
+  box-shadow: teal;
+  padding: 20px;
+  width: auto;
+  outline-color: #2A2D34;
+  margin: auto;
+  }
+  
+  
+  .MuiInput-root{
+  position: relative;
+  margin-left: 100px;
+  margin-right: 100px;
+  justify-content: 'center';
+  }
+  .MuiButton-contained{
+  width: 100px;
+  margin: auto;
+  }
+  .MuiButtonBase-root{
+  margin: auto;
+  }
+  
+  #standard-basic{
+  /* width: fit-content; */
+  text-align: center;
+  }
+  
+  .MuiFormControl-root.makeStyles-root-1{
+  margin: auto;
+  }
+  
+  .register-button{
+  position: absolute;
+  top: 5px;
+  /* left: 14vw; */
+  justify-content: center;
+  }

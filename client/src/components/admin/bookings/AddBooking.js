@@ -48,28 +48,19 @@ export function Layout(props) {
   }
 
   return(
-  <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
-    
-    <MatUI.FormControl>
-      <MatUI.InputLabel htmlFor="component-simple">Employee Name</MatUI.InputLabel>
-      <MatUI.Input id="standard-basic" name="first_name"required type="text" onChange={handleChange}/>
-    </MatUI.FormControl>
-
-    <MatUI.FormControl>
-      <MatUI.InputLabel htmlFor="component-simple">Recurring Booking</MatUI.InputLabel>
-      <MatUI.Select id="standard-select" name="recurring-booking"required type="select" onChange={handleChange}/>
-    </MatUI.FormControl>
-
-    <MatUI.Button type="submit" value="Register">
-      Create New Booking
-    </MatUI.Button>
-    
-    <MatUI.Button onClick={props.handleClose} variant="contained" color="primary">
-      Cancel//FIX ME
-    </MatUI.Button>
-
-    <p>{errorMessage}</p>
+  <MatUI.FormControl onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+  <MatUI.FormControl>
+  <MatUI.FormLabel htmlFor="component-simple">Employee Name</MatUI.FormLabel>
+  <MatUI.Input id="standard-basic" name="employee-name"required type="text" onChange={handleChange} />
+  </MatUI.FormControl>
+  <MatUI.FormControl>
+  <MatUI.FormLabel htmlFor="component-simple">Recurring Booking</MatUI.FormLabel>
+  <MatUI.Select id="standard-select" name="recurring-booking"required type="select" onChange={handleChange} />
+  </MatUI.FormControl>
+  <MatUI.Button type="submit" value="Register">Create New Booking</MatUI.Button>
+  <MatUI.Button onClick={handleClose} color="primary">Cancel//FIX ONCLICK/CLOSE
+  </MatUI.Button>
+  </MatUI.FormControl>
   
-  </form>
   )
 }

@@ -5,7 +5,7 @@ import AppLayout from '../../AppLayout'
 
 import CalendarSelector from './CalendarSelector'
 import DeskSelector from './DeskSelector'
-// import AddBooking from './AddBooking'
+import AddBooking from './AddBooking'
 
 
 export function Route(props){
