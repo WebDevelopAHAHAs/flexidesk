@@ -7,10 +7,10 @@ const test = function(req, res) {
 
 //Register / Does not Sign In
 async function newUser(req, res) {
-  const { first_name, email, password } = req.body;
+  const { access, first_name, last_name, contact_number, email, password } = req.body;
 
   try {
-    const user = await User.create({ first_name, email, password });
+    const user = await User.create({ access, first_name, last_name, contact_number, email, password });
     console.log("Created User:", user)
 
     res.redirect("/");

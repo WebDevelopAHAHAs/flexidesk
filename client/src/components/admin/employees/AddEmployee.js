@@ -20,8 +20,15 @@ export function Layout(props) {
   const {dispatch} = useGlobalState()
   const [errorMessage, setErrorMessage] = useState(null)
 
-  const initialFormState = {first_name: "", email: "", password: ""}
+  const initialFormState = {first_name: "", last_name: "", contact_number: null, email: "", password: "", access: ""}
   const [userDetails, setUserDetails] = useState(initialFormState);
+  const [access, setAccess] = useState("");
+
+  function handleAccessChange (event) {
+    console.log(event.target.value)
+    setAccess(event.target.value);
+    setUserDetails({ ...userDetails, access: event.target.value })
+  }
 
   function handleChange(event) {
     const name = event.target.name
@@ -45,7 +52,7 @@ export function Layout(props) {
   }
 
   return(  
-    <MatUI.FormControl onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+    <MatUI.FormControl component="form" onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
       <MatUI.FormControl>
         <MatUI.FormLabel htmlFor="component-simple">First Name</MatUI.FormLabel>
         <MatUI.Input id="standard-basic" name="first_name" required type="text" onChange={handleChange} />
@@ -72,21 +79,21 @@ export function Layout(props) {
       </MatUI.FormControl> */}
       <MatUI.FormControl>
         <MatUI.FormLabel htmlFor="component-simple">Permissions</MatUI.FormLabel>
-        <MatUI.Select id="demo-simple-select-helper" value={""} onChange={handleChange}>
+        <MatUI.Select id="demo-simple-select-helper" required value={access} onChange={handleAccessChange}>
           <MatUI.MenuItem value={""}><em>None</em></MatUI.MenuItem>
-          <MatUI.MenuItem value={""}>Employee Access</MatUI.MenuItem>
-          <MatUI.MenuItem value={""}>Manager Access</MatUI.MenuItem>
-          <MatUI.MenuItem value={""}>Admin Access</MatUI.MenuItem>
+          <MatUI.MenuItem value={"employee"}>Employee Access</MatUI.MenuItem>
+          <MatUI.MenuItem value={"manager"}>Manager Access</MatUI.MenuItem>
+          <MatUI.MenuItem value={"admin"}>Admin Access</MatUI.MenuItem>
         </MatUI.Select>
       </MatUI.FormControl>
-      <MatUI.FormControl>
+      {/* <MatUI.FormControl>
         <MatUI.FormLabel htmlFor="component-simple">Team</MatUI.FormLabel>
         <MatUI.Select id="demo-simple-select-helper" value={""} onChange={handleChange}>
           <MatUI.MenuItem value=""><em>None</em></MatUI.MenuItem>
           <MatUI.MenuItem value={""}>Team 1</MatUI.MenuItem>
           <MatUI.MenuItem value={""}>Team 2</MatUI.MenuItem>
         </MatUI.Select>
-      </MatUI.FormControl>
+      </MatUI.FormControl> */}
       <MatUI.FormControl>
         <MatUI.Button className="register-button"type="submit" variant="contained" value="Register">Register</MatUI.Button>
       </MatUI.FormControl>

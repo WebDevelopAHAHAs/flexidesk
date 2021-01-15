@@ -18,7 +18,7 @@ export default function ViewDesksTable(props) {
   }
 
   const loadTable = () => {
-    console.log("Loading Users Table: ", desks)
+    console.log("Loading Desk Table: ", desks)
  
     return desks.map(desk => (
       <tr key={desk._id}>

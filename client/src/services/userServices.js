@@ -31,8 +31,8 @@ export async function updateUser(userInfo) {
 }
 
 //Delete
-export async function deleteUser(userInfo) {
-  console.log("Requesting User Delete: ", userInfo)
-  const response = await api.delete(`/user/${userInfo.id}`)
-  console.log("Deleted User: ", userInfo.id) 
+export async function deleteUser(id) {
+  console.log("Requesting User Delete: ", id)
+  await api.get(`/user/${id}/delete`)
+  console.log("Deleted User: ", id) 
 }

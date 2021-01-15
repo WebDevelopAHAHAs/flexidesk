@@ -5,8 +5,9 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import {deleteUser} from '../../../services/userServices'
 
-export default function DeleteDialog() {
+export default function DeleteDialog(props) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -16,6 +17,12 @@ export default function DeleteDialog() {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const deleteButton = (dialogSuccess) => {
+    deleteUser(props.data_id);
+    if(dialogSuccess === true)
+      window.location.reload()  
+  }
 
   return (
     <div>
@@ -38,7 +45,7 @@ export default function DeleteDialog() {
           <Button onClick={handleClose} color="primary">
             ABORT
           </Button>
-          <Button onClick={handleClose} color="primary" autoFocus>
+          <Button onClick={deleteButton} color="primary" autoFocus>
             DELETE
           </Button>
         </DialogActions>

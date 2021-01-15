@@ -19,7 +19,7 @@ export default function ViewBookingsTable(props) {
   }
 
   const loadTable = () => {
-    console.log("Loading Users Table: ", bookings)
+    console.log("Loading Booking Table: ", bookings)
  
     return bookings.map(booking => (
       <tr key={booking._id}>
