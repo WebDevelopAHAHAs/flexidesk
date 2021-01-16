@@ -4,18 +4,18 @@ const getAllBookings = function() {
   return Booking.find();
 }
 
-const getBookingByID = function(id) {
-	return Booking.findById(id)
+const getBookingByID = function(req) {
+	return Booking.findById(req.params.id)
 }
 
-const deleteBooking = function(id) {
-	return Booking.findByIdAndRemove(id)
+const deleteBooking = function(req) {
+	return Booking.findByIdAndRemove(req.params.id)
 }
 
-const updateBooking = function (id) {
+const updateBooking = function (req) {
   req.body.modified_date = Date.now();
   // use new:true to return the updated booking rather than the original booking when the query is executed
-  return Booking.findByIdAndUpdate(id, req.body, { new: true } );
+  return Booking.findByIdAndUpdate(req.params.id, req.body, { new: true } );
     // ,{ new: true } // include if i dont want to return the old document
 };
 

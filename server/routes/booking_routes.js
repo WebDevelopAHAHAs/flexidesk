@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const { newBooking,
+const {
+  newBooking,
   getBookings, getBooking,
-  changeBooking, removeBooking } = require('../controllers/booking_controller');
+  changeBooking, removeBooking
+} = require('../controllers/booking_controller');
 
 //Create
 router.post('/new', newBooking); //database booking creation route

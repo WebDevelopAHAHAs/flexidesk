@@ -1,5 +1,8 @@
 const Desk = require('../models/Desk');
-const {getAllDesks} = require('../utilities/desk_utilities')
+const {
+  getDeskByID, getAllDesks,
+  deleteDesk, updateDesk
+} = require('../utilities/desk_utilities')
 
 async function newDesk(req, res) {
   const { number, section, available } = req.body;

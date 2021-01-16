@@ -1,11 +1,14 @@
 const Booking = require('../models/Booking');
-const {getAllBookings} = require('../utilities/booking_utilities')
+const {
+  getBookingByID, getAllBookings,
+  deleteBooking, updateBooking
+} = require('../utilities/booking_utilities')
 
 async function newBooking(req, res) {
-  const { user_id, desk_id, date } = req.body;
+  const { booking_id, desk_id, date } = req.body;
 
   try {
-    const booking = await Booking.create({ user_id, desk_id, date });
+    const booking = await Booking.create({ booking_id, desk_id, date });
     console.log("Created Booking:", booking)
 
     res.redirect("/");
@@ -30,7 +33,6 @@ const getBookings = function (req, res) {
 
 
 const getBooking = function(req, res) {
-  console.log("Hit!")
 	getBookingByID(req).exec((err, booking) => {
     if (err) {
         res.status(400);
