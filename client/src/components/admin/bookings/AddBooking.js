@@ -57,7 +57,7 @@ export default function AddBooking(props) {
  
     return users.map(user => (
       <MatUI.MenuItem key={user._id} value={user._id}>
-        <em>{user.first_name}</em>
+        <em>{user.first_name} {user.last_name}</em>
       </MatUI.MenuItem>
     ))
   }
@@ -76,6 +76,8 @@ export default function AddBooking(props) {
     <MatUI.Button type="submit" value="CreateBooking">
       Create New Booking
     </MatUI.Button>
+
+    <p> {errorMessage} </p>
 
   </MatUI.FormControl>
   

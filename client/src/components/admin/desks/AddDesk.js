@@ -67,6 +67,9 @@ export function Layout(props) {
     <MatUI.FormControl>
       <MatUI.Button variant="contained" type="submit" value="Register">Create Desk</MatUI.Button>
     </MatUI.FormControl>
+    
+    <p> {errorMessage} </p>
+
   </MatUI.FormControl>
   )
 }

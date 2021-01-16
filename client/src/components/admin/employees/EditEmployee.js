@@ -115,6 +115,9 @@ export function Layout(props) {
       <MatUI.FormControl>
         <MatUI.Button type="submit" variant="contained" value="Register">Save Changes</MatUI.Button>
       </MatUI.FormControl>
-    </MatUI.FormControl>
+
+      <p> {errorMessage} </p>
+
+    </MatUI.FormControl>    
   )
 }

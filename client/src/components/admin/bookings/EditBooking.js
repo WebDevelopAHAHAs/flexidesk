@@ -61,7 +61,10 @@ export function Layout(props) {
   </MatUI.FormControl>
     <MatUI.Button type="submit" value="Register">Create New Booking</MatUI.Button>
    <MatUI.Button onClick={props.handleClose} color="primary">Cancel//FIX THE ON CLOSE
-  </MatUI.Button>
+  </MatUI.Button>  
+
+  <p> {errorMessage} </p>
+
   </MatUI.FormControl>
   )
 }
