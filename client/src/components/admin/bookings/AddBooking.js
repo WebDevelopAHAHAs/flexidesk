@@ -10,12 +10,13 @@ export default function AddBooking(props) {
   const {dispatch} = useGlobalState()
   const [errorMessage, setErrorMessage] = useState(null)
 
-  const formState = {user_id: null, desk_id: props.desk_id, date: props.date}
-  console.log("Form State: ", formState)
-  const [bookingDetails, setBookingDetails] = useState(formState);
   const [users, setUsers] = useState([])
 
   const [employee, setEmployee] = useState("")
+  
+  const formState = {user_id: employee, desk_id: props.desk_id, date: props.date}
+  console.log("Form State: ", formState)
+  const [bookingDetails, setBookingDetails] = useState(formState);
 
   useEffect( () => {
     fetchData();
@@ -34,6 +35,7 @@ export default function AddBooking(props) {
 
   function handleEmployeeSelectorChange (event) {
     setEmployee(event.target.value);
+    console.log(event.target.value)
     setBookingDetails({ ...bookingDetails, user_id: event.target.value })
   }
 

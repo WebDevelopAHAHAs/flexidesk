@@ -5,10 +5,10 @@ const {
 } = require('../utilities/booking_utilities')
 
 async function newBooking(req, res) {
-  const { booking_id, desk_id, date } = req.body;
+  const { user_id, desk_id, date } = req.body;
 
   try {
-    const booking = await Booking.create({ booking_id, desk_id, date });
+    const booking = await Booking.create({ user_id, desk_id, date });
     console.log("Created Booking:", booking)
 
     res.redirect("/");
