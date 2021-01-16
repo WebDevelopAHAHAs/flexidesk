@@ -6,7 +6,7 @@ import AppLayout from '../../AppLayout'
 import CalendarSelector from './CalendarSelector'
 import DeskSelector from './DeskSelector'
 // import AddBooking from './AddBooking'
-import './userBooking.css'
+import './UserBooking.css'
 
 export function Route(props){
   return(<AppLayout userNewBookings/>);
