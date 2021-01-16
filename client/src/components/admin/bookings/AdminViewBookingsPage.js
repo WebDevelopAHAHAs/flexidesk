@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 // import CalendarSelector from './CalendarSelector'
 // import DeskSelector from './DeskSelector'
 import ViewBookingsTable from './ViewBookingsTable'
+import './adminBookings.css'
 
 export function Route(props){
   return(<AppLayout viewbookings/>);
@@ -26,20 +27,32 @@ export function Layout(props) {
   
 
   return(
-  <div id="adminBookings-page">
-    <MatUI.Container maxWidth="lg" className={classes.container} id="adminBookings-container">
+    <div id="adminBookings-page">
+
+    <MatUI.Container maxWidth="lg" className={classes.container} id="adminEmployees-container">
 
       <MatUI.Grid container spacing={3}>
+      
         <MatUI.Grid item xs={12} md={8} lg={4}>
 
-          <h1>View Bookings</h1> 
-          <ViewBookingsTable/>
+          <h1>Bookings</h1>
+          
+            
+        </MatUI.Grid>
 
+          <MatUI.Grid item xs={12}>
+            <MatUI.Paper className={classes.paper}>
+
+            <ViewBookingsTable/>
+
+            </MatUI.Paper>
           </MatUI.Grid>
 
-        </MatUI.Grid>
+      </MatUI.Grid>
+      
       <MatUI.Box pt={4}> </MatUI.Box>
+      
     </MatUI.Container>
-  </div>
-  )
+
+  </div>)
 }

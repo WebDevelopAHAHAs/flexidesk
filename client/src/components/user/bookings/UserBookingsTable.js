@@ -6,7 +6,6 @@ import {getUser} from '../../../services/userServices'
 import {getDesk} from '../../../services/deskServices'
 // import EditBooking from './EditBooking'
 import DeleteBooking from './DeleteBooking'
-import './adminBookings.css'
 
 export default function ViewBookingsTable(props) {
 
@@ -60,7 +59,7 @@ export default function ViewBookingsTable(props) {
  
     return bookings.map(booking => (
       <tr key={booking._id}>
-        <td>{booking.employeeName}</td>
+      
         <td>{booking.deskNumber}</td>
         {/* {fetchEmployeeName(booking.user_id)}
         {fetchDeskNumber(booking.desk_id)} */}
@@ -78,7 +77,7 @@ export default function ViewBookingsTable(props) {
       <table className="booking-table"  id="booking-table-id">
           <thead>
             <tr>
-              <th>Employee</th>
+              
               <th>Desk No.</th>
               <th>Date</th>
               {/* <th>Edit</th> */}

@@ -9,6 +9,7 @@ import useStyles from './styling/useStyles';
 
 
 import NavBar from './navBar/NavBar'
+// Admin
 import {Layout as AdminDashboard} from './admin/dashboard/AdminDashboardPage'
 
 import {Layout as AdminNewBookings}  from './admin/bookings/AdminNewBookingsPage'
@@ -16,6 +17,10 @@ import {Layout as AdminViewBookings}  from './admin/bookings/AdminViewBookingsPa
 
 import {Layout as AdminEmployees} from './admin/employees/AdminEmployeesPage'
 import {Layout as AdminDesks}     from './admin/desks/AdminDesksPage'
+// User
+import {Layout as UserDashboard}     from './user/dashboard/UserDashboardPage'
+import {Layout as UserNewBookings}     from './user/bookings/UserNewBookingsPage'
+import {Layout as UserViewBookings}  from './user/bookings/UserViewBookingsPage'
 
 export default function AppLayout(props)
 {
@@ -57,7 +62,7 @@ export default function AppLayout(props)
     <MatUI.Drawer open={open} variant="permanent" classes={{ paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose), }}>
       
       <div className={classes.toolbarIcon}>
-        <h2>Welcome Admin</h2> {/* HERE IS WTHE WELCOME NOTE FOR THE USER */}
+        <h2>Welcome</h2> {/* HERE IS WTHE WELCOME NOTE FOR THE USER */}
         <MatUI.IconButton onClick={handleDrawerClose}>
           <MatIcon.ChevronLeft/>
         </MatUI.IconButton>
@@ -77,6 +82,7 @@ export default function AppLayout(props)
       
       <div className={classes.appBarSpacer}/>
               
+      {/* Admin         */}
       {props && props.newBookings && <AdminNewBookings/>}
 
       {props && props.viewbookings && <AdminViewBookings/>}
@@ -86,7 +92,13 @@ export default function AppLayout(props)
       {props && props.employees && <AdminEmployees/>}
 
       {props && props.desks && <AdminDesks/>}
+
+      {/* User */}
+      {props && props.userdashboard && <UserDashboard/>}
+
+      {props && props.userNewBookings && <UserNewBookings/>}
       
+      {props && props.userViewbookings && <UserViewBookings/>}
     </main>
     
     </div>
