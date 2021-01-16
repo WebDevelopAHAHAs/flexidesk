@@ -16,6 +16,6 @@ router.get('/:id', getDesk)
 router.post('/:id', changeDesk)
 
 //Delete
-router.delete('/:id', removeDesk)
+router.get('/:id/delete', removeDesk)
 
 module.exports = router;

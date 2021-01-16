@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import {getDesks} from '../../../services/deskServices'
 import EditDesk from './EditDesk'
+import DeleteDesk from './DeleteDesk'
 
 export default function ViewDesksTable(props) {
 
@@ -25,8 +26,8 @@ export default function ViewDesksTable(props) {
         <td>{desk.number} </td>
         <td>{desk.section}</td>
         <td>{desk.available}</td>
-        <td><EditDesk dataID={desk._id} number={desk.number} section={desk.section} email={desk.available}/></td>
-        {/* <td><DeleteDialog/></td> */}
+        <td><EditDesk data_id={desk._id} number={desk.number} section={desk.section} email={desk.available}/></td>
+        <td><DeleteDesk data_id={desk._id} /></td>
       </tr>
     ))
   }
@@ -41,7 +42,7 @@ export default function ViewDesksTable(props) {
               <th>Desk Section</th>
               <th>Available</th>
               <th>Edit</th>
-              {/* <th>Delete</th> */}
+              <th>Delete</th>
             </tr>
           </thead>
           

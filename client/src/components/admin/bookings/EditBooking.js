@@ -8,7 +8,7 @@ import {updateBooking} from '../../../services/bookingServices'
 
 export default function Wrapper(props) {
   let details = [props.number, props.section, props.available]
-  return(<ModalWrap dataType="booking" formType="edit" header="Edit Booking" dataID={props.dataID} details={details}/>)
+  return(<ModalWrap dataType="booking" formType="edit" header="Edit Booking" data_id={props.data_id} details={details}/>)
 }
 
 export function Button(props) {
@@ -26,7 +26,7 @@ export function Layout(props) {
   const [errorMessage, setErrorMessage] = useState(null)
 
   const data = props.details;
-  const initialFormState = {id: props.id, number: data[0], section: data[1], available: data[2] }
+  const initialFormState = {id: props.data_id, number: data[0], section: data[1], available: data[2] }
   const [bookingDetails, setBookingDetails] = useState(initialFormState);
 
   function handleChange(event) {

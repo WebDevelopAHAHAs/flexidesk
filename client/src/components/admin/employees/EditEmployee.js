@@ -8,7 +8,7 @@ import {updateUser} from '../../../services/userServices'
 
 export default function Wrapper(props) {
   let details = [props.access, props.first_name, props.last_name, props.contact_number, props.email]
-  return(<ModalWrap dataType="user" formType="edit" header="Edit Employee" id={props.userID} details={details}/>)
+  return(<ModalWrap dataType="user" formType="edit" header="Edit Employee" data_id={props.userID} details={details}/>)
 }
 
 export function Button(props) {
@@ -20,13 +20,20 @@ export function Layout(props) {
   console.log(useGlobalState)
   const {dispatch} = useGlobalState();
   const [errorMessage, setErrorMessage] = useState(null)
+  const [access, setAccess] = useState("");
 
-  const formState = {id: props.id, access: props.details[0],
+  const formState = {id: props.data_id, access: props.details[0],
     first_name: props.details[1], last_name: props.details[2],
     contact_number: props.details[3], email: props.details[4]
   }
   console.log("Form State:", formState)
   const [userDetails, setUserDetails] = useState(formState);
+
+  function handleAccessChange (event) {
+    console.log(event.target.value)
+    setAccess(event.target.value);
+    setUserDetails({ ...userDetails, access: event.target.value })
+  }
 
   function handleChange(event) {
     const name = event.target.name
@@ -76,14 +83,16 @@ export function Layout(props) {
         <MatUI.Input id="standard-basic" defaultValue={userDetails.email} name="email"required type="email" onChange={handleChange} />
       </MatUI.FormControl>
 
-      <MatUI.FormControl>
+      {/* <MatUI.FormControl>
         <MatUI.FormLabel htmlFor="component-simple">Password</MatUI.FormLabel>
         <MatUI.Input id="standard-basic" name="password" required type="password" onChange={handleChange} />
-      </MatUI.FormControl>
+      </MatUI.FormControl> */}
+
       {/* <MatUI.FormControl>
         <MatUI.FormLabel htmlFor="component-simple">Company</MatUI.FormLabel>
         <MatUI.Input id="standard-basic" defaultValue={userDetails.first_name} name="company"required type="text" onChange={handleChange} />
       </MatUI.FormControl> */}
+
       <MatUI.FormControl>
         <MatUI.FormLabel htmlFor="component-simple">Permissions</MatUI.FormLabel>
         <MatUI.Select id="demo-simple-select-helper" required value={access} onChange={handleAccessChange}>
@@ -93,6 +102,7 @@ export function Layout(props) {
           <MatUI.MenuItem value={"admin"}>Admin Access</MatUI.MenuItem>
         </MatUI.Select>
       </MatUI.FormControl>
+
       {/* <MatUI.FormControl>
         <MatUI.FormLabel htmlFor="component-simple">Team</MatUI.FormLabel>
         <MatUI.Select id="demo-simple-select-helper" value={""} onChange={handleChange}>
@@ -101,6 +111,7 @@ export function Layout(props) {
           <MatUI.MenuItem value={""}>Team 2</MatUI.MenuItem>
         </MatUI.Select>
       </MatUI.FormControl> */}
+      
       <MatUI.FormControl>
         <MatUI.Button type="submit" variant="contained" value="Register">Save Changes</MatUI.Button>
       </MatUI.FormControl>

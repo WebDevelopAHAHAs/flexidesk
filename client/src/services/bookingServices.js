@@ -9,7 +9,7 @@ export async function createBooking(bookingInfo) {
 
 export async function deleteBooking(bookingInfo) {
   console.log("Requesting Booking Delete: ", bookingInfo)
-  const response = await api.delete(`/booking/${bookingInfo.id}`)
+  const response = await api.get(`/booking/${bookingInfo.id}/delete`)
   console.log("Deleted Booking: ", bookingInfo.id) 
 }
 

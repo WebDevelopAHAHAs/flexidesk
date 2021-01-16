@@ -9,7 +9,7 @@ export async function createDesk(deskInfo) {
 
 export async function deleteDesk(deskInfo) {
   console.log("Requesting Desk Delete: ", deskInfo)
-  const response = await api.delete(`/desk/${deskInfo.id}`)
+  const response = await api.get(`/desk/${deskInfo.id}/delete`)
   console.log("Deleted Desk: ", deskInfo.id) 
 }
 

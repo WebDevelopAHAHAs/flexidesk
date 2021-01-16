@@ -16,6 +16,6 @@ router.get('/:id', getBooking)
 router.post('/:id', changeBooking)
 
 //Delete
-router.delete('/:id', removeBooking)
+router.get('/:id/delete', removeBooking)
 
 module.exports = router;

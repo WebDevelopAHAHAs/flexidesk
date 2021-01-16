@@ -33,6 +33,6 @@ export async function updateUser(userInfo) {
 //Delete
 export async function deleteUser(id) {
   console.log("Requesting User Delete: ", id)
-  await api.get(`/user/${id}/delete`)
+  const response = await api.get(`/user/${id}/delete`)
   console.log("Deleted User: ", id) 
 }

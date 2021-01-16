@@ -79,7 +79,7 @@ export default function ModalWrap(props) {
           <div id="transition-modal-description">            
             <Form.Layout
               handleClose={handleClose}
-              dataID={props.dataID}
+              data_id={props.data_id}
               details={props.details}
               errorGen={errorGen}
               defaultError={defaultError}/>

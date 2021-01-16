@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 
 import {getBookings} from '../../../services/bookingServices'
-import EditBooking from './EditBooking'
+// import EditBooking from './EditBooking'
+import DeleteBooking from './DeleteBooking'
 
 export default function ViewBookingsTable(props) {
 
@@ -27,6 +28,7 @@ export default function ViewBookingsTable(props) {
         <td>{booking.desk_id}</td>
         <td>{booking.date}</td>
         {/* <td><EditBooking dataID={booking._id} user_id={booking.user_id} desk_id={booking.desk_id} date={booking.date}/></td> */}
+        <td><DeleteBooking data_id={booking._id} /></td>
       </tr>
     ))
   }
@@ -41,7 +43,7 @@ export default function ViewBookingsTable(props) {
               <th>Desk No.</th>
               <th>Date</th>
               {/* <th>Edit</th> */}
-              {/* <th>Delete</th> */}
+              <th>Delete</th>
             </tr>
           </thead>
           
