@@ -61,7 +61,7 @@ export function Layout(props) {
     
     <MatUI.FormControl>
       <MatUI.FormLabel htmlFor="component-simple">Available</MatUI.FormLabel>
-      <MatUI.Radio id="standard-basic" name="available" required type="radio" onChange={handleChange} />
+      <MatUI.Checkbox id="standard-basic" defaultValue={deskDetails.available} name="availabile" required type="checkbox" onChange={handleChange} />
     </MatUI.FormControl>
     
     <MatUI.FormControl>

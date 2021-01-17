@@ -5,6 +5,7 @@ import useStyles from '../../styling/useStyles';
 import {createBooking} from '../../../services/bookingServices'
 import {getUsers} from '../../../services/userServices'
 
+
 export default function UserAddBooking(props) {
   const classes = useStyles();
   const {dispatch} = useGlobalState()
@@ -66,14 +67,16 @@ export default function UserAddBooking(props) {
 
   return(
   <MatUI.FormControl component="form" onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+      <div className={classes.paper}>
+      <p id="simple-modal-description">
+        I hereby declare that I:<br></br> <br></br>
+        Have not been travelling within the past 14 days <br></br><br></br>
+        Have no flu like symptoms <br></br><br></br>
+        Have not come into contact with anyone with Covid-19<br></br><br></br>
+        <MatUI.Checkbox id="standard-basic" name="i_agree" required type="checkbox" onChange={handleChange} />
+    </p>
 
-    {/* <MatUI.FormControl>
-        <MatUI.FormLabel htmlFor="component-simple">Employee</MatUI.FormLabel>
-        <MatUI.Select id="demo-simple-select-helper" value={employee} onChange={handleEmployeeSelectorChange}>
-            <MatUI.MenuItem value={employee}><em>None</em></MatUI.MenuItem>
-            {loadUsers()}
-      </MatUI.Select>
-    </MatUI.FormControl> */}
+    </div>
 
     <MatUI.Button type="submit" value="CreateBooking">
       Create New Booking
