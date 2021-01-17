@@ -2,6 +2,7 @@ import {React, useState} from 'react';
 import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';
 import AppLayout from '../../AppLayout'
+import 'react-calendar/dist/Calendar.css';
 
 import CalendarSelector from './CalendarSelector'
 import DeskSelector from './DeskSelector'
@@ -28,7 +29,7 @@ export function Layout(props) {
       <MatUI.Grid container spacing={3}>
 
         {/* Calendar Day Selector */}
-        <MatUI.Grid item xs={12} md={8} lg={4}>
+        <MatUI.Grid item xs={12} md={12} lg={12}>
         <h1 className='booking-h1'>New Booking</h1>
           <MatUI.Paper className="admin-calendar">
 

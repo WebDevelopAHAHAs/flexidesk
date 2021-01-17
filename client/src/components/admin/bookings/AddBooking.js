@@ -67,13 +67,15 @@ export default function AddBooking(props) {
 
   return(
   <MatUI.FormControl component="form" onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
-
+    
     <MatUI.FormControl>
+    <div className="modal-spacing">
         <MatUI.FormLabel htmlFor="component-simple">Employee</MatUI.FormLabel>
         <MatUI.Select id="dropdown" value={employee} onChange={handleEmployeeSelectorChange}>
             <MatUI.MenuItem value={employee}><em>None</em></MatUI.MenuItem>
             {loadUsers()}
       </MatUI.Select>
+      </div>
     </MatUI.FormControl>
     <div className='btn-wrapper'>
     <button className='book-btn'type="submit" value="CreateBooking">
