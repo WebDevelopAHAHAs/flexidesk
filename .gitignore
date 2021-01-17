@@ -34,13 +34,15 @@ client/debug.log
 
 #Ignore
 /*
-!client/
-client/*
-!client/node_modules/
-client/node_modules/*
-!client/node_modules/dist
-client/node_modules/dist/*
-!client/node_modules/dist/Calendar.css
+!/client/
+/client/*
+!/client/node_modules/
+/client/node_modules/*
+!client/node_modules/react-calendar
+client/node_modules/react-calendar/*
+!client/node_modules/react-calendar/dist
+client/node_modules/react-calendar/dist/*
+!client/node_modules/react-calendar/dist/Calendar.css
 # !/react-calendar
 # /react-calendar/*
 # !/react-calendar/dist
