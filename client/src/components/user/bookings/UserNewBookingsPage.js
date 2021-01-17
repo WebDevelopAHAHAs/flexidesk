@@ -44,7 +44,6 @@ export function Layout(props) {
           <DeskSelector date={date}/> {/* open={newBookingsModalOpen} setOpen={setNewBookingsModalOpen} deskNum={deskNum} setDeskNum={setDeskNum} */}
   
           {/* < NewBookingModal open={addNewBookingsModalOpen} setOpen={setAddNewBookingsModalOpen}>Edit Booking</ NewBookingModal> */}
-
           </MatUI.Paper>
         </MatUI.Grid>
 
