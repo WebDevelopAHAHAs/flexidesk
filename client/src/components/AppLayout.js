@@ -7,6 +7,7 @@ import * as MatIcon from '@material-ui/icons'
 // Styling
 import useStyles from './styling/useStyles';
 
+import {getLoggedOnUser} from '../services/authServices'
 
 import NavBar from './navBar/NavBar'
 // Admin
@@ -21,11 +22,23 @@ import {Layout as AdminDesks}     from './admin/desks/AdminDesksPage'
 import {Layout as UserDashboard}     from './user/dashboard/UserDashboardPage'
 import {Layout as UserNewBookings}     from './user/bookings/UserNewBookingsPage'
 import {Layout as UserViewBookings}  from './user/bookings/UserViewBookingsPage'
+// import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function AppLayout(props)
 {
+  console.log("---props", props)
+
   const classes = useStyles();
   const [open, setOpen] = useState(false);
+
+
+  async function redirect() {
+    const sessionUser = await getLoggedOnUser();
+    console.log("Session: ", sessionUser)
+    // props.history.push("/login")
+  }
+
+  redirect();
 
   const handleDrawerOpen = () => {
     setOpen(true);

@@ -69,10 +69,14 @@ export default function UserAddBooking(props) {
   <MatUI.FormControl component="form" onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
       <div className={classes.paper}>
       <p id="simple-modal-description">
-        I hereby declare that I:<br></br> <br></br>
-        Have not been travelling within the past 14 days <br></br><br></br>
-        Have no flu like symptoms <br></br><br></br>
-        Have not come into contact with anyone with Covid-19<br></br><br></br>
+        I hereby declare that I:<br></br>
+        <br></br>
+        Have not been travelling within the past 14 days <br></br>
+        <br></br>
+        Have no flu like symptoms <br></br>
+        <br></br>
+        Have not come into contact with anyone with Covid-19<br></br>
+        <br></br>
         <MatUI.Checkbox id="standard-basic" name="i_agree" required type="checkbox" onChange={handleChange} />
     </p>
 

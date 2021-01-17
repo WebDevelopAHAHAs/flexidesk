@@ -45,21 +45,22 @@ mongoose.connect(
 // cacheReset(mongoose);
 
 // Install middleware
+app.use(session({
+  // resave and saveUninitialized set to false for deprecation warnings
+  secret: "Express is awesome",
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 1200000 // 20 minutes in milliseconds
+  },
+  store: new MongoStore({
+      mongooseConnection: mongoose.connection
+  })
+}));
 app.use(cors());
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json());
-app.use(session({
-    // resave and saveUninitialized set to false for deprecation warnings
-    secret: "Express is awesome",
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      maxAge: 1200000 // 20 minutes in milliseconds
-    },
-    store: new MongoStore({
-        mongooseConnection: mongoose.connection
-    })
-}));
+
 
 // app.get('/', (req, res) => {
 //     console.log('GET on /');

@@ -93,7 +93,8 @@ const SignInForm = ({history}) => {
       event.preventDefault()
       // Attempt login on server
       loginUser(userDetails).then((response) => {
-          console.log("response success:", response)
+          console.log("User Retrieved:", response)
+          // document.cookie(response)
           dispatch({
               type: "setLoggedInUser",
               data: userDetails

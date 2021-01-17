@@ -13,7 +13,7 @@ import {getDesks, getUnbookedDesks} from '../../../services/deskServices'
 import ConvertDate from '../../ConvertDate'
 
 export function Route(props){
-  return(<AppLayout newBookings/>);
+  return(<AppLayout history={props.history} newBookings/>);
 }
 
 export function Layout(props) {
