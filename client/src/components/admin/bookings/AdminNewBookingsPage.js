@@ -26,7 +26,7 @@ export function Layout(props) {
 
   useEffect( () => {
       fetchData();
-  }, [])
+  }, [date])
 
   async function fetchData() {
     const deskData = await getUnbookedDesks(convertedDate);

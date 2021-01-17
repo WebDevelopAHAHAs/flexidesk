@@ -26,6 +26,8 @@ const updateBooking = function (req) {
     // ,{ new: true } // include if i dont want to return the old document
 };
 
-module.exports = { getBookingByID, getAllBookings, deleteBooking, updateBooking,
+module.exports = {
+  getBookingByID, getAllBookings,
+  deleteBooking, updateBooking,
   getAllBookingsByDate
 };
