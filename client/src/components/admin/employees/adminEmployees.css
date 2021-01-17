@@ -7,14 +7,22 @@
     padding: 5px;
 }
 
+.employee-table tr{
+    line-height: 40px;
+    font-family: 'Montserrat', sans-serif; 
+    box-shadow: 0px 2px 2px whitesmoke;
+  -moz-box-shadow: 0px 2px 2px whitesmoke;
+  -webkit-box-shadow: 0px 2px 2px whitesmoke;
+  }
+
 /* Header of Table */
 thead{
     font-size: 20px;
 }
 
 .adminEmployees-page > h1{
-    text-align: center;
-    font-size: 50px;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 30px;
   }
 
 th{

@@ -63,6 +63,7 @@ export default function CenteredTabs() {
           <Tab label="Today" {...a11yProps(0)} />
           <Tab label="Week" {...a11yProps(1)} />
           <Tab label="Month" {...a11yProps(2)} />
+          <Tab label="This Year" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -73,6 +74,9 @@ export default function CenteredTabs() {
       </TabPanel>
       <TabPanel value={value} index={2}>
       Your Bookings This Month
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+      Your Bookings This Year
       </TabPanel>
     </div>
   );

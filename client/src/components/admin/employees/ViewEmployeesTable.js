@@ -23,11 +23,11 @@ export default function ViewEmployeesTable(props) {
  
     return users.map(user => (
       <tr key={user._id}>
-        <td>{user.access}</td>
         <td>{user.first_name}</td>
         <td>{user.last_name}</td>
         <th>{user.contact_number}</th>  
         <td>{user.email}</td>
+        <td>{user.access}</td>
         <td><EditEmployee data_id={user._id} access={user.access} first_name={user.first_name} last_name={user.last_name} contact_number={user.contact_number} email={user.email}/></td>
         <td><DeleteEmployee data_id={user._id} /></td>
       </tr>
@@ -40,13 +40,13 @@ export default function ViewEmployeesTable(props) {
       <table className="employee-table"  id="employee-table-id">
           <thead>
               <tr>
-                <th>Access</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Contact No.</th>                
                 <th>Email</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th>Access</th>
+                <th></th>
+                <th></th>
               </tr>
           </thead>
           

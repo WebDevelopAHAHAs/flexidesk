@@ -4,6 +4,7 @@ import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';
 import {createBooking} from '../../../services/bookingServices'
 import {getUsers} from '../../../services/userServices'
+import './adminBookings.css'
 
 export default function AddBooking(props) {
   const classes = useStyles();
@@ -69,16 +70,16 @@ export default function AddBooking(props) {
 
     <MatUI.FormControl>
         <MatUI.FormLabel htmlFor="component-simple">Employee</MatUI.FormLabel>
-        <MatUI.Select id="demo-simple-select-helper" value={employee} onChange={handleEmployeeSelectorChange}>
+        <MatUI.Select id="dropdown" value={employee} onChange={handleEmployeeSelectorChange}>
             <MatUI.MenuItem value={employee}><em>None</em></MatUI.MenuItem>
             {loadUsers()}
       </MatUI.Select>
     </MatUI.FormControl>
-
-    <MatUI.Button type="submit" value="CreateBooking">
-      Create New Booking
-    </MatUI.Button>
-
+    <div className='btn-wrapper'>
+    <button className='book-btn'type="submit" value="CreateBooking">
+      Book Now
+    </button>
+    </div>
     <p> {errorMessage} </p>
 
   </MatUI.FormControl>

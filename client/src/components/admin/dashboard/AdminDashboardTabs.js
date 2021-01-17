@@ -59,10 +59,11 @@ export default function CenteredTabs() {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Tabs TabIndicatorProps={{style: {background:'#E8E9EB'}}} className="dashboard-tabs" value={value} onChange={handleChange} aria-label="simple tabs example">
+        <Tabs TabIndicatorProps={{style: {background:'#E8E9EB'}}} className="dashboard-tabs" value={value} onChange={handleChange} aria-label="dashboard tabs">
           <Tab label="Today" {...a11yProps(0)} />
-          <Tab label="Week" {...a11yProps(1)} />
-          <Tab label="Month" {...a11yProps(2)} />
+          <Tab label="This Week" {...a11yProps(1)} />
+          <Tab label="This Month" {...a11yProps(2)} />
+          <Tab label="This Year" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -73,6 +74,9 @@ export default function CenteredTabs() {
       </TabPanel>
       <TabPanel value={value} index={2}>
       Employees Booked This Month
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+      Employees Booked This Year
       </TabPanel>
     </div>
   );

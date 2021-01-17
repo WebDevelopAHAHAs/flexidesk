@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 // import CalendarSelector from './CalendarSelector'
 // import DeskSelector from './DeskSelector'
 import ViewBookingsTable from './UserBookingsTable'
-import './UserBooking.css'
+import './userBooking.css'
 
 
 export function Route(props){

@@ -61,7 +61,7 @@ export default function ViewBookingsTable(props) {
     return bookings.map(booking => (
       <tr key={booking._id}>
         <td>{booking.employeeName}</td>
-        <td>{booking.deskNumber}</td>
+        <td className='desk-no'>{booking.deskNumber}</td>
         {/* {fetchEmployeeName(booking.user_id)}
         {fetchDeskNumber(booking.desk_id)} */}
         {/* <td>{booking.desk_id}</td> */}
@@ -82,7 +82,7 @@ export default function ViewBookingsTable(props) {
               <th>Desk No.</th>
               <th>Date</th>
               {/* <th>Edit</th> */}
-              <th>Delete</th>
+              <th></th>
             </tr>
           </thead>
           

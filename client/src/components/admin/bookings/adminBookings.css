@@ -11,10 +11,9 @@
   
 }
 
-.adminBookings-page > h1{
-  text-align: center;
-  font-size: 50px;
-  color: red;
+.booking-h1{
+  font-family: 'Exo 2', sans-serif;
+  font-size: 30px;
 }
 
 /* Entire Table */
@@ -22,6 +21,15 @@
   width: 100%;
   text-align: left;
   padding: 5px;
+  font-family: 'Montserrat', sans-serif; 
+}
+
+.booking-table tr{
+  line-height: 40px;
+  font-family: 'Montserrat', sans-serif; 
+  box-shadow: 0px 2px 2px whitesmoke;
+  -moz-box-shadow: 0px 2px 2px whitesmoke;
+  -webkit-box-shadow: 0px 2px 2px whitesmoke;
 }
 /* Header of Table */
 thead{
@@ -30,6 +38,11 @@ thead{
 
 th{
   padding-bottom: 10px;    
+}
+
+.desk-no{
+  text-align: left;
+  padding-left: 45px;
 }
 
 /* Edit button */
@@ -56,6 +69,45 @@ th{
 #EditBooking:visited{
   background-color: #fff;
   border: none;
+}
+
+
+/* deletemodal */
+
+.delete-text{
+  font-family: 'Montserrat', sans-serif; 
+}
+
+.abort-btn{
+  background-color: #6E75A8 ;;
+  padding: 12px 26px;
+  border-radius: 4px;
+  outline: none;
+  text-align: center;
+  border: 1px solid #000;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.5s;	
+  cursor: pointer;
+  font-size: 15px;
+  color: #fff;
+  text-decoration-style: solid;
+}
+
+.delete-btn{
+  background-color: #a86e6e ;;
+  padding: 12px 26px;
+  border-radius: 4px;
+  outline: none;
+  text-align: center;
+  border: 1px solid #000;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.5s;	
+  cursor: pointer;
+  font-size: 15px;
+  color: #fff;
+  text-decoration-style: solid;
 }
 
 .desks{
@@ -152,4 +204,24 @@ cursor: pointer;
 #NewBooking:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+.book-btn{
+  background-color: #6E75A8 ;;
+  padding: 12px 26px;
+  border-radius: 4px;
+  outline: none;
+  text-align: center;
+  border: 1px solid #000;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.5s;	
+  cursor: pointer;
+  font-size: 15px;
+  color: #fff;
+  text-decoration-style: solid;
+}
+
+.btn-wrapper{
+  padding-top: 10px;
 }

@@ -30,21 +30,18 @@ export default function DeleteBooking(props) {
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
-      >
+      ><div className="delete-text">
         <MatUI.DialogTitle id="alert-dialog-title">{"Are you sure you would like to delete this booking?"}</MatUI.DialogTitle>
-        <MatUI.DialogContent>
-          <MatUI.DialogContentText id="alert-dialog-description">
-            Once a booking has been deleted, it cannot be undone.
-          </MatUI.DialogContentText>
-        </MatUI.DialogContent>
+     
         <MatUI.DialogActions>
-          <MatUI.Button onClick={handleClose} color="primary">
+          <button className="abort-btn" onClick={handleClose} >
             ABORT
-          </MatUI.Button>
-          <MatUI.Button onClick={deleteButton} color="primary" autoFocus>
+          </button>
+          <button className="delete-btn" onClick={deleteButton} autoFocus>
             DELETE
-          </MatUI.Button>
+          </button>
         </MatUI.DialogActions>
+        </div>
       </MatUI.Dialog>
     </div>
   );

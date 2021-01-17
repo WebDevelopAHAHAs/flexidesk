@@ -29,7 +29,7 @@ export function Layout(props) {
 
         {/* Calendar Day Selector */}
         <MatUI.Grid item xs={12} md={8} lg={4}>
-        <h1>New Booking</h1>
+        <h1 className='booking-h1'>New Booking</h1>
           <MatUI.Paper className="admin-calendar">
 
             <CalendarSelector setDate={setDate}/>

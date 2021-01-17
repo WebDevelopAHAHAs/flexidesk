@@ -1,5 +1,5 @@
 .modal-position {
-  display: 'flex';
+  display: flex-start;
   align-items: 'center';
   justify-content: 'center';
   padding: 80px;
@@ -7,6 +7,7 @@
   height: fit-content;
   width: 50vw;
   text-align: center;
+  font-family: 'Montserrat', sans-serif; 
   }
   
   .modal-styling {
@@ -17,6 +18,7 @@
   width: auto;
   outline-color: #2A2D34;
   margin: auto;
+  
   }
   
   
@@ -25,6 +27,7 @@
   margin-left: 100px;
   margin-right: 100px;
   justify-content: 'center';
+  font-family: 'Montserrat', sans-serif; 
   }
   .MuiButton-contained{
   width: 100px;
@@ -36,11 +39,39 @@
   
   #standard-basic{
   /* width: fit-content; */
-  text-align: center;
+  text-align: left;
   }
+
+  #email{
+    margin-right: 52px;
+    text-align: left;
+  }
+
+  #firstname{
+    margin-right: 16px;
+    text-align: left;
+  }
+
+  #lastname{
+    margin-right: 16px;
+    text-align: left;
+  }
+
+  #access{
+    margin-right: 38px;
+    text-align: left;
+  }
+ 
+
+.MatUI.FormLabel{
+  font-family: 'Montserrat', sans-serif; 
+  text-align: left;
+}
   
   .MuiFormControl-root.makeStyles-root-1{
   margin: auto;
+  text-align: left;
+  padding-left: 13%;
   }
   
   .register-button{
@@ -49,3 +80,19 @@
   /* left: 14vw; */
   justify-content: center;
   }
+
+  .save-btn{
+    background-color: #6E75A8 ;;
+    padding: 12px 26px;
+    border-radius: 4px;
+    outline: none;
+    text-align: center;
+    border: 1px solid #000;
+    letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: all 0.5s;	
+	cursor: pointer;
+    font-size: 15px;
+    color: #fff;
+    text-decoration-style: solid;
+}
