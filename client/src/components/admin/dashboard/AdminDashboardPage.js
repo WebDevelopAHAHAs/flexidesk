@@ -5,7 +5,7 @@ import AppLayout from '../../AppLayout'
 import TabPanel from './AdminDashboardTabs'
 
 export function Route(props) {
-  return( <AppLayout dashboard/>);
+  return( <AppLayout history={props.history} dashboard/>);
 }
 
 export function Layout(props) {
