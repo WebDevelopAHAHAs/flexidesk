@@ -1,7 +1,9 @@
 const Booking = require('../models/Booking');
 const {
   getBookingByID, getAllBookings,
-  deleteBooking, updateBooking
+  deleteBooking, updateBooking,
+  
+  getAllBookingsByDate
 } = require('../utilities/booking_utilities')
 
 async function newBooking(req, res) {
@@ -68,11 +70,26 @@ const removeBooking = function (req, res) {
     });
 }
 
+const getBookingsByDate = function (req, res) {
+
+  getAllBookingsByDate(req).exec((err, bookings) => {
+      if (err) {
+          res.status(500);
+          return res.json({
+              error: err.message
+          });
+      }
+      res.send(bookings);
+  });
+};
+
 
 module.exports = {
   newBooking,
   getBookings,
   getBooking,
   changeBooking,
-  removeBooking
+  removeBooking,
+
+  getBookingsByDate
 };

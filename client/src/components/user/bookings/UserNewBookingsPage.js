@@ -41,9 +41,8 @@ export function Layout(props) {
         <MatUI.Grid item xs={12}>
           <MatUI.Paper className={classes.paper}>   
 
-          <DeskSelector date={date}/> {/* open={newBookingsModalOpen} setOpen={setNewBookingsModalOpen} deskNum={deskNum} setDeskNum={setDeskNum} */}
+          <DeskSelector date={date}/>
   
-          {/* < NewBookingModal open={addNewBookingsModalOpen} setOpen={setAddNewBookingsModalOpen}>Edit Booking</ NewBookingModal> */}
           </MatUI.Paper>
         </MatUI.Grid>
 

@@ -1,7 +1,8 @@
 import {useEffect, useState} from 'react'
 import * as MatUI from '@material-ui/core';
 import UserAddBooking from './UserAddBooking'
-import {getDesks} from '../../../services/deskServices'
+import {getDesks, getUnbookedDesks} from '../../../services/deskServices'
+// import {getBookings} from '../../../services/bookingServices'
 
 
 export default function DeskSelector(props){
@@ -9,17 +10,15 @@ export default function DeskSelector(props){
   const [newBookingOpen, setNewBookingOpen] = useState(false);
   const [desks, setDesks] = useState([])
   const [deskID, setDeskID] = useState(null)
-
+  const [bookings, setBookings] = useState([])
 
   useEffect( () => {
-    // if(desks === [null]) { 
-      fetchData();
-    // }
+    fetchData();
   }, [])
 
   async function fetchData() {
-    const deskData = await getDesks();
-    setDesks(deskData);
+    const deskData = await getUnbookedDesks(props.date);
+    setDesks(deskData)
   }
   
   const handleOpen = (event) => {
@@ -33,12 +32,27 @@ export default function DeskSelector(props){
     setNewBookingOpen(false);
   };
 
+  // const notEqualTo = (bookingsValue, deskValue) => bookingsValue != desk_id;
+
   const loadDesks = () => {
     console.log("Loading Desks: ", desks)
- 
-    return desks.map(desk => (      
+    return desks.map(desk => (
       <button key={desk._id} desk_id={desk._id} className='desks' onClick={handleOpen}><span desk_id={desk._id}>Desk {desk.number}</span></button>
-    ))
+      )
+    )
+    // if(bookings[i].desk_id != desk._id)
+
+
+    // for(let booking in bookings) {
+    //   setDesks(desks.map()(desk))
+    // }
+ 
+    // return desks.map(desk => (
+    //   const compare = (a, b) => bookings.every((desk_id, i) => desk_id === bookings[i].desk_id);
+    //   bookings.every(notEqualTo)
+
+    //       <button key={desk._id} desk_id={desk._id} className='desks' onClick={handleOpen}><span desk_id={desk._id}>Desk {desk.number}</span></button>
+ 
   }
   
   return(

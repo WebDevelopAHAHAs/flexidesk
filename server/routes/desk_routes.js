@@ -3,14 +3,20 @@ const router = express.Router();
 const {
   newDesk,
   getDesks, getDesk,
-  changeDesk, removeDesk
+  changeDesk, removeDesk,
+  getAllAvailableDesksByDate
 } = require('../controllers/desk_controller');
 
 //Create
 router.post('/new', newDesk); //database desk creation route
 
+
+
 //Queries
 router.get('/all', getDesks)
+
+//Queries
+router.get('/all/:date', getAllAvailableDesksByDate)
 
 router.get('/:id', getDesk)
 

@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import {React, useEffect, useState} from 'react';
 import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';
 import AppLayout from '../../AppLayout'
@@ -8,6 +8,9 @@ import CalendarSelector from './CalendarSelector'
 import DeskSelector from './DeskSelector'
 // import AddBooking from './AddBooking'
 
+import {getDesks, getUnbookedDesks} from '../../../services/deskServices'
+
+import ConvertDate from '../../ConvertDate'
 
 export function Route(props){
   return(<AppLayout newBookings/>);
@@ -17,11 +20,18 @@ export function Layout(props) {
 
   const classes = useStyles();
 
-  const [date, setDate] = useState(null)
-  // const [desk_id, setDeskID] = useState(null)
+  const [date, setDate] = useState(new Date())
+  const [convertedDate, setConvertedDate] = useState(ConvertDate(date))
+  const [desks, setDesks] = useState([])
 
-  // const [newBookingOpen, setNewBookingOpen] = useState(false);
-  // const [addNewBookingsModalOpen, setAddNewBookingsModalOpen] = useState(false);
+  useEffect( () => {
+      fetchData();
+  }, [])
+
+  async function fetchData() {
+    const deskData = await getUnbookedDesks(convertedDate);
+    setDesks(deskData)
+  }
 
   return(
   <div id="adminBookings-page">    
@@ -33,7 +43,7 @@ export function Layout(props) {
         <h1 className='booking-h1'>New Booking</h1>
           <MatUI.Paper className="admin-calendar">
 
-            <CalendarSelector setDate={setDate}/>
+            <CalendarSelector date={date} setDate={setDate} setConvertedDate={setConvertedDate}/>
 
           </MatUI.Paper>
         </MatUI.Grid>
@@ -42,9 +52,7 @@ export function Layout(props) {
         <MatUI.Grid item xs={12}>
           <MatUI.Paper className={classes.paper}>   
 
-          <DeskSelector date={date}/> {/* open={newBookingsModalOpen} setOpen={setNewBookingsModalOpen} deskNum={deskNum} setDeskNum={setDeskNum} */}
-  
-          {/* < NewBookingModal open={addNewBookingsModalOpen} setOpen={setAddNewBookingsModalOpen}>Edit Booking</ NewBookingModal> */}
+          <DeskSelector desks={desks} date={convertedDate}/>
 
           </MatUI.Paper>
         </MatUI.Grid>

@@ -8,7 +8,7 @@ export default function CalendarSelector(props) {
   
   const [value, onChange] = useState(new Date());
 
-  console.log(value)
+  props.setDate(value)
 
   return ( <div className='calendarSelectorDiv'>
     <Calendar

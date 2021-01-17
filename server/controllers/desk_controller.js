@@ -4,6 +4,8 @@ const {
   deleteDesk, updateDesk
 } = require('../utilities/desk_utilities')
 
+const { getAllBookingsByDate  } = require('../utilities/booking_utilities')
+
 async function newDesk(req, res) {
   const { number, section, available } = req.body;
 
@@ -19,7 +21,7 @@ async function newDesk(req, res) {
 }
 
 const getDesks = function (req, res) {
-
+  console.log("Called getDesks")
   getAllDesks().exec((err, desks) => {
       if (err) {
           res.status(500);
@@ -33,7 +35,7 @@ const getDesks = function (req, res) {
 
 
 const getDesk = function(req, res) {
-  console.log("Hit!")
+  console.log("Called getDesk")
 	getDeskByID(req).exec((err, desk) => {
     if (err) {
         res.status(400);
@@ -69,11 +71,56 @@ const removeDesk = function (req, res) {
     });
 }
 
+const getAllAvailableDesksByDate = function (req, res) {
+  console.log("Called getAllAvailableDesksByDate")
+  getAllDesks().exec((err, desks) => {
+      if (err) {
+          res.status(500);
+          return res.json({
+              error: err.message
+          });
+      }
+
+      // console.log("Desks: ", desks)
+      
+      getAllBookingsByDate(req).exec((err, bookings) => {
+        if (err) {
+          res.status(500);
+          return res.json({ error: err.message });
+        }
+
+        console.log("Bookings: ", bookings)
+        // console.log("All bookings of date: ", req.params.date)
+
+        let filteredDesks = []
+        
+        console.log(bookings.length)
+        if(bookings.length != 0) {
+          for(let booking of bookings) {
+            for(let desk of desks) {
+              console.log(booking.desk_id, desk._id)
+              if(booking.desk_id != desk._id) {
+                filteredDesks.push(desk)
+              }
+            }        
+          }
+          res.send(filteredDesks);
+        }
+        else
+        {
+          res.send(desks);
+        }            
+      });
+  });
+
+};
 
 module.exports = {
   newDesk,
   getDesks,
   getDesk,
   changeDesk,
-  removeDesk
+  removeDesk,
+
+  getAllAvailableDesksByDate
 };

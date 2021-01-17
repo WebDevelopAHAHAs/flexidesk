@@ -1,26 +1,12 @@
 import {useEffect, useState} from 'react'
 import * as MatUI from '@material-ui/core';
 import AddBooking from './AddBooking'
-import {getDesks} from '../../../services/deskServices'
 
 export default function DeskSelector(props){
        
   const [newBookingOpen, setNewBookingOpen] = useState(false);
-  const [desks, setDesks] = useState([])
   const [deskID, setDeskID] = useState(null)
 
-
-  useEffect( () => {
-    // if(desks === [null]) { 
-      fetchData();
-    // }
-  }, [])
-
-  async function fetchData() {
-    const deskData = await getDesks();
-    setDesks(deskData);
-  }
-  
   const handleOpen = (event) => {
     const id = event.target.getAttribute("desk_id")
     console.log("Desk ID:", id)
@@ -33,9 +19,9 @@ export default function DeskSelector(props){
   };
 
   const loadDesks = () => {
-    console.log("Loading Desks: ", desks)
+    console.log("Loading Desks: ", props.desks)
  
-    return desks.map(desk => (      
+    return props.desks.map(desk => (      
       <button key={desk._id} desk_id={desk._id} className='desks' onClick={handleOpen}><span desk_id={desk._id}>Desk {desk.number}</span></button>
     ))
   }
