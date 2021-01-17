@@ -61,13 +61,13 @@ app.use(session({
     })
 }));
 
-app.get('/', (req, res) => {
-    console.log('GET on /');
-    console.log('Session Details', req.session)
-    res.send("Request received.");
-})
+// app.get('/', (req, res) => {
+//     console.log('GET on /');
+//     console.log('Session Details', req.session)
+//     res.send("Request received.");
+// })
 
-app.use("/", pageRouter);
+// app.use("/", pageRouter);
 app.use('/auth', authRouter);
 app.use("/user", userRouter);
 app.use("/desk", deskRouter);

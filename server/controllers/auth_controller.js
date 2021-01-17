@@ -23,7 +23,8 @@ async function login(req, res) {
 
   console.log('Logged on as', email);
   req.session.user = user;
-  res.redirect("/");
+  console.log(req.session.user)
+  res.send(req.session);
 }
 
 //Logout
@@ -32,7 +33,7 @@ const logout = function (req, res) {
   // console.log('session object:', req.session);
 
   req.session.destroy(() => {
-    res.redirect("/");
+    res.send(req.session);
   });
 
   // res.sendStatus(200);
