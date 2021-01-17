@@ -32,7 +32,7 @@ client/debug.log
 
 ## Dependencies
 #Ignore
-!*/client/node_modules/react-calendar/dist/Calendar.css*
+!*/client/node_modules/react-calendar/dist/*
 client/node_modules
 client/.pnp
 client/.pnp.js
