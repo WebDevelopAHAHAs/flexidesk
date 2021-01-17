@@ -81,6 +81,11 @@
   justify-content: center;
   }
 
+  .button-wrapper{
+    padding-top: 10px;
+    justify-content: right;
+    text-align: right;
+  }
   .save-btn{
     background-color: #6E75A8 ;;
     padding: 12px 26px;

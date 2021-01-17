@@ -123,7 +123,7 @@ export function Layout(props) {
       </MatUI.FormControl> */}
       
       <MatUI.FormControl>
-      <div className="container-spacing">
+      <div className="button-wrapper">
         <button className='save-btn' type="submit" variant="contained" value="Register">Save Changes</button>
         </div>
       </MatUI.FormControl>
