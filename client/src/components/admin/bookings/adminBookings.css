@@ -346,6 +346,7 @@ cursor: pointer;
     #dropdown{
       justify-content: left;
       width: 100px;
+      margin-left: 50px;
       
     }
 
@@ -389,4 +390,6 @@ cursor: pointer;
     .desks:hover span:after {
       font-size: 15px;
     }
+
+    
     }
