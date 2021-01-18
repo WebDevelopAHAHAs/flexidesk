@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react'
 // import ReactDOM from 'react-dom';
 
-import {getBookings} from '../../../services/bookingServices'
+import {getBookingsByDate} from '../../../services/bookingServices'
 import {getUser} from '../../../services/userServices'
 import {getDesk} from '../../../services/deskServices'
+import convertDate from '../../ConvertDate'
 // import EditBooking from './EditBooking'
 
 
@@ -19,7 +20,7 @@ export default function ViewBookingsMonth(props) {
   }, [])
 
   async function fetchData() {
-    const bookingData = await getBookings();
+    const bookingData = await  getBookingsByDate('month', convertDate(new Date()));
     for(let i = 0; i < bookingData.length; i++) {
       const user = await getUser(bookingData[i].user_id)
       const desk = await getDesk(bookingData[i].desk_id)
