@@ -10,7 +10,7 @@ import ViewEmployeesTable from './ViewEmployeesTable'
 // import EditEmployee from './EditEmployeeModal'
 
 export function Route(props){
-  return(<AppLayout employees/>);
+  return(<AppLayout history={props.history} employees/>);
 }
 
 export function Layout(props) {

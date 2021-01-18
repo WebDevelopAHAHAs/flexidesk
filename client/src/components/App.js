@@ -6,7 +6,7 @@ import {StateContext, useGlobalState} from '../config/store'
 
 //Pages
 
-import RootRedirect from './RootRedirect';
+import {Root} from './Redirect';
 import LoginPage from './login/LoginPage'
 // admin
 import {Route as AdminDashboard} from  './admin/dashboard/AdminDashboardPage';
@@ -39,19 +39,19 @@ export default function App()
       <BrowserRouter>
         
         {/* admin */}
-        <Route exact path=  "/login"                component={LoginPage} />
-        <Route exact path=  "/admin/dashboard"      component={AdminDashboard} />
-        <Route exact path=  "/admin/newBookings"    component={AdminNewBookings} />
-        <Route exact path=  "/admin/viewBookings"   component={AdminViewBookings} />
-        <Route exact path=  "/admin/employees"      component={AdminEmployees} />
-        <Route exact path=  "/admin/desks"          component={AdminDesks} />
+        <Route exact path=  "/admin/dashboard"     component={AdminDashboard} />
+        <Route exact path=  "/admin/newBookings"   component={AdminNewBookings} />
+        <Route exact path=  "/admin/viewBookings"  component={AdminViewBookings} />
+        <Route exact path=  "/admin/employees"     component={AdminEmployees} />
+        <Route exact path=  "/admin/desks"         component={AdminDesks} />
         {/* user */}
         <Route exact path=  "/user/dashboard"      component={UserDashboard} />
         <Route exact path=  "/user/newBookings"    component={UserNewBookings} />
         <Route exact path=  "/user/viewBookings"   component={UserViewBookings} />
-        {/* <Route exact path=  "/"                     component={RootRedirect} /> */}
-        <Route exact path=  "/"                     component={RootRedirect} loggedIn={loggedInUser} login={LoginPage} dashboard={AdminDashboard} />
-        {/* Desks */}
+
+        {/* universal */}
+        <Route exact path=  "/login"               component={LoginPage} />
+        <Route exact path=  "/"                    component={Root} />
         
       </BrowserRouter>
 

@@ -14,7 +14,6 @@ async function newDesk(req, res) {
     console.log("Created Desk:", desk)
 
     res.send(desk)
-    // res.redirect("/");
   }
   catch(err){
       console.log(err)
@@ -96,7 +95,7 @@ const getAllAvailableDesksByDate = function (req, res) {
         let filteredDesks = []
         
         console.log(bookings.length)
-        if(bookings.length != 0) {
+        if(bookings.length !== 0) {
           for(let booking of bookings) {
             for(let desk of desks) {
               console.log(booking.desk_id, desk._id)

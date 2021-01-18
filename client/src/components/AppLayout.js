@@ -7,7 +7,7 @@ import * as MatIcon from '@material-ui/icons'
 // Styling
 import useStyles from './styling/useStyles';
 
-import {getLoggedOnUser} from '../services/authServices'
+import {AuthCheck} from './Redirect';
 
 import NavBar from './navBar/NavBar'
 // Admin
@@ -26,19 +26,12 @@ import {Layout as UserViewBookings}  from './user/bookings/UserViewBookingsPage'
 
 export default function AppLayout(props)
 {
-  console.log("---props", props)
+  // console.log("---props", props)
 
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
-
-  async function redirect() {
-    const sessionUser = await getLoggedOnUser();
-    console.log("Session: ", sessionUser)
-    // props.history.push("/login")
-  }
-
-  redirect();
+  AuthCheck(props);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -85,7 +78,7 @@ export default function AppLayout(props)
         <MatUI.List> </MatUI.List>
       <MatUI.Divider/>
 
-      <NavBar/>
+      <NavBar history={props.history}/>
       
     </MatUI.Drawer>
     

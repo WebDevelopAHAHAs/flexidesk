@@ -100,7 +100,10 @@ const SignInForm = ({history}) => {
               data: userDetails
           })
 
-          history.push("/admin/dashboard") //successful redirect
+          if(response.access === "admin")
+            history.push("/admin/dashboard") //successful redirect
+          else if (response.access === "employee")
+            history.push("/user/dashboard")
           
       }).catch((error) => {
         console.log('error:', error)
