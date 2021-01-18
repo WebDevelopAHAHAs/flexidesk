@@ -84,7 +84,7 @@ export default function UserAddBooking(props) {
     </div>
     <div className="button-wrapper">
     <button className="reserve" type="submit" value="CreateBooking">
-      Create New Booking
+      Book Now
     </button>
     </div>
 

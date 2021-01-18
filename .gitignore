@@ -37,6 +37,7 @@ client/.pnp.js
 
 #Ignore
 
+
 !/client/node_modules/
 /client/node_modules/*
 !client/node_modules/react-calendar

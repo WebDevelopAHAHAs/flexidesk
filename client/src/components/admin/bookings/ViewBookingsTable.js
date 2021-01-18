@@ -8,6 +8,7 @@ import {getDesk} from '../../../services/deskServices'
 import DeleteBooking from './DeleteBooking'
 import './adminBookings.css'
 import ViewFloorplanIcon from './ViewFloorplanIcon'
+import convertDate from '../../ConvertDate'
 
 export default function ViewBookingsTable(props) {
 
@@ -21,7 +22,7 @@ export default function ViewBookingsTable(props) {
   }, [])
 
   async function fetchData() {
-    const bookingData = await getBookings();
+    const bookingData = await getBookings('day',convertDate(new Date()));
     for(let i = 0; i < bookingData.length; i++) {
       const user = await getUser(bookingData[i].user_id)
       const desk = await getDesk(bookingData[i].desk_id)
@@ -81,7 +82,7 @@ export default function ViewBookingsTable(props) {
           <thead>
             <tr>
               <th>Employee</th>
-              <th>Desk No.</th>
+              <th>Desk</th>
               <th>Date</th>
               {/* <th>Edit</th> */}
               <th></th>

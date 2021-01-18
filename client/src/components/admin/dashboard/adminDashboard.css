@@ -16,3 +16,50 @@
     font-family: 'Montserrat', sans-serif; 
     font-size: 30px; 
 }
+
+.desk-no{
+    text-align: left;
+    padding-left: 18px;
+  }
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
+    #appbar{
+        width: 100%;
+    }
+    .booking-table{
+        font-size: 10px;
+    }
+
+    .dashboard-tabs{
+        font-size: 2px;
+        
+    }
+}
+
+/* ----------- iPad Pro 12.9" ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .booking-table{
+        font-size: 25px;
+        padding-left: 50px;
+    }
+  
+    #appbar{
+        width: 100%;
+    }
+
+    .dashboard-tabs{
+        font-size: 20px; 
+    }
+}

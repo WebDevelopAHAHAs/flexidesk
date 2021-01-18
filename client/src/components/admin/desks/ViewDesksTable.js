@@ -38,8 +38,8 @@ export default function ViewDesksTable(props) {
       <table className="desk-table"  id="desk-table-id">
           <thead>
             <tr>
-              <th>Desk Number</th>
-              <th>Desk Section</th>
+              <th>Desk</th>
+              <th>Section</th>
               <th>Available</th>
               <th></th>
               <th></th>

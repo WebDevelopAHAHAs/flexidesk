@@ -25,7 +25,7 @@ export default function ViewEmployeesTable(props) {
       <tr key={user._id}>
         <td>{user.first_name}</td>
         <td>{user.last_name}</td>
-        <th>{user.contact_number}</th>  
+        <th>0{user.contact_number}</th>  
         <td>{user.email}</td>
         <td>{user.access}</td>
         <td><EditEmployee data_id={user._id} access={user.access} first_name={user.first_name} last_name={user.last_name} contact_number={user.contact_number} email={user.email}/></td>
@@ -40,9 +40,9 @@ export default function ViewEmployeesTable(props) {
       <table className="employee-table"  id="employee-table-id">
           <thead>
               <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Contact No.</th>                
+                <th>First</th>
+                <th>Last</th>
+                <th>Contact</th>                
                 <th>Email</th>
                 <th>Access</th>
                 <th></th>
