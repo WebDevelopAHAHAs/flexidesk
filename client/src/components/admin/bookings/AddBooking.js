@@ -72,10 +72,12 @@ export default function AddBooking(props) {
     <MatUI.FormControl>
     <div className="modal-spacing">
         <MatUI.FormLabel htmlFor="component-simple">Employee</MatUI.FormLabel>
+        <div className="seperator">
         <MatUI.Select id="dropdown" value={employee} onChange={handleEmployeeSelectorChange}>
             <MatUI.MenuItem value={employee}><em>None</em></MatUI.MenuItem>
             {loadUsers()}
       </MatUI.Select>
+      </div>
       </div>
     </MatUI.FormControl>
     <div className='btn-wrapper'>

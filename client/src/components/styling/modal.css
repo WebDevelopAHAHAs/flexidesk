@@ -85,10 +85,11 @@
 .MatUI.FormLabel{
   font-family: 'Montserrat', sans-serif; 
   text-align: left;
+  width: 100%;
 }
   
   .MuiFormControl-root.makeStyles-root-1{
-  margin: auto;
+  margin: none;
   text-align: left;
   padding-left: 13%;
   }
@@ -135,4 +136,36 @@ cursor: pointer;
   font-size: 15px;
   color: #fff;
   text-decoration-style: solid;
+}
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+.modal-styling {
+  background-color: whitesmoke;
+  padding: 5px;
+  width: 300px;
+  height: 300px;
+  margin-right: 50px;
+  display: flex-start;
+  align-items: left;
+  justify-content: left;
+  position:relative
+
+  }
+
+    .modal-position{
+      padding: 1px;
+      margin-left: 40px;
+    }
+
+    .MuiFormControl-root.makeStyles-root-1{
+      padding-left: 0%;
+      }
+
+     
 }
