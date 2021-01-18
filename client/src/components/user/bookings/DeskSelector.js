@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 import * as MatUI from '@material-ui/core';
 import UserAddBooking from './UserAddBooking'
 import {getDesks, getUnbookedDesks} from '../../../services/deskServices'
+import ViewFloorplan from './ViewFloorplan'
 // import {getBookings} from '../../../services/bookingServices'
 
 
@@ -69,7 +70,7 @@ export default function DeskSelector(props){
       <MatUI.Fade className="modal-styling" in={newBookingOpen}>
        <div>
           <h2 id="transition-modal-title">Reserve Desk</h2>
-
+          <ViewFloorplan/>
           <div id="transition-modal-description"> <UserAddBooking handleClose={handleClose} date={props.date} desk_id={deskID} /></div>
         </div>
       </MatUI.Fade>

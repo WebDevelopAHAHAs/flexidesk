@@ -6,6 +6,7 @@ import {getUser} from '../../../services/userServices'
 import {getDesk} from '../../../services/deskServices'
 // import EditBooking from './EditBooking'
 import DeleteBooking from './DeleteBooking'
+import ViewFloorplanIcon from './ViewFloorplanIcon'
 
 export default function ViewBookingsTable(props) {
 
@@ -65,6 +66,7 @@ export default function ViewBookingsTable(props) {
         {fetchDeskNumber(booking.desk_id)} */}
         {/* <td>{booking.desk_id}</td> */}
         <td>{booking.date}</td>
+        <td><ViewFloorplanIcon/></td>
         {/* <td><EditBooking dataID={booking._id} user_id={booking.user_id} desk_id={booking.desk_id} date={booking.date}/></td> */}
         <td><DeleteBooking data_id={booking._id} /></td>
       </tr>
