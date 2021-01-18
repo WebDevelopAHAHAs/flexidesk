@@ -2,7 +2,7 @@ import {React, useState} from 'react';
 import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';
 import AppLayout from '../../AppLayout'
-import './AdminDesks.css'
+import './adminDesks.css'
 
 import AddDesk from './AddDesk'
 import ViewDesksTable from './ViewDesksTable'
