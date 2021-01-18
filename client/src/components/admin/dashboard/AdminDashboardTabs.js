@@ -61,7 +61,7 @@ export default function CenteredTabs() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar id='appbar' position="static">
         <Tabs TabIndicatorProps={{style: {background:'#E8E9EB'}}} className="dashboard-tabs" value={value} onChange={handleChange} aria-label="dashboard tabs">
           <Tab label="Today" {...a11yProps(0)} />
           <Tab label="This Month" {...a11yProps(1)} />

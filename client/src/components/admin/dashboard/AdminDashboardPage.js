@@ -17,7 +17,7 @@ export function Layout(props) {
     <MatUI.Container maxWidth="lg" className={classes.container} id="adminDashboard-container">
       <MatUI.Grid container spacing={1}>
       
-        <MatUI.Grid item xs={12} md={8} lg={12}>
+        <MatUI.Grid item xs={12} md={12} lg={12}>
         <h1 className="admin-dashboard-h1">Dashboard</h1>
           <MatUI.Paper className="box1">
             <TabPanel/>

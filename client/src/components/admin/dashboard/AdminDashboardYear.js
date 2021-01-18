@@ -80,7 +80,7 @@ export default function ViewBookingsYear(props) {
           <thead>
             <tr>
               <th>Employee</th>
-              <th>Desk No.</th>
+              <th>Desk</th>
               <th>Date</th>
               {/* <th>Edit</th> */}
               <th></th>
