@@ -32,3 +32,38 @@ export async function getBooking(id) {
   console.log("Retrieved Booking: ", response) 
   return response.data
 }
+
+export async function getBookingsByDate(type, value) {
+  console.log('Requesting All Bookings')
+  const response = await api.get("/booking/all")
+  console.log("Retrieved Bookings: ", response)
+
+  let sliceStart = 0
+        
+  const bookings = response.data;
+  if(bookings.length !== 0) {
+    switch(type) {
+      case "month":
+        sliceStart = 4
+        break;
+
+      case "year":
+        sliceStart = 7        
+        break;
+
+      default:
+      break;
+    }
+  }
+  
+  const filteredBookings = bookings.filter((booking) => booking.date.slice(sliceStart, 9) === value.slice(sliceStart, 9))
+    // let filteredDesks = []
+    // for(let booking of bookings) {
+    //   if(booking.date.slice(sliceStart, 9) === value.slice(sliceStart, 9)) {
+    //     filteredBookings.push(booking)
+    //   }      
+    //}
+
+
+  return filteredBookings;
+}

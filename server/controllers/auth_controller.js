@@ -1,7 +1,7 @@
 const User = require("../models/User");
 
 async function getSession(req, res) {
-  console.log(req.session.user)
+  console.log("Retrieving User", req.session.user)
   res.send(req.session.user)
 }
 

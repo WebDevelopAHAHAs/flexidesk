@@ -16,7 +16,7 @@ async function newUser(req, res) {
     const user = await User.create({ access, first_name, last_name, contact_number, email, password });
     console.log("Created User:", user)
 
-    res.redirect("/");
+    res.send(user);
   }
   catch(err){
       console.log(err)

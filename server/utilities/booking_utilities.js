@@ -10,8 +10,6 @@ const getBookingByID = function(req) {
 
 const getAllBookingsByDate = function(req) {
   console.log("Bookings by Date Query: ", req.params.date)
-  // const parsedDate = Date.parse(req.params.date)
-  // console.log(parsedDate)
 	return Booking.find({date: req.params.date})
 }
 
