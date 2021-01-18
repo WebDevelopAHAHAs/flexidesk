@@ -239,6 +239,7 @@ cursor: pointer;
   width: 450px
 }
 
+/* button for floorplan dialog box */
 #floorplan{
   background-color: #6E75A8 ;
   padding: 12px 26px;
@@ -248,46 +249,24 @@ cursor: pointer;
   text-align: center;
   border: 1px solid #000;
   letter-spacing: 1px;
-text-transform: uppercase;
-transition: all 0.5s;	
-cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.5s;	
+  cursor: pointer;
   font-size: 15px;
   color: #fff;
   text-decoration-style: solid;
 }
-
-/* #floorplan span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
+/* Legend icons for floorplan */
+#green{
+  color: green;
 }
 
-#floorplan span:after {
-  content: '\002b';
-  font-weight:bold ;
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
+#red{
+  color: red;
+  padding-left: 15px;
 }
 
-#floorplan:hover span {
-  padding-right: 25px;
+.legend{
+  justify-content: center;
+  text-align: center;
 }
-
-#floorplan:hover span:after {
-  opacity: 1;
-  right: 0;
-} */
-
-img{
-  width: 900px;
-  height: 900px;
-  padding-left: 185px;
-}
-/* 
-img:hover {
-  transform: scale(5.3);
-  } */
