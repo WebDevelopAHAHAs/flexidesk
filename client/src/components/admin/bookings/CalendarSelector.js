@@ -15,9 +15,6 @@ export default function CalendarSelector(props) {
     <Calendar
       onChange={changeSelected}
       value={selected}
-      // passes argument
-      // onClickDay={(day)=> ShowDesk(day, setOpen, setDeskNum, open, deskNum)}
-      // onClickDay = {(day) => DeskSelector(day)}
       onClickDay = {(day) => {
         console.log(day);
         props.setDate(day);

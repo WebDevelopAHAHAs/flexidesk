@@ -38,7 +38,7 @@ const getUsers = function (req, res) {
 };
 
 const getUser = function(req, res) {
-  console.log("Hit!")
+  console.log("Called getUser")
 	getUserByID(req).exec((err, user) => {
     if (err) {
         res.status(400);

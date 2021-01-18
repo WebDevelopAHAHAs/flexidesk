@@ -6,6 +6,7 @@ export default function DeskSelector(props){
        
   const [newBookingOpen, setNewBookingOpen] = useState(false);
   const [deskID, setDeskID] = useState(null)
+  const [deskNodes, setDeskNodes] = useState(null);
 
   const handleOpen = (event) => {
     const id = event.target.getAttribute("desk_id")
@@ -20,10 +21,21 @@ export default function DeskSelector(props){
 
   const loadDesks = () => {
     console.log("Loading Desks: ", props.desks)
- 
-    return props.desks.map(desk => (      
-      <button key={desk._id} desk_id={desk._id} className='desks' onClick={handleOpen}><span desk_id={desk._id}>Desk {desk.number}</span></button>
-    ))
+    
+    // if(deskNodes != null) {
+    //   deskNodes.forEach(element => {
+    //     element.parentNode.removeChild(element);
+    //   });
+    // }
+
+    const deskButtons = (props.desks.map(desk => (      
+      <button className='desks' key={desk._id} desk_id={desk._id} onClick={handleOpen}><span desk_id={desk._id}>Desk {desk.number}</span></button>
+    )))
+
+    // setDeskNodes(document.getElementsByClassName("desks"))
+    // console.log(deskNodes)
+
+    return deskButtons
   }
   
   return(

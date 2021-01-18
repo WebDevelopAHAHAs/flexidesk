@@ -14,10 +14,10 @@ export default function DeleteDesk(props) {
     setOpen(false);
   };
 
-  const deleteButton = (dialogSuccess) => {
+  const deleteButton = () => {
     deleteDesk(props.data_id);
-    if(dialogSuccess === true)
-      window.location.reload()  
+    handleClose()
+    window.location.reload()  
   }
 
   return (

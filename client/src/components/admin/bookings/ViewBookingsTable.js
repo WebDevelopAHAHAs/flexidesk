@@ -82,7 +82,7 @@ export default function ViewBookingsTable(props) {
               <th>Desk No.</th>
               <th>Date</th>
               {/* <th>Edit</th> */}
-              <th></th>
+              <th>Delete</th>
             </tr>
           </thead>
           

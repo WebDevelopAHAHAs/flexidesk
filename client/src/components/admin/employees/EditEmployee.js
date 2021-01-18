@@ -8,7 +8,7 @@ import {updateUser} from '../../../services/userServices'
 
 export default function Wrapper(props) {
   let details = [props.access, props.first_name, props.last_name, props.contact_number, props.email]
-  return(<ModalWrap dataType="user" formType="edit" header="Edit Employee" data_id={props.userID} details={details}/>)
+  return(<ModalWrap dataType="user" formType="edit" header="Edit Employee" data_id={props.data_id} details={details}/>)
 }
 
 export function Button(props) {

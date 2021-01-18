@@ -14,11 +14,12 @@ export default function DeleteEmployee(props) {
     setOpen(false);
   };
 
-  const deleteButton = (dialogSuccess) => {
+  const deleteButton = () => {
     deleteUser(props.data_id);
-    if(dialogSuccess === true)
-      window.location.reload()  
+    handleClose()
+    window.location.reload()  
   }
+
 
   return (
     <div>

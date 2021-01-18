@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 // import CalendarSelector from './CalendarSelector'
 // import DeskSelector from './DeskSelector'
 import ViewBookingsTable from './UserBookingsTable'
-import './UserBooking.css'
+import './userBooking.css'
 
 
 export function Route(props){
@@ -15,17 +15,6 @@ export function Route(props){
 
 export function Layout(props) {
   const classes = useStyles();
-
-  // const [editBookingsModalOpen, setEditBookingsModalOpen] = useState(false);
-
-  // const history = useHistory();
-
-  // const routeChange = () =>{ 
-  //   let path = `/admin/newBookings`; 
-  //   history.push(path);
-  // }
-
-  
 
   return(
     <div id="userBookings-page">
@@ -36,12 +25,12 @@ export function Layout(props) {
       
         <MatUI.Grid item xs={12} md={8} lg={4}>
 
-          <h1>Bookings</h1>
-          
+          <h1>Bookings</h1>          
             
         </MatUI.Grid>
 
           <MatUI.Grid item xs={12}>
+
             <MatUI.Paper className={classes.paper}>
 
             <ViewBookingsTable/>

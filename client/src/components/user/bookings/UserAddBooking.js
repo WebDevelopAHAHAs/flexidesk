@@ -8,12 +8,12 @@ import {getUsers} from '../../../services/userServices'
 
 export default function UserAddBooking(props) {
   const classes = useStyles();
-  const {dispatch} = useGlobalState()
-  const [errorMessage, setErrorMessage] = useState(null)
+  const {dispatch} = useGlobalState();
+  const [errorMessage, setErrorMessage] = useState(null);
 
-  const [users, setUsers] = useState([])
+  const [users, setUsers] = useState([]);
 
-  const [employee, setEmployee] = useState("")
+  const [employee, setEmployee] = useState("");
   
   const formState = {user_id: employee, desk_id: props.desk_id, date: props.date}
   console.log("Form State: ", formState)

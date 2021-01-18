@@ -7,10 +7,10 @@ export async function createBooking(bookingInfo) {
   return response.data
 }
 
-export async function deleteBooking(bookingInfo) {
-  console.log("Requesting Booking Delete: ", bookingInfo)
-  const response = await api.get(`/booking/${bookingInfo.id}/delete`)
-  console.log("Deleted Booking: ", bookingInfo.id) 
+export async function deleteBooking(id) {
+  console.log("Requesting Booking Delete: ", id)
+  const response = await api.get(`/booking/${id}/delete`)
+  console.log("Deleted Booking: ", id) 
 }
 
 export async function updateBooking(bookingInfo) {

@@ -13,7 +13,8 @@ async function newDesk(req, res) {
     const desk = await Desk.create({ number, section, available });
     console.log("Created Desk:", desk)
 
-    res.redirect("/");
+    res.send(desk)
+    // res.redirect("/");
   }
   catch(err){
       console.log(err)
