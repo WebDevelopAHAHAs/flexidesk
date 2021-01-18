@@ -45,7 +45,7 @@ export default function ViewFloorplanIcon(props) {
             <i id="green" class="fas fa-square"> </i> Available 
             
             <i id="red" class="fas fa-square"> </i> Covid Restricted<br></br>
-            Hover to zoom in. test
+            Hover to zoom in.
             </div>
         </MatUI.DialogContent>
         <MatUI.DialogActions>
