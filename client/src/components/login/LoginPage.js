@@ -1,6 +1,6 @@
 import React from "react";
 import SignInForm from './SignInForm'
-import './LoginPage.css'
+import './loginPage.css'
 
 export default function LoginPage({history})
 {

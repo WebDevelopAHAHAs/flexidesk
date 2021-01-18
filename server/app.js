@@ -24,6 +24,42 @@ if(process.env.NODE_ENV !== 'production') {
 
 // cacheReset();
 
+
+// cacheReset(mongoose);
+
+// Install middleware
+app.use(session({
+  // resave and saveUninitialized set to false for deprecation warnings
+  secret: "Express is awesome",
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 1200000 // 20 minutes in milliseconds
+  },
+  store: new MongoStore({
+      mongooseConnection: mongoose.connection
+  })
+}));
+
+// --- CORS --- //
+const corsOptions = {
+  credentials: true
+}
+const whitelist = ['http://localhost:3000']
+app.use(cors({
+  credentials: true,
+  origin: function (origin,callback) {
+      // Check each url in whitelist and see if it includes the origin (instead of matching exact string)
+      const whitelistIndex = whitelist.findIndex((url) => url.includes(origin))
+      console.log("found whitelistIndex", whitelistIndex)
+      callback(null,whitelistIndex > -1)
+  }
+}));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }))
+
+
 //Set three properties to avoid deprecation warnings: useNewUrlParser: true, useUnifiedTopology: true, useFileAndModify: false, useCreateIndex: true
 mongoose.connect(
   uri,
@@ -41,26 +77,6 @@ mongoose.connect(
     }
   }
 );
-
-// cacheReset(mongoose);
-
-// Install middleware
-app.use(session({
-  // resave and saveUninitialized set to false for deprecation warnings
-  secret: "Express is awesome",
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-    maxAge: 1200000 // 20 minutes in milliseconds
-  },
-  store: new MongoStore({
-      mongooseConnection: mongoose.connection
-  })
-}));
-app.use(cors());
-app.use(express.urlencoded({ extended: false }))
-app.use(express.json());
-
 
 // app.get('/', (req, res) => {
 //     console.log('GET on /');
