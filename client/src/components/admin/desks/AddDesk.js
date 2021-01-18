@@ -50,22 +50,30 @@ export function Layout(props) {
   return(
   <MatUI.FormControl component="form" onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
     <MatUI.FormControl>
-      <MatUI.FormLabel htmlFor="component-simple">Desk Number</MatUI.FormLabel>
+    <div className="container-spacing">
+      <MatUI.FormLabel htmlFor="component-simple">Desk No</MatUI.FormLabel>
       <MatUI.Input id="standard-basic" name="number" required type="text" onChange={handleChange} />
+      </div>
     </MatUI.FormControl>
     
     <MatUI.FormControl>
-      <MatUI.FormLabel htmlFor="component-simple">Section</MatUI.FormLabel>
+    <div className="container-spacing">
+      <MatUI.FormLabel id="section" htmlFor="component-simple">Section</MatUI.FormLabel>
       <MatUI.Input id="standard-basic" name="section" required type="text" onChange={handleChange} />
+      </div>
     </MatUI.FormControl>
     
     <MatUI.FormControl>
-      <MatUI.FormLabel htmlFor="component-simple">Available</MatUI.FormLabel>
-      <MatUI.Checkbox id="standard-basic" defaultValue={deskDetails.available} name="available" required type="checkbox" onChange={handleChange} />
+    <div className="available-container-spacing">
+      <MatUI.FormLabel id="available" htmlFor="component-simple">Available</MatUI.FormLabel>
+      <MatUI.Checkbox defaultValue={deskDetails.available} name="available" required type="checkbox" onChange={handleChange} />
+      </div>
     </MatUI.FormControl>
     
     <MatUI.FormControl>
-      <MatUI.Button variant="contained" type="submit" value="Register">Create Desk</MatUI.Button>
+    <div className="button-wrapper">
+      <button className='save-btn' variant="contained" type="submit" value="Register">Add Desk</button>
+      </div>
     </MatUI.FormControl>
     
     <p> {errorMessage} </p>
