@@ -84,7 +84,7 @@ app.get('/', (req, res) => {
     res.send("Request received.");
 })
 
-app.use("/", pageRouter);
+// app.use("/", pageRouter);
 app.use('/auth', authRouter);
 app.use("/user", userRouter);
 app.use("/desk", deskRouter);
