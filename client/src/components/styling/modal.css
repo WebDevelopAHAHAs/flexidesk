@@ -145,6 +145,7 @@ cursor: pointer;
   and (min-device-width: 375px) 
   and (max-device-width: 812px) 
   and (-webkit-min-device-pixel-ratio: 3) { 
+
 .modal-styling {
   background-color: whitesmoke;
   padding: 5px;
@@ -155,17 +156,39 @@ cursor: pointer;
   align-items: left;
   justify-content: left;
   position:relative
-
   }
 
-    .modal-position{
-      padding: 1px;
-      margin-left: 40px;
-    }
+.modal-position{
+  padding: 1px;
+  margin-left: 40px;
+}
 
+.MuiFormControl-root.makeStyles-root-1{
+  padding-left: 0%;
+  } 
+}
+
+/* ----------- iPad Pro 12.9" ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .modal-styling {
+      width: 500px;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      }
+    
+    .modal-position{
+      padding: 10px;
+    }
+    
     .MuiFormControl-root.makeStyles-root-1{
       padding-left: 0%;
-      }
-
-     
-}
+      } 
+    
+    }

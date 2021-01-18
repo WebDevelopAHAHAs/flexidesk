@@ -363,5 +363,30 @@ cursor: pointer;
   and (min-device-width: 1024px) 
   and (max-device-width: 1366px)
   and (-webkit-min-device-pixel-ratio: 2) {
-   
+    .desks{
+      margin: 1px;
+      margin-bottom: 3px;
+      width: 125px;
+      
+    }
+
+    .desks span{
+      font-size: 15px;
+    }
+    
+    .desks span:after {
+      font-size: 15px;
+    }
+    
+    .desks:hover span {
+      font-size: 15px;
+    }
+    
+    .desks:hover{
+      font-size: 15px;
+    }
+    
+    .desks:hover span:after {
+      font-size: 15px;
+    }
     }
