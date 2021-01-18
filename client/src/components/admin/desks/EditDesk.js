@@ -2,7 +2,7 @@ import {useState} from 'react'
 import {useGlobalState} from '../../../config/store'
 import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';
-
+import '../../styling/modal.css'
 import ModalWrap from '../../ModalWrap'
 import {updateDesk} from '../../../services/deskServices'
 
@@ -51,20 +51,34 @@ export function Layout(props) {
 
   return(
     <MatUI.FormControl component="form" onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+      
       <MatUI.FormControl>
-        <MatUI.FormLabel htmlFor="component-simple">Desk Number</MatUI.FormLabel>
-        <MatUI.Input id="standard-basic" defaultValue={deskDetails.number} name="number"required type="text" onChange={handleChange} />
+      <div className="container-spacing">
+        <MatUI.FormLabel htmlFor="component-simple">Desk No.</MatUI.FormLabel>
+        <MatUI.Input id="desk-no" defaultValue={deskDetails.number} name="number"required type="text" onChange={handleChange} />
+        </div>
       </MatUI.FormControl>
+
       <MatUI.FormControl>
-        <MatUI.FormLabel htmlFor="component-simple">Section</MatUI.FormLabel>
-      <MatUI.Input id="standard-basic" defaultValue={deskDetails.section} name="section"required type="text" onChange={handleChange} />
+      <div className="container-spacing">
+        <MatUI.FormLabel id="section" htmlFor="component-simple">Section</MatUI.FormLabel>
+      <MatUI.Input defaultValue={deskDetails.section} name="section"required type="text" onChange={handleChange} />
+      </div>
       </MatUI.FormControl>
+
+      
       <MatUI.FormControl>
-      <MatUI.FormLabel htmlFor="component-simple">Available</MatUI.FormLabel>
-      <MatUI.Checkbox id="standard-basic" defaultValue={deskDetails.available} name="availabile" required type="checkbox" onChange={handleChange} />
+      <div className="available-container-spacing">
+      <MatUI.FormLabel id="available" htmlFor="component-simple">Available</MatUI.FormLabel>
+      <MatUI.Checkbox defaultValue={deskDetails.available} name="availabile" required type="checkbox" onChange={handleChange} />
+      </div>
       </MatUI.FormControl>
+
+     
       <MatUI.FormControl>
-        <MatUI.Button variant="contained" type="submit" value="Save Changes">Create Desk</MatUI.Button>
+      <div className="button-wrapper">
+        <button className='save-btn' variant="contained" type="submit" value="Save Changes">Save Changes</button>
+        </div>
       </MatUI.FormControl>
 
       <p> {errorMessage} </p>

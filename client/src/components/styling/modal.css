@@ -61,6 +61,19 @@
     margin-right: 38px;
     text-align: left;
   }
+
+  #section{
+    margin-right: 15px;
+    text-align: left;
+  }
+
+  #available{
+    padding-right: 87px;
+  }
+
+  .available-container-spacing{
+    padding-top: 15px;
+  }
  
 
 .MatUI.FormLabel{
