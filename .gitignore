@@ -28,10 +28,30 @@ yarn-error.log*
 
 # Client
 
+client/debug.log
+
 ## Dependencies
 client/node_modules
 client/.pnp
 client/.pnp.js
+
+#Ignore
+
+!/client/node_modules/
+/client/node_modules/*
+!client/node_modules/react-calendar
+client/node_modules/react-calendar/*
+!client/node_modules/react-calendar/dist
+client/node_modules/react-calendar/dist/*
+!client/node_modules/react-calendar/dist/Calendar.css
+# !/react-calendar
+# /react-calendar/*
+# !/react-calendar/dist
+# client/node_modules/react-calendar/dist/*
+# !client/node_modules/react-calendar/dist/Calendar.css
+
+
+
 
 ## Testing
 client/coverage
@@ -54,7 +74,10 @@ client/.eslintcache
 
 # Server
 
-./server/config/databaseKey.js
+server/config/databaseKey.js
+
+server/config/databaseKey.js
+
 
 ## Dependencies
 server/node_modules

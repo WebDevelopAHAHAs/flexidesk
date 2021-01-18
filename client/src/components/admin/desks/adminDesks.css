@@ -3,7 +3,16 @@
     width: 100%;
     text-align: left;
     padding: 5px;
+    font-family: 'Montserrat', sans-serif; 
 }
+
+.desk-table tr{
+    line-height: 40px;
+    font-family: 'Montserrat', sans-serif; 
+    box-shadow: 0px 2px 2px whitesmoke;
+    -moz-box-shadow: 0px 2px 2px whitesmoke;
+    -webkit-box-shadow: 0px 2px 2px whitesmoke;
+  }
 /* Header of Table */
 thead{
     font-size: 20px;
@@ -98,3 +107,4 @@ button:hover{
     opacity: 1;
     right: 0;
   }
+

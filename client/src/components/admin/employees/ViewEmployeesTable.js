@@ -1,10 +1,9 @@
 /* eslint-disable no-unused-expressions */
 import React, {useState, useEffect} from 'react'
-import ReactDOM from 'react-dom';
-import {getUser, getUsers} from '../../../services/userServices'
+import {getUsers} from '../../../services/userServices'
 
-import EditEmployee from './EditEmployeeModal'
-
+import EditEmployee from './EditEmployee'
+import DeleteEmployee from './DeleteEmployee'
 
 export default function ViewEmployeesTable(props) {
 
@@ -20,13 +19,17 @@ export default function ViewEmployeesTable(props) {
   }
 
   const loadTable = () => {
-    console.log("Loading Users Table: ", users)
+    console.log("Loading Employee Table: ", users)
  
     return users.map(user => (
       <tr key={user._id}>
-        <td>{user.first_name} </td>
+        <td>{user.first_name}</td>
+        <td>{user.last_name}</td>
+        <th>{user.contact_number}</th>  
         <td>{user.email}</td>
-        <td><EditEmployee key={user._id} first_name={user.first_name} email={user.email}/></td>
+        <td>{user.access}</td>
+        <td><EditEmployee data_id={user._id} access={user.access} first_name={user.first_name} last_name={user.last_name} contact_number={user.contact_number} email={user.email}/></td>
+        <td><DeleteEmployee data_id={user._id} /></td>
       </tr>
     ))
   }
@@ -38,16 +41,17 @@ export default function ViewEmployeesTable(props) {
           <thead>
               <tr>
                 <th>First Name</th>
-                {/* <th>Last Name</th> */}
-                {/* <th>Mobile</th> */}
-                {/* <th>Access</th> */}
+                <th>Last Name</th>
+                <th>Contact No.</th>                
                 <th>Email</th>
-                <th>Edit</th>
+                <th>Access</th>
+                <th></th>
+                <th></th>
               </tr>
           </thead>
           
           <tbody>
-           {loadTable()}
+            {loadTable()}
           </tbody>
       </table>
         

@@ -7,14 +7,22 @@
     padding: 5px;
 }
 
+.employee-table tr{
+    line-height: 40px;
+    font-family: 'Montserrat', sans-serif; 
+    box-shadow: 0px 2px 2px whitesmoke;
+  -moz-box-shadow: 0px 2px 2px whitesmoke;
+  -webkit-box-shadow: 0px 2px 2px whitesmoke;
+  }
+
 /* Header of Table */
 thead{
     font-size: 20px;
 }
 
 .adminEmployees-page > h1{
-    text-align: center;
-    font-size: 50px;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 30px;
   }
 
 th{
@@ -23,10 +31,11 @@ th{
 
 /* Edit button */
 #Edit{
-    background-color: #fff;
+    background-color: transparent;
     border: none;
     font-size: 15px;
     padding: 3px;
+    color: #6E75A8;
 }
 #Edit:active{
     background-color: #fff;
@@ -44,7 +53,36 @@ th{
 #Edit:visited{
     background-color: #fff;
     border: none;
+    color: #6E75A8 ;
 }
+
+/* Delete button */
+
+#Delete{
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+    padding: 3px;
+}
+#Delete:active{
+    background-color: #fff;
+    transform: translateY(4px);
+  
+}
+
+#Delete:hover{
+    background-color: #fff;
+    border: none;
+    color: #6E75A8 ;
+    
+}
+
+#Delete:visited{
+    background-color: #fff;
+    border: none;
+}
+
+/* Add employee button */
 
 #AddEmployee{
     background-color: #6E75A8 ;;

@@ -1,3 +1,18 @@
 .MuiTabs-flexContainer{
     background-color: #2A2D34
 }
+
+.admin-dashboard-h1{
+    font-family: 'Exo 2', sans-serif;
+    font-size: 30px;
+}
+
+.adminDashboard-page{
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 10px;
+}
+
+.dashboard-tabs{
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 30px; 
+}

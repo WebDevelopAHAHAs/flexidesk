@@ -1,22 +1,25 @@
+import { PersonPinSharp } from '@material-ui/icons';
 import {React, useState} from 'react';
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 
-import DeskSelector from './DeskSelector'
+import ConvertDate from '../../ConvertDate'
 
-export default function CalendarSelector() {
-    
-  const [value, onChange] = useState(new Date());
+// import DeskSelector from './DeskSelector'
 
-  return (
-   <div className='calendarSelectorDiv'>
-      <Calendar
-          onChange={onChange}
-          value={value}
-          // passes argument
-          // onClickDay={(day)=> ShowDesk(day, setOpen, setDeskNum, open, deskNum)}
-          onClickDay = {(day) => DeskSelector(day)}
-       />                
-  </div>
-);
+export default function CalendarSelector(props) {
+  
+  const [selected, changeSelected] = useState(props.date);
+
+  return ( <div className='calendarSelectorDiv'>
+    <Calendar
+      onChange={changeSelected}
+      value={selected}
+      onClickDay = {(day) => {
+        console.log(day);
+        props.setDate(day);
+        props.setConvertedDate(ConvertDate(day));
+      }}
+    />                
+  </div> );
 }

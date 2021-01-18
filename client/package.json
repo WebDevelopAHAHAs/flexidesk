@@ -15,6 +15,7 @@
     "react": "^17.0.1",
     "react-calendar": "^3.2.1",
     "react-dom": "^17.0.1",
+    "react-img-zoom": "^0.1.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1"
   },
@@ -22,8 +23,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "yarn install && yarn run build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

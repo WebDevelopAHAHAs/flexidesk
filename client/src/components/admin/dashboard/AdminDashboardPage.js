@@ -5,7 +5,7 @@ import AppLayout from '../../AppLayout'
 import TabPanel from './AdminDashboardTabs'
 
 export function Route(props) {
-  return( <AppLayout dashboard/>);
+  return( <AppLayout history={props.history} dashboard/>);
 }
 
 export function Layout(props) {
@@ -18,7 +18,7 @@ export function Layout(props) {
       <MatUI.Grid container spacing={1}>
       
         <MatUI.Grid item xs={12} md={8} lg={12}>
-        <h1 className="admin-dashboard-h1">Admin Dashboard</h1>
+        <h1 className="admin-dashboard-h1">Dashboard</h1>
           <MatUI.Paper className="box1">
             <TabPanel/>
           </MatUI.Paper>

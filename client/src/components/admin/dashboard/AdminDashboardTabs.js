@@ -7,6 +7,9 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import './adminDashboard.css'
+import ViewBookingsToday from './AdminDashboardToday'
+import ViewBookingsMonth from './AdminDashboardMonth'
+import ViewBookingsYear from './AdminDashboardYear'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -59,20 +62,20 @@ export default function CenteredTabs() {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Tabs TabIndicatorProps={{style: {background:'#E8E9EB'}}} className="dashboard-tabs" value={value} onChange={handleChange} aria-label="simple tabs example">
+        <Tabs TabIndicatorProps={{style: {background:'#E8E9EB'}}} className="dashboard-tabs" value={value} onChange={handleChange} aria-label="dashboard tabs">
           <Tab label="Today" {...a11yProps(0)} />
-          <Tab label="Week" {...a11yProps(1)} />
-          <Tab label="Month" {...a11yProps(2)} />
+          <Tab label="This Month" {...a11yProps(1)} />
+          <Tab label="This Year" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Employees Booked Today
+        <ViewBookingsToday/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-      Employees Booked This Week
+      <ViewBookingsMonth/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-      Employees Booked This Month
+      <ViewBookingsYear/>
       </TabPanel>
     </div>
   );

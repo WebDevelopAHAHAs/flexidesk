@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     height: '100%',
+    fontFamily: 'Montserrat'
   },
 
   toolbar: {

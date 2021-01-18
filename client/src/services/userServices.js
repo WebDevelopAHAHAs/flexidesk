@@ -1,30 +1,38 @@
 import api from '../config/api'
 
+//Create
 export async function createUser(userInfo) {
+  console.log("Request User Creation: ", userInfo)
   const response = await api.post("/user/new", userInfo)
-  console.log("new user posted to server", response) 
+  console.log("Created User: ", response) 
   return response.data
 }
 
+// Retrieve
 export async function getUsers() {
-  console.log('request sent')
+  console.log('Requesting All Users')
   const response = await api.get("/user/all")
-  console.log("got all users back from server", response) 
+  console.log("Retrieved Users: ", response) 
   return response.data
 }
 
-export async function getUser(userInfo) {
-  const response = await api.get(`/user/${userInfo.id}`)
-  console.log("Retrieved a user from the database: ", response) 
+export async function getUser(id) {
+  console.log("Requesting User: ", id)
+  const response = await api.get(`/user/${id}`)
+  console.log("Retrieved User: ", response) 
   return response.data
 }
 
-export async function deleteUser(userInfo) {
-  const response = await api.delete(`/user/${userInfo.id}`)
-  console.log("Deleted user from database: ", response) 
-}
-
+//Update
 export async function updateUser(userInfo) {
-  const response = await api.update(`/user/${userInfo.id}`)
-  console.log("Updated user in database: ", response) 
+  console.log("Requesting User Update: ", userInfo)
+  const response = await api.post(`/user/${userInfo.id}`, userInfo)
+  console.log("Updated User: ", response) 
+}
+
+//Delete
+export async function deleteUser(id) {
+  console.log("Requesting User Delete: ", id)
+  const response = await api.get(`/user/${id}/delete`)
+  console.log("Deleted User: ", id) 
 }

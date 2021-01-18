@@ -2,23 +2,18 @@ import {React, useState} from 'react';
 import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';
 import AppLayout from '../../AppLayout'
-import './AdminDesks.css'
+import './adminDesks.css'
 
-import AddDeskButton from './AddDeskModal'
+import AddDesk from './AddDesk'
 import ViewDesksTable from './ViewDesksTable'
 
 export function Route(props){
-  return(<AppLayout desks/>);
+  return(<AppLayout history={props.history} desks/>);
 }
 
 export function Layout(props) {
 
   const classes = useStyles();
-
-  //add desk
-  const [addDeskModalOpen, setAddDeskModalOpen] = useState(false);
-  const [addNum, setAddNum] = useState(null)
-
 
   return( <div id="adminDesk-page">
 
@@ -26,10 +21,10 @@ export function Layout(props) {
 
       <MatUI.Grid container spacing={3}>
       
-        <MatUI.Grid item xs={12} md={8} lg={4}>
+        <MatUI.Grid item xs={12} md={12} lg={12}>
 
-          <h1>Desks</h1>        
-          <AddDeskButton open={addDeskModalOpen} setOpen={setAddDeskModalOpen} setAddNum={setAddNum}/>
+          <h1>Desks</h1>
+          <AddDesk/>
 
         </MatUI.Grid>
 

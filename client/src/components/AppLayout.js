@@ -7,18 +7,31 @@ import * as MatIcon from '@material-ui/icons'
 // Styling
 import useStyles from './styling/useStyles';
 
+import {AuthCheck} from './Redirect';
 
 import NavBar from './navBar/NavBar'
-import {Layout as AdminBookingsLayout}  from './admin/bookings/AdminBookingsPage'
-import {Layout as AdminViewBookingsLayout}  from './admin/bookings/AdminViewBookingsPage'
-import {Layout as AdminDashboardLayout} from './admin/dashboard/AdminDashboardPage'
-import {Layout as AdminEmployeesLayout} from './admin/employees/AdminEmployeesPage'
-import {Layout as AdminDesksLayout}     from './admin/desks/AdminDesksPage'
+// Admin
+import {Layout as AdminDashboard} from './admin/dashboard/AdminDashboardPage'
+
+import {Layout as AdminNewBookings}  from './admin/bookings/AdminNewBookingsPage'
+import {Layout as AdminViewBookings}  from './admin/bookings/AdminViewBookingsPage'
+
+import {Layout as AdminEmployees} from './admin/employees/AdminEmployeesPage'
+import {Layout as AdminDesks}     from './admin/desks/AdminDesksPage'
+// User
+import {Layout as UserDashboard}     from './user/dashboard/UserDashboardPage'
+import {Layout as UserNewBookings}     from './user/bookings/UserNewBookingsPage'
+import {Layout as UserViewBookings}  from './user/bookings/UserViewBookingsPage'
+// import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function AppLayout(props)
 {
+  // console.log("---props", props)
+
   const classes = useStyles();
   const [open, setOpen] = useState(false);
+
+  AuthCheck(props);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -28,8 +41,7 @@ export default function AppLayout(props)
     setOpen(false);
   };
 
-  return ( <div>
-    
+  return ( <div>  
   
     <div className={classes.root}>
 
@@ -43,16 +55,11 @@ export default function AppLayout(props)
           <MatIcon.Menu/>
         </MatUI.IconButton>
 
-        <MatUI.Typography noWrap className={classes.title}>
+        <MatUI.Typography className={classes.title} noWrap>
           FlexiDesk
         </MatUI.Typography>
 
-        <MatUI.IconButton color="inherit">
-          {/* <Badge badgeContent={1} color="secondary"> */}
-            {/* <NotificationsIcon /> */}
-            {/* HERE IS THE NOTIFICATIONS */}
-          {/* </Badge> */}
-        </MatUI.IconButton>
+        <MatUI.IconButton color="inherit"> {/* <Badge badgeContent={1} color="secondary"> */} {/* <NotificationsIcon /> */} {/* HERE IS THE NOTIFICATIONS */} {/* </Badge> */}</MatUI.IconButton>
 
       </MatUI.Toolbar>
 
@@ -61,17 +68,17 @@ export default function AppLayout(props)
     <MatUI.Drawer open={open} variant="permanent" classes={{ paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose), }}>
       
       <div className={classes.toolbarIcon}>
-        <h2>Welcome Admin</h2> {/* HERE IS WTHE WELCOME NOTE FOR THE USER */}
+        <h2>Welcome</h2> {/* HERE IS WTHE WELCOME NOTE FOR THE USER */}
         <MatUI.IconButton onClick={handleDrawerClose}>
           <MatIcon.ChevronLeft/>
         </MatUI.IconButton>
       </div>
 
       <MatUI.Divider/>
-      <MatUI.List> </MatUI.List>
+        <MatUI.List> </MatUI.List>
       <MatUI.Divider/>
 
-      <NavBar/>
+      <NavBar history={props.history}/>
       
     </MatUI.Drawer>
     
@@ -81,16 +88,23 @@ export default function AppLayout(props)
       
       <div className={classes.appBarSpacer}/>
               
-      {props && props.bookings && <AdminBookingsLayout/>}
+      {/* Admin         */}
+      {props && props.newBookings && <AdminNewBookings/>}
 
-      {props && props.viewbookings && <AdminViewBookingsLayout/>}
+      {props && props.viewbookings && <AdminViewBookings/>}
 
-      {props && props.dashboard && <AdminDashboardLayout/>}
+      {props && props.dashboard && <AdminDashboard/>}
 
-      {props && props.employees && <AdminEmployeesLayout/>}
+      {props && props.employees && <AdminEmployees/>}
 
-      {props && props.desks && <AdminDesksLayout/>}
+      {props && props.desks && <AdminDesks/>}
+
+      {/* User */}
+      {props && props.userdashboard && <UserDashboard/>}
+
+      {props && props.userNewBookings && <UserNewBookings/>}
       
+      {props && props.userViewbookings && <UserViewBookings/>}
     </main>
     
     </div>
