@@ -31,10 +31,11 @@ th{
 
 /* Edit button */
 #Edit{
-    background-color: #fff;
+    background-color: transparent;
     border: none;
     font-size: 15px;
     padding: 3px;
+    color: #6E75A8;
 }
 #Edit:active{
     background-color: #fff;
@@ -52,12 +53,13 @@ th{
 #Edit:visited{
     background-color: #fff;
     border: none;
+    color: #6E75A8 ;
 }
 
 /* Delete button */
 
 #Delete{
-    background-color: #fff;
+    background-color: transparent;
     border: none;
     font-size: 15px;
     padding: 3px;
@@ -71,7 +73,7 @@ th{
 #Delete:hover{
     background-color: #fff;
     border: none;
-    color: #6E75A8 ;;
+    color: #6E75A8 ;
     
 }
 
