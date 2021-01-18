@@ -79,7 +79,7 @@ export default function AddBooking(props) {
       </div>
     </MatUI.FormControl>
     <div className='btn-wrapper'>
-    <ViewFloorplan/>
+  <ViewFloorplan/><br></br>
     <button className='book-btn'type="submit" value="CreateBooking">
       Book Now
     </button>

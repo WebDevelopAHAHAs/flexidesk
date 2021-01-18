@@ -3,7 +3,7 @@ import * as MatUI from '@material-ui/core';
 import Zoom from 'react-img-zoom'
 
 
-export default function ViewFloorplan(props) {
+export default function ViewFloorplanIcon(props) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -19,7 +19,7 @@ export default function ViewFloorplan(props) {
       
     <div>
            
-    <button id='floorplan' onClick={handleClickOpen}><span>Floorplan</span></button>    
+    <button id='floorplanicon' onClick={handleClickOpen}><span><i class="fas fa-map-marked-alt"></i></span></button>    
      
       <MatUI.Dialog 
         open={open}
