@@ -54,37 +54,53 @@ export function Layout(props) {
   return(  
     <MatUI.FormControl component="form" onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
       <MatUI.FormControl>
+      <div className="container-spacing">
         <MatUI.FormLabel htmlFor="component-simple">First Name</MatUI.FormLabel>
         <MatUI.Input id="standard-basic" name="first_name" required type="text" onChange={handleChange} />
+     </div>
       </MatUI.FormControl>
+
       <MatUI.FormControl>
+      <div className="container-spacing">
         <MatUI.FormLabel htmlFor="component-simple">Last Name</MatUI.FormLabel>
         <MatUI.Input id="standard-basic" name="last_name" required type="text" onChange={handleChange} />
+    </div>
       </MatUI.FormControl>
+
       <MatUI.FormControl>
-        <MatUI.FormLabel htmlFor="component-simple">Contact Number</MatUI.FormLabel>
+      <div className="container-spacing">
+        <MatUI.FormLabel htmlFor="component-simple">Contact No</MatUI.FormLabel>
         <MatUI.Input id="standard-basic" name="contact_number" required type="text" onChange={handleChange} />
+      </div>
       </MatUI.FormControl>
+    
       <MatUI.FormControl>
-        <MatUI.FormLabel htmlFor="component-simple">Email</MatUI.FormLabel>
+      <div className="container-spacing">
+        <MatUI.FormLabel id="email" htmlFor="component-simple">Email</MatUI.FormLabel>
         <MatUI.Input id="standard-basic" name="email" required type="email" onChange={handleChange} />
+      </div>
       </MatUI.FormControl>
+
       <MatUI.FormControl>
-        <MatUI.FormLabel htmlFor="component-simple">Password</MatUI.FormLabel>
+      <div className="container-spacing">
+        <MatUI.FormLabel id="password" htmlFor="component-simple">Password</MatUI.FormLabel>
         <MatUI.Input id="standard-basic" name="password" required type="password" onChange={handleChange} />
+     </div>
       </MatUI.FormControl>
       {/* <MatUI.FormControl>
         <MatUI.FormLabel htmlFor="component-simple">Company</MatUI.FormLabel>
         <MatUI.Input id="standard-basic" name="company"required type="text" onChange={handleChange} />
       </MatUI.FormControl> */}
       <MatUI.FormControl>
-        <MatUI.FormLabel htmlFor="component-simple">Permissions</MatUI.FormLabel>
+      <div className="container-spacing">
+        <MatUI.FormLabel id="access" htmlFor="component-simple">Access</MatUI.FormLabel>
         <MatUI.Select id="demo-simple-select-helper" required value={access} onChange={handleAccessChange}>
           <MatUI.MenuItem value={""}><em>None</em></MatUI.MenuItem>
           <MatUI.MenuItem value={"employee"}>Employee Access</MatUI.MenuItem>
           <MatUI.MenuItem value={"manager"}>Manager Access</MatUI.MenuItem>
           <MatUI.MenuItem value={"admin"}>Admin Access</MatUI.MenuItem>
         </MatUI.Select>
+        </div>
       </MatUI.FormControl>
       {/* <MatUI.FormControl>
         <MatUI.FormLabel htmlFor="component-simple">Team</MatUI.FormLabel>
@@ -95,7 +111,9 @@ export function Layout(props) {
         </MatUI.Select>
       </MatUI.FormControl> */}
       <MatUI.FormControl>
-        <MatUI.Button className="register-button"type="submit" variant="contained" value="Register">Register</MatUI.Button>
+      <div className="button-wrapper">
+        <button className="register-btn"type="submit" variant="contained" value="Register">Register</button>
+        </div>
       </MatUI.FormControl>
       
       <p> {errorMessage} </p>

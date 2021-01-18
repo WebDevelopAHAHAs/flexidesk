@@ -21,7 +21,7 @@ export function Layout(props) {
 
       <MatUI.Grid container spacing={3}>
       
-        <MatUI.Grid item xs={12} md={8} lg={4}>
+        <MatUI.Grid item xs={12} md={12} lg={12}>
 
           <h1>Desks</h1>
           <AddDesk/>

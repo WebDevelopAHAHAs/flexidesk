@@ -82,10 +82,11 @@ export default function UserAddBooking(props) {
     </p>
 
     </div>
-
-    <MatUI.Button type="submit" value="CreateBooking">
-      Create New Booking
-    </MatUI.Button>
+    <div className="button-wrapper">
+    <button className="reserve" type="submit" value="CreateBooking">
+      Book Now
+    </button>
+    </div>
 
     <p> {errorMessage} </p>
 

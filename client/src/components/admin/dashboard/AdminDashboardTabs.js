@@ -8,7 +8,6 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import './adminDashboard.css'
 import ViewBookingsToday from './AdminDashboardToday'
-import ViewBookingsWeek from './AdminDashboardWeek'
 import ViewBookingsMonth from './AdminDashboardMonth'
 import ViewBookingsYear from './AdminDashboardYear'
 
@@ -62,24 +61,20 @@ export default function CenteredTabs() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar id='appbar' position="static">
         <Tabs TabIndicatorProps={{style: {background:'#E8E9EB'}}} className="dashboard-tabs" value={value} onChange={handleChange} aria-label="dashboard tabs">
           <Tab label="Today" {...a11yProps(0)} />
-          <Tab label="This Week" {...a11yProps(1)} />
-          <Tab label="This Month" {...a11yProps(2)} />
-          <Tab label="This Year" {...a11yProps(3)} />
+          <Tab label="This Month" {...a11yProps(1)} />
+          <Tab label="This Year" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
         <ViewBookingsToday/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-      <ViewBookingsWeek/>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
       <ViewBookingsMonth/>
       </TabPanel>
-      <TabPanel value={value} index={3}>
+      <TabPanel value={value} index={2}>
       <ViewBookingsYear/>
       </TabPanel>
     </div>

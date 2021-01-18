@@ -115,7 +115,8 @@ th{
 }
 
 .desks{
-  margin-right: 30px;
+  margin: 10px;
+  width: 130px;
   background-color: #fff ;
   padding: 12px 26px;
   border-radius: 4px;
@@ -292,3 +293,103 @@ cursor: pointer;
   justify-content: center;
   text-align: center;
 }
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
+    .desks{
+      margin: 1px;
+      margin-bottom: 3px;
+      width: 120px;
+      
+    }
+
+    .desks span{
+      font-size: 10px;
+    }
+    
+    .desks span:after {
+      font-size: 10px;
+    }
+    
+    .desks:hover span {
+      font-size: 10px;
+    }
+    
+    .desks:hover{
+      font-size: 10px;
+    }
+    
+    .desks:hover span:after {
+      font-size: 10px;
+    }
+
+    .modal-spacing{
+      margin-right: 0px;
+      width: 100%;
+    }
+    
+    
+    
+    .btn-wrapper{
+      padding-top: 50px;
+      padding-right: 0px;
+      justify-content: center;
+      text-align: center;
+    }
+
+    #dropdown{
+      justify-content: left;
+      width: 100px;
+      margin-left: 50px;
+      
+    }
+
+    #floorplan{
+      padding: 6px 13px;
+      padding-bottom: 5px;
+      font-size: 5px;
+    }
+}
+
+/* ----------- iPad Pro 12.9" ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .desks{
+      margin: 1px;
+      margin-bottom: 3px;
+      width: 125px;
+      
+    }
+
+    .desks span{
+      font-size: 15px;
+    }
+    
+    .desks span:after {
+      font-size: 15px;
+    }
+    
+    .desks:hover span {
+      font-size: 15px;
+    }
+    
+    .desks:hover{
+      font-size: 15px;
+    }
+    
+    .desks:hover span:after {
+      font-size: 15px;
+    }
+
+    
+    }

@@ -25,7 +25,7 @@ export function Layout(props) {
       
         <MatUI.Grid item xs={12} md={8} lg={4}>
 
-          <h1>Bookings</h1>          
+          <h1>Your Bookings</h1>          
             
         </MatUI.Grid>
 
