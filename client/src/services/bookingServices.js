@@ -34,7 +34,7 @@ export async function getBooking(id) {
 }
 
 export async function getBookingsByDate(type, value) {
-  console.log('Requesting All Bookings')
+  console.log('Requesting All Bookings by ', type)
   const response = await api.get("/booking/all")
   console.log("Retrieved Bookings: ", response)
 
@@ -57,13 +57,6 @@ export async function getBookingsByDate(type, value) {
   }
   
   const filteredBookings = bookings.filter((booking) => booking.date.slice(sliceStart, 9) === value.slice(sliceStart, 9))
-    // let filteredDesks = []
-    // for(let booking of bookings) {
-    //   if(booking.date.slice(sliceStart, 9) === value.slice(sliceStart, 9)) {
-    //     filteredBookings.push(booking)
-    //   }      
-    //}
-
 
   return filteredBookings;
 }
