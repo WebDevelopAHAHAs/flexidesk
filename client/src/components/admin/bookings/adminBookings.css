@@ -115,9 +115,8 @@ th{
 }
 
 .desks{
-  margin-right: 30px;
-  margin-bottom: 30px;
-  width: 150px;
+  margin: 10px;
+  width: 130px;
   background-color: #fff ;
   padding: 12px 26px;
   border-radius: 4px;
