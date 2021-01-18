@@ -7,6 +7,10 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import './userDashboard.css'
+import ViewBookingsToday from './UserDashboardToday'
+import ViewBookingsWeek from './UserDashboardWeek'
+import ViewBookingsMonth from './UserDashboardMonth'
+import ViewBookingsYear from './UserDashboardYear'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -67,16 +71,16 @@ export default function CenteredTabs() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Your Bookings Today
+      <ViewBookingsToday/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-      Your Bookings This Week
+      <ViewBookingsWeek/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-      Your Bookings This Month
+      <ViewBookingsMonth/>
       </TabPanel>
       <TabPanel value={value} index={3}>
-      Your Bookings This Year
+      <ViewBookingsYear/>
       </TabPanel>
     </div>
   );

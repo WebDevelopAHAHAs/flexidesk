@@ -110,18 +110,22 @@ th{
   text-decoration-style: solid;
 }
 
+.fa-trash-alt{
+ color: #6E75A8;
+}
+
 .desks{
   margin-right: 30px;
-  background-color: #6E75A8 ;
+  background-color: #fff ;
   padding: 12px 26px;
   border-radius: 4px;
   outline: none;
   text-align: center;
-  border: 1px solid #000;
+  border: 1px solid #6E75A8;
   letter-spacing: 1px;
-text-transform: uppercase;
-transition: all 0.5s;	
-cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.5s;	
+  cursor: pointer;
   font-size: 15px;
   color: #fff;
   text-decoration-style: solid;
@@ -139,7 +143,7 @@ cursor: pointer;
 .desks span:after {
   content: 'book!';
   text-align: center;
-  color: #6E75A8;
+  color: #fff;
   font-weight:bold ;
   position: absolute;
   opacity: 0;
@@ -212,7 +216,7 @@ cursor: pointer;
   border-radius: 4px;
   outline: none;
   text-align: center;
-  border: 1px solid #000;
+  border: 1px solid #6E75A8;
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: all 0.5s;	
@@ -241,19 +245,37 @@ cursor: pointer;
 
 /* button for floorplan dialog box */
 #floorplan{
-  background-color: #6E75A8 ;
+  background-color: #fff ;
   padding: 12px 26px;
   padding-bottom: 15px;
   border-radius: 4px;
   outline: none;
   text-align: center;
-  border: 1px solid #000;
+  border: 1px solid #6E75A8;
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: all 0.5s;	
   cursor: pointer;
   font-size: 15px;
-  color: #fff;
+  color: #6E75A8;
+  text-decoration-style: solid;
+}
+
+/* button for floorplan dialog box */
+#floorplanicon{
+  background-color: transparent ;
+  padding: 12px 26px;
+  padding-bottom: 15px;
+  border-radius: 4px;
+  outline: none;
+  text-align: center;
+  border: 0px solid #6E75A8;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.5s;	
+  cursor: pointer;
+  font-size: 15px;
+  color: #6E75A8;
   text-decoration-style: solid;
 }
 /* Legend icons for floorplan */

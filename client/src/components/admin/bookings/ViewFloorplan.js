@@ -16,7 +16,7 @@ export default function ViewFloorplan(props) {
   return (      
   <div>
            
-    <button id='floorplan' onClick={handleClickOpen}><span>View Floorplan</span></button>    
+    <button id='floorplan' onClick={handleClickOpen}><span>Floorplan</span></button>    
      
     <MatUI.Dialog 
       open={open}

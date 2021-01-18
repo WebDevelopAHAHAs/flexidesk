@@ -5,11 +5,9 @@ import {getBookings} from '../../../services/bookingServices'
 import {getUser} from '../../../services/userServices'
 import {getDesk} from '../../../services/deskServices'
 // import EditBooking from './EditBooking'
-import DeleteBooking from './DeleteBooking'
-import './adminBookings.css'
-import ViewFloorplanIcon from './ViewFloorplanIcon'
 
-export default function ViewBookingsTable(props) {
+
+export default function ViewBookingsToday(props) {
 
   const [bookings, setBookings] = useState([])
 
@@ -61,15 +59,15 @@ export default function ViewBookingsTable(props) {
  
     return bookings.map(booking => (
       <tr key={booking._id}>
-        <td>{booking.employeeName}</td>
+        
         <td className='desk-no'>{booking.deskNumber}</td>
         {/* {fetchEmployeeName(booking.user_id)}
         {fetchDeskNumber(booking.desk_id)} */}
         {/* <td>{booking.desk_id}</td> */}
         <td>{booking.date}</td>
         {/* <td><EditBooking dataID={booking._id} user_id={booking.user_id} desk_id={booking.desk_id} date={booking.date}/></td> */}
-        <td><ViewFloorplanIcon/></td>
-        <td><DeleteBooking data_id={booking._id} /></td>
+        
+        
       </tr>
     ))
   }
@@ -80,12 +78,12 @@ export default function ViewBookingsTable(props) {
       <table className="booking-table"  id="booking-table-id">
           <thead>
             <tr>
-              <th>Employee</th>
+              
               <th>Desk No.</th>
               <th>Date</th>
               {/* <th>Edit</th> */}
               <th></th>
-              <th></th>
+              
             </tr>
           </thead>
           

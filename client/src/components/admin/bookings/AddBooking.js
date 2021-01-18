@@ -5,6 +5,7 @@ import useStyles from '../../styling/useStyles';
 import {createBooking} from '../../../services/bookingServices'
 import {getUsers} from '../../../services/userServices'
 import './adminBookings.css'
+import ViewFloorplan from './ViewFloorplan'
 
 export default function AddBooking(props) {
   const classes = useStyles();
@@ -78,6 +79,7 @@ export default function AddBooking(props) {
       </div>
     </MatUI.FormControl>
     <div className='btn-wrapper'>
+  <ViewFloorplan/><br></br>
     <button className='book-btn'type="submit" value="CreateBooking">
       Book Now
     </button>

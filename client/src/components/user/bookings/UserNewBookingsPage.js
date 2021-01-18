@@ -2,7 +2,7 @@ import {React, useState} from 'react';
 import * as MatUI from '@material-ui/core';
 import useStyles from '../../styling/useStyles';
 import AppLayout from '../../AppLayout'
-
+import ViewFloorplan from './ViewFloorplan'
 import CalendarSelector from './CalendarSelector'
 import DeskSelector from './DeskSelector'
 // import AddBooking from './AddBooking'
@@ -30,6 +30,7 @@ export function Layout(props) {
         {/* Calendar Day Selector */}
         <MatUI.Grid item xs={12} md={12} lg={12}>
         <h1>New Booking</h1>
+        <ViewFloorplan/><br></br>
           <MatUI.Paper className="user-calendar">
 
             <CalendarSelector setDate={setDate}/>

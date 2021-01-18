@@ -41,8 +41,8 @@ export default function ViewDesksTable(props) {
               <th>Desk Number</th>
               <th>Desk Section</th>
               <th>Available</th>
-              <th>Edit</th>
-              <th>Delete</th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
           
