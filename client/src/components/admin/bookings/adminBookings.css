@@ -281,3 +281,13 @@ cursor: pointer;
   opacity: 1;
   right: 0;
 } */
+
+img{
+  width: 900px;
+  height: 900px;
+  padding-left: 185px;
+}
+/* 
+img:hover {
+  transform: scale(5.3);
+  } */
