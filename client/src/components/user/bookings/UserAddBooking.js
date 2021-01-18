@@ -70,6 +70,7 @@ export default function UserAddBooking(props) {
   <MatUI.FormControl component="form" onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
       <div className={classes.paper}>
       <p id="simple-modal-description">
+        {/* covid form */}
         I hereby declare that I:<br></br>
         <br></br>
         Have not been travelling within the past 14 days <br></br>
