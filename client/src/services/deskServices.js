@@ -16,9 +16,9 @@ export async function getDesks() {
 }
 
 export async function getDesk(id) {
-  console.log("Requesting Desk: ", id)
+  // console.log("Requesting Desk: ", id)
   const response = await api.get(`/desk/${id}`)
-  console.log("Retrieved Desk: ", response) 
+  // console.log("Retrieved Desk: ", response) 
   return response.data
 }
 
@@ -29,12 +29,12 @@ export async function getUnbookedDesks(date) {
   return response.data
 }
 
-export async function getAvailableUnbookedDesks(available, date) {
-  console.log('Requesting all available Desks by Date', available)
-  const response = await api.get(`/desk/all/${date}/available`)
-  console.log("Retrieved all available Desks by Date: ", response)
-  return response.data
-}
+// export async function getAvailableUnbookedDesks(available, date) {
+//   console.log('Requesting all available Desks by Date', available)
+//   const response = await api.get(`/desk/all/available/${date}`)
+//   console.log("Retrieved all available Desks by Date: ", response)
+//   return response.data
+// }
 
 export async function updateDesk(deskInfo) {
   console.log("Requesting Desk Update: ", deskInfo)

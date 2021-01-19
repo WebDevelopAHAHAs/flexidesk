@@ -20,20 +20,12 @@ export default function DeskSelector(props){
   };
 
   const loadDesks = () => {
+
     console.log("Loading Desks: ", props.desks)
-    
-    // if(deskNodes != null) {
-    //   deskNodes.forEach(element => {
-    //     element.parentNode.removeChild(element);
-    //   });
-    // }
 
     const deskButtons = (props.desks.map(desk => (      
       <button className='desks' key={desk._id} desk_id={desk._id} onClick={handleOpen}><span desk_id={desk._id}>Desk {desk.number}</span></button>
     )))
-
-    // setDeskNodes(document.getElementsByClassName("desks"))
-    // console.log(deskNodes)
 
     return deskButtons
   }
@@ -41,7 +33,7 @@ export default function DeskSelector(props){
   return(
   <div className='showDesksDiv'>
 
-    {loadDesks()}
+    {props.reloadDesks && loadDesks()}
     
     <MatUI.Modal className="modal-position"
       open={newBookingOpen} onClose={handleClose} closeAfterTransition

@@ -34,48 +34,27 @@ export default function NavBar(props) {
   }
 
   function employeeNavBar() {
-  <MatUI.List>
-    <h2 className="navbar-header">Admin</h2>
-    <div className="navbar-home">
-      <ul className="navbar-button-list">
+    return( <MatUI.List>
+      <h2 className="navbar-header"></h2>
+      <div className="navbar-home">
+        <ul className="navbar-button-list">
+      
+        <li><MatUI.Button className="nav-btn" href="/user/dashboard">Dashboard</MatUI.Button></li>
+      
+        <li><MatUI.Button className="nav-btn" href="/user/newbookings">New Booking</MatUI.Button></li>
+      
+        <li><MatUI.Button className="nav-btn" href="/user/viewbookings">Your Bookings</MatUI.Button></li>
 
-      <li><MatUI.Button className="nav-btn" href="/user/dashboard">Dashboard</MatUI.Button></li>
-
-      <li><MatUI.Button className="nav-btn" href="/user/bookings">New Booking</MatUI.Button></li>
-
-      <MatUI.Button id="nav-btn" onClick={handleLogout} to="/login" >Logout </MatUI.Button>
-
-      </ul>
-    </div>
-  </MatUI.List>
+        <MatUI.Button id="nav-btn" onClick={handleLogout} to="/login" >Logout </MatUI.Button>
+      
+        </ul>
+      </div>
+    </MatUI.List>)
   }
 
   function adminNavBar() {
-  <MatUI.List>
-    <h2 className="navbar-header">User</h2>
-    <div className="navbar-home">
-      <ul className="navbar-button-list">
-
-      <li><MatUI.Button className="nav-btn" href="/admin/dashboard">Dashboard</MatUI.Button></li>
-
-      <li><MatUI.Button className="nav-btn" href="/admin/newBookings">New Booking</MatUI.Button></li>
-
-      <li><MatUI.Button className="nav-btn" href="/admin/viewBookings">View Bookings</MatUI.Button></li>
-
-      <li><MatUI.Button className="nav-btn" href="/admin/employees">Employees</MatUI.Button></li>
-
-      <li><MatUI.Button className="nav-btn" href="/admin/desks">Desks</MatUI.Button></li>
-
-      <MatUI.Button id="nav-btn" onClick={handleLogout} to="/login" >Logout </MatUI.Button>
-
-      </ul>
-    </div>
-  </MatUI.List>
-  }
-
-  const navBar = () => {
-  <MatUI.List>
-      <h2 className="navbar-header">User</h2>
+    return( <MatUI.List>
+      <h2 className="navbar-header"></h2>
       <div className="navbar-home">
         <ul className="navbar-button-list">
 
@@ -93,46 +72,50 @@ export default function NavBar(props) {
 
         </ul>
       </div>
-  </MatUI.List>
-    // if(loggedOnUser) {
-    //   if(loggedOnUser.access === "admin")
-    //     return adminNavBar()
+    </MatUI.List>)
+  }
 
-    //   if(loggedOnUser.access === "employee")
-    //     return employeeNavBar()
-    // }
+  const navBar = () => {
+    console.log("Logged On User: ", loggedOnUser)
+    if(loggedOnUser) {
+      if(loggedOnUser.access === "admin")
+        return adminNavBar()
 
-    // return null;
+      if(loggedOnUser.access === "employee")
+        return employeeNavBar()
+    }
+
+    return null;
   }
 
 
   return (
-  <MatUI.List>
-    <h2 className="navbar-header">User</h2>
-    <div className="navbar-home">
-      <ul className="navbar-button-list">
+//   <MatUI.List>
+//     <h2 className="navbar-header">User</h2>
+//     <div className="navbar-home">
+//       <ul className="navbar-button-list">
 
-      <li><MatUI.Button className="nav-btn" href="/admin/dashboard">Dashboard</MatUI.Button></li>
+//       <li><MatUI.Button className="nav-btn" href="/admin/dashboard">Dashboard</MatUI.Button></li>
 
-      <li><MatUI.Button className="nav-btn" href="/admin/newBookings">New Booking</MatUI.Button></li>
+//       <li><MatUI.Button className="nav-btn" href="/admin/newBookings">New Booking</MatUI.Button></li>
 
-      <li><MatUI.Button className="nav-btn" href="/admin/viewBookings">View Bookings</MatUI.Button></li>
+//       <li><MatUI.Button className="nav-btn" href="/admin/viewBookings">View Bookings</MatUI.Button></li>
 
-      <li><MatUI.Button className="nav-btn" href="/admin/employees">Employees</MatUI.Button></li>
+//       <li><MatUI.Button className="nav-btn" href="/admin/employees">Employees</MatUI.Button></li>
 
-      <li><MatUI.Button className="nav-btn" href="/admin/desks">Desks</MatUI.Button></li>
+//       <li><MatUI.Button className="nav-btn" href="/admin/desks">Desks</MatUI.Button></li>
 
-      <MatUI.Button id="nav-btn" onClick={handleLogout} to="/login" >Logout </MatUI.Button>
+//       <MatUI.Button id="nav-btn" onClick={handleLogout} to="/login" >Logout </MatUI.Button>
 
-      </ul>
-    </div>
-  </MatUI.List>
+//       </ul>
+//     </div>
+//   </MatUI.List>
 
-  )
-  
-}
-
-//   {/* <div> {navBar()} </div> */}
 //   )
   
 // }
+
+  <div> {navBar()} </div>
+  )
+  
+}

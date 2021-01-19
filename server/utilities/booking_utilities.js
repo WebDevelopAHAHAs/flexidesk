@@ -8,6 +8,16 @@ const getBookingByID = function(req) {
 	return Booking.findById(req.params.id)
 }
 
+const getAllUserBookings = function(req) {
+  console.log("Bookings by User Query: ", req.params.id)
+	return Booking.find({user_id: req.params.id})
+}
+
+// const getAllUserBookingsByDate = function(req) {
+//   console.log("Bookings by User & Date Query: ", req.params.user_id, req.params.date)
+// 	return Booking.find({user_id: req.params.user_id, date: req.params.date})
+// }
+
 const getAllBookingsByDate = function(req) {
   console.log("Bookings by Date Query: ", req.params.date)
 	return Booking.find({date: req.params.date})
@@ -24,8 +34,11 @@ const updateBooking = function (req) {
     // ,{ new: true } // include if i dont want to return the old document
 };
 
+
 module.exports = {
   getBookingByID, getAllBookings,
   deleteBooking, updateBooking,
-  getAllBookingsByDate
+  getAllBookingsByDate,
+  getAllUserBookings
+  // getAllUserBookingsByDate
 };

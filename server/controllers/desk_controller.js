@@ -89,25 +89,32 @@ const getAllAvailableDesksByDate = function (req, res) {
           return res.json({ error: err.message });
         }
 
-        console.log("Bookings: ", bookings)
+        console.log("Desks Booked: ", bookings.length)
+        // console.log("Bookings: ", bookings)
         // console.log("All bookings of date: ", req.params.date)
 
-        let filteredDesks = []
-        
-        console.log(bookings.length)
+        let bookedDesks = []
+
         if(bookings.length !== 0) {
           for(let booking of bookings) {
-            for(let desk of desks) {
-              console.log(booking.desk_id, desk._id)
-              if(booking.desk_id != desk._id) {
-                filteredDesks.push(desk)
+            for(let desk of desks) {         
+              if(booking.desk_id == desk._id) {
+                // console.log("Booked Desk: ", desk)
+                bookedDesks.push(desk)
               }
             }        
-          }
+          }          
+
+          let filteredDesks = desks.filter(desk => !bookedDesks.includes(desk) )
+
+          // console.log("Booked Desks: ", bookedDesks)
+          console.log("Desks Available: ", filteredDesks.length)
+          // console.log(filteredDesks)
           res.send(filteredDesks);
         }
         else
         {
+          console.log("Desks Available: ", desks.length)
           res.send(desks);
         }            
       });

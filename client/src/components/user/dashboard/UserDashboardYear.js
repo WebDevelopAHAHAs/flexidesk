@@ -1,36 +1,29 @@
 import React, {useState, useEffect} from 'react'
 // import ReactDOM from 'react-dom';
 
-import {getBookings} from '../../../services/bookingServices'
-import {getUser} from '../../../services/userServices'
+import {getUserBookingsByDate} from '../../../services/bookingServices'
 import {getDesk} from '../../../services/deskServices'
-// import EditBooking from './EditBooking'
-
+import convertDate from '../../ConvertDate'
 
 
 export default function ViewBookingsYear(props) {
 
   const [bookings, setBookings] = useState([])
 
-  // const [userID, setUserID] = useState()
-  // const [deskID, setDeskID] = useState()
-
   useEffect( () => {
     fetchData();
   }, [])
 
   async function fetchData() {
-    const bookingData = await getBookings();
+    const bookingData = await getUserBookingsByDate(props.user_id, 'year', convertDate(new Date()));
     for(let i = 0; i < bookingData.length; i++) {
-      const user = await getUser(bookingData[i].user_id)
-      const desk = await getDesk(bookingData[i].desk_id)
-      bookingData[i].employeeName = `${user.first_name} ${user.last_name}`
-      bookingData[i].deskNumber = `${desk.number}`
+      if(props.user_id === bookingData[i].user_id) {
+        const desk = await getDesk(bookingData[i].desk_id)
+        bookingData[i].deskNumber = `${desk.number}`
+      }
     }
 
-
     setBookings(bookingData);
-
   }
 
   //   const user = await getUser(userID);

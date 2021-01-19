@@ -3,7 +3,10 @@ const {
   getBookingByID, getAllBookings,
   deleteBooking, updateBooking,
   
-  getAllBookingsByDate
+  // getAllBookingsByDate,
+
+  getAllUserBookings
+  // getAllUserBookingsByDate
 } = require('../utilities/booking_utilities')
 
 async function newBooking(req, res) {
@@ -13,7 +16,7 @@ async function newBooking(req, res) {
     const booking = await Booking.create({ user_id, desk_id, date });
     console.log("Created Booking:", booking)
 
-    res.send(user);
+    res.send(booking);
   }
   catch(err){
       console.log(err)
@@ -70,9 +73,22 @@ const removeBooking = function (req, res) {
     });
 }
 
-const getBookingsByDate = function (req, res) {
+// const getBookingsByDate = function (req, res) {
 
-  getAllBookingsByDate(req).exec((err, bookings) => {
+//   getAllBookingsByDate(req).exec((err, bookings) => {
+//       if (err) {
+//           res.status(500);
+//           return res.json({
+//               error: err.message
+//           });
+//       }
+//       res.send(bookings);
+//   });
+// };
+
+const getUserBookings = function (req, res) {
+
+  getAllUserBookings(req).exec((err, bookings) => {
       if (err) {
           res.status(500);
           return res.json({
@@ -83,9 +99,9 @@ const getBookingsByDate = function (req, res) {
   });
 };
 
-// const getBookingsByDay = function (req, res) {
+// const getUserBookingsByDate = function (req, res) {
 
-//   getAllBookingsByDate(req).exec((err, bookings) => {
+//   getAllUserBookingsByDate(req).exec((err, bookings) => {
 //       if (err) {
 //           res.status(500);
 //           return res.json({
@@ -95,34 +111,6 @@ const getBookingsByDate = function (req, res) {
 //       res.send(bookings);
 //   });
 // };
-
-// const getBookingsByMonth = function (req, res) {
-
-//   getAllBookingsByDate(req).exec((err, bookings) => {
-//       if (err) {
-//           res.status(500);
-//           return res.json({
-//               error: err.message
-//           });
-//       }
-//       res.send(bookings);
-//   });
-// };
-
-
-// const getBookingsByYear = function (req, res) {
-
-//   getAllBookingsByDate(req).exec((err, bookings) => {
-//       if (err) {
-//           res.status(500);
-//           return res.json({
-//               error: err.message
-//           });
-//       }
-//       res.send(bookings);
-//   });
-// };
-
 
 
 module.exports = {
@@ -132,5 +120,8 @@ module.exports = {
   changeBooking,
   removeBooking,
 
-  getBookingsByDate
+  // getBookingsByDate,
+
+  getUserBookings
+  // getUserBookingsByDate
 };

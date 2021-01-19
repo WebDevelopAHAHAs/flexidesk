@@ -1,13 +1,14 @@
-import {React, useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './styling/style.css';
 import clsx from 'clsx';
 import * as MatUI from '@material-ui/core';
 import * as MatIcon from '@material-ui/icons'
 
+import {getLoggedOnUser} from '../services/authServices'
+import {AuthCheck} from './Redirect';
+
 // Styling
 import useStyles from './styling/useStyles';
-
-import {AuthCheck} from './Redirect';
 
 import NavBar from './navBar/NavBar'
 // Admin
@@ -26,12 +27,21 @@ import {Layout as UserViewBookings}  from './user/bookings/UserViewBookingsPage'
 
 export default function AppLayout(props)
 {
-  // console.log("---props", props)
 
   const classes = useStyles();
   const [open, setOpen] = useState(false);
+  const [user, setUser] = useState(null)
 
-  AuthCheck(props);
+  useEffect( () => {
+    fetchData();
+  }, [])
+
+  async function fetchData() {
+    const loggedInUser = await getLoggedOnUser();
+    console.log(loggedInUser, props)
+    AuthCheck(loggedInUser, props.access, props.history);
+    setUser(loggedInUser);
+  }
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -100,11 +110,11 @@ export default function AppLayout(props)
       {props && props.desks && <AdminDesks/>}
 
       {/* User */}
-      {props && props.userdashboard && <UserDashboard/>}
+      {props && user && props.userdashboard && <UserDashboard user_id={user._id}/>}
 
-      {props && props.userNewBookings && <UserNewBookings/>}
+      {props && user && props.userNewBookings && <UserNewBookings user_id={user._id}/>}
       
-      {props && props.userViewbookings && <UserViewBookings/>}
+      {props && user && props.userViewbookings && <UserViewBookings user_id={user._id}/>}
     </main>
     
     </div>

@@ -128,9 +128,11 @@ const SignInForm = ({history}) => {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <form className={classes.form} noValidate onSubmit={handleSubmit}>
+          <form id="login-form"className={classes.form} noValidate onSubmit={handleSubmit}>
       {errorMessage && <p style={errorStyles}>{errorMessage}</p>}
+
             <TextField
+              className="login-email"
               variant="outlined"
               margin="normal"
               required
@@ -142,12 +144,12 @@ const SignInForm = ({history}) => {
               autoFocus
               onChange={handleChange}
             />
-            <TextField name="password" label="Password" onChange={handleChange}
+            <TextField className="login-pw" name="password" label="Password" onChange={handleChange}
               type="password" id="password" autoComplete="current-password"
               variant="outlined" margin="normal" required fullWidth/>
             <FormControlLabel label="Remember me"
               control={<Checkbox value="remember" color="primary" />}/>              
-            
+
             <Button className={classes.submit} type="submit"
               fullWidth variant="contained" color="primary">
               Sign In

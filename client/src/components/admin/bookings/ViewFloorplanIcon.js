@@ -19,15 +19,15 @@ export default function ViewFloorplanIcon(props) {
       
     <div>
            
-    <button id='floorplanicon' onClick={handleClickOpen}><span><i class="fas fa-map-marked-alt"></i></span></button>    
+    <button id='floorplanicon' onClick={handleClickOpen}><span><i className="fas fa-map-marked-alt"></i></span></button>    
      
       <MatUI.Dialog 
         open={open}
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
-        fullWidth={true}
-        maxWidth = {'lg'}
+        width={650}
+        maxWidth = {650}
       >
         <MatUI.DialogTitle id="alert-dialog-title">{"Level 8, Floorplan"}</MatUI.DialogTitle>
         <MatUI.DialogContent >
@@ -36,16 +36,16 @@ export default function ViewFloorplanIcon(props) {
           <Zoom
             img="/images/floorplanmap.jpg"
             zoomScale={6}
-            width={1200}
+            width={600}
             height={600}
         />  
            
           </MatUI.DialogContentText>
           <div className="legend">
-            <i id="green" class="fas fa-square"> </i> Available 
+            <i id="green" className="fas fa-square"> </i> Available 
             
-            <i id="red" class="fas fa-square"> </i> Covid Restricted<br></br>
-            Hover to zoom in
+            <i id="red" className="fas fa-square"> </i> Covid Restricted<br></br>
+            Hover to zoom in. test
             </div>
         </MatUI.DialogContent>
         <MatUI.DialogActions>

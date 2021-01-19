@@ -8,7 +8,7 @@ import AddDesk from './AddDesk'
 import ViewDesksTable from './ViewDesksTable'
 
 export function Route(props){
-  return(<AppLayout history={props.history} desks/>);
+  return(<AppLayout access="admin" history={props.history} desks/>);
 }
 
 export function Layout(props) {

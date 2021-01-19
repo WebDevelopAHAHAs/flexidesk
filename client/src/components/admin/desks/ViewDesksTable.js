@@ -18,6 +18,15 @@ export default function ViewDesksTable(props) {
     setDesks(deskData);
   }
 
+  function convertToString(bool) {
+    if(bool) {
+      return "Yes"
+    }
+    else {
+      return "No"
+    }
+  }
+
   const loadTable = () => {
     console.log("Loading Desk Table: ", desks)
  
@@ -25,7 +34,7 @@ export default function ViewDesksTable(props) {
       <tr key={desk._id}>
         <td>{desk.number} </td>
         <td>{desk.section}</td>
-        <td>{desk.available}</td>
+        <td>{convertToString(desk.available)}</td>
         <td><EditDesk data_id={desk._id} number={desk.number} section={desk.section} email={desk.available}/></td>
         <td><DeleteDesk data_id={desk._id} /></td>
       </tr>

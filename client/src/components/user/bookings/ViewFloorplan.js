@@ -26,8 +26,8 @@ export default function ViewFloorplan(props) {
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
-        fullWidth={true}
-        maxWidth = {'lg'}
+        width={650}
+        maxWidth = {650}
       >
         <MatUI.DialogTitle id="alert-dialog-title">{"Level 8, Floorplan"}</MatUI.DialogTitle>
         <MatUI.DialogContent >
@@ -36,15 +36,15 @@ export default function ViewFloorplan(props) {
           <Zoom
             img="/images/floorplanmap.jpg"
             zoomScale={6}
-            width={1200}
+            width={600}
             height={600}
         />  
            
           </MatUI.DialogContentText>
           <div className="legend">
-            <i id="green" class="fas fa-square"> </i> Available 
+            <i id="green" className="fas fa-square"> </i> Available 
             
-            <i id="red" class="fas fa-square"> </i> Covid Restricted<br></br>
+            <i id="red" className="fas fa-square"> </i> Covid Restricted<br></br>
             Hover to zoom in
             </div>
         </MatUI.DialogContent>

@@ -7,10 +7,9 @@ import './adminEmployees.css'
 import AddEmployee from './AddEmployee'
 import ViewEmployeesTable from './ViewEmployeesTable'
 
-// import EditEmployee from './EditEmployeeModal'
 
 export function Route(props){
-  return(<AppLayout history={props.history} employees/>);
+  return(<AppLayout access="admin" history={props.history} employees/>);
 }
 
 export function Layout(props) {

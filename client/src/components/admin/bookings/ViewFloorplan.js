@@ -23,8 +23,8 @@ export default function ViewFloorplan(props) {
       onClose={handleClose}
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
-      fullWidth={true}
-      maxWidth = {'lg'}
+      width={650}
+      maxWidth = {650}
     >
       
       <MatUI.DialogTitle id="alert-dialog-title">{"Level 8, Floorplan"}</MatUI.DialogTitle>
@@ -34,7 +34,7 @@ export default function ViewFloorplan(props) {
         <Zoom
           img="/images/floorplanmap.jpg"
           zoomScale={6}
-          width={1200}
+          width={600}
           height={600}
       />  
          
