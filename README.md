@@ -461,3 +461,44 @@ Below is a legend corresponding to the wireframes.
 
 
 
+# Test Plan
+
+## Manual Testing
+
+**Quality Objective**
+
+In this manual Software Testing Document, the objective is to:
+
+\-     Identify what features and functionality will be tested in this release;
+
+\-     Ensure the applications is functional;
+
+\-     Ensure the application meets the quality specifications defined by the client; and
+
+\-     Ensure that the bugs/issues are identified and fixed before they go live
+
+**Roles and Responsibilities for Testing**
+
+Developers – Rachel, Tom and Callum
+
+Quality Testers – Rachel Williams, Tom Fisher and LEAPDev
+
+**Test Deliverables**
+
+This test will cover:
+
+1. Feature and function testing according to the test plan; 
+
+2. Test cases based on R4. User Stories of the FlexiDesk READme.md; 
+
+3. Bug report; and 
+
+4. Customer /Tester signoff 
+
+### Manual Testing Results
+
+Development Test 1 Results - [link]()
+
+Development Test 2 Results -
+
+Production Test Results -
