@@ -534,5 +534,5 @@ This test will cover:
 3.  Making sure User Access is going to the User side 
 4.  Making sure Admin Access is going to the Admin side
 
-![]()
+![](https://github.com/WebDevelopAHAHAs/flexidesk/blob/development/docs/img/testing/testingpicture.jpg?raw=true)
 
