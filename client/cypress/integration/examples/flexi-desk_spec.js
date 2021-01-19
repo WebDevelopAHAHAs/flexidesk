@@ -2,10 +2,14 @@
 describe('Home Page', () => {
     it('successfully loads', () => {
         cy.visit('http://www.flexi-desks.com/login')
-
+        cy.get('#email').type('test@email').should('have.value', 'test@email')
+        cy.get('#password').type('123456').should('have.value', '123456')
         cy.get('[type="checkbox"]').check()
+        cy.get('.MuiButtonBase-root').click({multiple: true })
     })
 })
+
+//cy.get(classname) .type()
 
 // Testing that the modals open upon click
 describe('Testing Modal will open upon click', () => {
@@ -15,3 +19,5 @@ describe('Testing Modal will open upon click', () => {
         cy.contains('Desk 9').click()
     })
 })
+
+// Making
