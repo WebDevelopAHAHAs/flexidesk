@@ -9,7 +9,7 @@ import ViewBookingsTable from './ViewBookingsTable'
 import './adminBookings.css'
 
 export function Route(props){
-  return(<AppLayout history={props.history} viewbookings/>);
+  return(<AppLayout access="admin" history={props.history} viewbookings/>);
 }
 
 export function Layout(props) {

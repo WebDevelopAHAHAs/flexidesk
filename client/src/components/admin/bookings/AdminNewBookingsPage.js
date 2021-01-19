@@ -8,12 +8,12 @@ import CalendarSelector from './CalendarSelector'
 import DeskSelector from './DeskSelector'
 // import AddBooking from './AddBooking'
 
-import {getDesks, getUnbookedDesks} from '../../../services/deskServices'
+import {getUnbookedDesks} from '../../../services/deskServices'
 
 import ConvertDate from '../../ConvertDate'
 
 export function Route(props){
-  return(<AppLayout history={props.history} newBookings/>);
+  return(<AppLayout access="admin" history={props.history} newBookings/>);
 }
 
 export function Layout(props) {

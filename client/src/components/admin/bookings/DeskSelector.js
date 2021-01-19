@@ -20,22 +20,12 @@ export default function DeskSelector(props){
   };
 
   const loadDesks = () => {
-    // props.setReloadDesks(false);
-    
+
     console.log("Loading Desks: ", props.desks)
-    
-    // if(deskNodes != null) {
-    //   deskNodes.forEach(element => {
-    //     element.parentNode.removeChild(element);
-    //   });
-    // }
 
     const deskButtons = (props.desks.map(desk => (      
       <button className='desks' key={desk._id} desk_id={desk._id} onClick={handleOpen}><span desk_id={desk._id}>Desk {desk.number}</span></button>
     )))
-
-    // setDeskNodes(document.getElementsByClassName("desks"))
-    // console.log(deskNodes)
 
     return deskButtons
   }

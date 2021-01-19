@@ -47,6 +47,7 @@ export default function AddBooking(props) {
       createBooking(bookingDetails).then(() => {
         dispatch({ type: "createBooking", data: bookingDetails });
         props.handleClose(true);
+        window.location.reload()
 
       }).catch((error) => {
         if (error.response && error.response.status === 401)

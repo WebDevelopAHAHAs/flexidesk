@@ -12,33 +12,15 @@ export default function UserAddBooking(props) {
   const {dispatch} = useGlobalState();
   const [errorMessage, setErrorMessage] = useState(null);
 
-  const [users, setUsers] = useState([]);
-
-  const [employee, setEmployee] = useState("");
-  
-  const formState = {user_id: employee, desk_id: props.desk_id, date: props.date}
+  // console.log("USER ID: ", props.user_id)
+  const formState = {user_id: props.user_id, desk_id: props.desk_id, date: props.date}
   console.log("Form State: ", formState)
   const [bookingDetails, setBookingDetails] = useState(formState);
-
-  useEffect( () => {
-    fetchData();
-  }, [])
-
-  async function fetchData() {
-    const userData = await getUsers();
-    setUsers(userData);
-  }
 
   function handleChange(event) {
     const name = event.target.name
     let value = event.target.value
     setBookingDetails({ ...bookingDetails, [name]: value })
-  }
-
-  function handleEmployeeSelectorChange (event) {
-    setEmployee(event.target.value);
-    console.log(event.target.value)
-    setBookingDetails({ ...bookingDetails, user_id: event.target.value })
   }
 
   function handleSubmit(event) {
@@ -47,6 +29,7 @@ export default function UserAddBooking(props) {
       createBooking(bookingDetails).then(() => {
         dispatch({ type: "createBooking", data: bookingDetails });
         props.handleClose(true);
+        window.location.reload()  
 
       }).catch((error) => {
         if (error.response && error.response.status === 401)
@@ -56,15 +39,6 @@ export default function UserAddBooking(props) {
     })
   }
 
-  const loadUsers = () => {
-    console.log("Loading Users for Selector: ", users)
- 
-    return users.map(user => (
-      <MatUI.MenuItem key={user._id} value={user._id}>
-        <em>{user.first_name} {user.last_name}</em>
-      </MatUI.MenuItem>
-    ))
-  }
 
   return(
   <MatUI.FormControl component="form" onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
