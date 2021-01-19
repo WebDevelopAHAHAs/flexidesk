@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 // import DeskSelector from './DeskSelector'
 import ViewBookingsTable from './UserBookingsTable'
 import './userBooking.css'
+import { Link } from 'react-router-dom';
 
 
 export function Route(props){
@@ -25,7 +26,15 @@ export function Layout(props) {
       
         <MatUI.Grid item xs={12} md={8} lg={4}>
 
-          <h1>Your Bookings</h1>          
+          <h1>Your Bookings</h1>    
+
+          <div className="new-btn-wrapper">
+        <Link to="/user/newBookings">
+          <button className="new-bookings">
+            New Booking
+          </button>
+              </Link>
+           </div>      
             
         </MatUI.Grid>
 

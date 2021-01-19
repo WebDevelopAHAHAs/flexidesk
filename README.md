@@ -461,3 +461,78 @@ Below is a legend corresponding to the wireframes.
 
 
 
+# Test Plan
+
+## Manual Testing
+
+**Quality Objective**
+
+In this manual Software Testing Document, the objective is to:
+
+\-     Identify what features and functionality will be tested in this release;
+
+\-     Ensure the applications is functional;
+
+\-     Ensure the application meets the quality specifications defined by the client; and
+
+\-     Ensure that the bugs/issues are identified and fixed before they go live
+
+**Roles and Responsibilities for Testing**
+
+Developers – Rachel, Tom and Callum
+
+Quality Testers – Rachel Williams, Tom Fisher and LEAPDev
+
+**Test Deliverables**
+
+This test will cover:
+
+1. Feature and function testing according to the test plan; 
+
+2. Test cases based on R4. User Stories of the FlexiDesk READme.md; 
+
+3. Bug report; and 
+
+4. Customer /Tester signoff 
+
+### Manual Testing Results
+
+Development Test 1 Results - [link](https://github.com/WebDevelopAHAHAs/flexidesk/blob/development/docs/img/testing/Software%20Testing%20for%20FlexiDesk%20-%20Dev%20Test%201%20%2014.1.2021.pdf)
+
+Development Test 2 Results - [link](https://github.com/WebDevelopAHAHAs/flexidesk/blob/development/docs/img/testing/Software%20Testing%20for%20FlexiDesk%20-%20Dev%20Test%202-%2018.1.2021.pdf)
+
+Production Test Results - [link](https://github.com/WebDevelopAHAHAs/flexidesk/blob/development/docs/img/testing/Software%20Testing%20for%20FlexiDesk%20-%20Production%20Test%201%20-%2019.1.2021.pdf)
+
+
+
+## Automated Testing
+
+**Quality Objective**
+
+In our Automated Software Testing using Cypress, the objective is to:
+
+\-     Identify what features and functionality will be tested in this release;
+
+\-     Ensure the applications is functional;
+
+\-     Ensure the application meets the quality specifications defined by the client; and
+
+\-     Ensure that the bugs/issues are identified and fixed before they go live
+
+**Roles and Responsibilities for Testing**
+
+Testing Developers –Tom Fisher
+
+Quality Testers – Tom Fisher
+
+**Test Deliverables**
+
+This test will cover:
+
+1. Testing the home page url loads and users can successfully log in 
+2.  Testing that the modals open upon click 
+3.  Making sure User Access is going to the User side 
+4.  Making sure Admin Access is going to the Admin side
+
+![](https://github.com/WebDevelopAHAHAs/flexidesk/blob/development/docs/img/testing/testingpicture.jpg?raw=true)
+
