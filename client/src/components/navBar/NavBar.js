@@ -35,13 +35,13 @@ export default function NavBar(props) {
 
   function employeeNavBar() {
     return( <MatUI.List>
-      <h2 className="navbar-header">User</h2>
+      <h2 className="navbar-header"></h2>
       <div className="navbar-home">
         <ul className="navbar-button-list">
       
         <li><MatUI.Button className="nav-btn" href="/user/dashboard">Dashboard</MatUI.Button></li>
       
-        <li><MatUI.Button className="nav-btn" href="/user/bookings">New Booking</MatUI.Button></li>
+        <li><MatUI.Button className="nav-btn" href="/user/newbookings">New Booking</MatUI.Button></li>
       
         <MatUI.Button id="nav-btn" onClick={handleLogout} to="/login" >Logout </MatUI.Button>
       
