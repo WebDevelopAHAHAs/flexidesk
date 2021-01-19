@@ -45,7 +45,7 @@ app.use(session({
 const corsOptions = {
   credentials: true
 }
-const whitelist = ['http://localhost:3000', 'www.flexi-desks.com/', 'https://flexidesk.herokuapp.com/']
+const whitelist = ['http://localhost:3000', 'http://flexi-desks.com/', 'https://flexidesk.herokuapp.com/']
 app.use(cors({
   credentials: true,
   origin: function (origin,callback) {
