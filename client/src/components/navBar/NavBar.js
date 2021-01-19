@@ -43,6 +43,8 @@ export default function NavBar(props) {
       
         <li><MatUI.Button className="nav-btn" href="/user/newbookings">New Booking</MatUI.Button></li>
       
+        <li><MatUI.Button className="nav-btn" href="/user/viewbookings">Your Bookings</MatUI.Button></li>
+
         <MatUI.Button id="nav-btn" onClick={handleLogout} to="/login" >Logout </MatUI.Button>
       
         </ul>
@@ -52,7 +54,7 @@ export default function NavBar(props) {
 
   function adminNavBar() {
     return( <MatUI.List>
-      <h2 className="navbar-header">Admin</h2>
+      <h2 className="navbar-header"></h2>
       <div className="navbar-home">
         <ul className="navbar-button-list">
 
