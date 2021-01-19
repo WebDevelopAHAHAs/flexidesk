@@ -1,13 +1,14 @@
-import {React, useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './styling/style.css';
 import clsx from 'clsx';
 import * as MatUI from '@material-ui/core';
 import * as MatIcon from '@material-ui/icons'
 
+import {getLoggedOnUser} from '../services/authServices'
+import {AuthCheck} from './Redirect';
+
 // Styling
 import useStyles from './styling/useStyles';
-
-import {AuthCheck} from './Redirect';
 
 import NavBar from './navBar/NavBar'
 // Admin
@@ -26,12 +27,19 @@ import {Layout as UserViewBookings}  from './user/bookings/UserViewBookingsPage'
 
 export default function AppLayout(props)
 {
-  // console.log("---props", props)
 
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
-  AuthCheck(props);
+  useEffect( () => {
+    fetchData();
+  }, [])
+
+  async function fetchData() {
+    const user = await getLoggedOnUser();
+    console.log(user, props)
+    AuthCheck(user, props.access, props.history);
+  }
 
   const handleDrawerOpen = () => {
     setOpen(true);
