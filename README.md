@@ -8,6 +8,16 @@ by Callum Worrall, Rachel Williams and Tom Fisher
 
 
 
+**Deployed Site** - http://www.flexi-desks.com/login
+
+Admin - Username: admin@email.com Password: pw
+
+Employee - Username: employee@email.com Password: pw
+
+**Github Repo** - https://github.com/WebDevelopAHAHAs/flexidesk
+
+
+
 ## R1. Description of your website, including: Purpose, Functionality/Features, Target Audience and Tech Stack.
 
 **FlexiDesk** allows LEAPDev to accurately plan and manage who is in the office each day thus protecting the entire company by knowing exactly who was at each desk and when. 
@@ -461,3 +471,44 @@ Below is a legend corresponding to the wireframes.
 
 
 
+# Test Plan
+
+## Manual Testing
+
+**Quality Objective**
+
+In this manual Software Testing Document, the objective is to:
+
+\-     Identify what features and functionality will be tested in this release;
+
+\-     Ensure the applications is functional;
+
+\-     Ensure the application meets the quality specifications defined by the client; and
+
+\-     Ensure that the bugs/issues are identified and fixed before they go live
+
+**Roles and Responsibilities for Testing**
+
+Developers – Rachel, Tom and Callum
+
+Quality Testers – Rachel Williams, Tom Fisher and LEAPDev
+
+**Test Deliverables**
+
+This test will cover:
+
+1. Feature and function testing according to the test plan; 
+
+2. Test cases based on R4. User Stories of the FlexiDesk READme.md; 
+
+3. Bug report; and 
+
+4. Customer /Tester signoff 
+
+### Manual Testing Results
+
+Development Test 1 Results - [link]()
+
+Development Test 2 Results -
+
+Production Test Results - 
