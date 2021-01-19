@@ -15,7 +15,6 @@ describe('Home Page', () => {
 describe('Testing Modal will open upon click', () => {
     it('successfully clicks and loads a modal', () => {
         cy.visit('http://www.flexi-desks.com/admin/newBookings')
-        cy.pause
         cy.contains('Desk 9').click()
     })
 })
