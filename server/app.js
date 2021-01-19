@@ -27,17 +27,33 @@ if(process.env.NODE_ENV !== 'production') {
 
 // cacheReset(mongoose);
 
-// Install middleware
+// // Install middleware
+// app.use(session({
+//   // resave and saveUninitialized set to false for deprecation warnings
+//   secret: "Express is awesome",
+//   resave: false,
+//   saveUninitialized: false,
+//   cookie: {
+//     maxAge: 1200000 // 20 minutes in milliseconds
+//   },
+//   store: new MongoStore({
+//       mongooseConnection: mongoose.connection
+//   })
+// }));
+
 app.use(session({
-  // resave and saveUninitialized set to false for deprecation warnings
-  secret: "Express is awesome",
+  name: "flexi-session",
+  secret: "gorgoroth",
   resave: false,
   saveUninitialized: false,
-  cookie: {
-    maxAge: 1200000 // 20 minutes in milliseconds
+    cookie: {
+      maxAge: 1200000,
+      path: "/",
+      secure: true,
+      httpOnly: true
   },
   store: new MongoStore({
-      mongooseConnection: mongoose.connection
+    mongooseConnection: mongoose.connection
   })
 }));
 
