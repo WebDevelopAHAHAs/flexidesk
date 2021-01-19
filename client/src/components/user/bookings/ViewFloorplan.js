@@ -42,9 +42,9 @@ export default function ViewFloorplan(props) {
            
           </MatUI.DialogContentText>
           <div className="legend">
-            <i id="green" class="fas fa-square"> </i> Available 
+            <i id="green" className="fas fa-square"> </i> Available 
             
-            <i id="red" class="fas fa-square"> </i> Covid Restricted<br></br>
+            <i id="red" className="fas fa-square"> </i> Covid Restricted<br></br>
             Hover to zoom in
             </div>
         </MatUI.DialogContent>

@@ -13,7 +13,7 @@ async function newBooking(req, res) {
     const booking = await Booking.create({ user_id, desk_id, date });
     console.log("Created Booking:", booking)
 
-    res.send(user);
+    res.send(booking);
   }
   catch(err){
       console.log(err)

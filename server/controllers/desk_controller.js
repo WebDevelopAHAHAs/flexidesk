@@ -103,9 +103,7 @@ const getAllAvailableDesksByDate = function (req, res) {
                 bookedDesks.push(desk)
               }
             }        
-          }
-
-          
+          }          
 
           let filteredDesks = desks.filter(desk => !bookedDesks.includes(desk) )
 

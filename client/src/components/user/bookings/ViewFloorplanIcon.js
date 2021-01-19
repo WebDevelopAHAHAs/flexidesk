@@ -19,7 +19,7 @@ export default function ViewFloorplanIcon(props) {
       
     <div>
            
-    <button id='floorplanicon' onClick={handleClickOpen}><span><i class="fas fa-map-marked-alt"></i></span></button>    
+    <button id='floorplanicon' onClick={handleClickOpen}><span><i className="fas fa-map-marked-alt"></i></span></button>    
      
       <MatUI.Dialog 
         open={open}
@@ -42,9 +42,9 @@ export default function ViewFloorplanIcon(props) {
            
           </MatUI.DialogContentText>
           <div className="legend">
-            <i id="green" class="fas fa-square"> </i> Available 
+            <i id="green" className="fas fa-square"> </i> Available 
             
-            <i id="red" class="fas fa-square"> </i> Covid Restricted<br></br>
+            <i id="red" className="fas fa-square"> </i> Covid Restricted<br></br>
             Hover to zoom in.
             </div>
         </MatUI.DialogContent>

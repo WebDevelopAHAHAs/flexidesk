@@ -17,10 +17,7 @@ export function Layout(props) {
   const classes = useStyles();
 
   const [date, setDate] = useState(null)
-  // const [desk_id, setDeskID] = useState(null)
 
-  // const [newBookingOpen, setNewBookingOpen] = useState(false);
-  // const [addNewBookingsModalOpen, setAddNewBookingsModalOpen] = useState(false);
 
   return(
   <div id="userBookings-page">    
