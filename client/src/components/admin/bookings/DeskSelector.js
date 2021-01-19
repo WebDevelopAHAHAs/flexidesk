@@ -20,6 +20,8 @@ export default function DeskSelector(props){
   };
 
   const loadDesks = () => {
+    // props.setReloadDesks(false);
+    
     console.log("Loading Desks: ", props.desks)
     
     // if(deskNodes != null) {
@@ -41,7 +43,7 @@ export default function DeskSelector(props){
   return(
   <div className='showDesksDiv'>
 
-    {loadDesks()}
+    {props.reloadDesks && loadDesks()}
     
     <MatUI.Modal className="modal-position"
       open={newBookingOpen} onClose={handleClose} closeAfterTransition

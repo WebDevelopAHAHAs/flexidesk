@@ -17,9 +17,9 @@ export async function getUsers() {
 }
 
 export async function getUser(id) {
-  console.log("Requesting User: ", id)
+  // console.log("Requesting User: ", id)
   const response = await api.get(`/user/${id}`)
-  console.log("Retrieved User: ", response) 
+  // console.log("Retrieved User: ", response) 
   return response.data
 }
 
