@@ -8,6 +8,16 @@ by Callum Worrall, Rachel Williams and Tom Fisher
 
 
 
+**Deployed Site** - http://www.flexi-desks.com/login
+
+Admin - Username: admin@email.com Password: pw
+
+Employee - Username: employee@email.com Password: pw
+
+**Github Repo** - https://github.com/WebDevelopAHAHAs/flexidesk
+
+
+
 ## R1. Description of your website, including: Purpose, Functionality/Features, Target Audience and Tech Stack.
 
 **FlexiDesk** allows LEAPDev to accurately plan and manage who is in the office each day thus protecting the entire company by knowing exactly who was at each desk and when. 
