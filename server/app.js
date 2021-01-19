@@ -61,7 +61,7 @@ app.use(session({
 const corsOptions = {
   credentials: true
 }
-const whitelist = ['http://localhost:3000', 'http://www.flexi-desks.com']
+const whitelist = ['http://localhost:3000', 'http://www.flexi-desks.com', 'https://flexi-desk.netlify.app/']
 app.use(cors({
   credentials: true,
   origin: function (origin,callback) {
