@@ -10,7 +10,7 @@ import './userBooking.css'
 
 
 export function Route(props){
-  return(<AppLayout userViewbookings/>);
+  return(<AppLayout access="employee" history={props.history} userViewbookings/>);
 }
 
 export function Layout(props) {
@@ -33,7 +33,7 @@ export function Layout(props) {
 
             <MatUI.Paper className={classes.paper}>
 
-            <ViewBookingsTable/>
+            <ViewBookingsTable user_id={props.user_id}/>
 
             </MatUI.Paper>
           </MatUI.Grid>

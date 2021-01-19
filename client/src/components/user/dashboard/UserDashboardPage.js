@@ -5,7 +5,7 @@ import AppLayout from '../../AppLayout'
 import TabPanel from './UserDashboardTabs'
 
 export function Route(props) {
-  return( <AppLayout userdashboard/>);
+  return( <AppLayout access="employee" history={props.history} userdashboard/>);
 }
 
 export function Layout(props) {
@@ -20,7 +20,7 @@ export function Layout(props) {
         <MatUI.Grid item xs={12} md={12} lg={12}>
         <h1 className="user-dashboard-h1">Dashboard</h1>
           <MatUI.Paper className="box1">
-            <TabPanel/>
+            <TabPanel user_id={props.user_id}/>
           </MatUI.Paper>
         </MatUI.Grid>
       

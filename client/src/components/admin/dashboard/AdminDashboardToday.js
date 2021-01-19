@@ -28,32 +28,9 @@ export default function ViewBookingsToday(props) {
       bookingData[i].deskNumber = `${desk.number}`
     }
 
-
     setBookings(bookingData);
 
   }
-
-  //   const user = await getUser(userID);
-  //   return (<td>{user.first_name} {user.last_name}</td>)
-
-  //   const desk = await getDesk(deskID);
-  //   return (<td>{desk.number}</td>)
-
-  // }
-
-
-
-  // aysnc function fetchEmployeeName(user_id) {
-  //   setUserID(user_id)
-  //   const user = await getUser(user_id);
-  //   return (<td>{user.first_name} {user.last_name}</td>)
-  // }
-
-  // aysnc function fetchDeskNumber(desk_id) {
-  //   setDeskID(desk_id)
-  //   const desk = await getDesk(desk_id);
-  //   return (<td>{desk.number}</td>)
-  // }
 
   const loadTable = () => {
     console.log("Loading Booking Table: ", bookings)
@@ -62,13 +39,7 @@ export default function ViewBookingsToday(props) {
       <tr key={booking._id}>
         <td>{booking.employeeName}</td>
         <td className='desk-no'>{booking.deskNumber}</td>
-        {/* {fetchEmployeeName(booking.user_id)}
-        {fetchDeskNumber(booking.desk_id)} */}
-        {/* <td>{booking.desk_id}</td> */}
         <td>{booking.date}</td>
-        {/* <td><EditBooking dataID={booking._id} user_id={booking.user_id} desk_id={booking.desk_id} date={booking.date}/></td> */}
-        
-        
       </tr>
     ))
   }

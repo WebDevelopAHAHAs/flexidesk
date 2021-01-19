@@ -30,15 +30,17 @@ export default function AppLayout(props)
 
   const classes = useStyles();
   const [open, setOpen] = useState(false);
+  const [user, setUser] = useState(null)
 
   useEffect( () => {
     fetchData();
   }, [])
 
   async function fetchData() {
-    const user = await getLoggedOnUser();
-    console.log(user, props)
-    AuthCheck(user, props.access, props.history);
+    const loggedInUser = await getLoggedOnUser();
+    console.log(loggedInUser, props)
+    AuthCheck(loggedInUser, props.access, props.history);
+    setUser(loggedInUser);
   }
 
   const handleDrawerOpen = () => {
@@ -108,11 +110,11 @@ export default function AppLayout(props)
       {props && props.desks && <AdminDesks/>}
 
       {/* User */}
-      {props && props.userdashboard && <UserDashboard/>}
+      {props && user && props.userdashboard && <UserDashboard user_id={user._id}/>}
 
-      {props && props.userNewBookings && <UserNewBookings/>}
+      {props && user && props.userNewBookings && <UserNewBookings user_id={user._id}/>}
       
-      {props && props.userViewbookings && <UserViewBookings/>}
+      {props && user && props.userViewbookings && <UserViewBookings user_id={user._id}/>}
     </main>
     
     </div>

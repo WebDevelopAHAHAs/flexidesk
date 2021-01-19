@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CenteredTabs() {
+export default function CenteredTabs(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -69,13 +69,13 @@ export default function CenteredTabs() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-      <ViewBookingsToday/>
+      <ViewBookingsToday user_id={props.user_id}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-      <ViewBookingsMonth/>
+      <ViewBookingsMonth user_id={props.user_id}/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-      <ViewBookingsYear/>
+      <ViewBookingsYear user_id={props.user_id}/>
       </TabPanel>
     </div>
   );

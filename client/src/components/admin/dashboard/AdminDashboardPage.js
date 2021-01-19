@@ -6,7 +6,7 @@ import TabPanel from './AdminDashboardTabs'
 import { Link } from 'react-router-dom';
 
 export function Route(props) {
-  return( <AppLayout history={props.history} dashboard/>);
+  return( <AppLayout access="admin" history={props.history} dashboard/>);
 }
 
 export function Layout(props) {

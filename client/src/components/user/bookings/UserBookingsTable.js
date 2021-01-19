@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 // import ReactDOM from 'react-dom';
 
-import {getBookings} from '../../../services/bookingServices'
+import {getUserBookings} from '../../../services/bookingServices'
 import {getUser} from '../../../services/userServices'
 import {getDesk} from '../../../services/deskServices'
 // import EditBooking from './EditBooking'
@@ -20,7 +20,7 @@ export default function ViewBookingsTable(props) {
   }, [])
 
   async function fetchData() {
-    const bookingData = await getBookings();
+    const bookingData = await getUserBookings(props.user_id);
     for(let i = 0; i < bookingData.length; i++) {
       const user = await getUser(bookingData[i].user_id)
       const desk = await getDesk(bookingData[i].desk_id)

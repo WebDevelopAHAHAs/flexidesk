@@ -21,10 +21,14 @@ export async function getBooking(id) {
   return response.data
 }
 
-export async function getBookingsByDate(type, value) {
-  console.log('Requesting All Bookings by ', type)
-  const response = await api.get("/booking/all")
-  console.log("Retrieved Bookings: ", response)
+export async function getUserBookings(id) {
+  console.log("Requesting User Bookings: ", id)
+  const response = await api.get(`/booking/user/${id}`)
+  console.log("Retrieved Bookings: ", response) 
+  return response.data
+}
+
+function filterByDate(type, value, response) {
   let sliceStart = 0        
   const bookings = response.data;
   if(bookings.length !== 0) {
@@ -41,10 +45,30 @@ export async function getBookingsByDate(type, value) {
   }
   const filteredBookings = bookings.filter((booking) =>
   booking.date.slice(sliceStart, 9) === value.slice(sliceStart, 9))
+
   return filteredBookings;
 }
 
-  
+export async function getUserBookingsByDate(id, type, value) {
+  console.log('Requesting All Bookings by ', type)
+  const response = await api.get(`/booking/user/${id}`)
+  console.log("Retrieved Bookings: ", response)
+
+  const filtered = filterByDate(type, value, response)
+  console.log("Retrieved Bookings: ", filtered)
+  return filtered;
+}
+
+export async function getBookingsByDate(type, value) {
+  console.log('Requesting All Bookings by ', type)
+  const response = await api.get('/booking/all/')
+  console.log("Retrieved Bookings: ", response)
+
+  const filtered = filterByDate(type, value, response)
+  console.log("Retrieved Bookings: ", filtered)
+  return filtered;
+}
+
 export async function updateBooking(bookingInfo) {
   console.log("Requesting Booking Update: ", bookingInfo)
   const response = await api.post(`/booking/${bookingInfo.id}`, bookingInfo)

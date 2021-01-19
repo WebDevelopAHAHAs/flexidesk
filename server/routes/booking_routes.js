@@ -4,7 +4,9 @@ const {
   newBooking,
   getBookings, getBooking,
   changeBooking, removeBooking,
-  getBookingsByYear,getBookingsByMonth, getBookingsByDate
+  getUserBookings
+  // , getUserBookingsByDate,
+  // getBookingsByDate
 } = require('../controllers/booking_controller');
 
 //Create
@@ -12,6 +14,10 @@ router.post('/new', newBooking); //database booking creation route
 
 //Queries
 router.get('/all', getBookings)
+
+router.get('/user/:id', getUserBookings)
+
+// router.get('/userDate/:id/:date', getUserBookingsByDate)
 
 // //Queries
 // router.get('/year/:year', getBookingsByYear)

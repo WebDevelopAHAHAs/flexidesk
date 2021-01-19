@@ -10,7 +10,7 @@ import './adminBookings.css'
 import { Link } from 'react-router-dom';
 
 export function Route(props){
-  return(<AppLayout history={props.history} viewbookings/>);
+  return(<AppLayout access="admin" history={props.history} viewbookings/>);
 }
 
 export function Layout(props) {
