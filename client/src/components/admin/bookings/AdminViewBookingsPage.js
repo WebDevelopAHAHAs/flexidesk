@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 // import DeskSelector from './DeskSelector'
 import ViewBookingsTable from './ViewBookingsTable'
 import './adminBookings.css'
+import { Link } from 'react-router-dom';
 
 export function Route(props){
   return(<AppLayout history={props.history} viewbookings/>);
@@ -36,7 +37,13 @@ export function Layout(props) {
         <MatUI.Grid item xs={12} md={12} lg={12}>
 
           <h1 className='booking-h1'>All Bookings</h1>
-          
+          <div className="new-btn-wrapper">
+        <Link to="/admin/newBookings">
+          <button className="new-bookings">
+            New Booking
+          </button>
+              </Link>
+           </div>
             
         </MatUI.Grid>
 

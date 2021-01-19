@@ -22,6 +22,26 @@
     padding-left: 18px;
   }
 
+  .edit-bookings{
+    background-color: #fff ;
+    padding: 12px 26px;
+    padding-bottom: 15px;
+    border-radius: 4px;
+    outline: none;
+    text-align: center;
+    border: 1px solid #6E75A8;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.5s;	
+    cursor: pointer;
+    font-size: 15px;
+    color: #6E75A8;
+    text-decoration-style: solid;
+  }
+
+  .edit-btn-wrapper{
+      padding-bottom: 20px;
+  }
 /* ----------- iPhone X ----------- */
 
 /* Portrait and Landscape */
