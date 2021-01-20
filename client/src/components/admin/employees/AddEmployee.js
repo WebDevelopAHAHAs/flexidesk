@@ -92,15 +92,15 @@ export function Layout(props) {
         <MatUI.Input id="standard-basic" name="company"required type="text" onChange={handleChange} />
       </MatUI.FormControl> */}
       <MatUI.FormControl>
-      <div className="container-spacing">
+     
         <MatUI.FormLabel id="access" htmlFor="component-simple">Access</MatUI.FormLabel>
-        <MatUI.Select id="demo-simple-select-helper" required value={access} onChange={handleAccessChange}>
+        <MatUI.Select id="simple-select" required value={access} onChange={handleAccessChange}>
           <MatUI.MenuItem value={""}><em>None</em></MatUI.MenuItem>
           <MatUI.MenuItem value={"employee"}>Employee Access</MatUI.MenuItem>
           <MatUI.MenuItem value={"manager"}>Manager Access</MatUI.MenuItem>
           <MatUI.MenuItem value={"admin"}>Admin Access</MatUI.MenuItem>
         </MatUI.Select>
-        </div>
+       
       </MatUI.FormControl>
       {/* <MatUI.FormControl>
         <MatUI.FormLabel htmlFor="component-simple">Team</MatUI.FormLabel>
