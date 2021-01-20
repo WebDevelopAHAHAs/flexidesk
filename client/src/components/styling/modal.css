@@ -24,8 +24,8 @@
   
   .MuiInput-root{
   position: relative;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
   justify-content: 'center';
   font-family: 'Montserrat', sans-serif; 
   }
@@ -58,7 +58,7 @@
   }
 
   #access{
-    margin-right: 16px;
+    margin-right: 0px;
     text-align: left;
   }
 
@@ -80,7 +80,7 @@
   .available-container-spacing{
     padding-top: 15px;
   }
- 
+
 
 .MatUI.FormLabel{
   font-family: 'Montserrat', sans-serif; 
