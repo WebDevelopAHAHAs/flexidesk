@@ -41,27 +41,31 @@ if(process.env.NODE_ENV !== 'production') {
 //   })
 // }));
 
-app.use(session({
-  name: "flexi-session",
-  secret: "gorgoroth",
+
+app.enable('trust proxy'); // stamps cookies to be secured
+const sessionConfig = {
+  secret: "express isn't too bad", // .env
   resave: false,
-  saveUninitialized: false,
-    cookie: {
-      maxAge: 1200000,
-      path: "/",
-      secure: true,
-      httpOnly: false
+  saveUninitialized: true,
+  store: new MongoStore({ mongooseConnection: mongoose.connection }),
+  proxy: true,
+  cookie: {
+    httpOnly: false,
+    maxAge: 1200000
   },
-  store: new MongoStore({
-    mongooseConnection: mongoose.connection
-  })
-}));
+};
+
+if (process.env.NODE_ENV === 'production') {
+  sessionConfig.cookie.sameSite = 'none'; // allow cross-site usage of cookies
+  sessionConfig.cookie.secure = true; // secures cookies
+}
+app.use(session(sessionConfig));
 
 // --- CORS --- //
 const corsOptions = {
   credentials: true
 }
-const whitelist = ['http://localhost:3000', 'http://www.flexi-desks.com', 'https://flexi-desk.netlify.app/']
+const whitelist = ['http://localhost:3000', 'http://www.flexi-desks.com', 'https://flexi-desk.netlify.app'] // Local, goDaddy, Netlify
 app.use(cors({
   credentials: true,
   origin: function (origin,callback) {

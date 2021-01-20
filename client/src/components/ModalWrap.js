@@ -71,9 +71,7 @@ export default function ModalWrap(props) {
         <div>
 
           <h2 id="transition-modal-title">
-
             {header}
-
           </h2>
 
           <div id="transition-modal-description">            

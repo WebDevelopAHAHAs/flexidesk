@@ -69,7 +69,7 @@ export default function AppLayout(props)
           FlexiDesk
         </MatUI.Typography>
 
-        <MatUI.IconButton color="inherit"> {/* <Badge badgeContent={1} color="secondary"> */} {/* <NotificationsIcon /> */} {/* HERE IS THE NOTIFICATIONS */} {/* </Badge> */}</MatUI.IconButton>
+        <MatUI.IconButton color="inherit"></MatUI.IconButton>
 
       </MatUI.Toolbar>
 
