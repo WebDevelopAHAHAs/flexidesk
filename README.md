@@ -16,6 +16,8 @@ Employee - Username: employee@email.com Password: pw
 
 **Github Repo** - https://github.com/WebDevelopAHAHAs/flexidesk
 
+**Trello Link** - https://trello.com/invite/b/Q2ebjdwr/734e154e3d89cfc126a1f9b0b5c77c9d/flexidesk
+
 
 
 ## R1. Description of your website, including: Purpose, Functionality/Features, Target Audience and Tech Stack.
