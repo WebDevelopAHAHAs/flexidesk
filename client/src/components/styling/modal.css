@@ -24,8 +24,8 @@
   
   .MuiInput-root{
   position: relative;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
   justify-content: 'center';
   font-family: 'Montserrat', sans-serif; 
   }
@@ -85,13 +85,13 @@
 .MatUI.FormLabel{
   font-family: 'Montserrat', sans-serif; 
   text-align: left;
-  width: 100%;
+  width: 10%;
 }
   
   .MuiFormControl-root.makeStyles-root-1{
   margin: none;
   text-align: left;
-  padding-left: 13%;
+  padding-left: 0px;
   }
   
   .register-button{
