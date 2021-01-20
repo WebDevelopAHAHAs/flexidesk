@@ -50,7 +50,7 @@ app.use(session({
       maxAge: 1200000,
       path: "/",
       secure: true,
-      httpOnly: true
+      httpOnly: false
   },
   store: new MongoStore({
     mongooseConnection: mongoose.connection
