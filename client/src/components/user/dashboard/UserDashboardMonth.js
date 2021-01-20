@@ -32,15 +32,8 @@ export default function ViewBookingsMonth(props) {
  
     return bookings.map(booking => (
       <tr key={booking._id}>
-        
         <td className='desk-no'>{booking.deskNumber}</td>
-        {/* {fetchEmployeeName(booking.user_id)}
-        {fetchDeskNumber(booking.desk_id)} */}
-        {/* <td>{booking.desk_id}</td> */}
         <td>{booking.date}</td>
-        {/* <td><EditBooking dataID={booking._id} user_id={booking.user_id} desk_id={booking.desk_id} date={booking.date}/></td> */}
-        
-        
       </tr>
     ))
   }
@@ -50,13 +43,9 @@ export default function ViewBookingsMonth(props) {
     <div className='col-12'>
       <table className="booking-table"  id="booking-table-id">
           <thead>
-            <tr>
-             
+            <tr>             
               <th>Desk No.</th>
-              <th>Date</th>
-              {/* <th>Edit</th> */}
-              <th></th>
-              
+              <th>Date</th>              
             </tr>
           </thead>
           
